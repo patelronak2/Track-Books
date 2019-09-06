@@ -16,12 +16,18 @@
 	<body>
 		<div class="row">
 			<div class="card-panel col m6 light-blue lighten-3">
-				<p class="center-align">Information Goes Here!</p>
+				<h5 class="center-align">Information Goes Here!</h5>
 			</div>
 			<div class="card-panel col m6 light-blue lighten-5">
-				<p class="center-align">Login Form Goes Here!</p>
+				<h5 class="center-align">Login Form Goes Here!</h5>
 			</div>
-		
 		</div>
+		
+		<div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
 	</body>
 </html>
