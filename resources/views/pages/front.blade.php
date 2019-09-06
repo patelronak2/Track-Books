@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<div class="row">
-			<div class="card-panel col m6 light-blue lighten-3">
+			<div class="card-panel col m6 light-blue lighten-3 valign-wrapper">
 				<h5 class="center-align">Information Goes Here!</h5>
 			</div>
 			<div class="card-panel col m6 light-blue lighten-5">
@@ -26,7 +26,7 @@
 		<div class="footer-copyright">
             <div class="container">
             © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <a class="grey-text text-lighten-2 right" href="#!">More Links</a>
             </div>
         </div>
 	</body>
