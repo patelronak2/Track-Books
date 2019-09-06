@@ -10,11 +10,22 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.css') }}">
 		<style type="text/css">
-		
+			body {
+				display: flex;
+				min-height: 100vh;
+				flex-direction: column;
+			  }
+
+			  main {
+				flex: 1 0 auto;
+			  }
 		</style>
 	</head>
 	<body>
-		<div class=" blue-grey lighten-5">
+		<header>
+		
+		</header>
+		<main>
 			<div class="row">
 				<div class="col m6 s12 light-blue lighten-3" style="height: 90vh;">
 					<h5 class="center-align">Information Goes Here!</h5>
@@ -23,14 +34,15 @@
 					<h5 class="center-align">Login Form Goes Here!</h5>
 				</div>
 			</div>
-			<footer>
-				<div class="footer-copyright">
-					<div class="container">
-					© 2014 Copyright Text
-					<a class="right" href="#!">More Links</a>
-					</div>
+		</main>
+		<footer class=" blue-grey lighten-5">
+			<div class="footer-copyright">
+				<div class="container">
+				© 2014 Copyright Text
+				<a class="right" href="#!">More Links</a>
 				</div>
-			</footer>
-		</div>
+			</div>
+		</footer>
+		
 	</body>
 </html>
