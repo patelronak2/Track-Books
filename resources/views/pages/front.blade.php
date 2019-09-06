@@ -16,10 +16,10 @@
 	<body>
 		<div class=" blue-grey lighten-5">
 			<div class="row">
-				<div class="col m6 light-blue lighten-3" style="height: 90vh;">
+				<div class="col m6 s12 light-blue lighten-3" style="height: 90vh;">
 					<h5 class="center-align">Information Goes Here!</h5>
 				</div>
-				<div class="col m6 light-blue lighten-5" style="height: 90vh;">
+				<div class="col m6 s12 light-blue lighten-5" style="height: 90vh;">
 					<h5 class="center-align">Login Form Goes Here!</h5>
 				</div>
 			</div>
