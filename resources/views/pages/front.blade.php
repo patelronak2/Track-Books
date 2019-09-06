@@ -22,18 +22,16 @@
 	</head>
 	<body>
 		<div class="row">
-			<div class="col m6 light-blue lighten-3">
+			<div class="card-panel col m6 light-blue lighten-3">
 				<p class="center-align">Information Goes Here!</p>
 			</div>
-			<div class="col m6 light-blue lighten-5">
+			<div class="card-panel col m6 light-blue lighten-5">
 				<p class="center-align">Login Form Goes Here!</p>
 			</div>
-		
 		</div>
-		<footer class="page-footer">
-			<div class="footer-copyright">
-				<div class="container">@2019 Copyright Text</div>
-			</div>
-		</footer>
+		<div class="footer-copyright">
+			<div class="container">@2019 Copyright Text</div>
+		</div>
+		
 	</body>
 </html>
