@@ -6,7 +6,7 @@
 	<head>
 		<title>Track-Books</title>
 		<meta name="csrf-token" content="{{ csrf_token() }}" />
-		<link rel="stylesheet" type="text/css" href="{{ asset('assets/style.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.css') }}">
 		<style type="text/css">
 		
 		</style>
