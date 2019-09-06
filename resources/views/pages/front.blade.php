@@ -6,14 +6,15 @@
 	<head>
 		<title>Track-Books</title>
 		<meta name="csrf-token" content="{{ csrf_token() }}" />
-		
+		<link rel="stylesheet" type="text/css" href="{{ asset('assets/style.css') }}">
 		<style type="text/css">
 		
 		</style>
 	</head>
 	<body>
 		<div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div>
-            
+        
+		   
 
 	</body>
 </html>
