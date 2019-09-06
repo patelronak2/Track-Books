@@ -35,7 +35,7 @@
 				</div>
 			</div>
 		</main>
-		<footer class=" blue-grey lighten-5">
+		<footer class=" blue-grey lighten-5" style="height: 10vh;">
 			<div class="footer-copyright">
 				<div class="container">
 				© 2014 Copyright Text
