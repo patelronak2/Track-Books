@@ -22,12 +22,13 @@
 				<h5 class="center-align">Login Form Goes Here!</h5>
 			</div>
 		</div>
-		
-		<div class="footer-copyright blue-grey lighten-5">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="right" href="#!">More Links</a>
-            </div>
-        </div>
+		<footer class=" blue-grey lighten-5">
+			<div class="footer-copyright">
+				<div class="container">
+				© 2014 Copyright Text
+				<a class="right" href="#!">More Links</a>
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
