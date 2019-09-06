@@ -15,18 +15,18 @@
 	</head>
 	<body>
 		<div class="row">
-			<div class="card-panel col m6 light-blue lighten-3" style="height: 100vh;">
+			<div class="col m6 light-blue lighten-3" style="height: 90vh;">
 				<h5 class="center-align">Information Goes Here!</h5>
 			</div>
-			<div class="card-panel col m6 light-blue lighten-5">
+			<div class="col m6 light-blue lighten-5" style="height: 90vh;">
 				<h5 class="center-align">Login Form Goes Here!</h5>
 			</div>
 		</div>
 		
-		<div class="footer-copyright">
+		<div class="footer-copyright blue-grey lighten-5">
             <div class="container">
             © 2014 Copyright Text
-            <a class="grey-text text-lighten-2 right" href="#!">More Links</a>
+            <a class="right" href="#!">More Links</a>
             </div>
         </div>
 	</body>
