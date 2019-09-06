@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<div class="row">
-			<div class="card-panel col m6 light-blue lighten-3 valign-wrapper">
+			<div class="card-panel col m6 light-blue lighten-3" style="height: 100vh;">
 				<h5 class="center-align">Information Goes Here!</h5>
 			</div>
 			<div class="card-panel col m6 light-blue lighten-5">
