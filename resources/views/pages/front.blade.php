@@ -27,19 +27,20 @@
 		</header>
 		<main>
 			<div class="row">
-				<div class="col m6 s12 light-blue lighten-3" style="height: 90vh;">
+				<div class="col m6 s12 light-blue lighten-3" style="height: 95vh;">
 					<h5 class="center-align">Information Goes Here!</h5>
 				</div>
-				<div class="col m6 s12 light-blue lighten-5" style="height: 90vh;">
+				<div class="col m6 s12 light-blue lighten-5" style="height: 95vh;">
 					<h5 class="center-align">Login Form Goes Here!</h5>
 				</div>
 			</div>
 		</main>
-		<footer class=" blue-grey lighten-5" style="height: 10vh;">
+		<footer class=" blue-grey lighten-5" style="height: 5vh;">
 			<div class="footer-copyright">
+				<div class="container">
 				© 2014 Copyright Text
 				<a class="right" href="#!">More Links</a>
-				
+				</div>
 			</div>
 		</footer>
 		
