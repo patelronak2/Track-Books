@@ -4,5 +4,5 @@
  -->
 
 <footer class="footer">
-	<p>Copy Right @ Ronak Patel</p>
+	<h5>Copy Right @ Ronak Patel</h5>
 </footer>

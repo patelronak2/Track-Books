@@ -5,8 +5,8 @@
 <nav>
 	<ul>
 		<li><a href="">Home</a></li>
-		<li><a href="">CRUD</a></li>
-		<li><a href="">AJAX</a></li>
+		<li><a href="">Sign in</a></li>
+		<li><a href="">About</a></li>
 		<li><a href="">About</a></li>
 	</ul>
 </nav>
