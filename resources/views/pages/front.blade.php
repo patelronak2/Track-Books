@@ -10,18 +10,30 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.css') }}">
 		<style type="text/css">
-		
+			  body {
+				display: flex;
+				min-height: 100vh;
+				flex-direction: column;
+			  }
+			  main {
+				flex: 1 0 auto;
+			  }
 		</style>
 	</head>
 	<body>
 		<div class="row">
-			<div class="card-panel col m6 light-blue lighten-3">
-				<h4 class="center-align">Information Goes Here!</h4>
+			<div class="col m6 light-blue lighten-3">
+				<p class="center-align">Information Goes Here!</p>
 			</div>
-			<div class="card-panel col m6 light-blue lighten-5">
-				<h4 class="center-align">Login Form Goes Here!</h4>
+			<div class="col m6 light-blue lighten-5">
+				<p class="center-align">Login Form Goes Here!</p>
 			</div>
 		
 		</div>
+		<footer class="page-footer">
+			<div class="footer-copyright">
+				<div class="container">@2019 Copyright Text</div>
+			</div>
+		</footer>
 	</body>
 </html>
