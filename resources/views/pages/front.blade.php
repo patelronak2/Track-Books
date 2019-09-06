@@ -14,7 +14,7 @@
 		</style>
 	</head>
 	<body>
-			<div class="row">
+			<div class="row" style="margin-bottom: 0px!important;">
 				<div class="col m6 s12 light-blue lighten-3" style="height: 100vh;">
 					<h5 class="center-align">Information Goes Here!</h5>
 				</div>
