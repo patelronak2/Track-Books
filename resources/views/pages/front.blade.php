@@ -10,19 +10,10 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.css') }}">
 		<style type="text/css">
-			body {
-				display: flex;
-				min-height: 100vh;
-				flex-direction: column;
-			  }
-
-			.flex-container {
-				flex: 1 0 auto;
-			  }
+			
 		</style>
 	</head>
 	<body>
-		<div class="flex-container">
 			<div class="row">
 				<div class="col m6 s12 light-blue lighten-3" style="height: 100vh;">
 					<h5 class="center-align">Information Goes Here!</h5>
@@ -31,7 +22,6 @@
 					<h5 class="center-align">Login Form Goes Here!</h5>
 				</div>
 			</div>
-		</div>
 		
 		
 	</body>
