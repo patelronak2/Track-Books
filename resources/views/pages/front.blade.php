@@ -14,6 +14,14 @@
 		</style>
 	</head>
 	<body>
-		<div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div>
+		<div class="row">
+			<div class="card-panel col m6 light-blue lighten-3">
+				<h4 class="center-align">Information Goes Here!</h4>
+			</div>
+			<div class="card-panel col m6 light-blue lighten-5">
+				<h4 class="center-align">Login Form Goes Here!</h4>
+			</div>
+		
+		</div>
 	</body>
 </html>
