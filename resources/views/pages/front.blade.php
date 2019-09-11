@@ -5,12 +5,12 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="row" style="margin-bottom: 0px!important;">
-		<div class="col-md-6 col-sm-12 bg-primary text-white" style="height: 100vh;">
-			<h5 class="center-align">Information Goes Here!</h5>
+	<div class="row" style="margin: 0px!important;">
+		<div class="col-md-6 col-sm-12 bg-primary text-white" style="height: 80vh;">
+			<h5 class="text-center">Information Goes Here!</h5>
 		</div>
-		<div class="col-md-6 col-sm-12 bg-light text-dark" style="height: 100vh;">
-			<h5 class="center-align">Login Form Goes Here!</h5>
+		<div class="col-md-6 col-sm-12 bg-light text-dark" style="height: 80vh;">
+			<h5 class="text-center">Login Form Goes Here!</h5>
 		</div>
 	</div>
 		
