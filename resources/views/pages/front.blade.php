@@ -7,9 +7,18 @@
 @section('content')
 	<div class="row" style="margin: 0px !important;">
 		<div class="col-md-6 col-sm-12 bg-primary text-white p-4" style="height: 80vh;">
-			<div class="mt-5 pt-5 d-flex flex-column justify-content-center">
+			<div class="mt-5 pt-5 d-flex flex-column">
 				<div class="m-2 p-2">
-					<h3>Explore</h3>
+					<div class="d-flex flex-row">
+						<div>
+							<i class="fas fa-cloud text-white" style="font-size: 48px"></i>
+						</div>
+						<div>
+							<h3>Explore</h3>
+							<p>Get latest facts!</p>
+						</div>
+					</div>
+					
 				</div>
 				<div class="m-2 p-2">
 					<h3>Explore</h3>
