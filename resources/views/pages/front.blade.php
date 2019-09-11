@@ -11,6 +11,7 @@
 		</div>
 		<div class="col-md-6 col-sm-12 bg-light text-dark p-4" style="height: 80vh;">
 			<div class="text-center mt-5 pt-5 justify-content-center">
+				<i class="fas fa-cloud"></i>
 				<h5 class="text-center text-primary mt-5">See Who is trending in Book world!</h5>
 				<h5 class="text-center text-secondary">Join the community now!</h5>
 				<div class="text-center mt-5">
