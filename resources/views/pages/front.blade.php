@@ -7,7 +7,7 @@
 @section('content')
 	<div class="row" style="margin: 0px !important;">
 		<div class="col-md-6 col-sm-12 bg-primary text-white p-4" style="height: 80vh;">
-			<div class="text-center mt-5 pt-5 justify-content-center">
+			<div class="mt-5 pt-5 d-flex flex-column justify-content-center">
 				<div class="m-2 p-2">
 					<h3>Explore</h3>
 				</div>
