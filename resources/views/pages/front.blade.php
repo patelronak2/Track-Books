@@ -11,20 +11,34 @@
 				<div class="m-2">
 					<div class="d-flex flex-row">
 						<div class="m-2 p-2">
-							<i class="fas fa-cloud text-white mt-1" style="font-size: 48px"></i>
+							<i class="fas fa-cloud text-white mt-1" style="font-size: 36px"></i>
 						</div>
 						<div class="m-2 p-2">
 							<p><strong>Explore</strong><br>	Get latest facts!</p>
 						</div>
 					</div>
-					
 				</div>
-				<div class="m-2 p-2">
-					<h3>Explore</h3>
+				<div class="m-2">
+					<div class="d-flex flex-row">
+						<div class="m-2 p-2">
+							<i class="fas fa-cloud text-white mt-1" style="font-size: 36px"></i>
+						</div>
+						<div class="m-2 p-2">
+							<p><strong>Explore</strong><br>	Get latest facts!</p>
+						</div>
+					</div>
 				</div>
-				<div class="m-2 p-2">
-					<h3>Explore</h3>
+				<div class="m-2">
+					<div class="d-flex flex-row">
+						<div class="m-2 p-2">
+							<i class="fas fa-cloud text-white mt-1" style="font-size: 36px"></i>
+						</div>
+						<div class="m-2 p-2">
+							<p><strong>Explore</strong><br>	Get latest facts!</p>
+						</div>
+					</div>
 				</div>
+				
 				
 			</div>
 		</div>
