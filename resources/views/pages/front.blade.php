@@ -10,7 +10,7 @@
 			<h5 class="text-center">Information Goes Here!</h5>
 		</div>
 		<div class="col-md-6 col-sm-12 bg-light text-dark p-4" style="height: 80vh;">
-			<div class="text-center mt-7 pb-5 justify-content-center">
+			<div class="text-center pb-5 justify-content-center" style="margin-top: 96px;">
 				<h5 class="text-center text-primary">See Who is trending in Book world!</h5>
 				<h5 class="text-center text-secondary">Join the community now!</h5>
 				<div class="text-center mt-5">
