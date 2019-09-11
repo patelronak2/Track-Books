@@ -7,7 +7,18 @@
 @section('content')
 	<div class="row" style="margin: 0px !important;">
 		<div class="col-md-6 col-sm-12 bg-primary text-white p-4" style="height: 80vh;">
-			<h5 class="text-center">Information Goes Here!</h5>
+			<div class="text-center mt-5 pt-5 justify-content-center">
+				<div class="m-2 p-2">
+					<h3>Explore</h3>
+				</div>
+				<div class="m-2 p-2">
+					<h3>Explore</h3>
+				</div>
+				<div class="m-2 p-2">
+					<h3>Explore</h3>
+				</div>
+				
+			</div>
 		</div>
 		<div class="col-md-6 col-sm-12 bg-light text-dark p-4" style="height: 80vh;">
 			<div class="text-center mt-5 pt-5 justify-content-center">
