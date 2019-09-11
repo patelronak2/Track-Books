@@ -11,6 +11,10 @@
 		</div>
 		<div class="col-md-6 col-sm-12 bg-light text-dark" style="height: 80vh;">
 			<h5 class="text-center">Login Form Goes Here!</h5>
+			<!--<button type="button" class="btn btn-primary">Primary</button> -->
+			<a class="btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
+			<!-- <button type="button" class="btn btn-outline-primary">Primary</button> -->
+			<a class="btn btn-outline-primary" href="{{ route('register') }}">{{ __('Register') }}</a>
 		</div>
 	</div>
 		
