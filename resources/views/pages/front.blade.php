@@ -10,7 +10,8 @@
 			<h5 class="text-center">Information Goes Here!</h5>
 		</div>
 		<div class="col-md-6 col-sm-12 bg-light text-dark p-4" style="height: 80vh;">
-			<h5 class="text-center">Login Form Goes Here!</h5>
+			<h5 class="text-center text-primary">See Who is trending in Book world!</h5>
+			<h5 class="text-center text-secondary">Join the community now!</h5>
 			<div class="text-center mt-5">
 				<a class="btn btn-primary btn-lg" href="{{ route('login') }}" role="button">{{ __('Login') }}</a>
 				
