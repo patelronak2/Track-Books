@@ -5,13 +5,13 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="row" style="margin: 0px!important;">
+	<div class="row">
 		<div class="col-md-6 col-sm-12 bg-primary text-white p-4" style="height: 80vh;">
 			<h5 class="text-center">Information Goes Here!</h5>
 		</div>
 		<div class="col-md-6 col-sm-12 bg-light text-dark p-4" style="height: 80vh;">
 			<h5 class="text-center">Login Form Goes Here!</h5>
-			<div class="m-5 mx-auto">
+			<div class="text-center">
 				<a class="btn btn-primary btn-lg" href="{{ route('login') }}" role="button">{{ __('Login') }}</a>
 				
 				<a class="btn btn-outline-primary btn-lg" href="{{ route('register') }}" role="button">{{ __('Register') }}</a>
