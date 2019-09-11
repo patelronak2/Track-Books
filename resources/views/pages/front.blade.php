@@ -7,8 +7,8 @@
 @section('content')
 	<div class="row" style="margin: 0px !important;">
 		<div class="col-md-6 col-sm-12 bg-primary text-white p-4" style="height: 80vh;">
-			<div class="mt-5 pt-5 d-flex flex-column text-center">
-				<div class="m-1">
+			<div class="mt-5 pt-5 d-flex flex-column">
+				<div class="m-1 justify-content-center">
 					<div class="d-flex flex-row">
 						<div class="m-2 p-2">
 							<i class="far fa-compass text-white mt-1" style="font-size: 36px"></i>
