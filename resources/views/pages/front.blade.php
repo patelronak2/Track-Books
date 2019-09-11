@@ -7,34 +7,34 @@
 @section('content')
 	<div class="row" style="margin: 0px !important;">
 		<div class="col-md-6 col-sm-12 bg-primary text-white p-4" style="height: 80vh;">
-			<div class="mt-5 pt-5 d-flex flex-column">
-				<div class="m-2">
+			<div class="mt-5 pt-5 d-flex flex-column text-center">
+				<div class="m-1">
 					<div class="d-flex flex-row">
 						<div class="m-2 p-2">
-							<i class="fas fa-cloud text-white mt-1" style="font-size: 36px"></i>
+							<i class="far fa-compass text-white mt-1" style="font-size: 36px"></i>
 						</div>
 						<div class="m-2 p-2">
-							<p><strong>Explore</strong><br>	Get latest facts!</p>
+							<p><strong>Explore</strong><br>	Get information about the books!</p>
 						</div>
 					</div>
 				</div>
-				<div class="m-2">
+				<div class="m-1">
 					<div class="d-flex flex-row">
 						<div class="m-2 p-2">
-							<i class="fas fa-cloud text-white mt-1" style="font-size: 36px"></i>
+							<i class="	fas fa-thumbs-up text-white mt-1" style="font-size: 36px"></i>
 						</div>
 						<div class="m-2 p-2">
-							<p><strong>Explore</strong><br>	Get latest facts!</p>
+							<p><strong>Favorites</strong><br> Add books to showcase on your profile!</p>
 						</div>
 					</div>
 				</div>
-				<div class="m-2">
+				<div class="m-1">
 					<div class="d-flex flex-row">
 						<div class="m-2 p-2">
-							<i class="fas fa-cloud text-white mt-1" style="font-size: 36px"></i>
+							<i class="	fas fa-user-friends text-white mt-1" style="font-size: 36px"></i>
 						</div>
 						<div class="m-2 p-2">
-							<p><strong>Explore</strong><br>	Get latest facts!</p>
+							<p><strong>Make Friends</strong><br> Find people with similar interest!</p>
 						</div>
 					</div>
 				</div>
