@@ -6,10 +6,10 @@
 
 @section('content')
 	<div class="row" style="margin-bottom: 0px!important;">
-		<div class="col m6 s12 light-blue lighten-3" style="height: 100vh;">
+		<div class="col-md-6 col-sm-12 bg-primary text-white" style="height: 100vh;">
 			<h5 class="center-align">Information Goes Here!</h5>
 		</div>
-		<div class="col m6 s12 light-blue lighten-5" style="height: 100vh;">
+		<div class="col-md-6 col-sm-12 bg-light text-dark" style="height: 100vh;">
 			<h5 class="center-align">Login Form Goes Here!</h5>
 		</div>
 	</div>
