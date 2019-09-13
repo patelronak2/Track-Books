@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
               "name" => "Ronak Patel",
               "email" => "patelronak2@hotmail.com",
               "password" => "Ronakpatel181198"
-			  "verified" => true
+			  "verified" => 1
           ]);
     }
 }
