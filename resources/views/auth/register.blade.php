@@ -64,7 +64,7 @@
                             <label for="security" class="col-md-4 col-form-label text-md-right">Security Question:</label>
 
                             <div class="col-md-6">
-                                <input id="security" type="text" class="form-control @error('name') is-invalid @enderror" name="security" value="What is the name of your pet?" required autocomplete="name" autofocus>
+                                <input id="security" type="text" class="form-control @error('name') is-invalid @enderror" name="security" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -77,7 +77,7 @@
                             <label for="answer" class="col-md-4 col-form-label text-md-right">Answer:</label>
 
                             <div class="col-md-6">
-                                <input id="answer" type="text" class="form-control @error('name') is-invalid @enderror" name="answer" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="answer" type="text" class="form-control @error('name') is-invalid @enderror" name="answer"  required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
