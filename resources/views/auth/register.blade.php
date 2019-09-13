@@ -64,9 +64,9 @@
                             <label for="security" class="col-md-4 col-form-label text-md-right">Security Question:</label>
 
                             <div class="col-md-6">
-                                <input id="security" type="text" class="form-control @error('name') is-invalid @enderror" name="security" required autocomplete="name" autofocus>
+                                <input id="security" type="text" class="form-control @error('security') is-invalid @enderror" name="security" value="{{ old('security') }}"required autocomplete="security" autofocus>
 
-                                @error('name')
+                                @error('security')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -77,9 +77,9 @@
                             <label for="answer" class="col-md-4 col-form-label text-md-right">Answer:</label>
 
                             <div class="col-md-6">
-                                <input id="answer" type="text" class="form-control @error('name') is-invalid @enderror" name="answer"  required autocomplete="name" autofocus>
+                                <input id="answer" type="text" class="form-control @error('answer') is-invalid @enderror" name="answer" value="{{ old('answer') }}" required autocomplete="answer" autofocus>
 
-                                @error('name')
+                                @error('answer')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
