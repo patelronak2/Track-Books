@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::post('/login',function(Request $request){
+	print($request->username());
+});
 Route::get('/', function () {
     return view('pages.front');
 });
@@ -22,3 +24,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@admin')    
     ->middleware('is_admin')    
     ->name('admin');
+
