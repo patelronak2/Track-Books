@@ -60,32 +60,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-						<div class="form-group row">
-                            <label for="security" class="col-md-4 col-form-label text-md-right">Security Question:</label>
-
-                            <div class="col-md-6">
-                                <input id="security" type="text" class="form-control @error('security') is-invalid @enderror" name="security" value="{{ old('security') }}"required autocomplete="security" autofocus>
-
-                                @error('security')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-						<div class="form-group row">
-                            <label for="answer" class="col-md-4 col-form-label text-md-right">Answer:</label>
-
-                            <div class="col-md-6">
-                                <input id="answer" type="text" class="form-control @error('answer') is-invalid @enderror" name="answer" value="{{ old('answer') }}" required autocomplete="answer" autofocus>
-
-                                @error('answer')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+						
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
