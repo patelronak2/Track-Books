@@ -73,6 +73,6 @@ class RegisterController extends Controller
         ]); 
 		//$user->sendEmailVerificationNotification();
 
-       return $User;
+       return $user;
     }
 }
