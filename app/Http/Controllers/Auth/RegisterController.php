@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/email/verify';
 
     /**
      * Create a new controller instance.
@@ -66,12 +66,12 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 		//print_r($data,true);
-		$User = User::create([
+		$user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]); 
-		$User->sendEmailVerificationNotification();
+		//$user->sendEmailVerificationNotification();
 
        return $User;
     }
