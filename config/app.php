@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://pacific-lake-84775.herokuapp.com/public/'),
 
     'asset_url' => env('ASSET_URL', null),
 

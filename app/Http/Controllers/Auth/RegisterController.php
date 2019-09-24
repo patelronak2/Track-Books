@@ -70,7 +70,10 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-        ]); 
+        ]);
+
+		//the line below is added to workaround the default problem of not sending email automatically
+		//after a new user registration.
 		$user->sendEmailVerificationNotification();
 
        return $user;
