@@ -41,12 +41,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                
-                    <ul class="navbar-nav mr-auto">
-						
-                    </ul>
-					<li class="nav-item">
+                    <ul class="navbar-nav navbar-right">
+						<li class="nav-item">
                                 <a class="nav-link" href="#" id="notification"><span class="fa fa-bell bg-secondry"></span></a>
-                            </li>
+                        </li>
+                    </ul>
+					
                     <ul class="navbar-nav ml-auto">
 						
 						<li class="nav-item dropdown">
