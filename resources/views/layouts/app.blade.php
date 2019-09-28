@@ -32,7 +32,9 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+				<li class="nav-item">
+                                <a class="nav-link" href="#" id="notification"><span class="fa fa-bell bg-secondry"></span></a>
+                            </li>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                
                     <ul class="navbar-nav mr-auto">
