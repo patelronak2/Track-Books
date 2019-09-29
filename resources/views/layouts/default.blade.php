@@ -51,7 +51,7 @@
 						<li class="nav-item dropdown">
 							<a id="notificationdropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><span class="fa fa-bell bg-secondry"></span></a>
 
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationdropdown">
+							<div class="dropdown-menu " aria-labelledby="notificationdropdown">
 								No Notifications yet
 							</div>
 						</li>
