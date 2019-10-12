@@ -22,32 +22,6 @@
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
 	<style>
-      body {
-		  font-size: .875rem;
-		}
-
-		/*
-		 * Sidebar
-		 */
-
-		.sidebar {
-		  position: fixed;
-		  top: 20px;
-		  bottom: 0;
-		  left: 0;
-		  z-index: -100; /* Behind the navbar */
-		  padding: 48px 0 0; /* Height of navbar */
-		  box-shadow: inset -2px 0 0 rgba(0, 0, 0, .1);
-		}
-
-		.sidebar-sticky {
-		  position: relative;
-		  top: 0;
-		  height: calc(100vh - 48px);
-		  padding-top: .5rem;
-		  overflow-x: hidden;
-		  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-		}
 
 
     </style>
