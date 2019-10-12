@@ -14,13 +14,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script>
-		$(document).ready(function(){
-		  $("#notification").click(function(event){
-			event.preventDefault();
-		  });
-		});
-	</script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -46,16 +39,15 @@
                     </ul>
 					
                     <ul class="navbar-nav ml-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="#" id="notification"><span class="fa fa-bell bg-secondry"></span></a>
-						</li>
 						<li class="nav-item dropdown">
 							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 								{{ Auth::user()->name }} <span class="caret"></span>
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-								
+								@if (Auth::user()->type == 'admin')
+									<a class="dropdown-item" href="/public/admin">Admin Dashboard</a>
+								@endif
 								<a class="dropdown-item" href="/public/profile">Profile</a>
 								<a class="dropdown-item" href="/public/setting">Account Settings</a>
 								<a class="dropdown-item" href="{{ route('logout') }}"
