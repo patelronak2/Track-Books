@@ -28,7 +28,7 @@
 					<div class="card-header">Manage Authors</div>
 					<div class="card-body">
 						Add Author, Delete author
-						<a href="/public/manageBooks" class="stretched-link"></a>
+						<a href="/public/manageAuthors" class="stretched-link"></a>
 					</div>
 				</div>
 			</div>
