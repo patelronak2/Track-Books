@@ -13,7 +13,7 @@ class BookShelf extends Migration
      */
     public function up()
     {
-        Schema::table('shelfs', function (Blueprint $table) {
+        Schema::create('shelfs', function (Blueprint $table) {
 			$table->bigIncrements('id');
 			$table->unsignedBigInteger('user_id');
 			$table->unsignedBigInteger('book_id');

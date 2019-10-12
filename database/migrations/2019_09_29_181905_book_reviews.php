@@ -13,7 +13,7 @@ class BookReviews extends Migration
      */
     public function up()
     {
-        Schema::table('reviews', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
 			$table->bigIncrements('id');
 			$table->unsignedBigInteger('user_id');
 			$table->unsignedBigInteger('book_id');

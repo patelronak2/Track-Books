@@ -13,8 +13,7 @@ class UserProfile extends Migration
      */
     public function up()
     {
-        //
-		Schema::table('profiles', function (Blueprint $table) {
+		Schema::create('profiles', function (Blueprint $table) {
 			$table->bigIncrements('id');
 			$table->unsignedBigInteger('user_id');
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
