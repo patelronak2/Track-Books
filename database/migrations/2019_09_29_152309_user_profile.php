@@ -22,8 +22,8 @@ class UserProfile extends Migration
 			$table->string('email');
 			$table->string('gender');
 			$table->date('birthday');
-			$table->bool('account_visiblity');
-			$table->bool('ban');
+			$table->boolean('account_visiblity');
+			$table->boolean('ban');
 			$table->timestamps();
 		});
     }
