@@ -10,7 +10,7 @@
 					<div class="card-header">Manage users</div>
 					<div class="card-body">
 						Add User account, Delete User account, Ban User account
-						<a href="#" class="stretched-link"></a>
+						<a href="/public/manageUsers" class="stretched-link"></a>
 					</div>
 				</div>
 			</div>
@@ -19,7 +19,7 @@
 					<div class="card-header">Manage Books</div>
 					<div class="card-body">
 						Add Books, Delete Books
-						<a href="#" class="stretched-link"></a>
+						<a href="/public/manageBooks" class="stretched-link"></a>
 					</div>
 				</div>
 			</div>
@@ -28,7 +28,7 @@
 					<div class="card-header">Manage Authors</div>
 					<div class="card-body">
 						Add Author, Delete author
-						<a href="#" class="stretched-link"></a>
+						<a href="/public/manageBooks" class="stretched-link"></a>
 					</div>
 				</div>
 			</div>

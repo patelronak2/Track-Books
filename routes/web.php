@@ -16,12 +16,12 @@ Route::get('/', function () {
 });
 
 Auth::routes(['verify' => true]);
-
 Route::get('/profile','User@index');
 Route::get('/setting','User@setting');
-
 Route::get('/home', 'HomeController@index')->middleware('verified')->name('home');
-
 Route::get('/admin', 'AdminController@admin')    
     ->middleware('is_admin')    
     ->name('admin');
+Route::get('/manageUsers','AdminController@manageUsers');
+Route::get('/manageBooks','AdminController@manageBooks');
+Route::get('/manageAuthors','AdminController@manageAuthors');

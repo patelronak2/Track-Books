@@ -1,17 +1,58 @@
 <?php
-
+//Created by Ronak Patel
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
-{
+{	
+	/**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('auth');
     }
+	
+	/**
+     * handles the route /admin
+     *
+     * @return dashboard.blade.php
+     */
     public function admin()
     {
         return view('admin.dashboard');
+    }
+	
+	/**
+     * handles the route /manageUsers
+     *
+     * @return users.blade.php
+     */
+	public function manageUsers()
+    {
+        return view('admin.users');
+    }
+	
+	/**
+     * handles the route /manageBooks
+     *
+     * @return books.blade.php
+     */
+	public function manageBooks()
+    {
+        return view('admin.books');
+    }
+	
+	/**
+     * handles the route /manageAuthors
+     *
+     * @return authors.blade.php
+     */
+	public function manageAuthors()
+    {
+        return view('admin.authors');
     }
 }
