@@ -8,10 +8,10 @@
                 <div class="card-header">Manage Users</div>
 
                 <div class="card-body">
-					<div class="text-center">
-						<a href="#" class="btn btn-primary p-5">Add Users</a>
+					<div class="text-center mt-1 p-2">
+						<a href="#" class="btn btn-primary">Add Users</a>
 					</div>
-                    <div class="mt-5">No User in the database yet</div>
+                    <div class="mt-5 text-center"><h3>No User in the database yet</h3></div>
                 </div>
             </div>
         </div>

@@ -9,9 +9,9 @@
 
                 <div class="card-body">
 					<div class="text-center">
-						<a href="#" class="btn btn-primary p-5">Add Authors</a>
+						<a href="#" class="btn btn-primary mt-1 p-2">Add Authors</a>
 					</div>
-                    <div class="mt-5">No Author in the database yet</div>
+                    <div class="mt-5 text-center"><h3>No Author in the database yet</h3></div>
                 </div>
             </div>
         </div>
