@@ -25,3 +25,4 @@ Route::get('/admin', 'AdminController@admin')
 Route::get('/manageUsers','AdminController@manageUsers');
 Route::get('/manageBooks','AdminController@manageBooks');
 Route::get('/manageAuthors','AdminController@manageAuthors');
+Route::get('/addEntries','AdminController@addEntries');

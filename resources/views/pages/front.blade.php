@@ -31,7 +31,7 @@
 				<div class="m-1">
 					<div class="d-flex flex-row">
 						<div class="m-2 p-2">
-							<i class="	fas fa-user-friends text-white mt-1" style="font-size: 36px"></i>
+							<i class="fas fa-user-friends text-white mt-1" style="font-size: 36px"></i>
 						</div>
 						<div class="m-2 p-2">
 							<p><strong>Make Friends</strong><br> Find people with similar interest!</p>

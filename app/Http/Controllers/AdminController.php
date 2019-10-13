@@ -55,4 +55,14 @@ class AdminController extends Controller
     {
         return view('admin.authors');
     }
+	
+	/**
+     * handles the route /addEntries
+     *
+     * @return addEntries.blade.php
+     */
+	public function addEntries()
+    {
+        return view('admin.addEntries');
+    }
 }
