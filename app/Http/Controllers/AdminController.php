@@ -73,10 +73,10 @@ class AdminController extends Controller
 	
 	public function insertUser(Request $request)
 	{
-		$name = $input->request('name');
-		$email = $input->request('email');
-		$password = $input->request('password');
-		$confirmPassword = $input->request('password-confirm');
+		$name = $request->input('name');
+		$email = $request->input('email');
+		$password = $request->input('password');
+		$confirmPassword = $request->input('password-confirm');
 		
 		return view('admin.users', ['alert' => 'Row added Successfully', 'email' => $email]);
 	}
