@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Book;
 use App\Http\Controllers\Controller;
-
+//use Illuminate\Support\Facades\Validator;
 class AdminController extends Controller
 {	
 	/**
@@ -77,8 +77,7 @@ class AdminController extends Controller
 		$email = $request->input('email');
 		$password = $request->input('password');
 		$confirmPassword = $request->input('password-confirm');
-		
-		Validator::make($data, [
+		$validatedData = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
