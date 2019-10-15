@@ -28,7 +28,7 @@
 										<td>{{ $book->book_name }}</td>
 										<td>{{ $book->author_name }}</td>
 										<td>{{ $user->category }}</td>
-										<td><a href="" class="text-danger"><i class="fa fa-trash-o" style="font-size:24px"></i></a></td>
+										<td><a href="" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a></td>
 									</tr>
 								@endforeach
 							</table>
