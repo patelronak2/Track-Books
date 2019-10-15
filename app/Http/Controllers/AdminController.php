@@ -78,6 +78,7 @@ class AdminController extends Controller
 		$password = $request->input('password');
 		$confirmPassword = $request->input('password-confirm');
 		
-		return view('admin.users', ['alert' => 'Row added Successfully', 'email' => $email, 'insertUser' => true]);
+		$users = User::all();
+		return view('admin.users', ['users'=> $users,'alert' => 'Row added Successfully', 'email' => $email, 'insertUser' => true]);
 	}
 }
