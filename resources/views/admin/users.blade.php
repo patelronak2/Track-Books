@@ -10,7 +10,7 @@
                 <div class="card-body">
 					@if ($alert)
                         <div class="alert alert-success" role="alert">
-                            {{ $alert $email }}
+                            {{ $alert}}
 							
                         </div>
                     @endif
