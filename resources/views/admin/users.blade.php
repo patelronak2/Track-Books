@@ -14,6 +14,11 @@
 							
                         </div>
                     @endif
+					@if($deleteUser)
+                        <div class="alert alert-info" role="alert">
+                            {{ $alert }}
+                        </div>
+                    @endif
 					<div class="text-center mt-1 p-2">
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Users </a>
 						<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>
