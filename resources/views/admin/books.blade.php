@@ -13,7 +13,7 @@
 						<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>
 					</div>
                     <div class="mt-5 text-center">
-						@if($books)
+						@if(count($books) > 0)
 							<table class="table table-hover">
 								<thead>
 								  <tr>
