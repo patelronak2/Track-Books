@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Book;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 //use Illuminate\Support\Facades\Validator;
 class AdminController extends Controller
 {	
@@ -73,10 +74,7 @@ class AdminController extends Controller
 	
 	public function insertUser(Request $request)
 	{
-		$name = $request->input('name');
-		$email = $request->input('email');
-		$password = $request->input('password');
-		$confirmPassword = $request->input('password-confirm');
+		
 		$validatedData = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -85,7 +83,18 @@ class AdminController extends Controller
 			
         ]);
 		
+		$name = $request->input('name');
+		$email = $request->input('email');
+		$password = $request->input('password');
+		$confirmPassword = $request->input('password-confirm');
+		
+		$user = new User;
+		$user->name = $name;
+		$user->password = Hash::make($password);
+		$user->email = $email;
+		$user->save();
+		
 		$users = User::all();
-		return view('admin.users', ['users'=> $users,'alert' => 'Row added Successfully', 'email' => $email, 'insertUser' => true]);
+		return view('admin.users', ['users'=> $users,'alert' => 'Row added Successfully.', 'name' => 'User name: '.$name, 'insertUser' => true]);
 	}
 }
