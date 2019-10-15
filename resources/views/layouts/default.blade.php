@@ -45,7 +45,7 @@
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="/public">Home</a>
+								<a class="dropdown-item" href="{{ url('/home') }}">Home</a>
 								@if (Auth::user()->type == 'admin')
 									<a class="dropdown-item" href="/public/admin">Admin Dashboard</a>
 								@endif
