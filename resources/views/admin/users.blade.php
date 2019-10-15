@@ -39,8 +39,10 @@
 									<td>{{ $user->email }}</td>
 									<td>{{ $user->type }}</td>
 									<td></td>
-									<td><a href="" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a></td>
-									<td><a href="" class="text-warning"><i class="fa fa-ban" style="font-size:24px"></i></a></td>
+									<td>
+										<a href="/public/deleteUser/{{ $user->id }}" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a>
+									</td>
+									<td><a href="/public/banUser/{{ $user->id }}" class="text-warning"><i class="fa fa-ban" style="font-size:24px"></i></a></td>
 								  </tr>								  
 								
 								@endforeach

@@ -72,6 +72,11 @@ class AdminController extends Controller
         return view('admin.addEntries');
     }
 	
+	/**
+     * handles the route /insertUser and insert a new record into user table
+     *
+     * @return addEntries.blade.php
+     */
 	public function insertUser(Request $request)
 	{
 		
@@ -97,4 +102,16 @@ class AdminController extends Controller
 		$users = User::all();
 		return view('admin.users', ['users'=> $users,'alert' => 'Row added Successfully.', 'name' => 'User name: '.$name, 'insertUser' => true]);
 	}
+	
+	/**
+     * handles the route /addEntries
+     *
+     * @return addEntries.blade.php
+     */
+	 public function deleteUser($id)
+	 {
+		echo $id; 
+	 }
+	
+	
 }
