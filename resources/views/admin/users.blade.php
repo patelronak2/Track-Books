@@ -14,7 +14,7 @@
 					</div>
                     <div class="mt-5 text-center">
 						@if($users)
-							<table class="table table-striped">
+							<table class="table table-hover">
 								<thead>
 								  <tr>
 									<th>Name</th>
@@ -33,8 +33,8 @@
 									<td>{{ $user->email }}</td>
 									<td>{{ $user->type }}</td>
 									<td></td>
-									<td><a href="" class="text-danger">Delete</a></td>
-									<td><a href="" class="text-warning">Ban</a></td>
+									<td><a href="" class="text-danger"><i class="fa fa-remove" style="font-size:24px"></i></a></td>
+									<td><a href="" class="text-warning"><i class="fa fa-ban" style="font-size:24px"></i></a></td>
 								  </tr>								  
 								
 								@endforeach
