@@ -28,9 +28,9 @@
 								@foreach ($users as $user)
 								<tbody>
 								  <tr>
-									<td>$user->name</td>
-									<td>$user->email</td>
-									<td>$user->type</td>
+									<td>{{ $user->name }}</td>
+									<td>{{ $user->email }}</td>
+									<td>{{ $user->type }}</td>
 									<td></td>
 									<td><a href="" class="btn btn-danger m-1 p-2">Delete</a></td>
 									<td><a href="" class="btn btn-warning m-1 p-2">Ban</a></td>
