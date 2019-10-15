@@ -110,7 +110,6 @@ class AdminController extends Controller
      */
 	 public function deleteUser($id)
 	 {
-		echo $id;
 		$user = User::find($id);
 		$user->delete();
 		
