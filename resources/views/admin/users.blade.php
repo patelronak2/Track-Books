@@ -8,9 +8,9 @@
                 <div class="card-header">Manage Users</div>
 
                 <div class="card-body">
-					@if ($alert)
+					@if ($insertUser)
                         <div class="alert alert-success" role="alert">
-                            {{ $alert}}
+                            {{ $alert $email}}
 							
                         </div>
                     @endif

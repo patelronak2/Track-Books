@@ -37,7 +37,7 @@ class AdminController extends Controller
 	public function manageUsers()
     {
 		$users = User::all();
-        return view('admin.users', ['users' => $users]);
+        return view('admin.users', ['users' => $users, 'insertUser' => false]);
     }
 	
 	/**
@@ -78,6 +78,6 @@ class AdminController extends Controller
 		$password = $request->input('password');
 		$confirmPassword = $request->input('password-confirm');
 		
-		return view('admin.users', ['alert' => 'Row added Successfully', 'email' => $email]);
+		return view('admin.users', ['alert' => 'Row added Successfully', 'email' => $email, 'insertUser' => true]);
 	}
 }
