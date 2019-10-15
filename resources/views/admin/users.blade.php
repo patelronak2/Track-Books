@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Manage Users</div>
 
@@ -14,7 +14,7 @@
 					</div>
                     <div class="mt-5 text-center">
 						@if($users)
-							<table class="table table-striped table-bordered">
+							<table class="table table-striped">
 								<thead>
 								  <tr>
 									<th>Name</th>
@@ -25,18 +25,20 @@
 									<th>Ban</th>
 								  </tr>
 								</thead>
-								@foreach ($users as $user)
 								<tbody>
+								@foreach ($users as $user)
+								
 								  <tr>
 									<td>{{ $user->name }}</td>
 									<td>{{ $user->email }}</td>
 									<td>{{ $user->type }}</td>
 									<td></td>
-									<td><a href="" class="btn btn-danger m-1 p-2">Delete</a></td>
-									<td><a href="" class="btn btn-warning m-1 p-2">Ban</a></td>
+									<td><a href="" class="btn btn-danger">Delete</a></td>
+									<td><a href="" class="btn btn-warning">Ban</a></td>
 								  </tr>								  
-								</tbody>
+								
 								@endforeach
+							</tbody>
 							</table>
 							
 						@else
