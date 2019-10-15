@@ -78,6 +78,14 @@ class AdminController extends Controller
 		$password = $request->input('password');
 		$confirmPassword = $request->input('password-confirm');
 		
+		Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+			'type' => User::DEFAULT_TYPE,
+			
+        ]);
+		
 		$users = User::all();
 		return view('admin.users', ['users'=> $users,'alert' => 'Row added Successfully', 'email' => $email, 'insertUser' => true]);
 	}
