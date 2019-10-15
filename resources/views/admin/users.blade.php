@@ -10,7 +10,7 @@
                 <div class="card-body">
 					@if($insertUser)
                         <div class="alert alert-success" role="alert">
-                            {{ $alert }} {{$email}}
+                            {{ $alert }} {{$name}}
 							
                         </div>
                     @endif
