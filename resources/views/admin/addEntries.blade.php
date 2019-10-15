@@ -131,7 +131,28 @@
 				<div class="card">
 					<div class="card-header">Add Authors</div>
 					<div class="card-body">
-						Form Goes Here
+						<form method="POST" action="#">
+							<div class="form-group row">
+								<label for="authorName" class="col-md-4 col-form-label text-md-right">Author Name</label>
+
+								<div class="col-md-6">
+									<input id="authorName" type="text" class="form-control @error('authorName') is-invalid @enderror" name="authorName" value="{{ old('authorName') }}" required autocomplete="authorName" autofocus>
+
+									@error('authorName')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+								</div>
+							</div>
+							<div class="form-group row mb-0">
+								<div class="col-md-6 offset-md-4">
+									<button type="submit" class="btn btn-primary">
+										Add Author
+									</button>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
