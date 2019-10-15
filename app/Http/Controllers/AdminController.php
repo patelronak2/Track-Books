@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Book;
 use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
@@ -46,7 +47,8 @@ class AdminController extends Controller
      */
 	public function manageBooks()
     {
-        return view('admin.books');
+		$books = Book::all();
+        return view('admin.books',['books' => $books]);
     }
 	
 	/**
