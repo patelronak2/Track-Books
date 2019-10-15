@@ -38,7 +38,7 @@ class AdminController extends Controller
 	public function manageUsers()
     {
 		$users = User::all();
-        return view('admin.users', ['users' => $users, 'insertUser' => false]);
+        return view('admin.users', ['users' => $users, 'insertUser' => false, 'deleteUser' => false]);
     }
 	
 	/**
@@ -100,7 +100,7 @@ class AdminController extends Controller
 		$user->save();
 		
 		$users = User::all();
-		return view('admin.users', ['users'=> $users,'alert' => 'Row added Successfully.', 'name' => 'User name: '.$name, 'insertUser' => true]);
+		return view('admin.users', ['users'=> $users,'alert' => 'Row added Successfully.', 'name' => 'User name: '.$name, 'insertUser' => true, 'deleteUser' => false]);
 	}
 	
 	/**
@@ -110,7 +110,12 @@ class AdminController extends Controller
      */
 	 public function deleteUser($id)
 	 {
-		echo $id; 
+		echo $id;
+		$user = User::find($id);
+		$user->delete();
+		
+		$data = User::all();
+		return view('admin.user', ['users' => $data, 'insertUser' => false, 'alert' => 'Deletion Successful.', 'deleteUser' => true]);
 	 }
 	
 	
