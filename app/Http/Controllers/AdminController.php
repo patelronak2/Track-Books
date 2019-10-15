@@ -70,4 +70,14 @@ class AdminController extends Controller
     {
         return view('admin.addEntries');
     }
+	
+	public function insertUser(Request $request)
+	{
+		$name = $input->request('name');
+		$email = $input->request('email');
+		$password = $input->request('password');
+		$confirmPassword = $input->request('password-confirm');
+		
+		return view('admin.users', ['alert' => 'Row added Successfully', 'email' => $email]);
+	}
 }

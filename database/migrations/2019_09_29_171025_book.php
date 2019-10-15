@@ -17,7 +17,7 @@ class Book extends Migration
 			$table->bigIncrements('id');
 			$table->string('book_name');
 			$table->string('author_name');
-			$table->string('rating');
+			$table->string('rating')->default('No ratings yet');
 			$table->string('category');
 			$table->timestamps();
 		});

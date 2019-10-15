@@ -26,3 +26,6 @@ Route::get('/manageUsers','AdminController@manageUsers');
 Route::get('/manageBooks','AdminController@manageBooks');
 Route::get('/manageAuthors','AdminController@manageAuthors');
 Route::get('/addEntries','AdminController@addEntries');
+Route::post('/insertUser','AdminController@insertUser');
+Route::post('/insertBook','AdminController@insertBook');
+Route::post('/insertAuthor','AdminController@insertAuthor');

@@ -8,6 +8,12 @@
                 <div class="card-header">Manage Users</div>
 
                 <div class="card-body">
+					@if ($alert)
+                        <div class="alert alert-success" role="alert">
+                            {{ $alert $email }}
+							
+                        </div>
+                    @endif
 					<div class="text-center mt-1 p-2">
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Users </a>
 						<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>

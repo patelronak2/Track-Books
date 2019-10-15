@@ -8,7 +8,7 @@
 				<div class="card">
 					<div class="card-header">Add users</div>
 					<div class="card-body">
-						<form method="POST" action="#">
+						<form method="POST" action="/insertUser">
 							@csrf
 							<div class="form-group row">
 								<label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
@@ -75,7 +75,7 @@
 				<div class="card">
 					<div class="card-header">Add Books</div>
 					<div class="card-body">
-						<form method="POST" action="#">
+						<form method="POST" action="/insertBook">
 							@csrf
 							<div class="form-group row">
 								<label for="bookName" class="col-md-4 col-form-label text-md-right">Book Name</label>
@@ -131,7 +131,7 @@
 				<div class="card">
 					<div class="card-header">Add Authors</div>
 					<div class="card-body">
-						<form method="POST" action="#">
+						<form method="POST" action="/insertAuthor">
 							<div class="form-group row">
 								<label for="authorName" class="col-md-4 col-form-label text-md-right">Author Name</label>
 
