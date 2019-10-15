@@ -115,7 +115,7 @@ class AdminController extends Controller
 		$user->delete();
 		
 		$data = User::all();
-		return view('admin.user', ['users' => $data, 'insertUser' => false, 'alert' => 'Deletion Successful.', 'deleteUser' => true]);
+		return view('admin.users', ['users' => $data, 'insertUser' => false, 'alert' => 'Deletion Successful.', 'deleteUser' => true]);
 	 }
 	
 	
