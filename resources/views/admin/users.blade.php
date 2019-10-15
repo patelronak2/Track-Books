@@ -14,9 +14,31 @@
 					</div>
                     <div class="mt-5 text-center">
 						@if($users)
-							@foreach ($users as $user)
-								<p>This is user {{ $user->name }}</p>
-							@endforeach
+							<table class="table table-striped table-bordered">
+								<thead>
+								  <tr>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Account Type</th>
+									<th>isBan</th>
+									<th>Delete</th>
+									<th>Ban</th>
+								  </tr>
+								</thead>
+								@foreach ($users as $user)
+								<tbody>
+								  <tr>
+									<td>$user->name</td>
+									<td>$user->email</td>
+									<td>$user->type</td>
+									<td></td>
+									<td><a href="" class="btn btn-danger m-1 p-2">Delete</a></td>
+									<td><a href="" class="btn btn-warning m-1 p-2">Ban</a></td>
+								  </tr>								  
+								</tbody>
+								@endforeach
+							</table>
+							
 						@else
 							<h3>No User in the database yet</h3>
 						@endif
