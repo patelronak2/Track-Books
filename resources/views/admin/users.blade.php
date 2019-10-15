@@ -33,8 +33,8 @@
 									<td>{{ $user->email }}</td>
 									<td>{{ $user->type }}</td>
 									<td></td>
-									<td><a href="" class="btn btn-danger">Delete</a></td>
-									<td><a href="" class="btn btn-warning">Ban</a></td>
+									<td><a href="" class="text-danger">Delete</a></td>
+									<td><a href="" class="text-warning">Ban</a></td>
 								  </tr>								  
 								
 								@endforeach
