@@ -20,6 +20,7 @@
                     @endif
 					<div class="text-center">
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Books </a>
+						<a href="/public/addMultipleEntries" class="btn btn-primary m-1 p-2">Add Multiple Books </a>
 						<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>
 					</div>
                     <div class="mt-1 text-center">

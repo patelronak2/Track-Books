@@ -18,7 +18,7 @@
 				<div class="card">
 					<div class="card-header">Manage Books</div>
 					<div class="card-body">
-						Add Books, Delete Books
+						Add Books, Add multiple Books, Delete Books
 						<a href="/public/manageBooks" class="stretched-link"></a>
 					</div>
 				</div>

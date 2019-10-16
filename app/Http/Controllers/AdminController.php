@@ -147,7 +147,7 @@ class AdminController extends Controller
 	 public function insertBook(Request $request)
 	 {
 		 $validatedData = $request->validate([
-            'title' => ['required'],			
+            'title' => ['required', 'unique:books'],			
         ]);
 		 $title = $request->input('title');
 		 $description = $request->input('description');
@@ -184,6 +184,11 @@ class AdminController extends Controller
 		 $message = "Deletion successful.";
 		 $data = Book::all();
 		 return view('admin.books',['books' => $data, 'insertBook' => false, 'alert' => $message, 'deleteBook' => true]);
+	 }
+	 
+	 public function addMultipleEntries()
+	 {
+		 return view('admin.addMultipleEntries');
 	 }
 	
 	
