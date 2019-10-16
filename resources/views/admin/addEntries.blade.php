@@ -75,7 +75,7 @@
 				<div class="card">
 					<div class="card-header">Add Books</div>
 					<div class="card-body">
-						<form method="POST" action="public/insertBook">
+						<form method="POST" action="/public/insertBook">
 							@csrf
 							<div class="form-group row">
 								<label for="bookName" class="col-md-4 col-form-label text-md-right">Book Name</label>
