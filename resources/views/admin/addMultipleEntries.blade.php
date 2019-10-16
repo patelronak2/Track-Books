@@ -14,7 +14,7 @@
 						  <div class="form-row align-items-center">
 							<div class="col-auto">
 							  <label class="sr-only" for="searchTerm">Search Term</label>
-							  <input type="text" class="form-control mb-2" id="searchTerm" placeholder="Harry Potter" onkeydown = "searchApi();">
+							  <input type="text" class="form-control mb-2" id="searchTerm" placeholder="Harry Potter" onkeyup = "searchApi();">
 							</div>
 							<div class="col-auto">
 							  <button type="submit" class="btn btn-primary mb-2">Add Multiple Books</button>
