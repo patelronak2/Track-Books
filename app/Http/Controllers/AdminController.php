@@ -121,10 +121,10 @@ class AdminController extends Controller
      */
 	 public function insertBook(Request $request)
 	 {
-		 $bookName
-		 $authorName
-		 $category
-		 $year
+		 $bookName = $request->input('bookName');
+		 $authorName = $request->input('authorName');
+		 $category = $request->input('category');
+		 $year = $request->input('year');
 	 }
 	
 	
