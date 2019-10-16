@@ -127,8 +127,12 @@ class AdminController extends Controller
 			$user->isBan = false;
 			$message = "Ban removed from user: " . $user->name;
 		}else{
-			$user->isBan = true;
-			$message = "Baned user: " . $user->name;
+			if($user->type == 'default'){			
+				$user->isBan = true;
+				$message = "Baned user: " . $user->name;
+			}else{
+				$message = "cannot ban an administrator " . $user->name;
+			}
 		}
 		$user->save();
 		
@@ -147,6 +151,8 @@ class AdminController extends Controller
 		 $authorName = $request->input('authorName');
 		 $category = $request->input('category');
 		 $year = $request->input('year');
+		 
+		 echo $bookName . $authorName . $category . $year;
 	 }
 	
 	
