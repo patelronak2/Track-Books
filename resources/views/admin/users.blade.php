@@ -26,7 +26,7 @@
                     @endif
 					<div class="text-center mt-1 p-2">
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Users </a>
-						<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>
+						<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
 					</div>
                     <div class="mt-1 text-center">
 						@if(count($users) > 0)

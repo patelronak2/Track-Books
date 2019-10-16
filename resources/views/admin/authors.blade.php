@@ -10,7 +10,7 @@
                 <div class="card-body">
 					<div class="text-center">
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Authors</a>
-						<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>
+						<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
 					</div>
                     <div class="mt-5 text-center"><h3>No Author in the database yet</h3></div>
                 </div>

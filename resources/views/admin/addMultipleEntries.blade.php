@@ -9,22 +9,30 @@
 				<div class="card">
 					<div class="card-header">Through Google Api</div>
 					<div class="card-body">
-						Search for the term. Top 10 results will be added to the database.
+						<p>Search for the term. Top 10 results will be added to the database.</p>
 						<form>
 						  <div class="form-row align-items-center">
 							<div class="col-auto">
-							  <label class="sr-only" for="inlineFormInput">Name</label>
-							  <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Jane Doe">
+							  <label class="sr-only" for="searchTerm">Search Term</label>
+							  <input type="text" class="form-control mb-2" id="searchTerm" placeholder="Harry Potter" onkeydown = "searchApi();">
 							</div>
 							<div class="col-auto">
-							  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+							  <button type="submit" class="btn btn-primary mb-2">Add Multiple Books</button>
 							</div>
 						  </div>
 						</form>
+						<div id="searchResult">
+						</div>
 					</div>
 				</div>
 			</div>
         </div>
     </div>
 </div>
+<script>
+	function searchApi(){
+		var value = $("#searchTerm").val();
+		alert(value);
+	}
+</script>
 @endsection
