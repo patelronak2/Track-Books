@@ -159,7 +159,7 @@ class AdminController extends Controller
 		 $book = new Book;
 		 $book->title = $request->input('title');
 		 $book->description = $request->input('description');
-		 $book->author = $request->input('author');
+		 $book->author = $request->input('authorName');
 		 $book->category = $request->input('category');
 		 $book->publisher = $request->input('publisher');
 		 $book->publishedDate = $request->input('publishedDate');
@@ -169,6 +169,21 @@ class AdminController extends Controller
 		 $data = Book::all();
 		 return view('admin.books',['books' => $data, 'insertBook' => true, 'alert' => $message, 'deleteBook' => false]);
 		 
+	 }
+	 
+	 /**
+     * handles the route /deleteBook
+     *
+     * @return books.blade.php
+     */
+	 public function deleteBook($id)
+	 {
+		 $book = Book::find($id);
+		 $book->delete();
+		 
+		 $message = "Deletion successful.";
+		 $data = Book::all();
+		 return view('admin.books',['books' => $data, 'insertBook' => false, 'alert' => $message, 'deleteBook' => true]);
 	 }
 	
 	

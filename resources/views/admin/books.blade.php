@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Manage Authors</div>
+                <div class="card-header">Manage Books</div>
 
                 <div class="card-body">
 					@if($insertBook)
@@ -47,7 +47,7 @@
 										<td>{{ $book->category }}</td>
 										<td>{{ $book->publisher }}</td>
 										<td>{{ $book->publishedDate }}</td>
-										<td><a href="/public/deleteBook" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a></td>
+										<td><a href="/public/deleteBook/{{ $book->id }}" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a></td>
 									</tr>
 								@endforeach
 							</table>
