@@ -19,6 +19,11 @@
                             {{ $alert }}
                         </div>
                     @endif
+					@if($banUser)
+                        <div class="alert alert-warning" role="alert">
+                            {{ $alert }}
+                        </div>
+                    @endif
 					<div class="text-center mt-1 p-2">
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Users </a>
 						<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>
@@ -44,7 +49,13 @@
 									<td>{{ $user->name }}</td>
 									<td>{{ $user->email }}</td>
 									<td>{{ $user->type }}</td>
-									<td>{{ $user->isBan }}</td>
+									<td>
+										@if($user->isBan)
+											yes
+										@else
+											No
+										@endif
+									</td>
 									<td>
 										<a href="/public/deleteUser/{{ $user->id }}" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a>
 									</td>

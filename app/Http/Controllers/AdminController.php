@@ -38,7 +38,7 @@ class AdminController extends Controller
 	public function manageUsers()
     {
 		$users = User::all();
-        return view('admin.users', ['users' => $users, 'insertUser' => false, 'deleteUser' => false]);
+        return view('admin.users', ['users' => $users, 'insertUser' => false, 'deleteUser' => false, 'banUser' => false]);
     }
 	
 	/**
@@ -98,7 +98,7 @@ class AdminController extends Controller
 		$user->email = $email;
 		$user->save();
 		$users = User::all();
-		return view('admin.users', ['users'=> $users,'alert' => 'Row added Successfully.', 'name' => 'User name: '.$name, 'insertUser' => true, 'deleteUser' => false]);
+		return view('admin.users', ['users'=> $users,'alert' => 'Row added Successfully.', 'name' => 'User name: '.$name, 'insertUser' => true, 'deleteUser' => false, 'banUser' => false]);
 	}
 	
 	/**
@@ -111,7 +111,29 @@ class AdminController extends Controller
 		$user = User::find($id);
 		$user->delete();
 		$data = User::all();
-		return view('admin.users', ['users' => $data, 'insertUser' => false, 'alert' => 'Deletion Successful.', 'deleteUser' => true]);
+		return view('admin.users', ['users' => $data, 'insertUser' => false, 'alert' => 'Deletion Successful.', 'deleteUser' => true, 'banUser' => false]);
+	 }
+	 
+	 /**
+     * handles the route /banUser
+     *
+     * @return users.blade.php
+     */
+	 public function banUser($id)
+	 {
+		$user = User::find($id);
+		$message = "";
+		if($user->isBan){
+			$user->isBan = false;
+			$message = "Ban removed from user: " . $user->name;
+		}else{
+			$user->isBan = true;
+			$message = "Baned user: " . $user->name;
+		}
+		$user->save();
+		
+		$data = User::all();
+		return view('admin.users', ['users' => $data, 'insertUser' => false, 'alert' => $message, 'deleteUser' => false, 'banUser' => true]);
 	 }
 	 
 	 /**

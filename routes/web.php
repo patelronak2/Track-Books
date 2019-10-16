@@ -30,3 +30,4 @@ Route::post('/insertUser','AdminController@insertUser');
 Route::post('/insertBook','AdminController@insertBook');
 Route::post('/insertAuthor','AdminController@insertAuthor');
 Route::get('/deleteUser/{id}', 'AdminController@deleteUser');
+Route::get('/banUser/{id}','AdminController@banUser');
