@@ -20,6 +20,7 @@ class Book extends Migration
 			$table->string('rating')->default('No ratings yet');
 			$table->string('category')->nullable();
 			$table->string('year')->nullable();
+			$table->string('img_link')->nullable();
 			$table->timestamps();
 		});
     }

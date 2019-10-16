@@ -44,7 +44,7 @@
 									<td>{{ $user->name }}</td>
 									<td>{{ $user->email }}</td>
 									<td>{{ $user->type }}</td>
-									<td></td>
+									<td>{{ $user->isBan }}</td>
 									<td>
 										<a href="/public/deleteUser/{{ $user->id }}" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a>
 									</td>

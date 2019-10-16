@@ -121,7 +121,10 @@ class AdminController extends Controller
      */
 	 public function insertBook(Request $request)
 	 {
-		 
+		 $bookName
+		 $authorName
+		 $category
+		 $year
 	 }
 	
 	
