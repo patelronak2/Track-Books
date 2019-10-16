@@ -23,8 +23,9 @@
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Users </a>
 						<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>
 					</div>
-                    <div class="mt-5 text-center">
+                    <div class="mt-3 text-center">
 						@if(count($users) > 0)
+							<p class="display-4">Users List</p>
 							<table class="table table-hover">
 								<thead>
 								  <tr>

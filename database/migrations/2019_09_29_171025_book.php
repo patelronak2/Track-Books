@@ -16,9 +16,10 @@ class Book extends Migration
         Schema::create('books', function (Blueprint $table) {
 			$table->bigIncrements('id');
 			$table->string('book_name');
-			$table->string('author_name');
+			$table->string('author_name')->nullable();
 			$table->string('rating')->default('No ratings yet');
-			$table->string('category');
+			$table->string('category')->nullable();
+			$table->string('year')->nullable();
 			$table->timestamps();
 		});
     }

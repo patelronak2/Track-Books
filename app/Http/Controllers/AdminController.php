@@ -92,29 +92,36 @@ class AdminController extends Controller
 		$email = $request->input('email');
 		$password = $request->input('password');
 		$confirmPassword = $request->input('password-confirm');
-		
 		$user = new User;
 		$user->name = $name;
 		$user->password = Hash::make($password);
 		$user->email = $email;
 		$user->save();
-		
 		$users = User::all();
 		return view('admin.users', ['users'=> $users,'alert' => 'Row added Successfully.', 'name' => 'User name: '.$name, 'insertUser' => true, 'deleteUser' => false]);
 	}
 	
 	/**
-     * handles the route /addEntries
+     * handles the route /deleteUser
      *
-     * @return addEntries.blade.php
+     * @return users.blade.php
      */
 	 public function deleteUser($id)
 	 {
 		$user = User::find($id);
 		$user->delete();
-		
 		$data = User::all();
 		return view('admin.users', ['users' => $data, 'insertUser' => false, 'alert' => 'Deletion Successful.', 'deleteUser' => true]);
+	 }
+	 
+	 /**
+     * handles the route /insertBook
+     *
+     * @return books.blade.php
+     */
+	 public function insertBook(Request request)
+	 {
+		 
 	 }
 	
 	

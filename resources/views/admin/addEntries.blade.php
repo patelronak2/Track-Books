@@ -94,7 +94,7 @@
 								<label for="authorName" class="col-md-4 col-form-label text-md-right">Author Name</label>
 
 								<div class="col-md-6">
-									<input id="authorName" type="text" class="form-control @error('authorName') is-invalid @enderror" name="authorName" value="{{ old('authorName') }}" required autocomplete="authorName" autofocus>
+									<input id="authorName" type="text" class="form-control @error('authorName') is-invalid @enderror" name="authorName" value="{{ old('authorName') }}" autocomplete="authorName" autofocus>
 
 									@error('authorName')
 										<span class="invalid-feedback" role="alert">
@@ -107,7 +107,7 @@
 								<label for="category" class="col-md-4 col-form-label text-md-right">Category</label>
 
 								<div class="col-md-6">
-									<input id="category" type="text" class="form-control @error('category') is-invalid @enderror" name="category" value="{{ old('category') }}" required autocomplete="category" autofocus>
+									<input id="category" type="text" class="form-control @error('category') is-invalid @enderror" name="category" value="{{ old('category') }}"  autocomplete="category" autofocus>
 
 									@error('category')
 										<span class="invalid-feedback" role="alert">
