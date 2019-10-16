@@ -8,27 +8,45 @@
                 <div class="card-header">Manage Authors</div>
 
                 <div class="card-body">
+					@if($insertBook)
+                        <div class="alert alert-success" role="alert">
+                            {{ $alert }}
+                        </div>
+                    @endif
+					@if($deleteBook)
+                        <div class="alert alert-success" role="alert">
+                            {{ $alert }}
+                        </div>
+                    @endif
 					<div class="text-center">
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Books </a>
 						<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>
 					</div>
-                    <div class="mt-5 text-center">
+                    <div class="mt-3 text-center">
 						@if(count($books) > 0)
 							<table class="table table-hover">
 								<thead>
 								  <tr>
 									<th>Book Name</th>
-									<th>Author Name</th>
+									<th>Description</th>
+									<th>Author</th>
+									<th>Rating</th>
 									<th>Category</th>
+									<th>Publisher</th>
+									<th>Published Date</th>
 									<th>Delete</th>
 								  </tr>
 								</thead>
 								@foreach ($books as $book)
 									<tr>
-										<td>{{ $book->book_name }}</td>
-										<td>{{ $book->author_name }}</td>
-										<td>{{ $user->category }}</td>
-										<td><a href="" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a></td>
+										<td>{{ $book->title }}</td>
+										<td>{{ $book->description }}</td>
+										<td>{{ $book->author }}</td>
+										<td>{{ $book->rating }}</td>
+										<td>{{ $book->category }}</td>
+										<td>{{ $book->publisher }}</td>
+										<td>{{ $book->publishedDate }}</td>
+										<td><a href="/public/deleteBook" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a></td>
 									</tr>
 								@endforeach
 							</table>
