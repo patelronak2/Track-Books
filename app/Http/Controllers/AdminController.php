@@ -7,7 +7,6 @@ use App\User;
 use App\Book;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-//use Illuminate\Support\Facades\Validator;
 class AdminController extends Controller
 {	
 	/**
@@ -49,7 +48,7 @@ class AdminController extends Controller
 	public function manageBooks()
     {
 		$books = Book::all();
-        return view('admin.books',['books' => $books]);
+        return view('admin.books',['books' => $books, 'deleteBook' => false, 'insertBook' => false]);
     }
 	
 	/**
@@ -147,12 +146,29 @@ class AdminController extends Controller
      */
 	 public function insertBook(Request $request)
 	 {
-		 $bookName = $request->input('bookName');
+		 $validatedData = $request->validate([
+            'title' => ['required'],			
+        ]);
+		 $title = $request->input('title');
+		 $description = $request->input('description');
 		 $authorName = $request->input('authorName');
 		 $category = $request->input('category');
-		 $year = $request->input('year');
+		 $publisher = $request->input('publisher');
+		 $publishedDate = $request->input('publishedDate');
 		 
-		 echo $bookName . $authorName . $category . $year;
+		 $book = new Book;
+		 $book->title = $request->input('title');
+		 $book->description = $request->input('description');
+		 $book->author = $request->input('author');
+		 $book->category = $request->input('category');
+		 $book->publisher = $request->input('publisher');
+		 $book->publishedDate = $request->input('publishedDate');
+		 $book->save();
+		 
+		 $message = "Book inserted: " . $title;
+		 $data = Book::all();
+		 return view('admin.books',['books' => $data, 'insertBook' => true, 'alert' => $message, 'deleteBook' => false]);
+		 
 	 }
 	
 	
