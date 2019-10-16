@@ -119,7 +119,7 @@ class AdminController extends Controller
      *
      * @return books.blade.php
      */
-	 public function insertBook(Request request)
+	 public function insertBook(Request $request)
 	 {
 		 
 	 }
