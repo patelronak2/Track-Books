@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">Manage Authors</div>
 
@@ -22,8 +22,9 @@
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Books </a>
 						<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>
 					</div>
-                    <div class="mt-3 text-center">
+                    <div class="mt-1 text-center">
 						@if(count($books) > 0)
+							<p class="display-4">Users List</p>
 							<table class="table table-hover">
 								<thead>
 								  <tr>
