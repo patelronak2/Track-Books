@@ -15,7 +15,7 @@ class CheckBanned
      */
     public function handle($request, Closure $next)
     {
-        if(auth()-check() && auth()->user()->isBan){
+        if(auth()->check() && auth()->user()->isBan){
 			auth()->logout();
 			$message = "Your account is banned. Please contact Administrator.";
 			return redirect()->route('login')->withMessage($message);
