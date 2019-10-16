@@ -15,11 +15,13 @@ class Book extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
 			$table->bigIncrements('id');
-			$table->string('book_name');
-			$table->string('author_name')->nullable();
+			$table->string('title');
+			$table->text('description')->nullable();
+			$table->string('author')->nullable();
 			$table->string('rating')->default('No ratings yet');
 			$table->string('category')->nullable();
-			$table->string('year')->nullable();
+			$table->string('publisher')->nullable();
+			$table->string('publishedDate')->nullable();
 			$table->string('img_link')->nullable();
 			$table->timestamps();
 		});

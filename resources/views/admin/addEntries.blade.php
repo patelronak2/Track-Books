@@ -8,6 +8,7 @@
 				<div class="card">
 					<div class="card-header">Add users</div>
 					<div class="card-body">
+					<!-- User Form -------- -->
 						<form method="POST" action="/public/insertUser">
 							@csrf
 							<div class="form-group row">
@@ -75,15 +76,28 @@
 				<div class="card">
 					<div class="card-header">Add Books</div>
 					<div class="card-body">
+					<!----------------- Book Form ------------------------------>
 						<form method="POST" action="/public/insertBook">
 							@csrf
 							<div class="form-group row">
-								<label for="bookName" class="col-md-4 col-form-label text-md-right">Book Name</label>
+								<label for="title" class="col-md-4 col-form-label text-md-right">Book Name</label>
 
 								<div class="col-md-6">
-									<input id="bookName" type="text" class="form-control @error('bookName') is-invalid @enderror" name="bookName" value="{{ old('bookName') }}" required autocomplete="bookName" autofocus>
+									<input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
 
-									@error('bookName')
+									@error('title')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+								<div class="col-md-6">
+									<input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autocomplete="description" autofocus>
+
+									@error('description')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
@@ -117,12 +131,25 @@
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="year" class="col-md-4 col-form-label text-md-right">Year</label>
+								<label for="publisher" class="col-md-4 col-form-label text-md-right">Publisher</label>
 
 								<div class="col-md-6">
-									<input id="year" type="number" class="form-control @error('year') is-invalid @enderror" name="year" value="{{ old('year') }}"  autocomplete="year" autofocus>
+									<input id="publisher" type="text" class="form-control @error('publisher') is-invalid @enderror" name="publisher" value="{{ old('publisher') }}"  autocomplete="publisher" autofocus>
 
-									@error('year')
+									@error('publisher')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+									@enderror
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="publishedDate" class="col-md-4 col-form-label text-md-right">Published Date</label>
+
+								<div class="col-md-6">
+									<input id="publishedDate" type="text" class="form-control @error('publishedDate') is-invalid @enderror" name="publishedDate" value="{{ old('publishedDate') }}"  autocomplete="publishedDate" autofocus>
+
+									@error('publishedDate')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
