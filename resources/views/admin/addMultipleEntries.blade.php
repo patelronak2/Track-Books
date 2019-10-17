@@ -34,7 +34,7 @@
 		var value = $("#searchTerm").val();
 		$.ajax({url: "https://www.googleapis.com/books/v1/volumes?q=" + value, success: function(results){
 			//var results = Json.parse(data);
-			alert(results.items['volumeInfo']['title']);
+			alert(results);
 			alert("Inside ajax function");
 		}});
 	}
