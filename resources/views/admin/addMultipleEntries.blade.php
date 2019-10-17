@@ -31,8 +31,8 @@
 </div>
 <script>
 	function searchApi(){
-		var value = $("#searchTerm").val();
-		$.ajax({url: "https://www.googleapis.com/books/v1/volumes?q=" + value, success: function(results){
+		var value = "https://www.googleapis.com/books/v1/volumes?q=" + $("#searchTerm").val();
+		$.ajax({url: value, success: function(results){
 			var data = JSON.parse(results);
 			alert(data);
 			alert("Inside ajax function");
