@@ -66,6 +66,7 @@
 	
 	function addmultipleRecords(){
 		alert("Adding 5 records" + data);
+		return false;
 	}
 </script> 
 @endsection
