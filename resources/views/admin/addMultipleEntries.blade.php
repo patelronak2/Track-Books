@@ -32,7 +32,11 @@
 <script>
 	function searchApi(){
 		var value = $("#searchTerm").val();
-		alert(value);
+		//alert(value);
+		var url = "https://www.googleapis.com/books/v1/volumes?q=" + value;
+		$.ajax({url: url, success: function(results){
+			alert(results);
+		}});
 	}
 </script>
 @endsection
