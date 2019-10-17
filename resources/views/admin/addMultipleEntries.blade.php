@@ -17,7 +17,7 @@
 							  <input type="text" class="form-control mb-2" id="searchTerm" placeholder="Harry Potter" onkeyup="searchApi();">
 							</div>
 							<div class="col-auto">
-							  <button type="submit" class="btn btn-primary mb-2" onclick="addmultipleRecords()">Add Multiple Books</button>
+							  <button type="submit" class="btn btn-primary mb-2" onclick="return addmultipleRecords()">Add Multiple Books</button>
 							</div>
 						  </div>
 						</form>
