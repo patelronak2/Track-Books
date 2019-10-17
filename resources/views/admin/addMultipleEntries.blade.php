@@ -54,13 +54,12 @@
 			}
 			
 			htmlOutput += '</ul>';
-			if($("#searchTerm").val() == ""){
-				$("#searchResult").html("");	
-			}else{
-				$("#searchResult").html(htmlOutput);
-			}
 			
+			$("#searchResult").html(htmlOutput);
 		}});
+		if($("#searchTerm").val() == ""){
+				$("#searchResult").html("");	
+			}
 	}
 </script> 
 @endsection
