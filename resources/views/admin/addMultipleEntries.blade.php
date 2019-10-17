@@ -52,7 +52,7 @@
 				htmlOutput += '<div>';
 				htmlOutput += '<div class="row no-gutters">';
 				htmlOutput += '<div class="col-auto d-none d-lg-block">';
-				htmlOutput += '<img src="'+ img_link +'" class="img-thumbnail" style="max-height: 75px; max-width: auto;"></div>';
+				htmlOutput += '<img src="'+ img_link +'" class="img-thumbnail" style="max-height: 90px; max-width: 75px;"></div>';
 				htmlOutput += '<div class="col-auto">';
 				htmlOutput += '<div class="ml-2"><h5>' + title + '</h5>';
 				htmlOutput += '<p>'+ author +'</p>';
