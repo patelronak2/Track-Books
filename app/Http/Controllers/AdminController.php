@@ -208,7 +208,7 @@ class AdminController extends Controller
 		 //Use the passed data to insert into row
 		 
 		 //return view or a message
-		 $data = $request->input('data');
+		 $data = json_decode($request->input('data'));
 		 
 		 echo $data; //->items[0]->volumeInfo->title
 		 
