@@ -17,7 +17,7 @@
 							  <input type="text" class="form-control mb-2" id="searchTerm" placeholder="Harry Potter" onkeyup="searchApi();">
 							</div>
 							<div class="col-auto">
-							  <button type="submit" class="btn btn-primary mb-2">Add Multiple Books</button>
+							  <button type="submit" class="btn btn-primary mb-2" onclick="addmultipleRecords()">Add Multiple Books</button>
 							</div>
 						  </div>
 						</form>
@@ -30,9 +30,11 @@
     </div>
 </div>
 <script>
+	var data = "";
 	function searchApi(){
 		var value = "https://www.googleapis.com/books/v1/volumes?q=" + $("#searchTerm").val();
 		$.ajax({url: value, success: function(results){
+			data = results;
 			var htmlOutput = '<ul class="list-group">';
 			for(var i = 0; i < 5 && i < results['totalItems']; i++){
 				
@@ -60,6 +62,10 @@
 		if($("#searchTerm").val() == ""){
 				$("#searchResult").html("");	
 			}
+	}
+	
+	function addmultipleRecords(){
+		alert("Adding 5 records" + data);
 	}
 </script> 
 @endsection
