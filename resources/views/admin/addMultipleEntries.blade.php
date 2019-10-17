@@ -33,7 +33,7 @@
 	function searchApi(){
 		var value = $("#searchTerm").val();
 		$.ajax({url: "https://www.googleapis.com/books/v1/volumes?q=" + value, success: function(results){
-			var data = Json.parse(data);
+			var data = JSON.parse(data);
 			alert(data);
 			alert("Inside ajax function");
 		}});
