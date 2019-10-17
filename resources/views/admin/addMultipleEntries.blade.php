@@ -32,7 +32,7 @@
 <script>
 	function searchApi(){
 		var value = "https://www.googleapis.com/books/v1/volumes?q=harry";
-		$.ajax({url: value, success: function(results){
+		$.ajax({url: "https://www.googleapis.com/books/v1/volumes?q=harry", success: function(results){
 			var data = JSON.parse(results);
 			//alert(data);
 			alert("Inside ajax function");
