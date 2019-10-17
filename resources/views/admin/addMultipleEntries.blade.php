@@ -34,9 +34,9 @@
 		var value = "https://www.googleapis.com/books/v1/volumes?q=harry";
 		$.ajax({url: value, success: function(results){
 			var data = JSON.parse(results);
-			alert(data);
+			//alert(data);
 			alert("Inside ajax function");
-			alert(data['totalItems']);
+			//alert(data['totalItems']);
 		}});
 	}
 </script>
