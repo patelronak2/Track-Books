@@ -210,7 +210,7 @@ class AdminController extends Controller
 		 //return view or a message
 		 $data = $request->input('data');
 		 
-		 echo "Recieved";
+		 echo $data;
 		 
 		 
 	 }
