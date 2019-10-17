@@ -220,8 +220,8 @@ class AdminController extends Controller
 			 $img_link = $data->items[$i]->volumeInfo->imageLinks->smallThumbnail;
 		 }
 		 
-		 //echo "";
-		 return view('admin.books',['books' => $books, 'deleteBook' => false, 'insertBook' => false]);
+		 echo "";
+		 
 		 
 	 }
 	
