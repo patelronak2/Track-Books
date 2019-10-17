@@ -31,11 +31,8 @@
 </div>
 <script>
 	function searchApi(){
-		var value = "https://www.googleapis.com/books/v1/volumes?q=harry";
-		$.ajax({url: "https://www.googleapis.com/books/v1/volumes?q=harry", success: function(results){
-			//var data = JSON.parse(results);
-			alert(results);
-			alert("Inside ajax function");
+		var value = "https://www.googleapis.com/books/v1/volumes?q=" + $("#searchTerm").val();
+		$.ajax({url: value, success: function(results){
 			alert(results['totalItems']);
 		}});
 	}
