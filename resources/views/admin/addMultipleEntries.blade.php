@@ -37,15 +37,15 @@
 			for(var i = 0; i < 5 && i < results['totalItems']; i++){
 				
 				var title = results['items'][i]['volumeInfo']['title'];
-				var description = results['items'][i]['volumeInfo']['description'];
-				var len = results['items'][i]['volumeInfo']['authors'].length;
-				var author = "";
-				for(var j = 0; j < len; j++){
-					author += results['items'][i]['volumeInfo']['authors'][j];
-				}
-				var category = results['items'][i]['volumeInfo']['categories'][0];
-				var publisher = results['items'][i]['volumeInfo']['publisher'];
-				var publishedDate = results['items'][i]['volumeInfo']['publishedDate'];
+				//var description = results['items'][i]['volumeInfo']['description'];
+				//var len = results['items'][i]['volumeInfo']['authors'].length;
+				var author = results['items'][i]['volumeInfo']['authors'][0];
+				//for(var j = 0; j < len; j++){
+					//author += results['items'][i]['volumeInfo']['authors'][j];
+				//}
+				//var category = results['items'][i]['volumeInfo']['categories'][0];
+				//var publisher = results['items'][i]['volumeInfo']['publisher'];
+				//var publishedDate = results['items'][i]['volumeInfo']['publishedDate'];
 				var img_link = results['items'][i]['volumeInfo']['imageLinks']['thumbnail'];
 				
 				htmlOutput += '<li class="list-group-item">';
