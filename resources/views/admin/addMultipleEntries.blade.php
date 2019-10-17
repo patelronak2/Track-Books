@@ -82,7 +82,7 @@
 				alert(response);
 			},
 			error: function(err){
-				alert(err);
+				alert(JSON.stringify(err));
 			}
 		});	
 		}
