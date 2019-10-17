@@ -58,9 +58,12 @@
 			htmlOutput += '</ul>';
 			
 			$("#searchResult").html(htmlOutput);
+		}, error: function(){
+			$("#searchResult").html("<h5>No Result Found</h5>");
 		}});
 		if($("#searchTerm").val() == ""){
-				$("#searchResult").html("");	
+				$("#searchResult").html("");
+				data = "";	
 			}
 	}
 	
