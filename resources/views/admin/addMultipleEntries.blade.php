@@ -81,8 +81,8 @@
 			success: function(response){
 				alert(response);
 			},
-			error: function(){
-				alert("Failed");
+			error: function(err){
+				alert(err);
 			}
 		});	
 		}

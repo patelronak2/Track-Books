@@ -220,7 +220,7 @@ class AdminController extends Controller
 			 $img_link = $data->items[$i]->volumeInfo->imageLinks->smallThumbnail;
 		 }
 		 
-		 echo "";
+		 echo "successful";
 		 
 		 
 	 }
