@@ -64,7 +64,7 @@
 			
 			htmlOutput += '</ul>';
 			alert(htmlOutput);
-			
+			$("#searchResult").html(htmlOutput);
 		}});
 	}
 </script> 
