@@ -212,12 +212,12 @@ class AdminController extends Controller
 		 
 		 for ($i = 0; $i < 5; $i++) {
 			 $title = $data->items[$i]->volumeInfo->title;
-			 $description = $data->items[$i]->volumeInfo->description;
-			 //$author = $data->items[$i]->volumeInfo->authors[0];
+			 //$description = $data->items[$i]->volumeInfo->description;
+			 $author = $data->items[$i]->volumeInfo->authors[0];
 			 //$category = $data->items[$i]->volumeInfo->categories[0];
 			 //$publisher = $data->items[$i]->volumeInfo->publisher;
 			 //$publishedDate = $data->items[$i]->volumeInfo->publishedDate;
-			 //$img_link = $data->items[$i]->volumeInfo->imageLinks->smallThumbnail;
+			 $img_link = $data->items[$i]->volumeInfo->imageLinks->smallThumbnail;
 		 }
 		 
 		 echo "successful";
