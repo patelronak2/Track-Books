@@ -63,9 +63,9 @@
 			}
 			
 			htmlOutput += '</ul>';
+			alert(htmlOutput);
 			
 		}});
-		$("#searchResult").val("AAA");
 	}
 </script> 
 @endsection
