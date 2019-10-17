@@ -48,7 +48,7 @@
 				var publishedDate = results['items'][i]['volumeInfo']['publishedDate'];
 				var img_link = results['items'][i]['volumeInfo']['imageLinks']['thumbnail'];
 
-				alert(title + description+ author+ category+ publisher+publishedDate+img_link);		
+				alert(title +"\n"+ description+"\n"+ author+"\n"+ category+"\n"+ publisher+"\n"+publishedDate+"\n"+img_link);		
 			}
 		}});
 	}
