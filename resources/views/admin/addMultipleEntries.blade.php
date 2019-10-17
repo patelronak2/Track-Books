@@ -49,12 +49,12 @@
 				var img_link = results.items[i].volumeInfo.imageLinks.smallThumbnail;
 				
 				htmlOutput += '<li class="list-group-item">';
-				htmlOutput += '<div class="mb-3">';
+				htmlOutput += '<div class="">';
 				htmlOutput += '<div class="row no-gutters">';
-				htmlOutput += '<div class="col-auto pt-1">';
+				htmlOutput += '<div class="col-auto">';
 				htmlOutput += '<img src="'+ img_link +'" class="img-thumbnail" style="max-height: 100px; max-width: 75px;"></div>';
 				htmlOutput += '<div class="col-auto">';
-				htmlOutput += '<div class="p-1 ml-1 align-middle"><h5>' + title + '</h5>';
+				htmlOutput += '<div class="ml-1"><h5>' + title + '</h5>';
 				htmlOutput += '<p>'+ author +'</p>';
 				htmlOutput += '</div></div></div>';
 				htmlOutput += '</div></li>';		
