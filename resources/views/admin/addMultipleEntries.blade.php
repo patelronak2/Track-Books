@@ -72,7 +72,19 @@
 		if(data == ""){
 			$("#searchResult").html(alertMessage);
 		}
-		
+		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+		var jsonData = JSON.stringify(data);
+		$.ajax({
+			url: '/public/insertMultipleBooks',
+			type: 'POST',
+			data: {_token: CSRF_TOKEN, data: jsonData },
+			success: function(response){
+				alert(response);
+			},
+			error: function(){
+				alert("Failed");
+			}
+		});
 		return false;
 	}
 </script> 

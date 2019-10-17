@@ -209,6 +209,9 @@ class AdminController extends Controller
 		 
 		 //return view or a message
 		 
+		 echo "Recieved";
+		 
+		 
 	 }
 	
 	
