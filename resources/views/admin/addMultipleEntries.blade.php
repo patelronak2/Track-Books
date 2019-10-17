@@ -48,7 +48,7 @@
 				var publishedDate = results['items'][i]['volumeInfo']['publishedDate'];
 				var img_link = results['items'][i]['volumeInfo']['imageLinks']['thumbnail'];
 				
-				htmlOutput += '<li class="list-group-item">;
+				htmlOutput += '<li class="list-group-item">';
 				htmlOutput += '<div class="card mb-3">';
 				htmlOutput += '<div class="row no-gutters">';
 				htmlOutput += '<div class="col-md-4">';
@@ -66,16 +66,5 @@
 			$("#searchResult").val(htmlOutput);
 		}});
 	}
-</script>
-
-  
-    
-      
-    
-    
-      
-        
-        
-     
-  
+</script> 
 @endsection
