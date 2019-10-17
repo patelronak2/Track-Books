@@ -32,12 +32,10 @@
 <script>
 	function searchApi(){
 		var value = $("#searchTerm").val();
-		
-		var url = "https://www.googleapis.com/books/v1/volumes?q=" + value;
-		alert(url);
-		$.ajax({url: url, success: function(results){
+		$.ajax({url: "https://www.googleapis.com/books/v1/volumes?q=" + value, success: function(results){
 			//var results = Json.parse(data);
 			alert(results.items['volumeInfo']['title']);
+			alert("Inside ajax function");
 		}});
 	}
 </script>
