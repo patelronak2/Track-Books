@@ -33,3 +33,4 @@ Route::get('/deleteUser/{id}', 'AdminController@deleteUser');
 Route::get('/banUser/{id}','AdminController@banUser');
 Route::get('/deleteBook/{id}','AdminController@deleteBook');
 Route::get('/addMultipleEntries','AdminController@addMultipleEntries');
+Route::post('/insertMultipleBooks', 'AdminController@insertMultipleBooks');

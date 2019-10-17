@@ -186,9 +186,29 @@ class AdminController extends Controller
 		 return view('admin.books',['books' => $data, 'insertBook' => false, 'alert' => $message, 'deleteBook' => true]);
 	 }
 	 
+	 /**
+     * handles the route /addMultipleEntries
+     *
+     * @return addMultipleEntries.blade.php
+     */
 	 public function addMultipleEntries()
 	 {
 		 return view('admin.addMultipleEntries');
+	 }
+	 
+	 /**
+     * handles the route /insertMultipleBooks
+     *
+     * @return 
+     */
+	 public function insertMultipleBooks(Request $request)
+	 {
+		 //need to handle onclick on 'add multiple books' by adding a JavaScript function in the addMultipleEntries.blade
+		 //make a ajax request and recieve the result. Convert the result into JSON and make a post ajax request here.
+		 //Use the passed data to insert into row
+		 
+		 //return view or a message
+		 
 	 }
 	
 	

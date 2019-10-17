@@ -9,8 +9,8 @@
 				<div class="card">
 					<div class="card-header">Through Google Api</div>
 					<div class="card-body">
-						<p>Search for the term. Top 10 results will be added to the database.</p>
-						<form>
+						<p>Search for the term. Top 5 results will be added to the database.</p>
+						<form method="post" action="/public/insertMultipleBooks">
 						  <div class="form-row align-items-center">
 							<div class="col-auto">
 							  <label class="sr-only" for="searchTerm">Search Term</label>
@@ -37,15 +37,7 @@
 			for(var i = 0; i < 5 && i < results['totalItems']; i++){
 				
 				var title = results.items[i].volumeInfo.title;
-				//var description = results['items'][i]['volumeInfo']['description'];
-				//var len = results['items'][i]['volumeInfo']['authors'].length;
 				var author = 'By: ' +  results.items[i].volumeInfo.authors[0];
-				//for(var j = 0; j < len; j++){
-					//author += results['items'][i]['volumeInfo']['authors'][j];
-				//}
-				//var category = results['items'][i]['volumeInfo']['categories'][0];
-				//var publisher = results['items'][i]['volumeInfo']['publisher'];
-				//var publishedDate = results['items'][i]['volumeInfo']['publishedDate'];
 				var img_link = results.items[i].volumeInfo.imageLinks.smallThumbnail;
 				
 				htmlOutput += '<li class="list-group-item">';
