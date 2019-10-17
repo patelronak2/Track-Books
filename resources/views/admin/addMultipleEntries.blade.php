@@ -71,8 +71,8 @@
 		var alertMessage = '<div class="alert alert-danger" role="alert">No data to add</div>';
 		if(data == ""){
 			$("#searchResult").html(alertMessage);
-		}
-		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+		}else{
+			var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 		var jsonData = JSON.stringify(data);
 		$.ajax({
 			url: '/public/insertMultipleBooks',
@@ -84,7 +84,9 @@
 			error: function(){
 				alert("Failed");
 			}
-		});
+		});	
+		}
+		
 		return false;
 	}
 </script> 
