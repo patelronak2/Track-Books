@@ -51,10 +51,10 @@
 				htmlOutput += '<li class="list-group-item">';
 				htmlOutput += '<div class="mb-3">';
 				htmlOutput += '<div class="row no-gutters">';
-				htmlOutput += '<div class="col-auto p-2">';
-				htmlOutput += '<img src="'+ img_link +'" class="img-thumbnail" style="max-height: 150px; max-width: 100px;"></div>';
+				htmlOutput += '<div class="col-auto p-1">';
+				htmlOutput += '<img src="'+ img_link +'" class="img-thumbnail" style="max-height: 100px; max-width: 75px;"></div>';
 				htmlOutput += '<div class="col-auto">';
-				htmlOutput += '<div class="p-2"><h5>' + title + '</h5>';
+				htmlOutput += '<div class="p-2 align-middle"><h5>' + title + '</h5>';
 				htmlOutput += '<p>'+ author +'</p>';
 				htmlOutput += '</div></div></div>';
 				htmlOutput += '</div></li>';		
