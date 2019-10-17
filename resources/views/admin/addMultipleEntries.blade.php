@@ -51,9 +51,9 @@
 				htmlOutput += '<li class="list-group-item">';
 				htmlOutput += '<div class="card mb-3">';
 				htmlOutput += '<div class="row no-gutters">';
-				htmlOutput += '<div class="col-md-4">';
-				htmlOutput += '<img src="'+ img_link +'" class="img-thumbnail"></div>';
-				htmlOutput += '<div class="col-md-8">';
+				htmlOutput += '<div class="col-auto">';
+				htmlOutput += '<img src="'+ img_link +'" class="img-thumbnail" style="max-height: 50px; max-width: 50px;"></div>';
+				htmlOutput += '<div class="col-auto">';
 				htmlOutput += '<div class="card-body"><h5 class="card-title">' + title + '</h5>';
 				htmlOutput += '<p class="card-text">'+ author +'</p>';
 				htmlOutput += '</div></div></div>';
