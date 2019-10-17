@@ -68,7 +68,11 @@
 	}
 	
 	function addmultipleRecords(){
-		alert("Adding 5 records" + data);
+		var alertMessage = '<div class="alert alert-danger" role="alert">No data to add</div>';
+		if(data == ""){
+			$("#searchResult").html(alertMessage);
+		}
+		
 		return false;
 	}
 </script> 
