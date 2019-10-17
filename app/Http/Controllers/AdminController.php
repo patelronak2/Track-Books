@@ -215,7 +215,7 @@ class AdminController extends Controller
 			 //$description = $data->items[$i]->volumeInfo->description;
 			 $author = $data->items[$i]->volumeInfo->authors[0];
 			 $category = $data->items[$i]->volumeInfo->categories[0];
-			 //$publisher = $data->items[$i]->volumeInfo->publisher;
+			 $publisher = $data->items[$i]->volumeInfo->publisher;
 			 //$publishedDate = $data->items[$i]->volumeInfo->publishedDate;
 			 $img_link = $data->items[$i]->volumeInfo->imageLinks->smallThumbnail;
 		 }
