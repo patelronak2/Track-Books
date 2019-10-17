@@ -36,26 +36,26 @@
 			var htmlOutput = '<ul class="list-group">';
 			for(var i = 0; i < 5 && i < results['totalItems']; i++){
 				
-				var title = results.items[i].volumeInfo.title;
+				////var title = results.items[i].volumeInfo.title;
 				//var description = results['items'][i]['volumeInfo']['description'];
 				//var len = results['items'][i]['volumeInfo']['authors'].length;
-				var author = 'By: ' +  results.items[i].volumeInfo.authors[0];
+				////var author = 'By: ' +  results.items[i].volumeInfo.authors[0];
 				//for(var j = 0; j < len; j++){
 					//author += results['items'][i]['volumeInfo']['authors'][j];
 				//}
 				//var category = results['items'][i]['volumeInfo']['categories'][0];
 				//var publisher = results['items'][i]['volumeInfo']['publisher'];
 				//var publishedDate = results['items'][i]['volumeInfo']['publishedDate'];
-				var img_link = results.items[i].volumeInfo.imageLinks.smallThumbnail;
+				////var img_link = results.items[i].volumeInfo.imageLinks.smallThumbnail;
 				
 				htmlOutput += '<li class="list-group-item">';
 				htmlOutput += '<div class="card mb-3">';
 				htmlOutput += '<div class="row no-gutters">';
 				htmlOutput += '<div class="col-md-4">';
-				htmlOutput += '<img src="'+ img_link + '" class="card-img"></div>';
+				htmlOutput += '<img src="http://books.google.com/books/content?id=39iYWTb6n6cC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api" class="card-img"></div>';
 				htmlOutput += '<div class="col-md-8">';
-				htmlOutput += '<div class="card-body"><h5 class="card-title">' + title + '</h5>';
-				htmlOutput += '<p class="card-text">Author: '+ author +'</p>';
+				htmlOutput += '<div class="card-body"><h5 class="card-title">Harry Potter</h5>';
+				htmlOutput += '<p class="card-text">Author:J.K. Rowling</p>';
 				htmlOutput += '</div></div></div>';
 				htmlOutput += '</div></li>';		
 				
