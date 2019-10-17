@@ -54,7 +54,12 @@
 			}
 			
 			htmlOutput += '</ul>';
-			$("#searchResult").html(htmlOutput);
+			if($("#searchTerm").val() == ""){
+				$("#searchResult").html("");	
+			}else{
+				$("#searchResult").html(htmlOutput);
+			}
+			
 		}});
 	}
 </script> 
