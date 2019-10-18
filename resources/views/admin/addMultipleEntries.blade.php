@@ -73,7 +73,7 @@
 			$("#searchResult").html(alertMessage);
 		}else{
 			//alert(data.items[0].volumeInfo.title);	
-			for (var i = 0; i < 5 && i < (data.item).length; i++){
+			for (var i = 0; i < 5 && i < data.totalItems; i++){
 				var title = data.items[i].volumeInfo.title;
 				var description = data.items[i].volumeInfo.description;
 				var author = data.items[i].volumeInfo.authors[0];
