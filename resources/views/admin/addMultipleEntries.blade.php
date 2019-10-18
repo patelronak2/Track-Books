@@ -72,15 +72,15 @@
 		if(data == ""){
 			$("#searchResult").html(alertMessage);
 		}else{
-			alert(data.items[0].volumeInfo.title);	
+			//alert(data.items[0].volumeInfo.title);	
 			for (var i = 0; i < 5; i++){
 				var title = data.items[i].volumeInfo.title;
 				var description = data.items[i].volumeInfo.description;
-				var author = results.items[i].volumeInfo.authors[0];
+				var author = data.items[i].volumeInfo.authors[0];
 				var category = data.items[i].volumeInfo.categories[0];
 				var publisher = data.items[i].volumeInfo.publisher;
 				var publishedDate = data.items[i].volumeInfo.publishedDate;
-				var img_link = results.items[i].volumeInfo.imageLinks.smallThumbnail;
+				var img_link = data.items[i].volumeInfo.imageLinks.smallThumbnail;
 				alert(title + "\n" +description + "\n" +author + "\n" +category + "\n" +publisher + "\n" +publishedDate + "\n" + img_link);
 			}
 		}
