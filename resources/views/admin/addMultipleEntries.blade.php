@@ -22,9 +22,9 @@
 							</div>
 						  </div>
 						</form>
-						@if($insertUser)
+						@if($errorMessage)
 							<div class="alert alert-danger" role="alert">
-								{{ $alert }} {{$name}}
+								{{ $alert }}
 								
 							</div>
 						@endif
