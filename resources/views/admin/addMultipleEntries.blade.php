@@ -72,7 +72,7 @@
 		if(data == ""){
 			$("#searchResult").html(alertMessage);
 		}else{
-			alert("kjkj");	
+			alert(data.items[0].volumeInfo.title);	
 		}
 		
 		return false;
