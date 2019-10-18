@@ -10,14 +10,14 @@
 					<div class="card-header">Through Google Api</div>
 					<div class="card-body">
 						<p>Search for the term. Top 5 results will be added to the database.</p>
-						<form method="post" action="">
+						<form method="post" action="/public/insertMultipleBooks">
 						  <div class="form-row align-items-center">
 							<div class="col-auto">
 							  <label class="sr-only" for="searchTerm">Search Term</label>
 							  <input type="text" class="form-control mb-2" id="searchTerm" placeholder="Harry Potter" onkeyup="searchApi();">
 							</div>
 							<div class="col-auto">
-							  <button type="submit" class="btn btn-primary mb-2" onclick="return addmultipleRecords();">Add Multiple Books</button>
+							  <button type="submit" class="btn btn-primary mb-2" onclick="return addmultipleRecords()">Add Multiple Books</button>
 							</div>
 						  </div>
 						</form>
@@ -72,7 +72,19 @@
 		if(data == ""){
 			$("#searchResult").html(alertMessage);
 		}else{
-			alert(results.items[0].volumeInfo.title);
+			var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+		var jsonData = JSON.stringify(data);
+		$.ajax({
+			url: '/public/insertMultipleBooks',
+			type: 'POST',
+			data: {_token: CSRF_TOKEN, data: jsonData },
+			success: function(response){
+				alert(response);
+			},
+			error: function(err){
+				alert(JSON.stringify(err));
+			}
+		});	
 		}
 		
 		return false;
