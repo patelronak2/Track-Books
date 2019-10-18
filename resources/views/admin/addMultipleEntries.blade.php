@@ -23,7 +23,7 @@
 						  </div>
 						</form>
 						@if($errorMessage)
-							<div class="alert alert-danger" role="alert">
+							<div class="alert alert-danger" role="alert" id="error">
 								{{ $alert }}
 								
 							</div>
@@ -39,6 +39,7 @@
 <script>
 	var data = "";
 	function searchApi(){
+		$("#error").html("");
 		var value = "https://www.googleapis.com/books/v1/volumes?q=" + $("#searchTerm").val();
 		$.ajax({url: value, success: function(results){
 			data = results;
