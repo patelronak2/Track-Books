@@ -72,6 +72,7 @@
 		var alertMessage = '<div class="alert alert-danger" role="alert">No data to add</div>';
 		if(data == ""){
 			$("#searchResult").html(alertMessage);
+			return false;
 		}else{
 			//alert(data.items[0].volumeInfo.title);	
 			var title = "";
@@ -81,7 +82,10 @@
 			var publisher = "";
 			var publishedDate = "";
 			var img_link = "";
+			var j = 0;
 			for (var i = 0; i < 5 && i < data.totalItems; i++){
+				j++;
+				
 				if(data.items[i].volumeInfo.title){
 					title = data.items[i].volumeInfo.title;
 				}
@@ -104,11 +108,13 @@
 					img_link = data.items[i].volumeInfo.imageLinks.smallThumbnail;
 				}
 				
-				alert(title + "\n" +description + "\n" +author + "\n" +category + "\n" +publisher + "\n" +publishedDate + "\n" + img_link);
+				
 			}
+			alert(j);
+			return false;
 		}
 		
-		return false;
+		
 	}
 </script> 
 @endsection
