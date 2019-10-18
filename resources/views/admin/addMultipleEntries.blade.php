@@ -39,7 +39,7 @@
 <script>
 	var data = "";
 	function searchApi(){
-		$("#error").html("");
+		$("#error").html("").removeClass("alert alert-danger");
 		var value = "https://www.googleapis.com/books/v1/volumes?q=" + $("#searchTerm").val();
 		$.ajax({url: value, success: function(results){
 			data = results;
