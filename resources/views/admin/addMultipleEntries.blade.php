@@ -22,6 +22,12 @@
 							</div>
 						  </div>
 						</form>
+						@if($insertUser)
+							<div class="alert alert-danger" role="alert">
+								{{ $alert }} {{$name}}
+								
+							</div>
+						@endif
 						<div id="searchResult">
 						</div>
 					</div>

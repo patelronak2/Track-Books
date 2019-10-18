@@ -193,7 +193,7 @@ class AdminController extends Controller
      */
 	 public function addMultipleEntries()
 	 {
-		 return view('admin.addMultipleEntries');
+		 return view('admin.addMultipleEntries', ['errorMessage' => false]);
 	 }
 	 
 	 /**
@@ -203,40 +203,8 @@ class AdminController extends Controller
      */
 	 public function insertMultipleBooks(Request $request)
 	 {
-		 //need to handle onclick on 'add multiple books' by adding a JavaScript function in the addMultipleEntries.blade
-		 //make a ajax request and recieve the result. Convert the result into JSON and make a post ajax request here.
-		 //Use the passed data to insert into row
-		 
-		 //return view or a message
-		 // $data = json_decode($request->input('data'));
-		 
-		 // for ($i = 0; $i < 5; $i++) {
-			 
-			 // if($data->items[$i]->volumeInfo->title){
-				// $title = $data->items[$i]->volumeInfo->title;	
-			 // }
-			 // if($data->items[$i]->volumeInfo->description){
-				 // $description = $data->items[$i]->volumeInfo->description;
-			 // }
-			 // if($data->items[$i]->volumeInfo->authors[0]){
-				 // $author = $data->items[$i]->volumeInfo->authors[0];
-			 // }
-			 // if($data->items[$i]->volumeInfo->categories[0]){
-				 // $category = $data->items[$i]->volumeInfo->categories[0];
-			 // }
-			 // if($data->items[$i]->volumeInfo->publisher){
-				 // $publisher = $data->items[$i]->volumeInfo->publisher;
-			 // }
-			 // if($data->items[$i]->volumeInfo->publishedDate){
-				 // $publishedDate = $data->items[$i]->volumeInfo->publishedDate;
-			 // }
-			 // if($data->items[$i]->volumeInfo->imageLinks->smallThumbnail){
-				 // $img_link = $data->items[$i]->volumeInfo->imageLinks->smallThumbnail;
-			 // }
-			 
-		 // }
-		 
-		 echo "successful";
+		 $alert = "Can not able to insert data into the database";
+		 return view('admin.addMultipleEntries', ['errorMessage' => true, 'alert' => $alert]);
 		 
 		 
 	 }
