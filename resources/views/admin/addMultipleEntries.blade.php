@@ -11,6 +11,7 @@
 					<div class="card-body">
 						<p>Search for the term. Top 5 results will be added to the database.</p>
 						<form method="post" action="/public/insertMultipleBooks">
+						@csrf
 						  <div class="form-row align-items-center">
 							<div class="col-auto">
 							  <label class="sr-only" for="searchTerm">Search Term</label>
