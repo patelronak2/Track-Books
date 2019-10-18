@@ -71,6 +71,8 @@
 		var alertMessage = '<div class="alert alert-danger" role="alert">No data to add</div>';
 		if(data == ""){
 			$("#searchResult").html(alertMessage);
+		}else{
+			alert(results.items[0].volumeInfo.title);
 		}
 		
 		return false;
