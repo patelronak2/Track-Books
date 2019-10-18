@@ -73,14 +73,36 @@
 			$("#searchResult").html(alertMessage);
 		}else{
 			//alert(data.items[0].volumeInfo.title);	
+			var title = "";
+			var description = "";
+			var author = "";
+			var category = "";
+			var publisher = "";
+			var publishedDate = "";
+			var img_link = "";
 			for (var i = 0; i < 5 && i < data.totalItems; i++){
-				var title = data.items[i].volumeInfo.title;
-				var description = data.items[i].volumeInfo.description;
-				var author = data.items[i].volumeInfo.authors[0];
-				var category = data.items[i].volumeInfo.categories[0];
-				var publisher = data.items[i].volumeInfo.publisher;
-				var publishedDate = data.items[i].volumeInfo.publishedDate;
-				var img_link = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+				if(data.items[i].volumeInfo.title){
+					title = data.items[i].volumeInfo.title;
+				}
+				if(data.items[i].volumeInfo.description){
+					description = data.items[i].volumeInfo.description;
+				}
+				if(data.items[i].volumeInfo.authors){
+					author = data.items[i].volumeInfo.authors[0];
+				}
+				if(data.items[i].volumeInfo.categories[0]){
+					category = data.items[i].volumeInfo.categories[0];
+				}
+				if(data.items[i].volumeInfo.publisher){
+					publisher = data.items[i].volumeInfo.publisher;
+				}
+				if(data.items[i].volumeInfo.publishedDate){
+					publishedDate = data.items[i].volumeInfo.publishedDate;
+				}
+				if(data.items[i].volumeInfo.imageLinks.smallThumbnail){
+					img_link = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+				}
+				
 				alert(title + "\n" +description + "\n" +author + "\n" +category + "\n" +publisher + "\n" +publishedDate + "\n" + img_link);
 			}
 		}
