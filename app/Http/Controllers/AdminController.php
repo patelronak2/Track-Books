@@ -203,7 +203,7 @@ class AdminController extends Controller
      */
 	 public function insertMultipleBooks(Request $request)
 	 {
-		 $alert = "Can not able to insert data into the database with term: " . $request->input('searchTerm') . "\n Try again";
+		 $alert = "Can not able to insert data into database. Try again";
 		 return view('admin.addMultipleEntries', ['errorMessage' => true, 'alert' => $alert]);
 		 
 		 
