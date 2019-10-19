@@ -205,7 +205,10 @@ class AdminController extends Controller
 	 {
 		 $alert = "Can not able to insert data into database. Try again";
 		 return view('admin.addMultipleEntries', ['errorMessage' => true, 'alert' => $alert]);
-		 
+	 }
+	 
+	 public function ajaxBookInsert(Request $request)
+	 {
 		 
 	 }
 	

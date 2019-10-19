@@ -81,17 +81,17 @@
 			$("#searchResult").html(alertMessage);
 			return false;
 		}else{
-			//alert(data.items[0].volumeInfo.title);	
+			var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');	
 			var title = "";
 			var description = "";
 			var author = "";
 			var category = "";
 			var publisher = "";
 			var publishedDate = "";
-			var img_link = "";
+			var imgLink = "";
 			var j = 0;
 			for (var i = 0; i < 5 && i < data.totalItems; i++){
-				j++;
+				
 				
 				if(data.items[i].volumeInfo.title){
 					title = data.items[i].volumeInfo.title;
@@ -112,12 +112,26 @@
 					publishedDate = data.items[i].volumeInfo.publishedDate;
 				}
 				if(data.items[i].volumeInfo.imageLinks.smallThumbnail){
-					img_link = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+					imgLink = data.items[i].volumeInfo.imageLinks.smallThumbnail;
 				}
 				
+				$.ajax({
+					url: '/public/ajaxBookInsert',
+					type: 'POST',
+					data: {_token: CSRF_TOKEN, title: title, description: description, author: author, category: category, publisher: publisher, publishedDate: publishedDate, imgLink: imgLink},
+					success: function(data){
+						j++;
+					},
+					error: function(error){
+						alert("something went wrong!");
+					}
+				});
 				
 			}
-			alert(j);
+			
+			alertMessage = '<div class="alert alert-success" role="alert">' ;alertMessage += j + ': Books added to database.</div>';
+			
+			$("#searchResult").html(alertMessage);
 			return false;
 		}
 		
