@@ -131,8 +131,9 @@
 						
 					},
 					error: function(error){
-						alert("something went wrong!");
-						flag = false;
+						alertMessage = '<div class="alert alert-danger" role="alert">' ;
+						alertMessage += 'Book is already in the database.</div>';
+						$("#searchResult").html(alertMessage);
 					}
 				});
 				
