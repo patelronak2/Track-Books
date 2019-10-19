@@ -149,12 +149,6 @@ class AdminController extends Controller
 		 $validatedData = $request->validate([
             'title' => ['required', 'unique:books'],			
         ]);
-		 $title = $request->input('title');
-		 $description = $request->input('description');
-		 $authorName = $request->input('authorName');
-		 $category = $request->input('category');
-		 $publisher = $request->input('publisher');
-		 $publishedDate = $request->input('publishedDate');
 		 
 		 $book = new Book;
 		 $book->title = $request->input('title');
@@ -209,7 +203,19 @@ class AdminController extends Controller
 	 
 	 public function ajaxBookInsert(Request $request)
 	 {
-		 echo "success";
+		 $validatedData = $request->validate([
+            'title' => ['required', 'unique:books'],			
+        ]);
+		 
+		 $book = new Book;
+		 $book->title = $request->input('title');
+		 $book->description = $request->input('description');
+		 $book->author = $request->input('author');
+		 $book->category = $request->input('category');
+		 $book->publisher = $request->input('publisher');
+		 $book->publishedDate = $request->input('publishedDate');
+		 $book->img_link = $request->input('imgLink');
+		 $book->save();
 	 }
 	
 	
