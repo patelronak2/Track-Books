@@ -5,6 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
 			<p class="display-4">Add Multiple Books</p>
+			<div class="text-center">
+				<a href="/public/manageBooks" class="btn btn-light m-1 p-2">All Books</a>
+				<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
+			</div>
 			<div class="mt-2">
 				<div class="card">
 					<div class="card-header">Through Google Api</div>
@@ -39,7 +43,7 @@
 <script>
 	var data = "";
 	function searchApi(){
-		$("#error").html("").removeClass("alert alert-danger");
+		$("#error").html("").removeClass("alert alert-danger alert-success");
 		var value = "https://www.googleapis.com/books/v1/volumes?q=" + $("#searchTerm").val();
 		$.ajax({url: value, success: function(results){
 			data = results;
@@ -130,7 +134,7 @@
 				
 			}
 			
-			alertMessage = '<div class="alert alert-success" role="alert">' ;alertMessage += j + ': Books added to database.</div>';
+			alertMessage = '<div class="alert alert-success" role="alert">' ;alertMessage += 'Books added to database.</div>';
 			
 			$("#searchResult").html(alertMessage);
 			return false;
