@@ -94,6 +94,7 @@
 			var publishedDate = "";
 			var imgLink = "";
 			var j = 0;
+			var flag = true;
 			for (var i = 0; i < 5 && i < data.totalItems; i++){
 				
 				
@@ -125,18 +126,22 @@
 					data: {_token: CSRF_TOKEN, title: title, description: description, author: author, category: category, publisher: publisher, publishedDate: publishedDate, imgLink: imgLink},
 					success: function(data){
 						j++;
-						alert(data);
+						
 					},
 					error: function(error){
 						alert("something went wrong!");
+						flag = false;
 					}
 				});
 				
 			}
 			
-			alertMessage = '<div class="alert alert-success" role="alert">' ;alertMessage += 'Books added to database.</div>';
-			
-			$("#searchResult").html(alertMessage);
+			if(flag){
+				alertMessage = '<div class="alert alert-success" role="alert">' ;
+				alertMessage += 'Books added to database.</div>';
+				$("#searchResult").html(alertMessage);
+			}
+						
 			return false;
 		}
 		
