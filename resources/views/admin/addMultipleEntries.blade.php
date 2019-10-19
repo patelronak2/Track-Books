@@ -125,7 +125,9 @@
 					type: 'POST',
 					data: {_token: CSRF_TOKEN, title: title, description: description, author: author, category: category, publisher: publisher, publishedDate: publishedDate, imgLink: imgLink},
 					success: function(data){
-						j++;
+						alertMessage = '<div class="alert alert-success" role="alert">' ;
+						alertMessage += 'Books added to database.</div>';
+						$("#searchResult").html(alertMessage);
 						
 					},
 					error: function(error){
@@ -134,12 +136,6 @@
 					}
 				});
 				
-			}
-			
-			if(flag){
-				alertMessage = '<div class="alert alert-success" role="alert">' ;
-				alertMessage += 'Books added to database.</div>';
-				$("#searchResult").html(alertMessage);
 			}
 						
 			return false;
