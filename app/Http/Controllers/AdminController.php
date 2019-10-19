@@ -209,7 +209,7 @@ class AdminController extends Controller
 	 
 	 public function ajaxBookInsert(Request $request)
 	 {
-		 echo "";
+		 echo "success";
 	 }
 	
 	

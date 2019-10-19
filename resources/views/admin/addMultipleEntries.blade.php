@@ -121,6 +121,7 @@
 					data: {_token: CSRF_TOKEN, title: title, description: description, author: author, category: category, publisher: publisher, publishedDate: publishedDate, imgLink: imgLink},
 					success: function(data){
 						j++;
+						alert(data);
 					},
 					error: function(error){
 						alert("something went wrong!");
