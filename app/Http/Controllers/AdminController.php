@@ -172,10 +172,12 @@ class AdminController extends Controller
      */
 	 public function deleteBook($id)
 	 {
+		 
 		 $book = Book::find($id);
+		 $title = $book->title;
 		 $book->delete();
 		 
-		 $message = "Deletion successful.";
+		 $message = "Book Deleted: " . $title;
 		 $data = Book::all();
 		 return view('admin.books',['books' => $data, 'insertBook' => false, 'alert' => $message, 'deleteBook' => true]);
 	 }
