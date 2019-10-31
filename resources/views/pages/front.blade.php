@@ -47,11 +47,13 @@
 				<i class="fas fa-book-reader text-primary" style="font-size: 48px;"></i>
 				<h5 class="text-center text-primary mt-5">See Who is trending in Book world!</h5>
 				<h5 class="text-center text-secondary">Join the community now!</h5>
+				@guest
 				<div class="text-center mt-5">
 					<a class="btn btn-primary btn-lg" href="{{ route('login') }}" role="button">{{ __('Login') }}</a>
 					
 					<a class="btn btn-outline-primary btn-lg" href="{{ route('register') }}" role="button">{{ __('Register') }}</a>
 				</div>
+				@endguest
 			</div>
 		</div>
 	</div>
