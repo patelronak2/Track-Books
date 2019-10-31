@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.front');
-});
+// Route::get('/', function () {
+    // return view('pages.front');
+// });
 
 Auth::routes(['verify' => true]);
 Route::get('/profile','User@index');
