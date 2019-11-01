@@ -35,16 +35,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                
                     <ul class="navbar-nav mr-auto">
-						
-                    </ul>
-					
-                    <ul class="navbar-nav ml-auto">
 						<a href="#" class="nav-link"><span class="badge badge-warning ml-2">4</span><i class="fas fa-bell" style="font-size: 20px"></i></a>
 						<li class="nav-item">
 							<form class="form-inline my-2 my-md-0">
 								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 							</form>
 						</li>
+                    </ul>
+					
+                    <ul class="navbar-nav ml-auto">
+						
 						
 						<li class="nav-item dropdown">
 							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
