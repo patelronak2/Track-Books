@@ -22,8 +22,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
 	<script>
 		$(document).ready(function(){
-			$("#submit").click(function(){
-				$("#search").val("")
+			$("#navSubmit").click(function(){
+				$("#navSearch").val("")
 				
 				return false;
 			});
@@ -47,11 +47,11 @@
 						
 						<li class="nav-item">
 							<form class="form-inline my-2 my-md-0">
-								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-								<button class="sr-only" id="submit" type="submit">Search</button>
+								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="navSearch">
+								<button class="sr-only" id="navSubmit" type="submit">Search</button>
 							</form>
-							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="search">
-								<a class="dropdown-item" href="#">Search Bar Toogle</a>
+							<div id="navSearchResults">
+								Nothing to display yet
 							</div>
 						</li>
 						
