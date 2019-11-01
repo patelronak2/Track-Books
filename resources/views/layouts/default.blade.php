@@ -26,7 +26,7 @@
 				$("#navSearch").val("")
 				return false;
 			});
-			$("#navSearch").keydown(function(){
+			$("#navSearch").keyup(function(){
 				$("#navSearchResults").removeClass("d-none");
 			});
 			
