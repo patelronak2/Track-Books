@@ -26,7 +26,7 @@
                     <div class="mt-1 text-center">
 						@if(count($books) > 0)
 							<p class="display-4">Users List</p>
-							<table class="table table-hover">
+							<table class="table table-hover table-responsive">
 								<thead>
 								  <tr>
 									<th>Book Name</th>

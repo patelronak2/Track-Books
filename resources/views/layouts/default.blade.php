@@ -23,7 +23,8 @@
 	<script>
 		$(document).ready(function(){
 			$("#submit").click(function(){
-				alert("button clicked");
+				$("#search").val("")
+				
 				return false;
 			});
 		});
@@ -46,11 +47,11 @@
 						
 						<li class="nav-item">
 							<form class="form-inline my-2 my-md-0">
-								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search">
 								<button class="sr-only" id="submit" type="submit">Search</button>
 							</form>
 						</li>
-						<a href="#" class="nav-link"><span class="badge badge-warning ml-1">4</span><i class="fas fa-bell" style="font-size: 20px"></i></a>
+						<a href="#" class="nav-link" ><span class="badge badge-warning ml-1">4</span><i class="fas fa-bell" style="font-size: 20px"></i></a>
                     </ul>
 					
                     <ul class="navbar-nav ml-auto">
