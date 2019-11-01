@@ -50,24 +50,16 @@
 								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search">
 								<button class="sr-only" id="submit" type="submit">Search</button>
 							</form>
-						</li><!--
-						<li class="nav-item avatar dropdown">
-							<a href="#" class="nav-link dropdown-toggle waves-effect waves-light" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="badge badge-warning ml-1">4</span><i class="fas fa-bell" style="font-size: 20px"></i></a>
-							<div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="notifications">
-							  No Notifications Yet.
-							</div>
-						</li>-->
-						<li class="nav-item avatar dropdown">
-							<a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							  <span class="badge badge-danger ml-2">4</span>
-							  <i class="fas fa-bell"></i>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							  <span class="badge badge-danger ml-l">4</span>
+							  <i class="fas fa-bell" style="font-size: 20px"></i>
 							</a>
-							<div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-5">
-							  <a class="dropdown-item waves-effect waves-light" href="#">Action <span class="badge badge-danger ml-2">4</span></a>
-							  <a class="dropdown-item waves-effect waves-light" href="#">Another action <span class="badge badge-danger ml-2">1</span></a>
-							  <a class="dropdown-item waves-effect waves-light" href="#">Something else here <span class="badge badge-danger ml-2">4</span></a>
+							<div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="notifications">
+							  <a class="dropdown-item" href="#">No Notifications yet</a>
 							</div>
-						  </li>
+						</li>
                     </ul>
 					
                     <ul class="navbar-nav ml-auto">
