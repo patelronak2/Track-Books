@@ -37,11 +37,10 @@
                     <ul class="navbar-nav mr-auto">
 						
                     </ul>
-					
-                    <ul class="navbar-nav ml-auto">
-						<form class="form-inline my-2 my-lg-0">
+					<form class="form-inline my-2 my-lg-0">
 							<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-						</form>
+					</form>
+                    <ul class="navbar-nav ml-auto">
 						<li class="nav-item dropdown">
 							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 								{{ Auth::user()->name }} <span class="caret"></span>
@@ -75,7 +74,7 @@
             @yield('content')
         </main>
 		<div class="footer-copyright text-center py-4">© 2018 Copyright:
-			<a href="#"> ronakjpatel.com</a>
+			<a href="https://ronakjpatel.com"> ronakjpatel.com</a>
 		</div>
     </div>
 </body>
