@@ -5,8 +5,8 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="row justify-content-center">
-		<div class="col-md-5 col-sm-10 bg-primary text-white p-4" style="height: 75vh;">
+	<div class="row justify-content-center" style="margin: 0px!important;">
+		<div class="col-md-5 col-sm-10 bg-primary text-white p-3 m-1" style="height: 75vh;">
 			<div class="mt-5 pt-5 d-flex flex-column container">
 				<div class="m-1">
 					<div class="d-flex flex-row">
@@ -42,7 +42,7 @@
 				
 			</div>
 		</div>
-		<div class="col-md-5 col-sm-10 bg-light text-dark p-4" style="height: 75vh;">
+		<div class="col-md-5 col-sm-10 bg-light text-dark p-3 m-1" style="height: 75vh;">
 			<div class="text-center mt-5 pt-5 justify-content-center">
 				<i class="fas fa-book-reader text-primary" style="font-size: 48px;"></i>
 				<h5 class="text-center text-primary mt-5">See Who is trending in Book world!</h5>
