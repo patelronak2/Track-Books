@@ -81,7 +81,7 @@
         <main class="py-4">
             @yield('content')
         </main>
-		<div class="footer-copyright text-center pt-3 shadow-sm bg-light">© 2018 Copyright:
+		<div class="footer-copyright text-center pt-3">© 2018 Copyright:
 			<a href="#"> ronakjpatel.com</a>
 		</div>
     </div>
