@@ -51,19 +51,10 @@
 								<button class="sr-only" id="submit" type="submit">Search</button>
 							</form>
 						</li>
-						<!--<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							  <span class="badge badge-danger ml-l">4</span>
-							  <i class="fas fa-bell" style="font-size: 20px"></i>
-							</a>
-							<div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="notifications">
-							  <a class="dropdown-item" href="#">No Notifications yet</a>
-							</div>
-						</li> -->
 						
 						<li class="nav-item dropdown">
-							<a id="notifications" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-								<span class="badge badge-danger ml-l">4</span><i class="fas fa-bell" style="font-size: 20px"></i>
+							<a id="notifications" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+								<span class="badge badge-warning ml-l">4</span><i class="fas fa-bell" style="font-size: 20px"></i>
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="notifications">
