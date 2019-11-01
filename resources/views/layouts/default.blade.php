@@ -50,8 +50,14 @@
 								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="navSearch">
 								<button class="sr-only" id="navSubmit" type="submit">Search</button>
 							</form>
-							<div id="navSearchResults">
-								Nothing to display yet
+							<div id="navSearchResults" class="" style="position: absolute; top: 50px; width: auto; height: auto;">
+								<ul class="list-group">
+								  <li class="list-group-item">Cras justo odio</li>
+								  <li class="list-group-item">Dapibus ac facilisis in</li>
+								  <li class="list-group-item">Morbi leo risus</li>
+								  <li class="list-group-item">Porta ac consectetur ac</li>
+								  <li class="list-group-item">Vestibulum at eros</li>
+								</ul>
 							</div>
 						</li>
 						
