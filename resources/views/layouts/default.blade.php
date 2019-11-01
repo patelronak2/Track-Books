@@ -68,10 +68,10 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="margin-top: 80px;">
             @yield('content')
         </main>
-		<div class="footer-copyright text-center pt-3">© 2018 Copyright:
+		<div class="footer-copyright text-center py-4">© 2018 Copyright:
 			<a href="#"> ronakjpatel.com</a>
 		</div>
     </div>
