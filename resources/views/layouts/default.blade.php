@@ -51,7 +51,11 @@
 								<button class="sr-only" id="submit" type="submit">Search</button>
 							</form>
 						</li>
-						<a href="#" class="nav-link" ><span class="badge badge-warning ml-1">4</span><i class="fas fa-bell" style="font-size: 20px"></i></a>
+						<a href="#" class="nav-link dropdown-toggle waves-effect waves-light" id="notifications" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="badge badge-warning ml-1">4</span><i class="fas fa-bell" style="font-size: 20px"></i></a>
+						<div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary" aria-labelledby="notifications">
+						  No Notifications Yet.
+						</div>
+						
                     </ul>
 					
                     <ul class="navbar-nav ml-auto">
