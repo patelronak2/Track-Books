@@ -20,6 +20,14 @@
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+	<script>
+		$(document).ready(function(){
+			$("#submit").click(function(){
+				alert("button clicked");
+				return false;
+			});
+		});
+	</script>
 </head>
 <body>
     <div id="app">
@@ -39,6 +47,7 @@
 						<li class="nav-item">
 							<form class="form-inline my-2 my-md-0">
 								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+								<button class="sr-only" id="submit" type="submit">Search</button>
 							</form>
 						</li>
 						<a href="#" class="nav-link"><span class="badge badge-warning ml-1">4</span><i class="fas fa-bell" style="font-size: 20px"></i></a>
