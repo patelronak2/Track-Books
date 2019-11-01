@@ -24,8 +24,19 @@
 		$(document).ready(function(){
 			$("#navSubmit").click(function(){
 				$("#navSearch").val("")
-				
 				return false;
+			});
+			$("#navSearch").keydown(function(){
+				$("#navSearchResults").removeClass("d-none");
+			});
+			
+			$(document).mouseup(function(e) 
+				var container = $("#navSearchResults");
+				// if the target of the click isn't the container nor a descendant of the container
+				if (!container.is(e.target) && container.has(e.target).length === 0) 
+				{
+					container.addClass("d-none");
+				}
 			});
 		});
 	</script>
@@ -50,7 +61,7 @@
 								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="navSearch">
 								<button class="sr-only" id="navSubmit" type="submit">Search</button>
 							</form>
-							<div id="navSearchResults" class="" style="position: absolute; top: 50px; width: auto; height: auto;">
+							<div id="navSearchResults" class="d-none" style="position: absolute; top: 50px; width: auto; height: auto;">
 								<ul class="list-group">
 								  <li class="list-group-item">Cras justo odio</li>
 								  <li class="list-group-item">Dapibus ac facilisis in</li>
