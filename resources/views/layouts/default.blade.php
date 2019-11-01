@@ -39,6 +39,9 @@
                     </ul>
 					
                     <ul class="navbar-nav ml-auto">
+						<form class="form-inline my-2 my-lg-0">
+							<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+						</form>
 						<li class="nav-item dropdown">
 							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 								{{ Auth::user()->name }} <span class="caret"></span>
