@@ -98,8 +98,8 @@
 			for (var i = 0; i < 5 && i < data.totalItems; i++){
 				title = data.items[i].volumeInfo.title;
 				
-				if(data.items[i].volumeInfo.description){
-					description = data.items[i].volumeInfo.hasOwnProperty('description');
+				if(data.items[i].volumeInfo.hasOwnProperty('description')){
+					description = data.items[i].volumeInfo.description;
 				}else{
 					description = "Information not Available"	
 				}

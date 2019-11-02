@@ -57,9 +57,7 @@
 				  case "Author":
 						temphtml += '<a class="list-group-item" href="">SearchBy Author</a>';
 					break;
-				  default:
-						//ajax call to controller
-						//get result from google api	
+				  default:	
 						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + $("#navSearch").val();
 						$.ajax({
 							url: searchURL,
@@ -67,7 +65,10 @@
 								searchResult = data;
 								for(var i = 0; i < 5 && i < searchResult['totalItems']; i++){
 									var title = searchResult.items[i].volumeInfo.title;
-									var author = 'By: ' +  searchResult.items[i].volumeInfo.authors[0];
+									var author = "";
+									if(searchResult.items[i].volumeInfo.hasOwnProperty('authors')){
+										author = 'By: ' +  searchResult.items[i].volumeInfo.authors[0];
+									}
 									temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
 									temphtml += '<div class="d-flex w-100 justify-content-between">';
 									temphtml += '<h5 class="mb-1">' + title + '</h5></div>';
@@ -76,7 +77,7 @@
 								}
 							},
 							error: function(){
-								temphtml += '<li class="list-group-item">No Result Found</li>';
+								temphtml += '<p class="list-group-item">No Result Found</p>';
 							}
 						});
 				}
