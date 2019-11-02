@@ -11,7 +11,7 @@
 			</div>
 			<div class="mt-2">
 				<div class="card">
-					<div class="card-header">Through Google Api</div>
+					<h4 class="card-header">Through Google Api</h4>
 					<div class="card-body">
 						<p>Search for the term. Top 5 results will be added to the database.</p>
 						<form method="post" action="/public/insertMultipleBooks">

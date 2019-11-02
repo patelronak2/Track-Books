@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="mt-2">
 				<div class="card">
-					<div class="card-header">Add users</div>
+					<h4 class="card-header">Add users</h4>
 					<div class="card-body">
 					<!-- User Form -------- -->
 						<form method="POST" action="/public/insertUser">
@@ -74,7 +74,7 @@
 			</div>
 			<div class="mt-2">
 				<div class="card">
-					<div class="card-header">Add Books</div>
+					<h4 class="card-header">Add Books</h4>
 					<div class="card-body">
 					<!----------------- Book Form ------------------------------>
 						<form method="POST" action="/public/insertBook">
@@ -169,8 +169,9 @@
 			</div>
 			<div class="mt-2">
 				<div class="card">
-					<div class="card-header">Add Authors</div>
+					<h4 class="card-header">Add Authors</h4>
 					<div class="card-body">
+						<!-- Author Form -->
 						<form method="POST" action="/public/insertAuthor">
 							<div class="form-group row">
 								<label for="authorName" class="col-md-4 col-form-label text-md-right">Author Name</label>

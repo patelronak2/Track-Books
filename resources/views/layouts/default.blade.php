@@ -44,25 +44,43 @@
 	<script>
 		$(document).ready(function(){
 			var searchBy = "Books";
-			
+			var searchResult = "";
 			$("#navSubmit").click(function(){
 				return false;
 			});
 			$("#navSearch").keyup(function(){
-				var temphtml = '<ul class="list-group">';
+				var temphtml = '<div class="list-group">';
 				switch(searchBy) {
 				  case "User":
-						temphtml += '<li class="list-group-item">SearchBy UserSearchBy UserSearchBy User</li><li class="list-group-item">SearchBy User</li><li class="list-group-item">SearchBy User</li>';
+						temphtml += '<a class="list-group-item" href="">SearchBy UserSearchBy UserSearchBy User</a>';
 					break;
 				  case "Author":
-						temphtml += '<li class="list-group-item">SearchBy Author</li>';
+						temphtml += '<a class="list-group-item" href="">SearchBy Author</a>';
 					break;
 				  default:
 						//ajax call to controller
 						//get result from google api	
-						temphtml += '<li class="list-group-item">SearchBy Books</li><li class="list-group-item">SearchBy Books</li>';
+						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + $("#navSearch").val();
+						$.ajax({
+							url: searchURL,
+							success: function(data){
+								searchResult = data;
+								for(var i = 0; i < 5 && i < searchResult['totalItems']; i++){
+									var title = searchResult.items[i].volumeInfo.title;
+									var author = 'By: ' +  searchResult.items[i].volumeInfo.authors[0];
+									temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
+									temphtml += '<div class="d-flex w-100 justify-content-between">';
+									temphtml += '<h5 class="mb-1">' + title + '</h5></div>';
+									temphtml += '<p class="mb-1">' + author + '</p>';
+									temphtml += '</a>';
+								}
+							},
+							error: function(){
+								temphtml += '<li class="list-group-item">No Result Found</li>';
+							}
+						});
 				}
-				temphtml += '</ul>';
+				temphtml += '</div>';
 				$("#navSearchResults").html(temphtml).removeClass("d-none");
 			});
 			
@@ -114,7 +132,6 @@
 								</div>
 							</form>
 							<div id="navSearchResults" class="d-none">
-								
 							</div>
 						</li>
 						
