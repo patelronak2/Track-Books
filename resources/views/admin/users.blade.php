@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">Manage Users</div>
+                <h4 class="card-header">Manage Users</h4>
 
                 <div class="card-body">
 					@if($insertUser)
@@ -30,7 +30,6 @@
 					</div>
                     <div class="mt-1 text-center">
 						@if(count($users) > 0)
-							<p class="display-4">Users List</p>
 							<table class="table table-hover table-responsive">
 								<thead>
 								  <tr>

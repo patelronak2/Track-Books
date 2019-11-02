@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Manage Authors</div>
+                <h4 class="card-header">Manage Authors</h4>
 
                 <div class="card-body">
 					<div class="text-center">
