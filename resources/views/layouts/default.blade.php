@@ -59,9 +59,11 @@
 					break;
 				  default:	
 						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + $("#navSearch").val();
+						alert(searchURL);
 						$.ajax({
 							url: searchURL,
 							success: function(data){
+								alert(data);
 								searchResult = data;
 								for(var i = 0; i < 5 && i < searchResult['totalItems']; i++){
 									var title = searchResult.items[i].volumeInfo.title;
