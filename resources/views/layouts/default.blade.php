@@ -66,15 +66,15 @@
 								
 								searchResult = data;
 								for(var i = 0; i < 5 && i < data['totalItems']; i++){
-									var title = data.items[i].volumeInfo.title;
+									// var title = data.items[i].volumeInfo.title;
 									var author = "";
-									if(data.items[i].volumeInfo.hasOwnProperty('authors')){
-										author = 'By: ' +  data.items[i].volumeInfo.authors[0];
-									}
+									// if(data.items[i].volumeInfo.hasOwnProperty('authors')){
+										// author = 'By: ' +  data.items[i].volumeInfo.authors[0];
+									// }
 									temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
 									temphtml += '<div class="d-flex w-100 justify-content-between">';
-									temphtml += '<h5 class="mb-1">' + title + '</h5></div>';
-									temphtml += '<p class="mb-1">' + author + '</p>';
+									temphtml += '<h5 class="mb-1">Ronak</h5></div>';
+									temphtml += '<p class="mb-1">Patel</p>';
 									temphtml += '</a>';
 								}
 							},
