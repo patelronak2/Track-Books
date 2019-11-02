@@ -51,14 +51,20 @@
 			for(var i = 0; i < 5 && i < results['totalItems']; i++){
 				
 				var title = results.items[i].volumeInfo.title;
-				var author = 'By: ' +  results.items[i].volumeInfo.authors[0];
-				var img_link = results.items[i].volumeInfo.imageLinks.smallThumbnail;
+				var author = "";
+				if(results.items[i].volumeInfo.hasOwnProperty('authors')){
+					author = 'By: ' +  results.items[i].volumeInfo.authors[0];
+				}
+				var img_link = '';
+				if(results.items[i].volumeInfo.imageLinks.hasOwnProperty('smallThumbnail')){
+					img_link = results.items[i].volumeInfo.imageLinks.smallThumbnail;
+				}
 				
 				htmlOutput += '<li class="list-group-item">';
 				htmlOutput += '<div>';
 				htmlOutput += '<div class="row no-gutters">';
 				htmlOutput += '<div class="col-auto d-none d-lg-block">';
-				htmlOutput += '<img src="'+ img_link +'" class="img-thumbnail" style="max-height: 90px; max-width: 75px;"></div>';
+				htmlOutput += '<img src="'+ img_link +'" alt="cannot load the image" class="img-thumbnail" style="max-height: 90px; max-width: 75px;"></div>';
 				htmlOutput += '<div class="col-auto">';
 				htmlOutput += '<div class="ml-2"><h5>' + title + '</h5>';
 				htmlOutput += '<p>'+ author +'</p>';

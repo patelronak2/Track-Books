@@ -70,7 +70,7 @@
 							success: function(data){
 								var temphtml = '<div class="list-group">';
 								searchResult = data;
-								for(var i = 0; i < 2 && i < data['totalItems']; i++){
+								for(var i = 0; i < 5 && i < data['totalItems']; i++){
 									var title = data.items[i].volumeInfo.title;
 									var author = "";
 									if(data.items[i].volumeInfo.hasOwnProperty('authors')){
