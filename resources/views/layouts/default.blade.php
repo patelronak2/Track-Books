@@ -82,8 +82,9 @@
 							error: function(){
 								temphtml += '<p class="list-group-item">No Result Found</p>';
 							}
-							alert("End of SWITCH");
+							
 						});
+						alert("End of SWITCH");
 				}
 				temphtml += '</div>';
 				$("#navSearchResults").html(temphtml).removeClass("d-none");
