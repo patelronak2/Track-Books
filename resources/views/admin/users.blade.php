@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="card">
                 <h4 class="card-header">Manage Users</h4>
-
+				
                 <div class="card-body">
 					@if($insertUser)
                         <div class="alert alert-success" role="alert">
@@ -24,7 +24,7 @@
                             {{ $alert }}
                         </div>
                     @endif
-					<div class="text-center mt-1 p-2">
+					<div class="text-center">
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Users </a>
 						<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
 					</div>
@@ -41,7 +41,6 @@
 									<th>Ban</th>
 								  </tr>
 								</thead>
-								<tbody>
 								@foreach ($users as $user)
 								
 								  <tr>
@@ -62,9 +61,7 @@
 								  </tr>								  
 								
 								@endforeach
-							</tbody>
 							</table>
-							
 						@else
 							<h3>No User in the database yet</h3>
 						@endif
