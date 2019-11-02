@@ -56,7 +56,7 @@
 					author = 'By: ' +  results.items[i].volumeInfo.authors[0];
 				}
 				var img_link = '';
-				if(results.items[i].volumeInfo.imageLinks.hasOwnProperty('smallThumbnail')){
+				if(results.items[i].volumeInfo.hasOwnProperty('imageLinks')){
 					img_link = results.items[i].volumeInfo.imageLinks.smallThumbnail;
 				}
 				
@@ -129,7 +129,7 @@
 				}else{
 					publishedDate = "Information not Available"
 				}
-				if(data.items[i].volumeInfo.imageLinks.hasOwnProperty('smallThumbnail')){
+				if(data.items[i].volumeInfo.hasOwnProperty('imageLinks')){
 					imgLink = data.items[i].volumeInfo.imageLinks.smallThumbnail;
 				}
 				
