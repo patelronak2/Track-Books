@@ -31,13 +31,13 @@
 		
 		@media only screen and (max-width: 768px){
 			#navSearchResults{
-			position: absolute; 
-			top: 100px; 
-			width: auto; 
-			height: auto; 
-			z-index: 1;
-			margin-right: 15px;
-		}
+				position: absolute; 
+				top: 100px; 
+				width: auto; 
+				height: auto; 
+				z-index: 1;
+				margin-right: 15px;
+			}
 		}
 	</style>
 	

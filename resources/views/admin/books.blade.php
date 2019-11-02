@@ -23,9 +23,9 @@
 						<a href="/public/addMultipleEntries" class="btn btn-light m-1 p-2">Add Multiple Books </a>
 						<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
 					</div>
-                    <div class="mt-1 text-center">
+                    <div class="mt-1 text-center table-responsive">
 						@if(count($books) > 0)
-							<table class="table table-hover table-responsive">
+							<table class="table table-hover">
 								<thead class="thead-light">
 								  <tr>
 									<th>Book Name</th>
@@ -33,8 +33,8 @@
 									<th>Rating</th>
 									<th>Category</th>
 									<th>Publisher</th>
-									<!--<th>Published Date</th>
-									<th>Delete</th>-->
+									<th>Published Date</th>
+									<th>Delete</th>
 								  </tr>
 								</thead>
 								@foreach ($books as $book)
@@ -44,8 +44,8 @@
 										<td>{{ $book->rating }}</td>
 										<td>{{ $book->category }}</td>
 										<td>{{ $book->publisher }}</td>
-										<!--<td>{{ $book->publishedDate }}</td>
-										<td><a href="/public/deleteBook/{{ $book->id }}" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a></td>-->
+										<td>{{ $book->publishedDate }}</td>
+										<td><a href="/public/deleteBook/{{ $book->id }}" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a></td>
 									</tr>
 								@endforeach
 							</table>

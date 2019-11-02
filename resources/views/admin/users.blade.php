@@ -28,9 +28,9 @@
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Users </a>
 						<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
 					</div>
-                    <div class="mt-1 text-center">
+                    <div class="mt-1 text-center table-responsive">
 						@if(count($users) > 0)
-							<table class="table table-hover table-responsive">
+							<table class="table table-hover">
 								<thead class="thead-light">
 								  <tr>
 									<th>Name</th>
@@ -42,7 +42,6 @@
 								  </tr>
 								</thead>
 								@foreach ($users as $user)
-								
 								  <tr>
 									<td>{{ $user->name }}</td>
 									<td>{{ $user->email }}</td>
@@ -57,9 +56,10 @@
 									<td>
 										<a href="/public/deleteUser/{{ $user->id }}" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a>
 									</td>
-									<td><a href="/public/banUser/{{ $user->id }}" class="text-warning"><i class="fa fa-ban" style="font-size:24px"></i></a></td>
+									<td>
+										<a href="/public/banUser/{{ $user->id }}" class="text-warning"><i class="fa fa-ban" style="font-size:24px"></i></a>
+									</td>
 								  </tr>								  
-								
 								@endforeach
 							</table>
 						@else
