@@ -28,10 +28,21 @@
 				return false;
 			});
 			$("#navSearch").keyup(function(){
-				$("#navSearchResults").removeClass("d-none");
-				//ajax call to controller
-				//get result from google api
-				//figure out a way to search other users as well
+				var temphtml = '<ul class="list-group">';
+				switch(searchBy) {
+				  case "User":
+						temphtml += '<li class="list-group-item">SearchBy User</li>';
+					break;
+				  case "Author":
+						temphtml += '<li class="list-group-item">SearchBy Author</li>';
+					break;
+				  default:
+						//ajax call to controller
+						//get result from google api	
+						temphtml += '<li class="list-group-item">SearchBy Books</li>';
+				}
+				temphtml += '</ul>';
+				$("#navSearchResults").html(temphtml).removeClass("d-none");
 			});
 			
 			$(document).mouseup(function(event){ 
@@ -50,7 +61,7 @@
 			});
 			
 		});
-	</script>
+	</script>								
 </head>
 <body>
     <div id="app">
@@ -82,9 +93,7 @@
 								</div>
 							</form>
 							<div id="navSearchResults" class="d-none" style="position: absolute; top: 50px; width: auto; height: auto;">
-								<ul class="list-group">
-								  <li class="list-group-item">Cras justo odio</li>
-								</ul>
+								
 							</div>
 						</li>
 						
