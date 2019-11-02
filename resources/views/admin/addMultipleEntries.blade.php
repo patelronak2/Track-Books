@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-			<p class="display-4">Add Multiple Books</p>
+			<h2 class="">Add Multiple Books</h2>
 			<div class="text-center">
 				<a href="/public/manageBooks" class="btn btn-light m-1 p-2">All Books</a>
 				<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
@@ -64,7 +64,7 @@
 				htmlOutput += '<div>';
 				htmlOutput += '<div class="row no-gutters">';
 				htmlOutput += '<div class="col-auto d-none d-lg-block">';
-				htmlOutput += '<img src="'+ img_link +'" alt="cannot load the image" class="img-thumbnail" style="max-height: 90px; max-width: 75px;"></div>';
+				htmlOutput += '<img src="'+ img_link +'" alt="image not available" class="img-thumbnail" style="max-height: 90px; max-width: 75px;"></div>';
 				htmlOutput += '<div class="col-auto">';
 				htmlOutput += '<div class="ml-2"><h5>' + title + '</h5>';
 				htmlOutput += '<p>'+ author +'</p>';
