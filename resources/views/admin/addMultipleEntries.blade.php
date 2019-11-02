@@ -96,27 +96,34 @@
 			var j = 0;
 			var flag = true;
 			for (var i = 0; i < 5 && i < data.totalItems; i++){
+				title = data.items[i].volumeInfo.title;
 				
-				
-				if(data.items[i].volumeInfo.title){
-					title = data.items[i].volumeInfo.title;
-				}
 				if(data.items[i].volumeInfo.description){
-					description = data.items[i].volumeInfo.description;
+					description = data.items[i].volumeInfo.hasOwnProperty('description');
+				}else{
+					description = "Information not Available"	
 				}
-				if(data.items[i].volumeInfo.authors){
+				if(data.items[i].volumeInfo.hasOwnProperty('authors')){
 					author = data.items[i].volumeInfo.authors[0];
+				}else{
+					author = "Information not Available"
 				}
-				if(data.items[i].volumeInfo.categories[0]){
+				if(data.items[i].volumeInfo.hasOwnProperty('categories')){
 					category = data.items[i].volumeInfo.categories[0];
+				}else{
+					category = "Information not Available"
 				}
-				if(data.items[i].volumeInfo.publisher){
+				if(data.items[i].volumeInfo.hasOwnProperty('publisher')){
 					publisher = data.items[i].volumeInfo.publisher;
+				}else{
+					publisher = "Information not Available"
 				}
-				if(data.items[i].volumeInfo.publishedDate){
+				if(data.items[i].volumeInfo.hasOwnProperty('publishedDate')){
 					publishedDate = data.items[i].volumeInfo.publishedDate;
+				}else{
+					publishedDate = "Information not Available"
 				}
-				if(data.items[i].volumeInfo.imageLinks.smallThumbnail){
+				if(data.items[i].volumeInfo.imageLinks.hasOwnProperty('smallThumbnail')){
 					imgLink = data.items[i].volumeInfo.imageLinks.smallThumbnail;
 				}
 				

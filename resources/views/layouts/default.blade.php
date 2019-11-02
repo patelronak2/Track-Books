@@ -23,19 +23,22 @@
 	<script>
 		$(document).ready(function(){
 			$("#navSubmit").click(function(){
-				$("#navSearch").val("")
 				return false;
 			});
 			$("#navSearch").keyup(function(){
 				$("#navSearchResults").removeClass("d-none");
+				//ajax call to controller
+				//get result from google api
+				//figure out a way to search other users as well
 			});
 			
-			$(document).mouseup(function(e){ 
+			$(document).mouseup(function(event){ 
 				var container = $("#navSearchResults");
 				// if the target of the click isn't the container nor a descendant of the container
-				if (!container.is(e.target) && container.has(e.target).length === 0) 
+				if (!container.is(event.target) && container.has(event.target).length === 0) 
 				{
 					container.addClass("d-none");
+					container.val("")
 				}
 			});
 		});
