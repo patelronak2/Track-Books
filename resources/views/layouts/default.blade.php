@@ -49,21 +49,26 @@
 				return false;
 			});
 			$("#navSearch").keyup(function(){
-				var temphtml = '<div class="list-group">';
+				
 				switch(searchBy) {
 				  case "User":
+						var temphtml = '<div class="list-group">';
 						temphtml += '<a class="list-group-item" href="">SearchBy UserSearchBy UserSearchBy User</a>';
+						temphtml += '</div>';
+						$("#navSearchResults").html(temphtml).removeClass("d-none");
 					break;
 				  case "Author":
+						var temphtml = '<div class="list-group">';
 						temphtml += '<a class="list-group-item" href="">SearchBy Author</a>';
+						temphtml += '</div>';
+						$("#navSearchResults").html(temphtml).removeClass("d-none");
 					break;
 				  default:	
 						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + $("#navSearch").val();
-						alert(searchURL);
 						$.ajax({
 							url: searchURL,
 							success: function(data){
-								alert(data);
+								var temphtml = '<div class="list-group">';
 								searchResult = data;
 								for(var i = 0; i < 2 && i < data['totalItems']; i++){
 									var title = data.items[i].volumeInfo.title;
@@ -76,18 +81,16 @@
 									temphtml += '<h5 class="mb-1">' + title + '</h5></div>';
 									temphtml += '<p class="mb-1">' + author + '</p>';
 									temphtml += '</a>';
-									alert(temphtml);
 								}
+								temphtml += '</div>';
+								$("#navSearchResults").html(temphtml).removeClass("d-none");
 							},
 							error: function(){
 								temphtml += '<p class="list-group-item">No Result Found</p>';
 							}
-							
 						});
-						alert("End of SWITCH");
 				}
-				temphtml += '</div>';
-				$("#navSearchResults").html(temphtml).removeClass("d-none");
+				
 			});
 			
 			$(document).mouseup(function(event){ 
