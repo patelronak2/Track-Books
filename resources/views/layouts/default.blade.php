@@ -22,6 +22,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
 	<script>
 		$(document).ready(function(){
+			var searchBy = "Books";
+			
 			$("#navSubmit").click(function(){
 				return false;
 			});
@@ -39,8 +41,14 @@
 				{
 					container.addClass("d-none");
 					container.val("")
+					$("#navSearch").val("");
 				}
 			});
+			
+			$("#searchCategory").change(function(){
+				searchBy = $(this).children("option:selected").val();
+			});
+			
 		});
 	</script>
 </head>
@@ -60,17 +68,32 @@
                     <ul class="navbar-nav mr-auto">
 						
 						<li class="nav-item">
+							<div class="input-group mt-3 mb-3">
+							  <div class="input-group-prepend">
+								<select class="form-control btn btn-outline-secondary" id="sel1">
+								  <option>Books</option>
+								  <option>User</option>
+								  <option>Author</option>
+								</select>
+							  </div>
+							  <input type="search" class="form-control" placeholder="Username">
+							</div>
 							<form class="form-inline my-2 my-md-0">
-								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="navSearch">
-								<button class="sr-only" id="navSubmit" type="submit">Search</button>
+								<div class="input-group mt-3 mb-3">
+								  <div class="input-group-prepend">
+									<select id="searchCategory" class="form-control btn btn-outline-secondary">
+										<option>Books</option>
+										<option>User</option>
+										<option>Author</option>
+									</select>
+								  </div>
+								  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="navSearch">
+								  <button class="sr-only" id="navSubmit" type="submit">Search</button>
+								</div>
 							</form>
 							<div id="navSearchResults" class="d-none" style="position: absolute; top: 50px; width: auto; height: auto;">
 								<ul class="list-group">
 								  <li class="list-group-item">Cras justo odio</li>
-								  <li class="list-group-item">Dapibus ac facilisis in</li>
-								  <li class="list-group-item">Morbi leo risus</li>
-								  <li class="list-group-item">Porta ac consectetur ac</li>
-								  <li class="list-group-item">Vestibulum at eros</li>
 								</ul>
 							</div>
 						</li>
