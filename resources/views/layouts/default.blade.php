@@ -65,11 +65,11 @@
 							success: function(data){
 								alert(data);
 								searchResult = data;
-								for(var i = 0; i < 5 && i < searchResult['totalItems']; i++){
-									var title = searchResult.items[i].volumeInfo.title;
+								for(var i = 0; i < 5 && i < data['totalItems']; i++){
+									var title = data.items[i].volumeInfo.title;
 									var author = "";
-									if(searchResult.items[i].volumeInfo.hasOwnProperty('authors')){
-										author = 'By: ' +  searchResult.items[i].volumeInfo.authors[0];
+									if(data.items[i].volumeInfo.hasOwnProperty('authors')){
+										author = 'By: ' +  data.items[i].volumeInfo.authors[0];
 									}
 									temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
 									temphtml += '<div class="d-flex w-100 justify-content-between">';
