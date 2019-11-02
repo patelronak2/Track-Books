@@ -68,16 +68,6 @@
                     <ul class="navbar-nav mr-auto">
 						
 						<li class="nav-item">
-							<div class="input-group mt-3 mb-3">
-							  <div class="input-group-prepend">
-								<select class="form-control btn btn-outline-secondary" id="sel1">
-								  <option>Books</option>
-								  <option>User</option>
-								  <option>Author</option>
-								</select>
-							  </div>
-							  <input type="search" class="form-control" placeholder="Username">
-							</div>
 							<form class="form-inline my-2 my-md-0">
 								<div class="input-group mt-3 mb-3">
 								  <div class="input-group-prepend">
