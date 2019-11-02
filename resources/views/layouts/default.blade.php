@@ -20,6 +20,27 @@
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+	
+	<style type="text/css">
+		#navSearchResults{
+			position: absolute; 
+			top: 50px; 
+			width: auto; 
+			height: auto;
+		}
+		
+		@media only screen and (min-width: 768px){
+			#navSearchResults{
+			position: absolute; 
+			top: 100px; 
+			width: auto; 
+			height: auto; 
+			z-index: 1;
+			margin-right: 15px;
+		}
+		}
+	</style>
+	
 	<script>
 		$(document).ready(function(){
 			var searchBy = "Books";
@@ -31,7 +52,7 @@
 				var temphtml = '<ul class="list-group">';
 				switch(searchBy) {
 				  case "User":
-						temphtml += '<li class="list-group-item">SearchBy User</li>';
+						temphtml += '<li class="list-group-item">SearchBy UserSearchBy UserSearchBy User</li><li class="list-group-item">SearchBy User</li><li class="list-group-item">SearchBy User</li>';
 					break;
 				  case "Author":
 						temphtml += '<li class="list-group-item">SearchBy Author</li>';
@@ -39,7 +60,7 @@
 				  default:
 						//ajax call to controller
 						//get result from google api	
-						temphtml += '<li class="list-group-item">SearchBy Books</li>';
+						temphtml += '<li class="list-group-item">SearchBy Books</li><li class="list-group-item">SearchBy Books</li>';
 				}
 				temphtml += '</ul>';
 				$("#navSearchResults").html(temphtml).removeClass("d-none");
@@ -80,7 +101,7 @@
 						
 						<li class="nav-item">
 							<form class="form-inline my-2 my-md-0">
-								<div class="input-group mt-3 mb-3">
+								<div class="input-group">
 								  <div class="input-group-prepend">
 									<select id="searchCategory" class="form-control btn btn-outline-secondary">
 										<option>Books</option>
@@ -92,7 +113,7 @@
 								  <button class="sr-only" id="navSubmit" type="submit">Search</button>
 								</div>
 							</form>
-							<div id="navSearchResults" class="d-none" style="position: absolute; top: 50px; width: auto; height: auto;">
+							<div id="navSearchResults" class="d-none">
 								
 							</div>
 						</li>
