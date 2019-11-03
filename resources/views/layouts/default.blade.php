@@ -178,7 +178,7 @@
 					$.ajax({
 						url: '/public/test',
 						type: 'POST',
-						data: {_token: CSRF_TOKEN, title: title},
+						data: {_token: CSRF_TOKEN, title: title, description: description, author: author, category: category, publisher: publisher, publishedDate: publishedDate, imgLink: imgLink},
 						success: function(data){
 							alert(data);
 							
