@@ -245,7 +245,7 @@ class AdminController extends Controller
 		 $books = Book::all();
 		 foreach ($books as $book){
 			if($book->title == $request->input('title')){
-				return $book->author;	
+				return $book->id;	
 			} 
 		}
 		 

@@ -141,6 +141,40 @@
 					$("#navSearch").val("");
 	
 					var title = searchResult.items[clickedId].volumeInfo.title;
+					var description = "";
+					var author = "";
+					var category = "";
+					var publisher = "";
+					var publishedDate = "";
+					var imgLink = "";
+					if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('description')){
+					description = searchResult.items[clickedId].volumeInfo.description;
+					}else{
+						description = "Information not Available"	
+					}
+					if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('authors')){
+						author = searchResult.items[clickedId].volumeInfo.authors[0];
+					}else{
+						author = "Information not Available"
+					}
+					if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('categories')){
+						category = searchResult.items[clickedId].volumeInfo.categories[0];
+					}else{
+						category = "Information not Available"
+					}
+					if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('publisher')){
+						publisher = searchResult.items[clickedId].volumeInfo.publisher;
+					}else{
+						publisher = "Information not Available"
+					}
+					if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('publishedDate')){
+						publishedDate = searchResult.items[clickedId].volumeInfo.publishedDate;
+					}else{
+						publishedDate = "Information not Available"
+					}
+					if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('imageLinks')){
+						imgLink = searchResult.items[clickedId].volumeInfo.imageLinks.smallThumbnail;
+					}
 					$.ajax({
 						url: '/public/test',
 						type: 'POST',
