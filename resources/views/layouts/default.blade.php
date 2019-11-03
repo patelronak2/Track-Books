@@ -92,9 +92,9 @@
 				
 			});
 			$('.list-group').on('click', 'a', function() {
-				alert("You clicked");
+				alert($(this).find('div').val());
 			});
-				// alert($(this).find('div').val());$(this).text()
+				// $(this).text()
 				// alert($(this).find('p').val());
 			//Remove the search results
 			$(document).mouseup(function(event){ 
