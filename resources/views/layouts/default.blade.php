@@ -101,11 +101,12 @@
 				
 			});
 			
-			$("modalMoreInfo").on("click",function(){
+			$("modalMoreInfo").click(function(){
 					var container = $("#navSearchResults");
 					container.addClass("d-none");
 					container.val("")
 					$("#navSearch").val("");
+					$('#bookModal').modal('show');
 					
 			});
 				
@@ -119,7 +120,7 @@
 					container.addClass("d-none");
 					container.val("")
 					$("#navSearch").val("");
-					$('#bookModal').modal('hide');
+					
 				}
 			});
 			
