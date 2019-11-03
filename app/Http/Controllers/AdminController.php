@@ -242,8 +242,12 @@ class AdminController extends Controller
 			 $book->save();
 		}
 		 //return $request->input('title');
-		 $book = Book::where('title', $request->input('title'))->get();
-		 return $book->id;
+		 $books = Book::all();
+		 foreach ($books as $book){
+			if($book->title == $request->input('title')){
+				return $book->author;	
+			} 
+		}
 		 
 	 }
 	
