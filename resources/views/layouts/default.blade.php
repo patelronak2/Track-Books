@@ -92,15 +92,38 @@
 				}
 				
 			});
+			
+			//Enter information in modal and show it
 			$('.list-group').on('click', 'a', function() {
-				
 				var i = parseInt($(this).find('#index').text());
 				$('#bookTitle').html(searchResult.items[i].volumeInfo.title);
+				$('#modalBookID').html(i);
+				var img_Link = "";
+				if(searchResult.items[i].volumeInfo.hasOwnProperty('imageLinks')){
+					img_Link = searchResult.items[i].volumeInfo.imageLinks.smallThumbnail;
+				}
+				var author = "";
+				if(searchResult.items[i].volumeInfo.hasOwnProperty('authors')){
+					author = 'Author: ' +  searchResult.items[i].volumeInfo.authors[0];
+				}else{
+					author = 'Author name not available';
+				}
+				var description = "";
+				if(searchResult.items[i].volumeInfo.hasOwnProperty('description')){
+					description = searchResult.items[i].volumeInfo.description;
+				}else{
+					description = 'Description Not Available';
+				}
+				var temphtml = '<img src="'+ img_Link +'" class="card-img" alt="Image Not Available">';
+				$('#modalImage').html(temphtml);
+				$('#modalAuthorName').html(author);
+				$('#modalBookDescription').html(description);
 				$('#bookModal').modal('show');
 				
 				
 			});
 			
+
 			$("#modalMoreInfo").click(function(){
 					var container = $("#navSearchResults");
 					container.addClass("d-none");
@@ -217,7 +240,20 @@
 				</button>
 			  </div>
 			  <div class="modal-body">
-				Image on left and Author Name Description on right
+				<div class="card mb-3" style="max-width: 540px;">
+				  <div class="row no-gutters">
+					<div class="col-md-4" id="modalImage">	
+					  <!--<img src="" class="card-img" alt="..."> -->
+					</div>
+					<div class="col-md-8">
+					  <div class="card-body" >
+						 <h5 class="card-title" id="modalAuthorName"></h5>
+						 <p class="card-text" id="modalBookDescription"></p>
+						 <p class="sr-only" id="modalBookID"></p>
+					  </div>
+					</div>
+				  </div>
+				</div>
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
