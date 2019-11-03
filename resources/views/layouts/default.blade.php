@@ -92,7 +92,7 @@
 				
 			});
 			$('.list-group').on('click', 'a', function() {
-				alert($(this).text());
+				alert($(this).find('h5').val());
 			});
 				// $(this).text()
 				// alert($(this).find('p').val());
