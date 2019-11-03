@@ -93,10 +93,13 @@
 				
 			});
 			$('.list-group').on('click', 'a', function() {
-				alert($(this).find('#index').text());
+				$('#bookTitle').html($(this).find('h4').text());
+				var i = parseInt($(this).find('#index').text());
+				$('#bookModal').modal('show');
+				
+				
 			});
-				// $(this).text()
-				// alert($(this).find('p').val());
+				
 			//Remove the search results
 			$(document).mouseup(function(event){ 
 				var container = $("#navSearchResults");
@@ -191,7 +194,26 @@
                 </div>
             </div>
         </nav>
-
+		<!-- Modal to show Book Details -->
+		<div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="bookTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title" id="bookTitle"></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-body">
+				Image on left and Author Name Description on right
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">More Info</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
         <main class="py-4" style="margin-top: 80px;">
             @yield('content')
         </main>
