@@ -83,6 +83,7 @@
 									temphtml += '<div class="d-flex w-100 justify-content-between">';
 									temphtml += '<h5 class="mb-1">' + title + '</h5></div>';
 									temphtml += '<p class="mb-1">' + author + '</p>';
+									temphtml += '<p class="sr-only" id="index">' + i + '</p>';
 									temphtml += '</a>';
 								}
 								$("#navSearchResults").html(temphtml).removeClass("d-none");
@@ -92,7 +93,7 @@
 				
 			});
 			$('.list-group').on('click', 'a', function() {
-				alert($(this).find('h5').text());
+				alert($(this).find('#index').text());
 			});
 				// $(this).text()
 				// alert($(this).find('p').val());
