@@ -2,6 +2,7 @@
 //Created by Ronak Patel
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
 use App\User;
 use App\Book;
@@ -223,16 +224,16 @@ class AdminController extends Controller
 	 public function test(Request $request)
 	 {
 				
-		// $validator = Validator::make($request->all(), [
-            // 'title' => ['required', 'unique:books'],
-        // ]);
+		$validator = Validator::make($request->all(), [
+            'title' => ['required', 'unique:books'],
+        ]);
 
-        // if ($validator->fails()) {
-            // return "Book Already Exist in the database"
-        // }else{
-			// return "Book Inserted"
-		// }
-		 return $request->input('title');
+        if ($validator->fails()) {
+            return "Book Already Exist in the database"
+        }else{
+			return "Book Inserted"
+		}
+		 //return $request->input('title');
 		 // $book = new Book;
 		 // $book->title = $request->input('title');
 		 // $book->description = $request->input('description');
