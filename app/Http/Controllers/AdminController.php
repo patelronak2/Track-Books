@@ -242,8 +242,8 @@ class AdminController extends Controller
 			 $book->save();
 		}
 		 //return $request->input('title');
-		 $book = Book::where('title', $request->input('title'))->get();
-		 return $book->id;
+		 $book = Book::all();
+		 return sizeof($book);
 		 
 	 }
 	
