@@ -225,14 +225,12 @@ class AdminController extends Controller
 	 {
 				
 		$validator = Validator::make($request->all(), [
-            'title' => ['required', 'unique:books'],
+            'title' => 'required|unique:books',
         ]);
 
         if ($validator->fails()) {
-            return "Book Already Exist in the database"
-        }else{
-			return "Book Inserted"
-		}
+            return "Already in the database";
+        }
 		 //return $request->input('title');
 		 // $book = new Book;
 		 // $book->title = $request->input('title');
