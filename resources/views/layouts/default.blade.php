@@ -103,21 +103,14 @@
 				
 			//Remove the search results
 			$(document).mouseup(function(event){ 
-				// var container = $("#navSearchResults");
-				// // if the target of the click isn't the container nor a descendant of the container
-				// if (!container.is(event.target) && container.has(event.target).length === 0) 
-				// {
-					// container.addClass("d-none");
-					// container.val("")
-					// $("#navSearch").val("");
-				// }
-				$("#navSearchResults, #bookModal").each(function(){
-					if (!$(this).is(event.target) && $(this).has(event.target).length === 0){
-						$(this).addClass("d-none");
-						$(this).val("")
-						$("#navSearch").val("");
-					}
-				});
+				var container = $("#navSearchResults");
+				// if the target of the click isn't the container nor a descendant of the container
+				if (!container.is(event.target) && container.has(event.target).length === 0) 
+				{
+					container.addClass("d-none");
+					container.val("")
+					$("#navSearch").val("");
+				}
 			});
 			
 			$("#searchCategory").change(function(){
