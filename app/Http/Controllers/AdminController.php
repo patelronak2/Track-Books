@@ -229,20 +229,22 @@ class AdminController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return "Already in the database";
+            
         }else{
-			return "Book Inserted";
+			 $book = new Book;
+			 $book->title = $request->input('title');
+			 $book->description = $request->input('description');
+			 $book->author = $request->input('author');
+			 $book->category = $request->input('category');
+			 $book->publisher = $request->input('publisher');
+			 $book->publishedDate = $request->input('publishedDate');
+			 $book->img_link = $request->input('imgLink');
+			 $book->save();
 		}
 		 //return $request->input('title');
-		 // $book = new Book;
-		 // $book->title = $request->input('title');
-		 // $book->description = $request->input('description');
-		 // $book->author = $request->input('author');
-		 // $book->category = $request->input('category');
-		 // $book->publisher = $request->input('publisher');
-		 // $book->publishedDate = $request->input('publishedDate');
-		 // $book->img_link = $request->input('imgLink');
-		 // $book->save();
+		 $book = Book::where('title', $request->input('title'))->get();
+		 return $book->id;
+		 
 	 }
 	
 	
