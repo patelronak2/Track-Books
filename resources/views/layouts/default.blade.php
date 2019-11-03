@@ -93,8 +93,9 @@
 				
 			});
 			$('.list-group').on('click', 'a', function() {
-				$('#bookTitle').html($(this).find('h4').text());
+				
 				var i = parseInt($(this).find('#index').text());
+				$('#bookTitle').html(searchResult.items[i].volumeInfo.title);
 				$('#bookModal').modal('show');
 				
 				
