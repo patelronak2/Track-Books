@@ -46,6 +46,7 @@
 		$(document).ready(function(){
 			var searchBy = "Books";
 			var searchResult = "";
+			var clickedId = -1;
 			$("#navSubmit").click(function(){
 				return false;
 			});
@@ -95,28 +96,28 @@
 			
 			//Enter information in modal and show it
 			$('.list-group').on('click', 'a', function() {
-				var i = parseInt($(this).find('#index').text());
-				$('#bookTitle').html(searchResult.items[i].volumeInfo.title);
-				$('#modalBookID').html(i);
+				clickedId = parseInt($(this).find('#index').text());
+				$('#bookTitle').html(searchResult.items[clickedId].volumeInfo.title);
+				$('#modalBookID').html(clickedId);
 				var img_Link = "";
-				if(searchResult.items[i].volumeInfo.hasOwnProperty('imageLinks')){
-					img_Link = searchResult.items[i].volumeInfo.imageLinks.smallThumbnail;
+				if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('imageLinks')){
+					img_Link = searchResult.items[clickedId].volumeInfo.imageLinks.smallThumbnail;
 				}
 				var author = "";
-				if(searchResult.items[i].volumeInfo.hasOwnProperty('authors')){
-					author = 'Author: ' +  searchResult.items[i].volumeInfo.authors[0];
+				if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('authors')){
+					author = 'Author: ' +  searchResult.items[clickedId].volumeInfo.authors[0];
 				}else{
 					author = 'Author name not available';
 				}
 				var publisher = "";
-				if(searchResult.items[i].volumeInfo.hasOwnProperty('publisher')){
-					publisher = 'Publisher: ' + searchResult.items[i].volumeInfo.publisher;
+				if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('publisher')){
+					publisher = 'Publisher: ' + searchResult.items[clickedId].volumeInfo.publisher;
 				}else{
 					publisher = 'Publisher Information Not Available';
 				}
 				var publishedDate = ""
-				if(searchResult.items[i].volumeInfo.hasOwnProperty('publishedDate')){
-					publishedDate = 'Published Date: ' + searchResult.items[i].volumeInfo.publishedDate;
+				if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('publishedDate')){
+					publishedDate = 'Published Date: ' + searchResult.items[clickedId].volumeInfo.publishedDate;
 				}else{
 					publishedDate = "Published Date not Available"
 				}
@@ -138,9 +139,8 @@
 					container.addClass("d-none");
 					container.val("")
 					$("#navSearch").val("");
-					
-					var index = $("#modalBookID").val();
-					var title = searchResult.items[index].volumeInfo.title;
+	
+					var title = searchResult.items[clickedId].volumeInfo.title;
 					$.ajax({
 						url: '/public/test',
 						type: 'POST',
