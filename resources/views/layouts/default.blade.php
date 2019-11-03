@@ -49,6 +49,11 @@
 			$("#navSubmit").click(function(){
 				return false;
 			});
+			
+			$(".list-group a").click(function(){
+				alert("You clicked")
+			  });
+  
 			$("#navSearch").keyup(function(){
 				
 				switch(searchBy) {
@@ -85,21 +90,14 @@
 								}
 								temphtml += '</div>';
 								$("#navSearchResults").html(temphtml).removeClass("d-none");
-							},
-							error: function(){
-								temphtml += '<p class="list-group-item">No Result Found</p>';
 							}
 						});
 				}
 				
 			});
 			
-			$(".list-group a").click(function(){
 				// alert($(this).find('div').val());
 				// alert($(this).find('p').val());
-				alert("You clicked");
-			});
-			
 			//Remove the search results
 			$(document).mouseup(function(event){ 
 				var container = $("#navSearchResults");
