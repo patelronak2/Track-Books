@@ -231,7 +231,7 @@
         </nav>
 		<!-- Modal to show Book Details -->
 		<div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="bookTitle" aria-hidden="true">
-		  <div class="modal-dialog modal-dialog-scrollable" role="document">
+		  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
 			<div class="modal-content">
 			  <div class="modal-header">
 				<h5 class="modal-title" id="bookTitle"></h5>
@@ -243,7 +243,7 @@
 				<div class="card mb-3" style="max-width: 540px;">
 				  <div class="row no-gutters">
 					<div class="col-md-4" id="modalImage">	
-					  <!--<img src="" class="card-img" alt="..."> -->
+					  
 					</div>
 					<div class="col-md-8">
 					  <div class="card-body" >
