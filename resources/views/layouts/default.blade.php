@@ -180,11 +180,10 @@
 						type: 'POST',
 						data: {_token: CSRF_TOKEN, title: title, description: description, author: author, category: category, publisher: publisher, publishedDate: publishedDate, imgLink: imgLink},
 						success: function(data){
-							alert(data);
-							
+														
 						},
 						error: function(error){
-							alert("request Failed");
+							
 						}
 					});
 					
@@ -316,7 +315,7 @@
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary" id="modalMoreInfo">More Info</button>
+				<a href="" class="btn btn-primary" id="modalMoreInfo">More Info</a>
 			  </div>
 			</div>
 		  </div>
