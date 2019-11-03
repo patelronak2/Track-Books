@@ -50,9 +50,6 @@
 				return false;
 			});
 			
-			$(".list-group a").click(function(){
-				alert("You clicked")
-			  });
   
 			$("#navSearch").keyup(function(){
 				
@@ -64,7 +61,7 @@
 						$("#navSearchResults").html(temphtml).removeClass("d-none");
 					break;
 				  case "Author":
-						var temphtml = '<div class="list-group">';
+						var temphtml = '';
 						temphtml += '<a class="list-group-item" href="">SearchBy Author</a>';
 						temphtml += '</div>';
 						$("#navSearchResults").html(temphtml).removeClass("d-none");
@@ -88,15 +85,16 @@
 									temphtml += '<p class="mb-1">' + author + '</p>';
 									temphtml += '</a>';
 								}
-								temphtml += '</div>';
 								$("#navSearchResults").html(temphtml).removeClass("d-none");
 							}
 						});
 				}
 				
 			});
-			
-				// alert($(this).find('div').val());
+			$('.list-group').on('click', 'a', function() {
+				alert("You clicked");
+			});
+				// alert($(this).find('div').val());$(this).text()
 				// alert($(this).find('p').val());
 			//Remove the search results
 			$(document).mouseup(function(event){ 
@@ -146,7 +144,7 @@
 								  <button class="sr-only" id="navSubmit" type="submit">Search</button>
 								</div>
 							</form>
-							<div id="navSearchResults" class="d-none">
+							<div id="navSearchResults" class="d-none list-group">
 							</div>
 						</li>
 						
