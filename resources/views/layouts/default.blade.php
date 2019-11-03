@@ -115,8 +115,8 @@
 					publisher = 'publisher information Not Available';
 				}
 				var publishedDate = ""
-				if(data.items[i].volumeInfo.hasOwnProperty('publishedDate')){
-					publishedDate = data.items[i].volumeInfo.publishedDate;
+				if(searchResult.items[i].volumeInfo.hasOwnProperty('publishedDate')){
+					publishedDate = searchResult.items[i].volumeInfo.publishedDate;
 				}else{
 					publishedDate = "Published Date not Available"
 				}
