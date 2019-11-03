@@ -133,26 +133,28 @@
 
 			$("#modalMoreInfo").click(function(){
 					var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+					//hiding search results and clearing the form
 					var container = $("#navSearchResults");
 					container.addClass("d-none");
 					container.val("")
 					$("#navSearch").val("");
-					$('#bookModal').modal('hide');
-					//Ajax POSt call here
-					//Define a route from here to handle opening a bookProfile page
-					//Add the clicked book to the database if already not exist in the database
+					
+					var index = $("#modalBookID").val();
+					var title = searchResult.items[index].volumeInfo.title;
 					$.ajax({
 						url: '/public/test',
 						type: 'POST',
-						data: {_token: CSRF_TOKEN},
+						data: {_token: CSRF_TOKEN, title: title},
 						success: function(data){
-							alert("Request Success");		
+							alert(data);
+							
 						},
 						error: function(error){
-							alert("Request Failed");
+							alert("request Failed");
 						}
 					});
 					
+					$('#bookModal').modal('hide');
 			});
 				
 			//Remove the search results

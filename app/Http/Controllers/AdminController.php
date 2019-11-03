@@ -219,6 +219,30 @@ class AdminController extends Controller
 		 $book->img_link = $request->input('imgLink');
 		 $book->save();
 	 }
+	 
+	 public function test(Request $request)
+	 {
+				
+		$validator = Validator::make($request->all(), [
+            'title' => ['required', 'unique:books'],
+        ]);
+
+        if ($validator->fails()) {
+            return "Book Already Exist in the database"
+        }else{
+			return "Book Inserted"
+		}
+		 
+		 // $book = new Book;
+		 // $book->title = $request->input('title');
+		 // $book->description = $request->input('description');
+		 // $book->author = $request->input('author');
+		 // $book->category = $request->input('category');
+		 // $book->publisher = $request->input('publisher');
+		 // $book->publishedDate = $request->input('publishedDate');
+		 // $book->img_link = $request->input('imgLink');
+		 // $book->save();
+	 }
 	
 	
 }
