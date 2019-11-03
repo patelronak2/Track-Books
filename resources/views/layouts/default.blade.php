@@ -108,16 +108,23 @@
 				}else{
 					author = 'Author name not available';
 				}
-				var description = "";
-				if(searchResult.items[i].volumeInfo.hasOwnProperty('description')){
-					description = searchResult.items[i].volumeInfo.description;
+				var publisher = "";
+				if(searchResult.items[i].volumeInfo.hasOwnProperty('publisher')){
+					publisher = searchResult.items[i].volumeInfo.publisher;
 				}else{
-					description = 'Description Not Available';
+					publisher = 'publisher information Not Available';
+				}
+				var publishedDate = ""
+				if(data.items[i].volumeInfo.hasOwnProperty('publishedDate')){
+					publishedDate = data.items[i].volumeInfo.publishedDate;
+				}else{
+					publishedDate = "Published Date not Available"
 				}
 				var temphtml = '<img src="'+ img_Link +'" class="card-img" alt="Image Not Available">';
 				$('#modalImage').html(temphtml);
 				$('#modalAuthorName').html(author);
-				$('#modalBookDescription').html(description);
+				$('#modalBookPublisher').html(publisher);
+				$('#modalBookPublishedDate').html(publishedDate);
 				$('#bookModal').modal('show');
 				
 				
@@ -248,7 +255,8 @@
 					<div class="col-md-8">
 					  <div class="card-body" >
 						 <h5 class="card-title" id="modalAuthorName"></h5>
-						 <p class="card-text" id="modalBookDescription"></p>
+						 <p class="card-text" id="modalBookPublisher"></p>
+						 <p class="card-text" id="modalBookPublishedDate"></p>
 						 <p class="sr-only" id="modalBookID"></p>
 					  </div>
 					</div>
