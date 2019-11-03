@@ -230,7 +230,9 @@ class AdminController extends Controller
 
         if ($validator->fails()) {
             return "Already in the database";
-        }
+        }else{
+			return "Book Inserted";
+		}
 		 //return $request->input('title');
 		 // $book = new Book;
 		 // $book->title = $request->input('title');
