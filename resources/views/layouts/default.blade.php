@@ -103,22 +103,15 @@
 				
 			//Remove the search results
 			$(document).mouseup(function(event){ 
-				// var container = $("#navSearchResults");
-				// var container1 = $("#bookModal");
-				// // if the target of the click isn't the container nor a descendant of the container
-				// if (!container.is(event.target) && container.has(event.target).length === 0 && !container1.is(event.target) && container1.has(event.target).length === 0) 
-				// {
-					// container.addClass("d-none");
-					// container.val("")
-					// $("#navSearch").val("");
-				// }
-				$("#navSearchResults, #bookModal").each(function(){
-					if (!$(this).is(event.target) && $(this).has(event.target).length === 0){
-						$("#navSearchResults").addClass("d-none");
-						$("#navSearchResults").val("")
-						$("#navSearch").val("");
-					}
-				});
+				var container = $("#navSearchResults");
+				var container1 = $("#bookModal");
+				// if the target of the click isn't the container nor a descendant of the container
+				if (!container.is(event.target) && container.has(event.target).length === 0 && !container1.is(event.target) && container1.has(event.target).length === 0) 
+				{
+					container.addClass("d-none");
+					container.val("")
+					$("#navSearch").val("");
+				}
 			});
 			
 			$("#searchCategory").change(function(){
