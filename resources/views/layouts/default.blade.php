@@ -110,13 +110,13 @@
 				}
 				var publisher = "";
 				if(searchResult.items[i].volumeInfo.hasOwnProperty('publisher')){
-					publisher = searchResult.items[i].volumeInfo.publisher;
+					publisher = 'Publisher: ' + searchResult.items[i].volumeInfo.publisher;
 				}else{
 					publisher = 'publisher information Not Available';
 				}
 				var publishedDate = ""
 				if(searchResult.items[i].volumeInfo.hasOwnProperty('publishedDate')){
-					publishedDate = searchResult.items[i].volumeInfo.publishedDate;
+					publishedDate = 'published Date: ' + searchResult.items[i].volumeInfo.publishedDate;
 				}else{
 					publishedDate = "Published Date not Available"
 				}
