@@ -35,3 +35,4 @@ Route::get('/deleteBook/{id}','AdminController@deleteBook');
 Route::get('/addMultipleEntries','AdminController@addMultipleEntries');
 Route::post('/insertMultipleBooks', 'AdminController@insertMultipleBooks');
 Route::post('/ajaxBookInsert', 'AdminController@ajaxBookInsert');
+Route::post('/test', 'User@index');

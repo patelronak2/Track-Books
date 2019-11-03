@@ -112,11 +112,11 @@
 				if(searchResult.items[i].volumeInfo.hasOwnProperty('publisher')){
 					publisher = 'Publisher: ' + searchResult.items[i].volumeInfo.publisher;
 				}else{
-					publisher = 'publisher information Not Available';
+					publisher = 'Publisher Information Not Available';
 				}
 				var publishedDate = ""
 				if(searchResult.items[i].volumeInfo.hasOwnProperty('publishedDate')){
-					publishedDate = 'published Date: ' + searchResult.items[i].volumeInfo.publishedDate;
+					publishedDate = 'Published Date: ' + searchResult.items[i].volumeInfo.publishedDate;
 				}else{
 					publishedDate = "Published Date not Available"
 				}
@@ -132,11 +132,26 @@
 			
 
 			$("#modalMoreInfo").click(function(){
+					var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 					var container = $("#navSearchResults");
 					container.addClass("d-none");
 					container.val("")
 					$("#navSearch").val("");
 					$('#bookModal').modal('hide');
+					//Ajax POSt call here
+					//Define a route from here to handle opening a bookProfile page
+					//Add the clicked book to the database if already not exist in the database
+					$.ajax({
+						url: '/public/test',
+						type: 'POST',
+						data: {_token: CSRF_TOKEN},
+						success: function(data){
+							alert("Request Success");		
+						},
+						error: function(error){
+							alert("Request Failed");
+						}
+					});
 					
 			});
 				
