@@ -106,7 +106,7 @@
 					container.addClass("d-none");
 					container.val("")
 					$("#navSearch").val("");
-					$('#bookModal').modal('show');
+					$('#bookModal').modal('hide');
 					
 			});
 				
