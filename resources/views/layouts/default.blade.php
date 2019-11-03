@@ -95,8 +95,9 @@
 			});
 			
 			$(".list-group a").click(function(){
-				alert($(this).find('div').val());
-				alert($(this).find('p').val());
+				// alert($(this).find('div').val());
+				// alert($(this).find('p').val());
+				alert("You clicked");
 			});
 			
 			//Remove the search results
@@ -153,7 +154,7 @@
 						
 						<li class="nav-item dropdown">
 							<a id="notifications" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-								Notifications<span class="badge badge-danger ml-l">4</span>Notifications
+								<span class="badge badge-danger ml-2">4</span>Notifications
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="notifications">
