@@ -100,6 +100,14 @@
 				
 				
 			});
+			
+			$("modalMoreInfo").on("click",function(){
+					var container = $("#navSearchResults");
+					container.addClass("d-none");
+					container.val("")
+					$("#navSearch").val("");
+					
+			});
 				
 			//Remove the search results
 			$(document).mouseup(function(event){ 
@@ -111,6 +119,7 @@
 					container.addClass("d-none");
 					container.val("")
 					$("#navSearch").val("");
+					$('#bookModal').modal('hide');
 				}
 			});
 			
@@ -211,7 +220,7 @@
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">More Info</button>
+				<button type="button" class="btn btn-primary" id="modalMoreInfo">More Info</button>
 			  </div>
 			</div>
 		  </div>
