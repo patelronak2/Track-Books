@@ -180,7 +180,7 @@
 						type: 'POST',
 						data: {_token: CSRF_TOKEN, title: title, description: description, author: author, category: category, publisher: publisher, publishedDate: publishedDate, imgLink: imgLink},
 						success: function(data){
-							$("#bookID").val(data);							
+							location.href = "/public/showBook/" + data;							
 						},
 						error: function(error){
 							
@@ -315,11 +315,7 @@
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<form method="POST" action="/public/showBook">
-				@csrf
-				<input type="hidden" value="" id="bookID" name="bookID"/>
 				<button type="button" class="btn btn-primary" id="modalMoreInfo">More Info</button>
-				</form>
 			  </div>
 			</div>
 		  </div>
