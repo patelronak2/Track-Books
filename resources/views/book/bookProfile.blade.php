@@ -64,7 +64,7 @@ $(document).ready(function(){
 		var id = $("#bookID").text();
 		var review = $("#review").val();
 		var userID = $("#userID").text();
-		alert(userID);
+		
 		$.ajax({
 			url: '/public/addReview',
 			type: 'POST',
