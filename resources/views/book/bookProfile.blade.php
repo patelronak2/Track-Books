@@ -57,7 +57,7 @@
 								</div>
 								<div class="col-md-2 text-center my-auto">
 									@if(Auth::id() == $review->user_id || Auth::user()->type == 'admin')
-										<a href="#" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a>
+										<a href="#" class="text-danger" id="deleteReview"><i class="fa fa-trash" style="font-size:24px"></i></a>
 									@endif
 								</div>
 							</div>
@@ -100,6 +100,9 @@ $(document).ready(function(){
 		});
 		$("#review").val("");
 		return false;
+	});
+	$("#deleteReview").on('click',function(){
+		alert("you clicked deleted");
 	});
 });
 </script>
