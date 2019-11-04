@@ -48,8 +48,9 @@
 			</div>
 			<div class="mb-3">
 				@foreach ($reviews as $review)
-					<div class="bg-light shadow-sm">
-						<h6>{{ $review->user_id->name }}</h6>
+					<div class="bg-light shadow-sm p-2">
+						<h6>{{ $review->user_id }}</h6>
+						<p>{{  $review->review}}</p>
 					</div>
 				@endforeach
 			</div>
