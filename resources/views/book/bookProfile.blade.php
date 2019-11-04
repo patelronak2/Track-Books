@@ -47,6 +47,13 @@
 				<button class="btn btn-primary" id="addReview">Add Review</button>
 			</div>
 			<div class="mb-3">
+				@foreach ($reviews as $review)
+					<div class="bg-light shadow-sm">
+						<h6>{{ $review->user_id->name }}</h6>
+					</div>
+				@endforeach
+			</div>
+			<div class="mb-3">
 			@if(count($reviews) > 0)
 				Display Reviews Here
 			@else
@@ -70,7 +77,7 @@ $(document).ready(function(){
 			type: 'POST',
 			data: {_token: CSRF_TOKEN, review: review, id: id},
 			success: function(data){
-				alert(data);							
+				//Print all the comments here							
 			},
 			error: function(error){
 				alert("Failed");
