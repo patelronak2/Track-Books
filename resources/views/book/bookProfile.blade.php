@@ -48,7 +48,6 @@
 			</div>
 			<div class="mb-3">
 				@foreach ($reviews as $review)
-					<!-- @if($book->id == $review->book_id) -->
 						<div class="bg-light shadow-sm p-2">
 							<h6>{{ $review->user_id }}</h6>
 							<p>{{  $review->review}}</p>
