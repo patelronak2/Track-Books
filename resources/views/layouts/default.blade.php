@@ -319,6 +319,7 @@
 				@csrf
 				<input type="hidden" value="" id="bookID" name="bookID"/>
 				<button type="button" class="btn btn-primary" id="modalMoreInfo">More Info</button>
+				</form>
 			  </div>
 			</div>
 		  </div>
