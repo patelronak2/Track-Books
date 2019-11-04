@@ -76,4 +76,11 @@ class HomeController extends Controller
 		$reviews = Review::where('book_id', $book_id)->get();	
 		return $reviews;
 	}
+	
+	public function deleteReview(Request $request){
+		$book_id = $request->input('book_id');
+		
+		$reviews = Review::where('book_id', $book_id)->get();	
+		return $reviews;
+	}
 }
