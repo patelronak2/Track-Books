@@ -67,7 +67,7 @@ class HomeController extends Controller
 		$book_id = $request->input('id');
 		$review = $request->input('review');
 		
-		$review = new $review;
+		$review = new Review;
 		$review->user_id = $user_id;
 		$review->book_id = $book_id;
 		$review->review = $review;
