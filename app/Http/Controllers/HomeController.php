@@ -63,7 +63,7 @@ class HomeController extends Controller
             'review' => ['required'],			
         ]);
 		
-		$user_id = Auth::id();
+		$user_id = Auth::user()->id;
 		$book_id = $request->input('id');
 		$review = $request->input('review');
 		

@@ -71,7 +71,7 @@ $(document).ready(function(){
 				alert(data);							
 			},
 			error: function(error){
-				
+				alert("Failed");
 			}
 		});
 		$("#review").val("");
