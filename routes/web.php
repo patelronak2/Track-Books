@@ -33,4 +33,5 @@ Route::get('/deleteBook/{id}','AdminController@deleteBook')->middleware('is_admi
 Route::get('/addMultipleEntries','AdminController@addMultipleEntries')->middleware('is_admin')->name('admin');
 Route::post('/insertMultipleBooks', 'AdminController@insertMultipleBooks')->middleware('is_admin')->name('admin');
 Route::post('/ajaxBookInsert', 'AdminController@ajaxBookInsert')->middleware('is_admin')->name('admin');
-Route::post('/test', 'AdminController@test');
+Route::post('/searchInsert', 'AdminController@searchInsert');
+Route::post('/showBook','HomeController@showBook');

@@ -25,4 +25,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
+	
+	public function showBook(Request $request)
+	{
+		$id = $request->input('bookID');
+		$book = Book::find($id);
+		return view('book.bookProfile',['book' => $book]);
+	}
 }

@@ -221,7 +221,12 @@ class AdminController extends Controller
 		 $book->save();
 	 }
 	 
-	 public function test(Request $request)
+	 /**
+     * handles the route /searchInsert
+     *
+     * @return 
+     */
+	 public function searchInsert(Request $request)
 	 {
 				
 		$validator = Validator::make($request->all(), [
@@ -241,7 +246,6 @@ class AdminController extends Controller
 			 $book->img_link = $request->input('imgLink');
 			 $book->save();
 		}
-		 //return $request->input('title');
 		 $books = Book::all();
 		 foreach ($books as $book){
 			if($book->title == $request->input('title')){

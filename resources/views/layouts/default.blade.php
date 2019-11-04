@@ -176,11 +176,11 @@
 						imgLink = searchResult.items[clickedId].volumeInfo.imageLinks.smallThumbnail;
 					}
 					$.ajax({
-						url: '/public/test',
+						url: '/public/searchInsert',
 						type: 'POST',
 						data: {_token: CSRF_TOKEN, title: title, description: description, author: author, category: category, publisher: publisher, publishedDate: publishedDate, imgLink: imgLink},
 						success: function(data){
-							alert(data);							
+							$("#bookID").val(data);							
 						},
 						error: function(error){
 							
@@ -315,7 +315,10 @@
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<a href="" class="btn btn-primary" id="modalMoreInfo">More Info</a>
+				<form method="POST" action="/public/showBook">
+				@csrf
+				<input type="hidden" value="" id="bookID" name="bookID"/>
+				<button type="button" class="btn btn-primary" id="modalMoreInfo">More Info</button>
 			  </div>
 			</div>
 		  </div>
