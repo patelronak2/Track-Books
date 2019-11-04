@@ -35,3 +35,4 @@ Route::post('/insertMultipleBooks', 'AdminController@insertMultipleBooks')->midd
 Route::post('/ajaxBookInsert', 'AdminController@ajaxBookInsert')->middleware('is_admin')->name('admin');
 Route::post('/searchInsert', 'AdminController@searchInsert');
 Route::get('/showBook/{id}','HomeController@showBook');
+Route::post('/addReview', 'HomeController@addReview');

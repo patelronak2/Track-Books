@@ -5,7 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
 			<div class="mb-3 shadow-sm p-2 bg-light">
-			  <h3 class="text-center mb-3">{{ $book->title }}</h3>	
+			  <h3 class="text-center mb-3">{{ $book->title }}</h3>
+			  <p class="sr-only" id="bookID">{{ $book->id }}</p>
+			  <p class="sr-only" id="userID">{{ $Auth::id() }}</p>
 			  <div class="row no-gutters">
 				<div class="col-md-4 px-2">
 				  <img src="{{ $book->img_link }}" class="img-thumbnail" alt="Image not Available" width="100%">
@@ -58,8 +60,20 @@
 $(document).ready(function(){
 	$("#addReview").click(function(){
 		//post call here and insert review from here
+		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+		var id = $("#bookID").val();
 		var review = $("#review").val();
-		alert(review);
+		$.ajax({
+			url: '/public/addReview',
+			type: 'POST',
+			data: {_token: CSRF_TOKEN, review: review, id: id},
+			success: function(data){
+				alert(data);							
+			},
+			error: function(error){
+				
+			}
+		});
 		$("#review").val("");
 		return false;
 	});

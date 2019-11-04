@@ -56,4 +56,25 @@ class HomeController extends Controller
 		$reviews = Review::all();
 		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews]);
 	}
+	
+	public function addReview(Request $request)
+	{
+		$validatedData = $request->validate([
+            'review' => ['required'],			
+        ]);
+		
+		$user_id = Auth::id();
+		$book_id = $request->input('id');
+		$review = $request->input('review');
+		
+		$review = new $review;
+		$review->user_id = $user_id;
+		$review->book_id = $book_id;
+		$review->review = $review;
+		$review->save();
+		
+		$reviews = Review::all();
+		
+		return $reviews;
+	}
 }
