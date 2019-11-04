@@ -28,6 +28,12 @@
 					@if($publishedDate)
 						<p>Published: {{ $book->publishedDate }}</p>
 					@endif
+					<select class="btn btn-primary">
+						<option selected disabled hidden>Add to Shelf</option>
+						<option>Books</option>
+						<option>User</option>
+						<option>Author</option>
+					</select>
 				</div>
 			  </div>
 			</div>
