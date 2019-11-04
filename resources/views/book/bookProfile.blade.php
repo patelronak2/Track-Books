@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-			<div class="mb-3 shadow-sm">
+			<div class="mb-3 shadow-sm p-2 bg-light">
 			  <h3 class="text-center mb-3">{{ $book->title }}</h3>	
 			  <div class="row no-gutters">
 				<div class="col-md-4 px-2">
