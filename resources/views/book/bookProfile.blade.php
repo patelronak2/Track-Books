@@ -102,7 +102,7 @@ $(document).ready(function(){
 		return false;
 	});
 	$("#deleteReview").on('click',function(){
-		
+		alert("You clicked deleteReview");
 		return false;
 	});
 });
