@@ -7,7 +7,7 @@
 			<div class="mb-3 shadow-sm p-2 bg-light">
 			  <h3 class="text-center mb-3">{{ $book->title }}</h3>
 			  <p class="sr-only" id="bookID">{{ $book->id }}</p>
-			  <p class="sr-only" id="userID">{{ $Auth::id() }}</p>
+			  <p class="sr-only" id="userID">{{ Auth::user()->id }}</p>
 			  <div class="row no-gutters">
 				<div class="col-md-4 px-2">
 				  <img src="{{ $book->img_link }}" class="img-thumbnail" alt="Image not Available" width="100%">
