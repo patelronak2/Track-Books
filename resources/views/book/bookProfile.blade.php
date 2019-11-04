@@ -30,20 +30,26 @@
 					@endif
 					<select class="btn btn-outline-primary">
 						<option selected disabled hidden>Add to Shelf</option>
-						<option>Books</option>
-						<option>User</option>
-						<option>Author</option>
+						<option>Want to Read</option>
+						<option>Currently Reading</option>
+						<option>Finished Reading</option>
 					</select>
 				</div>
 			  </div>
 			</div>
 			<div class="mb-3">
-				
 				<div class="form-group">
 				  <label for="comment">Write a Review:</label>
 				  <textarea class="form-control" rows="5" id="comment"></textarea>
 				</div>
 				<button class="btn btn-primary">Add Review</button>
+			</div>
+			<div class="mb-3">
+			@if(count($reviews) > 0)
+				Display Reviews Here
+			@else
+				No Reviews Here
+			@endif
 			</div>
         </div>
     </div>

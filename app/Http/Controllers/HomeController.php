@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Book;
+use App\Review;
 
 class HomeController extends Controller
 {
@@ -51,6 +52,8 @@ class HomeController extends Controller
 		if($book->category == "Information not Available"){
 			$category = false;
 		}
-		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category]);
+		
+		$reviews = Review::all();
+		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews]);
 	}
 }
