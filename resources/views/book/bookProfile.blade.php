@@ -55,9 +55,9 @@
 									<p>{{  $review->review}}</p>
 									<p class="sr-only">{{ $review->id }}</p>
 								</div>
-								<div class="col-md-2">
+								<div class="col-md-2 text-center my-auto">
 									@if(Auth::id() == $review->user_id || Auth::user()->type == 'admin')
-										<a href="#" class="text-danger"><i class="fa fa-trash" style="font-size:20px"></i></a>
+										<a href="#" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a>
 									@endif
 								</div>
 							</div>
