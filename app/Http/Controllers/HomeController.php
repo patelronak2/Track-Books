@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
 use App\Book;
@@ -63,7 +63,7 @@ class HomeController extends Controller
             'review' => ['required'],			
         ]);
 		
-		$user_id = Auth::user()->id;
+		$user_id = Auth::id();
 		$book_id = $request->input('id');
 		$review = $request->input('review');
 		
