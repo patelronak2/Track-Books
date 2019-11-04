@@ -46,14 +46,19 @@
 				</div>
 				<button class="btn btn-primary" id="addReview">Add Review</button>
 			</div>
-			<div class="mb-3">
-				@foreach ($reviews as $review)
-						<div class="bg-light shadow-sm p-2">
-							<h6>{{ $review->user_id }}</h6>
-							<p>{{  $review->review}}</p>
-						</div>
-					 <!-- End If-->
-				@endforeach
+			<div class="mb-3" id="reviews">
+				@if(count($reviews) > 0)
+					@foreach ($reviews as $review)
+							<div class="bg-light shadow-sm p-2">
+								<h6>{{ $review->user_id }}</h6>
+								<p>{{  $review->review}}</p>
+							</div>
+					@endforeach
+				@else
+					<div class="bg-light shadow-sm p-2">
+						<h6>Be the first to add Review for this book</h6>
+					</div>
+				@endif
 			</div>
         </div>
     </div>
@@ -72,10 +77,17 @@ $(document).ready(function(){
 			type: 'POST',
 			data: {_token: CSRF_TOKEN, review: review, id: id},
 			success: function(data){
-				//Print all the comments here							
+				//Print all the comments here
+				var temphtml = '';
+				for(var i = 0; i < data.length; i++){
+					temphtml += '<div class="bg-light shadow-sm p-2">';
+					temphtml += '<h6>' + data[i].user_id + '</h6><p>' + data[i].review + '</p>';
+					temphtml += '</div>';
+				}
+				
+				$("#reviews").html(temphtml);	
 			},
 			error: function(error){
-				alert("Failed");
 			}
 		});
 		$("#review").val("");
