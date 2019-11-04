@@ -62,19 +62,18 @@ $(document).ready(function(){
 		//post call here and insert review from here
 		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 		var id = $("#bookID").text();
-		alert(id);
 		var review = $("#review").val();
-		// $.ajax({
-			// url: '/public/addReview',
-			// type: 'POST',
-			// data: {_token: CSRF_TOKEN, review: review, id: id},
-			// success: function(data){
-				// alert(data);							
-			// },
-			// error: function(error){
-				// alert("Failed");
-			// }
-		// });
+		$.ajax({
+			url: '/public/addReview',
+			type: 'POST',
+			data: {_token: CSRF_TOKEN, review: review, id: id},
+			success: function(data){
+				alert(data);							
+			},
+			error: function(error){
+				alert("Failed");
+			}
+		});
 		$("#review").val("");
 		return false;
 	});
