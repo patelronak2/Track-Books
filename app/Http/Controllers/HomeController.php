@@ -53,7 +53,7 @@ class HomeController extends Controller
 			$category = false;
 		}
 		
-		$reviews = Review::all();
+		$reviews = Review::where('book_id', $id)->get();
 		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews]);
 	}
 	
@@ -73,8 +73,7 @@ class HomeController extends Controller
 		$review->review = $userReview;
 		$review->save();
 		
-		$reviews = Review::all();
-		
+		$reviews = Review::where('book_id', $book_id)->get();	
 		return $reviews;
 	}
 }
