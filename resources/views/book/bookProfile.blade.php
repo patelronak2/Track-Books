@@ -28,7 +28,7 @@
 					@if($publishedDate)
 						<p>Published: {{ $book->publishedDate }}</p>
 					@endif
-					<select class="btn btn-primary">
+					<select class="btn btn-outline-primary">
 						<option selected disabled hidden>Add to Shelf</option>
 						<option>Books</option>
 						<option>User</option>
@@ -36,6 +36,14 @@
 					</select>
 				</div>
 			  </div>
+			</div>
+			<div class="mb-3">
+				
+				<div class="form-group">
+				  <label for="comment">Write a Review:</label>
+				  <textarea class="form-control" rows="5" id="comment"></textarea>
+				</div>
+				<button class="btn btn-primary">Add Review</button>
 			</div>
         </div>
     </div>
