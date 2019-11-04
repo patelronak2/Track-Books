@@ -49,7 +49,7 @@
 			<div class="mb-3" id="reviews">
 				@if(count($reviews) > 0)
 					@foreach ($reviews as $review)
-							<div class="bg-light shadow-sm p-2">
+							<div class="bg-light shadow-sm p-2 mb-2">
 								<h6>{{ $review->user_id }}</h6>
 								<p>{{  $review->review}}</p>
 							</div>
@@ -80,7 +80,7 @@ $(document).ready(function(){
 				//Print all the comments here
 				var temphtml = '';
 				for(var i = 0; i < data.length; i++){
-					temphtml += '<div class="bg-light shadow-sm p-2">';
+					temphtml += '<div class="bg-light shadow-sm p-2 mb-2">';
 					temphtml += '<h6>' + data[i].user_id + '</h6><p>' + data[i].review + '</p>';
 					temphtml += '</div>';
 				}
