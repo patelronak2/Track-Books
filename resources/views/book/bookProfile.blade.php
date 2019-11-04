@@ -61,7 +61,7 @@ $(document).ready(function(){
 	$("#addReview").click(function(){
 		//post call here and insert review from here
 		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-		var id = $("#bookID").val();
+		var id = $("#bookID").text();
 		alert(id);
 		var review = $("#review").val();
 		// $.ajax({
