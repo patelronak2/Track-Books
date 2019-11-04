@@ -19,7 +19,7 @@
 						<h5 class="text-danger">Author: Information not Available</h5>
 					@endif
 					@if($category)
-						<h6 class="text-secondary">{{ $book->category }}</h6>
+						<h6 class="text-secondary">Category: {{ $book->category }}</h6>
 					@endif	
 					@if($description)
 						<p>{{ $book->description }}</p>
