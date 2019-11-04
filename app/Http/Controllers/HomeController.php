@@ -75,6 +75,6 @@ class HomeController extends Controller
 		
 		// $reviews = Review::all();
 		
-		return $user_id;
+		return $book_id;
 	}
 }
