@@ -11,21 +11,21 @@
 				  <img src="{{ $book->img_link }}" class="img-thumbnail" alt="Image not Available" width="100%">
 				</div>
 				<div class="col-md-8 p-2">
-					@if(author)
+					@if($author)
 						<h5>Author: {{ $book->author }}</h5>
 					@else
 						<h5 class="text-danger">Author: Information not Available</h5>
 					@endif
-					@if(category)
+					@if($category)
 						<h6 class="text-secondary">{{ $book->category }}</h6>
 					@endif	
-					@if(description)
+					@if($description)
 						<p>{{ $book->description }}</p>
 					@endif
-					@if(publisher)
+					@if($publisher)
 						<p>Publisher: {{ $book->publisher }}</p>
 					@endif
-					@if(publishedDate)
+					@if($publishedDate)
 						<p>Published: {{ $book->publishedDate }}</p>
 					@endif
 				</div>
