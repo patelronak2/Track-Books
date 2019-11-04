@@ -51,7 +51,7 @@
 					@foreach ($reviews as $review)
 							<div class="bg-light shadow-sm p-2 mb-2 row">
 								<div class="col-md-10">
-									<h6>{{ $review->user_id }}</h6>
+									<h6>{{ $review->user_id->name }}</h6>
 									<p>{{  $review->review}}</p>
 									<p class="sr-only">{{ $review->id }}</p>
 								</div>
