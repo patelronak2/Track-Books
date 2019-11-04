@@ -57,7 +57,7 @@
 								</div>
 								<div class="col-md-2 text-center my-auto">
 									@if(Auth::id() == $review->user_id || Auth::user()->type == 'admin')
-										<a class="text-danger" id="deleteReview"><i class="fa fa-trash" style="font-size:24px"></i></a>
+										<a href="#" class="text-danger" id="deleteReview"><i class="fa fa-trash" style="font-size:24px"></i></a>
 									@endif
 								</div>
 							</div>
