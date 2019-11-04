@@ -108,7 +108,7 @@ $(document).ready(function(){
 		alert("Review Id: "+id);
 		var book_id = $("#bookID").text();
 		$.ajax({
-			url: '/public/deleteReview/,
+			url: '/public/deleteReview',
 			type: 'POST',
 			data: {_token: CSRF_TOKEN, review_id: id, book_id: book_id},
 			success: function(data){
