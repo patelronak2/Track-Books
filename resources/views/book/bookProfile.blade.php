@@ -40,9 +40,9 @@
 			<div class="mb-3">
 				<div class="form-group">
 				  <label for="comment">Write a Review:</label>
-				  <textarea class="form-control" rows="5" id="comment"></textarea>
+				  <textarea class="form-control" rows="5" id="review"></textarea>
 				</div>
-				<button class="btn btn-primary">Add Review</button>
+				<button class="btn btn-primary" id="addReview">Add Review</button>
 			</div>
 			<div class="mb-3">
 			@if(count($reviews) > 0)
@@ -54,4 +54,15 @@
         </div>
     </div>
 </div>
+<script>
+$(document).ready(function(){
+	$("#addReview").click(function(){
+		//post call here and insert review from here
+		var review = $("#review").val();
+		alert(review);
+		$("#review").val("");
+		return false;
+	});
+});
+</script>
 @endsection
