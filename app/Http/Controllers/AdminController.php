@@ -274,7 +274,7 @@ class AdminController extends Controller
 		 
 		 $message = "Deletion Completed";
 		 $data = Review::all();
-		 return view('admin.books',['reviews' => $data, 'alert' => $message, 'deleteReview' => true]); 
+		 return view('admin.reviews',['reviews' => $data, 'alert' => $message, 'deleteReview' => true]); 
 	 }
 	
 	
