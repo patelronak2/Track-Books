@@ -38,3 +38,4 @@ Route::get('/showBook/{id}','HomeController@showBook');
 Route::post('/addReview', 'HomeController@addReview');
 Route::post('/deleteReview', 'HomeController@deleteReview');
 Route::get('/manageReviews','AdminController@manageReviews')->middleware('is_admin')->name('admin');
+Route::get('/deleteReview/{id}', 'AdminController@deleteReview' )->middleware('is_admin')->name('admin');

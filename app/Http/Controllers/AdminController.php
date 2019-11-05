@@ -266,6 +266,16 @@ class AdminController extends Controller
 		$reviews = Review::all();
         return view('admin.reviews',['reviews' => $reviews, 'deleteReview' => false]);
 	 }
+	 
+	 public function deleteReview($id)
+	 {
+		 $review = Review::find($id);
+		 $review->delete();
+		 
+		 $message = "Deletion Completed";
+		 $data = Review::all();
+		 return view('admin.books',['reviews' => $data, 'alert' => $message, 'deleteReview' => true]); 
+	 }
 	
 	
 }
