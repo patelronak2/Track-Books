@@ -98,7 +98,7 @@ $(document).ready(function(){
 			error: function(error){
 			}
 		});
-		$("#review").val("");
+		//$("#review").val("");
 		return false;
 	});
 	$("#reviews").on("click","a",function(){
@@ -110,7 +110,14 @@ $(document).ready(function(){
 			type: 'POST',
 			data: {_token: CSRF_TOKEN,review_id: review_id, book_id: book_id},
 			success: function(data){
-				alert(data);
+				var temphtml = '';
+				for(var i = 0; i < data.length; i++){
+					temphtml += '<div class="bg-light shadow-sm p-2 mb-2">';
+					temphtml += '<h6>' + data[i].user_id + '</h6><p>' + data[i].review + '</p>';
+					temphtml += '</div>';
+				}
+				
+				$("#reviews").html(temphtml);
 			},
 			error: function(error){
 				alert("Something went wrong");
