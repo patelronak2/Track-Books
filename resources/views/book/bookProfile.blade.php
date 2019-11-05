@@ -98,7 +98,7 @@ $(document).ready(function(){
 			error: function(error){
 			}
 		});
-		//$("#review").val("");
+		$("#review").val("");
 		return false;
 	});
 	$("#reviews").on("click","a",function(){
