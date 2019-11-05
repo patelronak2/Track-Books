@@ -113,7 +113,7 @@ $(document).ready(function(){
 				var temphtml = '';
 				for(var i = 0; i < data.length; i++){
 					temphtml += '<div class="bg-light shadow-sm p-2 mb-2">';
-					temphtml += '<h6>' + data[i].user_id + '</h6><p>' + data[i].review + '</p>';
+					temphtml += '<h6>' + data[i].user.name + '</h6><p>' + data[i].review + '</p>';
 					temphtml += '</div>';
 				}
 				
