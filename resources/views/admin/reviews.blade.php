@@ -6,6 +6,12 @@
         <div class="col-md-10">
             <div class="card">
                 <h4 class="card-header">Manage Reviews</h4>
+				<div class="card-body">
+				@if($deleteReview)
+					<div class="alert alert-success" role="alert">
+						{{ $alert }}
+					</div>
+				@endif
                 <div class="text-center">
 					<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
 				</div>
@@ -32,6 +38,7 @@
 					@else
 						<h3>No Reviews in the database yet</h3>
 					@endif
+				</div>
 				</div>
             </div>
         </div>
