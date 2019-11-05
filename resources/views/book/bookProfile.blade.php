@@ -101,7 +101,7 @@ $(document).ready(function(){
 		$("#review").val("");
 		return false;
 	});
-	$("#reviews").on('click','a',function(){
+	$('.text-center').on('click','a',function(){
 		//alert("You clicked deleteReview");
 		// var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 		// var id = $('#reviewID').text();
