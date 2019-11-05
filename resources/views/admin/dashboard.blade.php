@@ -32,6 +32,15 @@
 					</div>
 				</div>
 			</div>
+			<div class="mt-2">
+				<div class="card">
+					<div class="card-header">Manage Reviews</div>
+					<div class="card-body">
+						Read all Reviews, Delete Offensive Reviews
+						<a href="/public/manageReviews" class="stretched-link"></a>
+					</div>
+				</div>
+			</div>
         </div>
     </div>
 </div>

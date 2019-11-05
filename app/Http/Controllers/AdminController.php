@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\User;
+use App\Review;
 use App\Book;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -253,6 +254,17 @@ class AdminController extends Controller
 			} 
 		}
 		 
+	 }
+	 
+	 /**
+     * handles the route /manageReviews
+     *
+     * @return reviews.blade.php
+     */
+	 public function manageReviews()
+	 {
+		$reviews = Review::all();
+        return view('admin.reviews',['reviews' => $reviews, 'deleteReview' => false]);
 	 }
 	
 	
