@@ -74,16 +74,17 @@ class HomeController extends Controller
 		$review->save();
 		
 		$reviews = Review::where('book_id', $book_id)->with('user')->get();
-			
 		echo json_encode(array('data' => $reviews, 'userType' => Auth::user()->type, 'userId' => $user_id));
 	}
 	
 	public function deleteReview(Request $request){
+		
 		$book_id = $request->input('book_id');
 		$review_id = $request->input('review_id');
 		
 		$review = Review::find($review_id);
 		$review->delete();
+		
 		$reviews = Review::where('book_id', $book_id)->with('user')->get();
 		echo json_encode(array('data' => $reviews, 'userType' => Auth::user()->type, 'userId' => $user_id));	
 	}
