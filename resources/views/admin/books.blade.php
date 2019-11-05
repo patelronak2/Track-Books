@@ -21,6 +21,7 @@
 					<div class="text-center">
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Books </a>
 						<a href="/public/addMultipleEntries" class="btn btn-light m-1 p-2">Add Multiple Books </a>
+						<a href="/public/manageBooks" class="btn btn-outline-primary m-1 p-2">Refresh</a>
 						<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
 					</div>
                     <div class="mt-1 text-center table-responsive">
