@@ -86,7 +86,7 @@ $(document).ready(function(){
 			success: function(res){
 				//Print all the comments here
 				var temphtml = '';
-				for(var i = 0; i < data.length; i++){
+				for(var i = 0; i < res.data.length; i++){
 					temphtml += '<div class="bg-light shadow-sm p-2 m-2 row">';
 					temphtml += '<div class="col-10"><h6>' + res.data[i].user.name + '</h6><p>' + res.data[i].review + '</p></div>';
 					temphtml += '<div class="col-2 text-right my-auto">';
