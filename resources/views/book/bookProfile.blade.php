@@ -102,8 +102,20 @@ $(document).ready(function(){
 		return false;
 	});
 	$("#reviews").on("click","a",function(){
-		alert("a tag was clicked");
-		alert($(this).attr("id"));
+		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+		var review_id = $(this).attr("id");
+		var book_id = $("#bookID").text();
+		$.ajax({
+			url: '/public/deleteReview',
+			type: 'POST',
+			data: {_token: CSRF_TOKEN,review_id: review_id, book_id: book_id},
+			success: function(data){
+				alert(data);
+			},
+			error: function(error){
+				alert("Something went wrong");
+			}
+		});
 		return false;
 	});
 });

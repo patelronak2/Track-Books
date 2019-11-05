@@ -79,7 +79,7 @@ class HomeController extends Controller
 	
 	public function deleteReview(Request $request){
 		$book_id = $request->input('book_id');
-		
+		$review_id = $request->input('review_id');
 		$reviews = Review::where('book_id', $book_id)->get();	
 		return $reviews;
 	}
