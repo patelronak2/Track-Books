@@ -53,11 +53,11 @@
 								<div class="col-md-10">
 									<h6>{{ $review->user->name }}</h6>
 									<p>{{  $review->review}}</p>
-									<p class="sr-only" id="">{{ $review->id }}</p>
+									
 								</div>
 								<div class="col-md-2 text-center my-auto">
 									@if(Auth::id() == $review->user_id || Auth::user()->type == 'admin')
-										<a href="#" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a>
+										<a href="#" class="text-danger" id="{{ $review->id }}"><i class="fa fa-trash" style="font-size:24px"></i></a>
 									@endif
 								</div>
 							</div>
@@ -103,6 +103,8 @@ $(document).ready(function(){
 	});
 	$("#reviews").on("click","a",function(){
 		alert("a tag was clicked");
+		alert($(this).attr("id"));
+		return false;
 	});
 });
 </script>
