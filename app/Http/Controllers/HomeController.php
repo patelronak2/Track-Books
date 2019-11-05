@@ -53,7 +53,7 @@ class HomeController extends Controller
 			$category = false;
 		}
 		
-		$reviews = Review::where('book_id', $id)->get();
+		$reviews = Review::where('book_id', $id)->orderBy('id', 'desc')->get();
 		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews]);
 	}
 	
@@ -73,7 +73,7 @@ class HomeController extends Controller
 		$review->review = $userReview;
 		$review->save();
 		
-		$reviews = Review::where('book_id', $book_id)->with('user')->get();
+		$reviews = Review::where('book_id', $book_id)->orderBy('id', 'desc')->with('user')->get();
 		echo json_encode(array('data' => $reviews, 'userType' => Auth::user()->type, 'userId' => $user_id));
 	}
 	
@@ -85,7 +85,7 @@ class HomeController extends Controller
 		$review = Review::find($review_id);
 		$review->delete();
 		
-		$reviews = Review::where('book_id', $book_id)->with('user')->get();
+		$reviews = Review::where('book_id', $book_id)->orderBy('id', 'desc')->with('user')->get();
 		echo json_encode(array('data' => $reviews, 'userType' => Auth::user()->type, 'userId' => Auth::id()));	
 	}
 }
