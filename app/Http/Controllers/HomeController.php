@@ -73,7 +73,7 @@ class HomeController extends Controller
 		$review->review = $userReview;
 		$review->save();
 		
-		$reviews = Review::where('book_id', $book_id)->with('users')->get();	
+		$reviews = Review::where('book_id', $book_id)->with('user')->get();	
 		return $reviews;
 	}
 	
@@ -83,7 +83,7 @@ class HomeController extends Controller
 		
 		$review = Review::find($review_id);
 		$review->delete();
-		$reviews = Review::where('book_id', $book_id)->with('users')->get();	
+		$reviews = Review::where('book_id', $book_id)->with('user')->get();	
 		return $reviews;
 	}
 }
