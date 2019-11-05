@@ -73,7 +73,7 @@
 </div>
 <script>
 $(document).ready(function(){
-	$("#addReview").click(function(){
+	$("#reviews").click(function(){
 		//post call here and insert review from here
 		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 		var id = $("#bookID").text();
