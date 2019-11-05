@@ -115,15 +115,23 @@ $(document).ready(function(){
 			url: '/public/deleteReview',
 			type: 'POST',
 			data: {_token: CSRF_TOKEN,review_id: review_id, book_id: book_id},
-			success: function(data){
+			success: function(response){
+				
+				var res = JSON.parse(response);
+				//Print all the comments here
 				var temphtml = '';
-				for(var i = 0; i < data.length; i++){
-					temphtml += '<div class="bg-light shadow-sm p-2 mb-2">';
-					temphtml += '<h6>' + data[i].user.name + '</h6><p>' + data[i].review + '</p>';
-					temphtml += '</div>';
+				for(var i = 0; i < res.data.length; i++){
+					temphtml += '<div class="bg-light shadow-sm p-2 m-2 row">';
+					temphtml += '<div class="col-10"><h6>' + res.data[i].user.name + '</h6><p>' + res.data[i].review + '</p></div>';
+					temphtml += '<div class="col-2 text-right my-auto">';
+					if(res.userType == 'admin' || res.userId == res.data[i].user_id){
+						temphtml += '<a href="#" class="text-danger" id="' + res.data[i].id + '"><i class="fa fa-trash" style="font-size:24px"></i></a>';
+					}
+					
+					temphtml += '</div></div>';
 				}
 				
-				$("#reviews").html(temphtml);
+				$("#reviews").html(temphtml);	
 			},
 			error: function(error){
 				alert("Something went wrong");
