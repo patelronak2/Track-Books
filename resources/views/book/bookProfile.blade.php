@@ -73,7 +73,7 @@
 </div>
 <script>
 $(document).ready(function(){
-	$("#reviews").click(function(){
+	$("#addReview").click(function(){
 		//post call here and insert review from here
 		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 		var id = $("#bookID").text();
@@ -101,8 +101,8 @@ $(document).ready(function(){
 		$("#review").val("");
 		return false;
 	});
-	$("#deleteReview").on('click','a',function(){
-		alert("You clicked deleteReview");
+	$("#reviews").on('click','a',function(){
+		//alert("You clicked deleteReview");
 		// var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 		// var id = $('#reviewID').text();
 		// alert("Review Id: "+id);
