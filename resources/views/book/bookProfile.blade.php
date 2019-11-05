@@ -53,11 +53,11 @@
 								<div class="col-md-10">
 									<h6>{{ $review->user->name }}</h6>
 									<p>{{  $review->review}}</p>
-									<p class="sr-only" id="reviewID">{{ $review->id }}</p>
+									<p class="sr-only" id="">{{ $review->id }}</p>
 								</div>
 								<div class="col-md-2 text-center my-auto">
 									@if(Auth::id() == $review->user_id || Auth::user()->type == 'admin')
-										<a href="#" class="text-danger" id="deleteReview"><i class="fa fa-trash" style="font-size:24px"></i></a>
+										<a href="#" class="text-danger" id=""><i class="fa fa-trash" style="font-size:24px"></i></a>
 									@endif
 								</div>
 							</div>
@@ -101,21 +101,21 @@ $(document).ready(function(){
 		$("#review").val("");
 		return false;
 	});
-	$("#deleteReview").on('click',function(){
-		//alert("You clicked deleteReview");
-		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-		var id = $('#reviewID').text();
-		alert("Review Id: "+id);
-		var book_id = $("#bookID").text();
-		$.ajax({
-			url: '/public/deleteReview',
-			type: 'POST',
-			data: {_token: CSRF_TOKEN, review_id: id, book_id: book_id},
-			success: function(data){
-				alert(data);
-			}
-		});
-		return false;
+	$("#deleteReview").on('click','a',function(){
+		alert("You clicked deleteReview");
+		// var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+		// var id = $('#reviewID').text();
+		// alert("Review Id: "+id);
+		// var book_id = $("#bookID").text();
+		// $.ajax({
+			// url: '/public/deleteReview',
+			// type: 'POST',
+			// data: {_token: CSRF_TOKEN, review_id: id, book_id: book_id},
+			// success: function(data){
+				// alert(data);
+			// }
+		// });
+		 return false;
 	});
 });
 </script>
