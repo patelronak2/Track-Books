@@ -77,6 +77,17 @@ $(document).ready(function(){
 	$("#bookShelf").change(function(){
 		var bookShelf = $(this).children("option:selected").val();
 		alert(bookShelf);
+		$.ajax({
+			url: '/public/addToShelf',
+			type: 'POST',
+			data: {_token: CSRF_TOKEN, bookShelf: bookShelf, book_id: book_id},
+			success: function(data){
+				alert(data);
+				},
+			error: function(error){
+				alert(error);
+			}
+		});
 		// switch(bookShelf){
 			// case "Want to Read":
 				// break;

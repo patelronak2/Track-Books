@@ -98,7 +98,7 @@ class HomeController extends Controller
 		$currentlyReading = false;
 		$wantToRead = false;
 		$finishedReading = false;
-		return "$bookShelf <br> $book_id <br> $user_id";
+		echo "$bookShelf $book_id $user_id";
 		// $shelf = Shelf::where([['book_id', '=' , $book_id],['user_id', '=' , $user_id]])->first();
 		
 		// if($shelf){
