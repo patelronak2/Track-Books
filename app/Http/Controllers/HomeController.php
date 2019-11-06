@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
 use App\Book;
+use App\Shelf;
 use App\Review;
 
 class HomeController extends Controller
@@ -87,5 +88,23 @@ class HomeController extends Controller
 		
 		$reviews = Review::where('book_id', $book_id)->orderBy('id', 'desc')->with('user')->get();
 		echo json_encode(array('data' => $reviews, 'userType' => Auth::user()->type, 'userId' => Auth::id()));	
+	}
+	
+	public function addToShelf(Request $request)
+	{
+		$bookShelf = $request->input('bookShelf');
+		$book_id = $request-input('book_id');
+		$user_id = Auth::id();
+		$currentlyReading = false;
+		$wantToRead = false;
+		$finishedReading = false;
+		
+		$shelf = Shelf::where([['book_id', '=' , $book_id],['user_id', '=' , $user_id]])->first();
+		
+		if($shelf){
+			return "$shelf";
+		}else{
+			return "Nothing in the database";
+		}
 	}
 }

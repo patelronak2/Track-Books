@@ -10,4 +10,7 @@ class Book extends Model
 	function review() {
         return $this->hasMany('App\Review');
     }
+	function shelf() {
+        return $this->hasMany('App\Shelf');
+    }
 }

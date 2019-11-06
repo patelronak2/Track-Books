@@ -72,15 +72,34 @@
 </div>
 <script>
 $(document).ready(function(){
-	
+	var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+	var book_id = $("#bookID").text();
 	$("#bookShelf").change(function(){
 		var bookShelf = $(this).children("option:selected").val();
-		alert(bookShelf);
+		$.ajax({
+			url: '/public/addToShelf',
+			type: 'POST',
+			data: {_token: CSRF_TOKEN, bookShelf: bookShelf, book_id: book_id},
+			success: function(data){
+				alert(data);
+			}
+			error: function(){
+				alert("Unexpected error");
+			}
+		// });
+		// switch(bookShelf){
+			// case "Want to Read":
+				// break;
+			// case "Currently Reading":
+				// break;
+			// case "Finished Reading":
+				// break;
+		// }
 	});
 	
 	$("#addReview").click(function(){
 		//post call here and insert review from here
-		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+		
 		var id = $("#bookID").text();
 		var review = $("#review").val();
 		var userID = $("#userID").text();
@@ -114,9 +133,7 @@ $(document).ready(function(){
 		return false;
 	});
 	$("#reviews").on("click","a",function(){
-		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 		var review_id = $(this).attr("id");
-		var book_id = $("#bookID").text();
 		$.ajax({
 			url: '/public/deleteReview',
 			type: 'POST',
