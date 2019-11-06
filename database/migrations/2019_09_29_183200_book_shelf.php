@@ -17,7 +17,9 @@ class BookShelf extends Migration
 			$table->bigIncrements('id');
 			$table->unsignedBigInteger('user_id');
 			$table->unsignedBigInteger('book_id');
-			$table->boolean('onShelf');
+			$table->boolean('currentlyReading');
+			$table->boolean('wantToRead');
+			$table->boolean('finishedReading');
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 			$table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
 			$table->timestamps();
