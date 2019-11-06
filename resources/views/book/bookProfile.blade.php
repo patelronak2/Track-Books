@@ -84,7 +84,7 @@ $(document).ready(function(){
 				alert(data);
 				},
 			error: function(error){
-				alert("Unexpected error");
+				alert(error);
 			}
 		});
 		// switch(bookShelf){
