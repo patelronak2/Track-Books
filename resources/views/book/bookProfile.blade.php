@@ -30,7 +30,7 @@
 					@if($publishedDate)
 						<p>Published: {{ $book->publishedDate }}</p>
 					@endif
-					<select class="btn btn-outline-primary">
+					<select id="bookShelf" class="btn btn-outline-primary">
 						<option selected disabled hidden>Add to Shelf</option>
 						<option>Want to Read</option>
 						<option>Currently Reading</option>
@@ -72,6 +72,12 @@
 </div>
 <script>
 $(document).ready(function(){
+	
+	$("#bookShelf").change(function(){
+		var bookShelf = $(this).children("option:selected").val();
+		alert(bookShelf);
+	});
+	
 	$("#addReview").click(function(){
 		//post call here and insert review from here
 		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
