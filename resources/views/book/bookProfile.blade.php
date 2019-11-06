@@ -86,7 +86,7 @@ $(document).ready(function(){
 			error: function(){
 				alert("Unexpected error");
 			}
-		// });
+		});
 		// switch(bookShelf){
 			// case "Want to Read":
 				// break;
