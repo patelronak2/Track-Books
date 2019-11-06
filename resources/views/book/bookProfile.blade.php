@@ -83,7 +83,7 @@ $(document).ready(function(){
 			success: function(data){
 				alert(data);
 			}
-			error: function(){
+			error: function(error){
 				alert("Unexpected error");
 			}
 		});
