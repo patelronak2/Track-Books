@@ -82,7 +82,7 @@ $(document).ready(function(){
 			data: {_token: CSRF_TOKEN, bookShelf: bookShelf, book_id: book_id},
 			success: function(data){
 				alert(data);
-			}
+				},
 			error: function(error){
 				alert("Unexpected error");
 			}
