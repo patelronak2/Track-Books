@@ -63,7 +63,7 @@
 					@endforeach
 				@else
 					<div class="bg-light shadow-sm p-2">
-						<h5 class="text-center">Be the first to add a review for this book</h5>
+						<h5 class="text-center">Be the first to add a review for this book.</h5>
 					</div>
 				@endif
 			</div>
