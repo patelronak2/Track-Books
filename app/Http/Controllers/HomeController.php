@@ -99,7 +99,7 @@ class HomeController extends Controller
 		$wantToRead = false;
 		$finishedReading = false;
 		//echo "Recieved Message";
-		$shelf = Shelf::where('book_id', $book_id])->get();
+		$shelf = Shelf::where('book_id', $book_id)->get();
 		
 		if($shelf){
 			return "$shelf";
