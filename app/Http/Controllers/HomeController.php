@@ -107,10 +107,10 @@ class HomeController extends Controller
 		if($bookShelf == "Finished Reading"){
 			$finishedReading = true;
 		}
-		$updated = Shelf::where('book_id', $book_id)->where('user_id', $user_id)->update(['currentlyReading'=> $currentlyReading, 'wantToRead'=> $wantToRead , 'finishedReading'=> $finishedReading]);
-		if(count($updated) > 0){
-			echo "Shelf updated";
-		}else{
+		// $updated = Shelf::where('book_id', $book_id)->where('user_id', $user_id)->update(['currentlyReading'=> $currentlyReading, 'wantToRead'=> $wantToRead , 'finishedReading'=> $finishedReading]);
+		// if(count($updated) > 0){
+			// echo "Shelf updated";
+		// }else{
 			$shelf = new Shelf;
 			$shelf->user_id = $user_id;
 			$shelf->book_id = $book_id;
@@ -119,6 +119,6 @@ class HomeController extends Controller
 			$shelf->finishedReading = $finishedReading;
 			$shelf->save();
 			echo "New Record Inserted";
-		}
+		//}
 	}
 }
