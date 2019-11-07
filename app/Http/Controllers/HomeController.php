@@ -55,7 +55,23 @@ class HomeController extends Controller
 		}
 		
 		$reviews = Review::where('book_id', $id)->orderBy('id', 'desc')->get();
-		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews]);
+		$wantToRead = false;
+		$currentlyReading = false;
+		$finishedReading = false;
+		$shelves = Shelf::all();
+		foreach($shelves as $shelf){
+			if($shelf->book_id == $book_id && $shelf->user_id == $user_id){
+				if($shelf->wantToRead){
+					$wantToRead = true;
+				}elseif($shelf->currentlyReading){
+					$currentlyReading = true;
+				}else{
+					$finishedReading = true;
+				}
+			}
+		}
+		
+		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews, 'wantToRead' => $wantToRead, 'currentlyReading' => $currentlyReading, 'finishedReading' => $finishedReading]);
 	}
 	
 	public function addReview(Request $request)
@@ -107,10 +123,6 @@ class HomeController extends Controller
 		if($bookShelf == "Finished Reading"){
 			$finishedReading = true;
 		}
-		// $updated = Shelf::where('book_id', $book_id)->where('user_id', $user_id)->update(['currentlyReading'=> $currentlyReading, 'wantToRead'=> $wantToRead , 'finishedReading'=> $finishedReading]);
-		// if(count($updated) > 0){
-			// echo "Shelf updated";
-		// }else{
 		$shelfId = -1;
 		$shelves = Shelf::all();
 		foreach($shelves as $shelf){

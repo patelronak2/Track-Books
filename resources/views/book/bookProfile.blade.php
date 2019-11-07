@@ -30,12 +30,35 @@
 					@if($publishedDate)
 						<p>Published: {{ $book->publishedDate }}</p>
 					@endif
-					<select id="bookShelf" class="btn btn-outline-primary">
-						<option selected disabled hidden>Add to Shelf</option>
-						<option>Want to Read</option>
-						<option>Currently Reading</option>
-						<option>Finished Reading</option>
-					</select>
+					@if($wantToRead)
+						<select id="bookShelf" class="btn btn-outline-primary">
+							<option disabled hidden>Add to Shelf</option>
+							<option selected>Want to Read</option>
+							<option>Currently Reading</option>
+							<option>Finished Reading</option>
+						</select>
+					@elseif($currentlyReading)
+						<select id="bookShelf" class="btn btn-outline-primary">
+							<option disabled hidden>Add to Shelf</option>
+							<option>Want to Read</option>
+							<option selected>Currently Reading</option>
+							<option>Finished Reading</option>
+						</select>
+					@elseif($finishedReading)
+						<select id="bookShelf" class="btn btn-outline-primary">
+							<option disabled hidden>Add to Shelf</option>
+							<option>Want to Read</option>
+							<option>Currently Reading</option>
+							<option selected>Finished Reading</option>
+						</select>
+					@else
+						<select id="bookShelf" class="btn btn-outline-primary">
+							<option selected disabled hidden>Add to Shelf</option>
+							<option>Want to Read</option>
+							<option>Currently Reading</option>
+							<option>Finished Reading</option>
+						</select>
+					@endif
 				</div>
 			  </div>
 			</div>
@@ -81,20 +104,13 @@ $(document).ready(function(){
 			type: 'POST',
 			data: {_token: CSRF_TOKEN, bookShelf: bookShelf, book_id: book_id},
 			success: function(data){
-				alert(data);
+				//Fire a notification from here
+				//Show that user added a book to shelf
 				},
 			error: function(error){
-				alert(error);
+				alert("Something Went Wrong");
 			}
 		});
-		// switch(bookShelf){
-			// case "Want to Read":
-				// break;
-			// case "Currently Reading":
-				// break;
-			// case "Finished Reading":
-				// break;
-		// }
 	});
 	
 	$("#addReview").click(function(){
