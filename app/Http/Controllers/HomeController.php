@@ -98,11 +98,10 @@ class HomeController extends Controller
 		$currentlyReading = false;
 		$wantToRead = false;
 		$finishedReading = false;
-		//echo "Recieved Message";
 		$shelf = Shelf::where('book_id', $book_id)->get();
 		
 		if($shelf){
-			echo "$shelf";
+			echo "Data Recieved";
 		}else{
 			echo "Nothing in the database";
 		}
