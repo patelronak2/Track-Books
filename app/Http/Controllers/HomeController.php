@@ -111,6 +111,21 @@ class HomeController extends Controller
 		// if(count($updated) > 0){
 			// echo "Shelf updated";
 		// }else{
+		$shelfId = -1;
+		$shelves = Shelf::all();
+		for($shelves as $shelf){
+			if($shelf->book_id == $book_id && $shelf->user_id == $user_id){
+				$shelfId = $shelf->id;
+			}
+		}
+		if($shelfId != -1){
+			$shelf = Shelf::find($shelfId);
+			$shelf->currentlyReading = $currentlyReading;
+			$shelf->wantToRead = $wantToRead;
+			$shelf->finishedReading = $finishedReading;
+			$shelf->save();
+			
+		}else{
 			$shelf = new Shelf;
 			$shelf->user_id = $user_id;
 			$shelf->book_id = $book_id;
@@ -119,6 +134,6 @@ class HomeController extends Controller
 			$shelf->finishedReading = $finishedReading;
 			$shelf->save();
 			echo "New Record Inserted";
-		//}
+		}
 	}
 }
