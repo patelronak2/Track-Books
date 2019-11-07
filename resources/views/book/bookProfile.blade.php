@@ -81,7 +81,7 @@ $(document).ready(function(){
 			type: 'POST',
 			data: {_token: CSRF_TOKEN, bookShelf: bookShelf, book_id: book_id},
 			success: function(data){
-				alert(JSON.parse(data));
+				alert(data);
 				},
 			error: function(error){
 				alert(error);
