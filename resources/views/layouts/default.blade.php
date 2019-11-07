@@ -251,8 +251,9 @@
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="notifications">
-								<a class="dropdown-item" href="#">No Notifications Yet</a>
-								<span id="newNotifications"></span>
+								<div id="newNotifications">
+									<a class="dropdown-item" href="#">No Notifications Yet</a>
+								</div>
 							</div>
 						</li>
 						
