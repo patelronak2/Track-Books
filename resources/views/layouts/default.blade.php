@@ -343,7 +343,7 @@
       var channel = pusher.subscribe('shelf-updated');
 
       // Bind a function to a Event (the full Laravel class)
-      channel.bind('App\\Events\\StatusLiked', function(data) {
+      channel.bind('App\\Events\\ShelfUpdated', function(data) {
         //Update dropdown from here
 		$("#newNotifications").html(data.message);
       });
