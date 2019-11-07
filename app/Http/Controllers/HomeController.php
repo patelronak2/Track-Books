@@ -102,9 +102,9 @@ class HomeController extends Controller
 		$shelf = Shelf::where('book_id', $book_id)->get();
 		
 		if($shelf){
-			return "$shelf";
+			echo "$shelf";
 		}else{
-			return "Nothing in the database";
+			echo "Nothing in the database";
 		}
 	}
 }
