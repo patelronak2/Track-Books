@@ -329,55 +329,6 @@
 		<div class="footer-copyright text-center py-4">© 2018 Copyright:
 			<a href="https://ronakjpatel.com"> ronakjpatel.com</a>
 		</div>
-    </div>
-	<script type="text/javascript">
-      // Enable pusher logging - don't include this in production
-       Pusher.logToConsole = true;
-
-      var pusher = new Pusher('74c23276456c6610bc6b', {
-		cluster: 'us2',  
-        CSRFToken: $('meta[name="csrf-token"]').attr('content')
-      });
-
-      // Subscribe to the channel we specified in our Laravel Event
-      var channel = pusher.subscribe('shelf-updated');
-
-      // Bind a function to a Event (the full Laravel class)
-      channel.bind('App\\Events\\ShelfUpdated', function(data) {
-		alert('An event was triggered with message: ' + data.message);
-      });
-    </script>  
+    </div> 
 </body>
 </html>
-<!--
-var existingNotifications = notifications.html();
-var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
-var newNotificationHtml = '<li class="notification active"><div class="media"><div class="media-left"><div class="media-object">';
-newNotificationHtml += '<img src="https://api.adorable.io/avatars/71/`+avatar+`.png" class="img-circle" alt="50x50" style="width: 50px; height: 50px;"></div></div>';
-newNotificationHtml += '<div class="media-body"><strong class="notification-title">'+data.message+'</strong>';
-newNotificationHtml += '</div></div></li>';
-notifications.html(newNotificationHtml + existingNotifications);
-
-notificationsCount += 1;
-notificationsCountElem.attr('data-count', notificationsCount);
-notificationsWrapper.find('.notif-count').text(notificationsCount);
-notificationsWrapper.show();
-<li class="dropdown dropdown-notifications">
-  <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
-	<i data-count="0" class="glyphicon glyphicon-bell notification-icon"></i>
-  </a>
-
-  <div class="dropdown-container">
-	<div class="dropdown-toolbar">
-	  <div class="dropdown-toolbar-actions">
-		<a href="#">Mark all as read</a>
-	  </div>
-	  <h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">0</span>)</h3>
-	</div>
-	<ul class="dropdown-menu">
-	</ul>
-	<div class="dropdown-footer text-center">
-	  <a href="#">View All</a>
-	</div>
-  </div>
-</li>-->
