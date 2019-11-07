@@ -92,7 +92,7 @@ class HomeController extends Controller
 	
 	public function addToShelf(Request $request)
 	{
-		$bookShelf = $request->input('bookShelf');
+		//$bookShelf = $request->input('bookShelf');
 		$book_id = $request-input('book_id');
 		$user_id = Auth::id();
 		$currentlyReading = false;
