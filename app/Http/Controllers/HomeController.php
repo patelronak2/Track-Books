@@ -99,8 +99,8 @@ class HomeController extends Controller
 		$wantToRead = false;
 		$finishedReading = false;
 		//$shelf = Shelf::where('book_id', $book_id)->get();
-		
-		if($currentlyReading){
+		$reviews = Review::where('book_id', $book_id)->orderBy('id', 'desc')->with('user')->get();
+		if($reviews){
 			echo "Data Recieved";
 		}else{
 			echo "Nothing in the database";
