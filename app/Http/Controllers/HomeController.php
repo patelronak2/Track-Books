@@ -152,9 +152,7 @@ class HomeController extends Controller
 		$user = Auth::user();
 		$book = Book::findorfail($book_id);
 		$user->notify(new ShelfUpdated($user, $book, $bookShelf));
-		die;
-		// Auth::user()->notify( new App\Notifications\ShelfUpdated(Auth::user(), Book::findorfail($book_id), $bookShelf));
-		
-		return Auth::user()->notifications;
+			
+		return $user->notifications;
 	}
 }
