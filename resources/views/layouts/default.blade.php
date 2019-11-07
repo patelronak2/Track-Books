@@ -333,7 +333,7 @@
     </div>
 	<script>
 		function displayNotifications(response){
-			//alert(response[0].data.shelf);
+			alert(typeof response[0].type);
 			var temp = "";
 			for(notification of response){
 				//if(notification.type == "App\Notifications\ShelfUpdated"){
