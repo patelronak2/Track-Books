@@ -330,6 +330,18 @@
 		<div class="footer-copyright text-center py-4">© 2018 Copyright:
 			<a href="https://ronakjpatel.com"> ronakjpatel.com</a>
 		</div>
-    </div> 
+    </div>
+	<script>
+		function displayNotifications(data){
+			var d = "";
+			for(notification of data){
+				if(notification.type == "App\Notifications\ShelfUpdated"){
+					var temp = 'Book: ' + notification.data['book_id'] + ' added to "' + notification.data['shelf'] + '" Shelf.';
+					d += temp + "\n";
+				}
+			}
+			alert(d);
+		}
+	</script>
 </body>
 </html>

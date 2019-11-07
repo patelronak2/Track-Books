@@ -106,7 +106,7 @@ $(document).ready(function(){
 			success: function(data){
 				//Fire a notification from here
 				//Show that user added a book to shelf
-				alert(data[0].type);
+				displayNotifications(data);
 				},
 			error: function(error){
 				alert("Something Went Wrong");
