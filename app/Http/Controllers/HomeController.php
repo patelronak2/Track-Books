@@ -136,7 +136,8 @@ class HomeController extends Controller
 			$shelf->wantToRead = $wantToRead;
 			$shelf->finishedReading = $finishedReading;
 			$shelf->save();
-			echo "Record Updated";
+			//fire notification from here to show that book shelf has been updated
+			
 		}else{
 			$shelf = new Shelf;
 			$shelf->user_id = $user_id;
@@ -145,7 +146,9 @@ class HomeController extends Controller
 			$shelf->wantToRead = $wantToRead;
 			$shelf->finishedReading = $finishedReading;
 			$shelf->save();
-			echo "New Record Inserted";
+			//fire notification to show that book has been added to shelf
 		}
+		$user->notify( new App\Notifications\ShelfUpdated(Auth::user(), Book::findorfail($book_id), $bookShelf));
+		return $user->notifications;
 	}
 }
