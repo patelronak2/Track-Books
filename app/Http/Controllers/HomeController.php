@@ -98,11 +98,31 @@ class HomeController extends Controller
 		$currentlyReading = false;
 		$wantToRead = false;
 		$finishedReading = false;
-		$shelf = Shelf::all();
-		if($shelf){
-			echo "Data Recieved: " . count($shelf);
+		if($bookShelf == "Want to Read"){
+			$wantToRead = true;
+		}
+		if($bookShelf == "Currently Reading"){
+			$currentlyReading = true;
+		}
+		if($bookShelf == "Finished Reading"){
+			$finishedReading = true;
+		}
+		$shelf = Shelf::where([['book_id', '=' , $book_id],['user_id', '=' , $user_id]])->first();
+		if(count($shelf) > 0){
+			$shelf->currentlyReading = $currentlyReading;
+			$shelf->wantToRead = $wantToRead;
+			$shelf->finishedReading = $finishedReading;
+			$shelf->save();
+			echo "Shelf updated";
 		}else{
-			echo "Nothing in the database";
+			$shelf = new Shelf;
+			$shelf->user_id = $user_id;
+			$shelf->book_id = $book_id;
+			$shelf->currentlyReading = $currentlyReading;
+			$shelf->wantToRead = $wantToRead;
+			$shelf->finishedReading = $finishedReading;
+			$shelf->save();
+			echo "New Record Inserted";
 		}
 	}
 }
