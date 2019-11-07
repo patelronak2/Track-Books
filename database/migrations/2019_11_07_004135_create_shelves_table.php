@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class BookShelf extends Migration
+class CreateShelvesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class BookShelf extends Migration
      */
     public function up()
     {
-        Schema::create('shelfs', function (Blueprint $table) {
-			$table->bigIncrements('id');
+        Schema::create('shelves', function (Blueprint $table) {
+            $table->bigIncrements('id');
 			$table->unsignedBigInteger('user_id');
 			$table->unsignedBigInteger('book_id');
 			$table->boolean('currentlyReading');
@@ -23,7 +23,7 @@ class BookShelf extends Migration
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 			$table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
 			$table->timestamps();
-		});
+        });
     }
 
     /**
@@ -33,6 +33,6 @@ class BookShelf extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shelfs');
+        Schema::dropIfExists('shelves');
     }
 }
