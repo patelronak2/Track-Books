@@ -336,7 +336,7 @@
 
       var pusher = new Pusher('74c23276456c6610bc6b', {
 		cluster: 'us2',  
-        encrypted: true
+        CSRFToken: $('meta[name="csrf-token"]').attr('content');
       });
 
       // Subscribe to the channel we specified in our Laravel Event
