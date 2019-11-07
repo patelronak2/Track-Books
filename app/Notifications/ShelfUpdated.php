@@ -10,15 +10,19 @@ use Illuminate\Notifications\Messages\MailMessage;
 class ShelfUpdated extends Notification
 {
     use Queueable;
-
+	public $user;
+	public $book;
+	public $shelf;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user, $book, $shelf)
     {
-        //
+        $this->user = $user;
+		$this->book = $book;
+		$this->shelf = $shelf;
     }
 
     /**
@@ -29,21 +33,7 @@ class ShelfUpdated extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
-    }
-
-    /**
-     * Get the mail representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
-     */
-    public function toMail($notifiable)
-    {
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+        return ['database'];
     }
 
     /**
@@ -52,10 +42,12 @@ class ShelfUpdated extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
-    public function toArray($notifiable)
+    public function toDatabase($notifiable)
     {
         return [
-            //
+            "book_id" => $this->book->id,
+			"user_id" => $this->user->id,
+			"shelf" => $this->shelf
         ];
     }
 }

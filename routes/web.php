@@ -40,3 +40,7 @@ Route::post('/deleteReview', 'HomeController@deleteReview');
 Route::get('/manageReviews','AdminController@manageReviews')->middleware('is_admin')->name('admin');
 Route::get('/deleteReview/{id}', 'AdminController@deleteReview' )->middleware('is_admin')->name('admin');
 Route::post('/addToShelf','HomeController@addToShelf');
+
+Route::get('/test',function(){
+	echo "Notification Test";
+});
