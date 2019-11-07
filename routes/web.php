@@ -43,7 +43,7 @@ Route::post('/addToShelf','HomeController@addToShelf');
 
 Route::get('/test',function(){
 	$user = Auth::user();
-	$book = Book::findorfail(7);
+	$book = App\Book::findorfail(7);
 	$shelf = "Want to Read";
 	
 	$user->notify( new ShelfUpdated($user, $book, $shelf));
