@@ -79,7 +79,7 @@ $(document).ready(function(){
 		$.ajax({
 			url: '/public/addToShelf',
 			type: 'POST',
-			data: {_token: CSRF_TOKEN},
+			data: {_token: CSRF_TOKEN, bookShelf: bookShelf, book_id: book_id},
 			success: function(data){
 				alert(data);
 				},
