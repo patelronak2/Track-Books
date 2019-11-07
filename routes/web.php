@@ -42,5 +42,9 @@ Route::get('/deleteReview/{id}', 'AdminController@deleteReview' )->middleware('i
 Route::post('/addToShelf','HomeController@addToShelf');
 
 Route::get('/test',function(){
-	echo "Notification Test";
+	$user = Auth::user();
+	$book = Book::findorfail(7);
+	$shelf = "Want to Read";
+	
+	$user->notify( new ShelfUpdated($user, $book, $shelf));
 });
