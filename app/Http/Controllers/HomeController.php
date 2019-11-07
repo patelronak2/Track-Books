@@ -60,7 +60,7 @@ class HomeController extends Controller
 		$finishedReading = false;
 		$shelves = Shelf::all();
 		foreach($shelves as $shelf){
-			if($shelf->book_id == $book_id && $shelf->user_id == $user_id){
+			if($shelf->book_id == $id && $shelf->user_id == Auth::id()){
 				if($shelf->wantToRead){
 					$wantToRead = true;
 				}elseif($shelf->currentlyReading){
