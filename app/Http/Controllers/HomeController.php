@@ -124,7 +124,7 @@ class HomeController extends Controller
 			$shelf->wantToRead = $wantToRead;
 			$shelf->finishedReading = $finishedReading;
 			$shelf->save();
-			
+			echo "Record Updated";
 		}else{
 			$shelf = new Shelf;
 			$shelf->user_id = $user_id;
