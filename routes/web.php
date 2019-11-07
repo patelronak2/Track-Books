@@ -46,5 +46,9 @@ Route::get('/test',function(){
 	$book = App\Book::findorfail(7);
 	$shelf = "Want to Read";
 	
-	$user->notify( new App\Notifications\ShelfUpdated($user, $book, $shelf));
+	//$user->notify( new App\Notifications\ShelfUpdated($user, $book, $shelf));
+	
+	foreach(Auth::user()->notifications as $notification){
+		dd($notification);
+	}
 });
