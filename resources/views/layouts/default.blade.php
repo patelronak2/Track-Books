@@ -251,10 +251,7 @@
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="notifications">
-								<div class="card">
-									<div class="card-body">Content</div> 
-									<div class="card-footer">Footer</div>
-								</div>
+								No Notification
 							</div>
 						</li>
 						
