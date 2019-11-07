@@ -49,5 +49,5 @@ Route::get('/test',function(){
 	// $user->notify( new App\Notifications\ShelfUpdated($user, $book, $shelf));
 	// die;
 	Auth::user()->notifications()->delete();
-	}
+	
 });
