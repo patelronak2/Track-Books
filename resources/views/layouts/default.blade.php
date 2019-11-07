@@ -334,7 +334,7 @@
       // Enable pusher logging - don't include this in production
       // Pusher.logToConsole = true;
 
-      var pusher = new Pusher('API_KEY_HERE', {
+      var pusher = new Pusher('fc04643e7a4ac766015c', {
         encrypted: true
       });
 
