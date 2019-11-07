@@ -48,8 +48,7 @@ Route::get('/test',function(){
 	
 	//$user->notify( new App\Notifications\ShelfUpdated($user, $book, $shelf));
 	
-	foreach(Auth::user()->unreadNotifications as $notification){
-		//$notification->markAsRead();
-		dd($notification);
+	foreach(Auth::user()->notifications as $notification){
+		$notification->markAsRead();
 	}
 });
