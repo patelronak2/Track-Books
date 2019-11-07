@@ -99,8 +99,8 @@ class HomeController extends Controller
 		$wantToRead = false;
 		$finishedReading = false;
 		$shelf = Shelf::all();
-		if($shelf){
-			echo "Data Recieved";
+		if($shel){
+			echo "Data Recieved: " . count($shelf);
 		}else{
 			echo "Nothing in the database";
 		}
