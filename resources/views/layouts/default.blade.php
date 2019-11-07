@@ -332,7 +332,7 @@
     </div>
 	<script type="text/javascript">
       // Enable pusher logging - don't include this in production
-      // Pusher.logToConsole = true;
+       Pusher.logToConsole = true;
 
       var pusher = new Pusher('74c23276456c6610bc6b', {
 		cluster: 'us2',  
@@ -344,8 +344,7 @@
 
       // Bind a function to a Event (the full Laravel class)
       channel.bind('App\\Events\\ShelfUpdated', function(data) {
-        //Update dropdown from here
-		$("#newNotifications").html(data.message);
+		alert('An event was triggered with message: ' + data.message);
       });
     </script>  
 </body>
