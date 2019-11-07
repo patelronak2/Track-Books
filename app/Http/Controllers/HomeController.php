@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
 use App\Book;
-use App\Shelf;
 use App\Review;
 
 class HomeController extends Controller
@@ -98,11 +97,7 @@ class HomeController extends Controller
 		$currentlyReading = false;
 		$wantToRead = false;
 		$finishedReading = false;
-		$shelf = Shelf::all();
-		if($shelf){
-			echo "Data Recieved";
-		}else{
-			echo "Nothing in the database";
-		}
+		echo "$bookShelf $book_id $user_id";
+		
 	}
 }
