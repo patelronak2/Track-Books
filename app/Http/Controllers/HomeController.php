@@ -148,7 +148,7 @@ class HomeController extends Controller
 			$shelf->save();
 			//fire notification to show that book has been added to shelf
 		}
-		$Auth::user()->notify( new App\Notifications\ShelfUpdated(Auth::user(), Book::findorfail($book_id), $bookShelf));
-		return $Auth::user()->notifications;
+		Auth::user()->notify( new App\Notifications\ShelfUpdated(Auth::user(), Book::findorfail($book_id), $bookShelf));
+		return Auth::user()->notifications;
 	}
 }
