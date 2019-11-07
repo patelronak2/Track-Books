@@ -336,10 +336,11 @@
 			//alert(response[0].data.shelf);
 			var temp = "";
 			for(notification of response){
-				if(notification.type == "App\Notifications\ShelfUpdated"){
-					temp += 'Book: ' + notification.data['book_id'] + ' added to "' + notification.data['shelf'] + '" Shelf.\n';
+				//if(notification.type == "App\Notifications\ShelfUpdated"){
+					temp += 'Notification Type: ' + notification.type;
+					temp += ' Book: ' + notification.data['book_id'] + ' added to "' + notification.data['shelf'] + '" Shelf.\n';
 				
-				}
+				//}
 			}
 			alert(temp);
 		}
