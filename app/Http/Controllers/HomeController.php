@@ -98,13 +98,13 @@ class HomeController extends Controller
 		$currentlyReading = false;
 		$wantToRead = false;
 		$finishedReading = false;
-		echo "Recieved Message";
-		// $shelf = Shelf::where([['book_id', '=' , $book_id],['user_id', '=' , $user_id]])->first();
+		//echo "Recieved Message";
+		$shelf = Shelf::where([['book_id', '=' , $book_id],['user_id', '=' , $user_id]])->first();
 		
-		// if($shelf){
-			// return "$shelf";
-		// }else{
-			// return "Nothing in the database";
-		// }
+		if($shelf){
+			return "$shelf";
+		}else{
+			return "Nothing in the database";
+		}
 	}
 }
