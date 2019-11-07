@@ -46,9 +46,9 @@ class ShelfUpdated extends Notification
     {
         return [
             "book_id" => $this->book->id,
-			"book_name" => $this->book->title;
+			"book_name" => $this->book->title,
 			"user_id" => $this->user->id,
-			"user_name" = $this->user->name;
+			"user_name" = $this->user->name,
 			"shelf" => $this->shelf
         ];
     }
