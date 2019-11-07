@@ -76,11 +76,10 @@ $(document).ready(function(){
 	var book_id = $("#bookID").text();
 	$("#bookShelf").change(function(){
 		var bookShelf = $(this).children("option:selected").val();
-		alert(bookShelf);
 		$.ajax({
 			url: '/public/addToShelf',
 			type: 'POST',
-			data: {_token: CSRF_TOKEN, bookShelf: bookShelf, book_id: book_id},
+			data: {_token: CSRF_TOKEN},
 			success: function(data){
 				alert(data);
 				},

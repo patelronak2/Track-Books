@@ -92,13 +92,13 @@ class HomeController extends Controller
 	
 	public function addToShelf(Request $request)
 	{
-		$bookShelf = $request->input('bookShelf');
-		$book_id = $request-input('book_id');
-		$user_id = Auth::id();
-		$currentlyReading = false;
-		$wantToRead = false;
-		$finishedReading = false;
-		echo "$bookShelf $book_id $user_id";
+		// $bookShelf = $request->input('bookShelf');
+		// $book_id = $request-input('book_id');
+		// $user_id = Auth::id();
+		// $currentlyReading = false;
+		// $wantToRead = false;
+		// $finishedReading = false;
+		echo "Recieved Message";
 		// $shelf = Shelf::where([['book_id', '=' , $book_id],['user_id', '=' , $user_id]])->first();
 		
 		// if($shelf){
