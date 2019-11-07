@@ -42,12 +42,12 @@ Route::get('/deleteReview/{id}', 'AdminController@deleteReview' )->middleware('i
 Route::post('/addToShelf','HomeController@addToShelf');
 
 Route::get('/test',function(){
-	$user = Auth::user();
-	$book = App\Book::findorfail(7);
-	$shelf = "Already Read";
+	// $user = Auth::user();
+	// $book = App\Book::findorfail(7);
+	// $shelf = "Already Read";
 	
-	$user->notify( new App\Notifications\ShelfUpdated($user, $book, $shelf));
-	die;
+	// $user->notify( new App\Notifications\ShelfUpdated($user, $book, $shelf));
+	// die;
 	foreach(Auth::user()->unreadNotifications as $notification){
 		//$notification->markAsRead();
 		dd($notification);
