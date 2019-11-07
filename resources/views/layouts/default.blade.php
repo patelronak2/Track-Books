@@ -250,12 +250,12 @@
 								<span class="badge badge-danger ml-2">4</span>Notifications
 							</a>
 
-							
-								<div class="dropdown-menu dropdown-menu-right animate slideIn" style="width:350px; height:450px;" aria-labelledby="notifications">
-									<div class="card-header">Header</div>
+							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="notifications">
+								<div class="card">
 									<div class="card-body">Content</div> 
 									<div class="card-footer">Footer</div>
-								  </div>
+								</div>
+							</div>
 						</li>
 						
                     </ul>
