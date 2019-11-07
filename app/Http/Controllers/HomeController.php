@@ -98,9 +98,8 @@ class HomeController extends Controller
 		$currentlyReading = false;
 		$wantToRead = false;
 		$finishedReading = false;
-		//$shelf = Shelf::where('book_id', $book_id)->get();
-		$reviews = Review::where('book_id', $book_id)->orderBy('id', 'desc')->with('user')->get();
-		if($reviews){
+		$shelf = Shelf::all();
+		if($shelf){
 			echo "Data Recieved";
 		}else{
 			echo "Nothing in the database";
