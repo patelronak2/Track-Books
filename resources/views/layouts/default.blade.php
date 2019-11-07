@@ -251,8 +251,9 @@
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="notifications">
-								<div id="newNotifications">
-									<a class="dropdown-item" href="#">No Notifications Yet</a>
+								<div class="card" style="width:350px; height:450px;">
+									<div class="card-body" id="notifications"></div> 
+									<div class="card-footer"><a href="#" class="btn btn-primary">Mark all Read</a></div>
 								</div>
 							</div>
 						</li>
