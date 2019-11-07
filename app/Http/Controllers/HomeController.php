@@ -113,7 +113,7 @@ class HomeController extends Controller
 		// }else{
 		$shelfId = -1;
 		$shelves = Shelf::all();
-		for($shelves as $shelf){
+		foreach($shelves as $shelf){
 			if($shelf->book_id == $book_id && $shelf->user_id == $user_id){
 				$shelfId = $shelf->id;
 			}
