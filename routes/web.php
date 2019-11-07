@@ -44,11 +44,12 @@ Route::post('/addToShelf','HomeController@addToShelf');
 Route::get('/test',function(){
 	$user = Auth::user();
 	$book = App\Book::findorfail(7);
-	$shelf = "Want to Read";
+	$shelf = "Already Read";
 	
-	//$user->notify( new App\Notifications\ShelfUpdated($user, $book, $shelf));
-	
-	foreach(Auth::user()->notifications as $notification){
-		$notification->markAsRead();
+	$user->notify( new App\Notifications\ShelfUpdated($user, $book, $shelf));
+	die;
+	foreach(Auth::user()->unreadNotifications as $notification){
+		//$notification->markAsRead();
+		dd($notification);
 	}
 });
