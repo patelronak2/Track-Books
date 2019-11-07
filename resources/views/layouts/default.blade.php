@@ -249,10 +249,13 @@
 							<a id="notifications" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 								<span class="badge badge-danger ml-2">4</span>Notifications
 							</a>
-							<div class="card dropdown-menu dropdown-menu-right animate slideIn" id="notifications" style="width:350px; height:450px;" aria-labelledby="notifications">
-								<div class="card-body" id="allNotifications"></div> 
-								<div class="card-footer"><a href="#" class="btn btn-primary">Mark all Read</a></div>
-							</div>
+
+							
+								<div class="dropdown-menu dropdown-menu-right animate slideIn" style="width:350px; height:450px;" aria-labelledby="notifications">
+									<div class="card-header">Header</div>
+									<div class="card-body">Content</div> 
+									<div class="card-footer">Footer</div>
+								  </div>
 						</li>
 						
                     </ul>
