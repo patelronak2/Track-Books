@@ -231,7 +231,7 @@
 					url: '/public/getNotification',
 					type: 'GET',
 					success: function(res){
-						alert(res[0][0]);
+						alert(res[0][0][0]);
 						var temphtml = '<div class="overflow-auto" style="width: 360px; height: 400px;">';
 						
 						for(notification of res){
