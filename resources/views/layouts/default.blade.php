@@ -311,17 +311,7 @@
 								<span class="badge badge-danger ml-2 d-none" id="unreadNotifications"></span>Notifications
 							</a>
 
-							<div class="d-none bg-white" id="allNotifications">
-								<div class="overflow-auto" style="width: 360px; height: 400px;">
-									<div class="card mb-1">
-										<div class="card-body">
-										  <h5 class="card-title">Card title</h5>
-										  <p class="card-text"></p>
-										  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-										</div>
-									</div>
-								</div>
-								
+							<div class="d-none bg-white" id="allNotifications">								
 							</div>
 						</li>
 						
