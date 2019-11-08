@@ -235,7 +235,7 @@
 							var temphtml = '<div class="text-center m-2"><h5>No Notifications Yet</h5></div>';
 							$("#allNotifications").html(temphtml);
 						}else{
-							var temphtml = '<div class="overflow-auto" style="width: 360px; height: 400px;">';							
+							var temphtml = '<div class="overflow-auto" style="width: 360px; max-height: 400px;">';							
 							for(var i = 0; i < response.timeStamp.length; i++){
 								temphtml  += '<div class="card mb-1"><div class="card-body">';
 								if(response.notification[i].type == "App\\Notifications\\ShelfUpdated"){
