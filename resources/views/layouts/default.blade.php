@@ -235,9 +235,9 @@
 						},
 					error: function(){
 						alert("Something is wrong");
-					}
+						}
 				});
-				$("#getNotification").removeClass("d-none");
+				$("#allNotifications").removeClass("d-none");
 			});
 		});
 	</script>								
