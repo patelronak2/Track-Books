@@ -41,4 +41,4 @@ Route::get('/manageReviews','AdminController@manageReviews')->middleware('is_adm
 Route::get('/deleteReview/{id}', 'AdminController@deleteReview' )->middleware('is_admin')->name('admin');
 Route::post('/addToShelf','HomeController@addToShelf');
 Route::get('/count', 'HomeController@getNotificationCount');
-Route::get('/getNotification','HomeController@getNotification');
+Route::get('/getNotification','HomeController@getNotifications');
