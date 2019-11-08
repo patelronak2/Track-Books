@@ -224,10 +224,7 @@
 				searchBy = $(this).children("option:selected").val();
 			});
 			
-			$("#notifications").on('click', function(){
-				
-				$("#unreadNotifications").addClass("d-none").html("");
-				
+			$("#notifications").on('click', function(){			
 				//get all notifications from here
 				//ajax call to get unread notifications
 				$.ajax({
@@ -254,7 +251,11 @@
 				url: '/public/count',
 				type: 'GET',
 				success: function(data){
-					alert(data.count);
+					if(data.count > 0){
+						$("#unreadNotifications").removeClass("d-none").html(data.count);
+					}else{
+						$("#unreadNotifications").removeClass("d-none").html("")
+					}
 					},
 				error: function(){
 					alert("Something is wrong");
