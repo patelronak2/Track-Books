@@ -164,6 +164,6 @@ class HomeController extends Controller
 		
 		$user = Auth::user();
 		$user->unreadNotifications->markAsRead();
-		return $user->getNotifications;
+		return $user->notifications;
 	}
 }
