@@ -169,6 +169,6 @@ class HomeController extends Controller
 			$data[][0] = $notification;
 			$data[][1] = $notification->created_at->diffForHumans();
 		}
-		return json_encode($data);
+		return $data;
 	}
 }
