@@ -231,6 +231,7 @@
 					url: '/public/getNotification',
 					type: 'GET',
 					success: function(response){
+						alert(response.notification);
 						var temphtml = '<div class="overflow-auto" style="width: 360px; height: 400px;">';
 						
 						for(var i = 0; i < response.timeStamp.length; i++){
