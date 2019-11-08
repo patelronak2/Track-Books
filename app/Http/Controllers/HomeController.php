@@ -161,7 +161,7 @@ class HomeController extends Controller
 	}
 	
 	public function	getNotifications(){
-		die;
+		
 		$user = Auth::user();
 		$user->unreadNotifications->markAsRead();
 		return $user->getNotifications;
