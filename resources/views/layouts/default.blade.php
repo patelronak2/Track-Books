@@ -251,10 +251,10 @@
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="notifications">
-								<div style="width:300px; 450px;">
+								<div class="overflow-auto" style="width: 300px; height: 400px;" id="allNotifications">
 								
 								</div>
-								<div>
+								<div class="container text-right">
 									<a href="#" class="btn btn-outline-primary btn-sm">Mark All Read</a>
 								</div>
 								
@@ -345,7 +345,7 @@
 				
 				}
 			}
-			alert(temp);
+			$("#allNotifications").html(temp);
 		}
 	</script>
 </body>
