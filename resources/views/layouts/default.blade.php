@@ -230,16 +230,16 @@
 				$.ajax({
 					url: '/public/getNotification',
 					type: 'GET',
-					success: function(data){
-						var res = JSON.parse(data);
+					success: function(res){
+						alert(res[0][0].type);
 						var temphtml = '<div class="overflow-auto" style="width: 360px; height: 400px;">';
 						
-						for(notification of res){
+						for(var i = 0; i < res.length; i++){
 							temphtml  += '<div class="card mb-1"><div class="card-body">';
-							if(notification[0].type == "App\\Notifications\\ShelfUpdated"){
-								temphtml += '<h5 class="card-title">'+ notification[0]['data']['book_name'] +'</h5>';
-								temphtml += '<p class="card-text">Added to "'+ notification[0]['data']['shelf'] +'" shelf.</p>';
-								temphtml += '<p class="card-text"><small class="text-muted">'+ notification[1] +'</small></p>';
+							if(res[i][0].type == "App\\Notifications\\ShelfUpdated"){
+								temphtml += '<h5 class="card-title">'+ res[i][0].data.book_name +'</h5>';
+								temphtml += '<p class="card-text">Added to "'+ res[i][0].data.shelf +'" shelf.</p>';
+								temphtml += '<p class="card-text"><small class="text-muted">'+ res[i][1] +'</small></p>';
 								
 							}
 							temphtml += '</div></div>';
