@@ -50,6 +50,7 @@
 			}
 			#allNotifications{
 				z-index: 1;
+				top: auto;
 			}
 		}
 	</style>
@@ -268,7 +269,7 @@
 							</a>
 
 							<div class="d-none bg-white" id="allNotifications">
-								<div class="overflow-auto" style="width: 300px; height: 400px;">
+								<div class="overflow-auto" style="width: 360px; height: 400px;">
 									<div class="card mb-1">
 									<div class="card-body">
 									  <h5 class="card-title">Card title</h5>
@@ -291,7 +292,7 @@
 									</div>
 								</div>
 								</div>
-								<div class="container text-right">
+								<div class="mx-4 my-2 text-right">
 									<a href="#" class="btn btn-outline-primary btn-sm">Mark All Read</a>
 								</div>	
 							</div>
