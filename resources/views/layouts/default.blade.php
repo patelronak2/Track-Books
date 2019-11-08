@@ -231,7 +231,6 @@
 					url: '/public/getNotification',
 					type: 'GET',
 					success: function(response){
-						alert(response.notification[0].type);
 						var temphtml = '<div class="overflow-auto" style="width: 360px; height: 400px;">';
 						
 						for(var i = 0; i < response.timeStamp.length; i++){
@@ -240,7 +239,7 @@
 								temphtml += '<h5 class="card-title">'+ response.notification[i].data.book_name +'</h5>';
 								temphtml += '<p class="card-text">Added to "'+ response.notification[i].data.shelf +'" shelf.</p>';
 								temphtml += '<p class="card-text"><small class="text-muted">'+ response.timeStamp[i] +'</small></p>';
-								
+								temphtml += '<a href="/public/showBook/'+ response.notification[i].data.book_id +'" class="stretched-link"></a>';
 							}
 							temphtml += '</div></div>';
 						}
@@ -252,10 +251,7 @@
 						}
 				});
 				$("#allNotifications").removeClass("d-none");
-			});
-			
-			
-			
+			});			
 		});
 		
 		function getNotificationCount() {
