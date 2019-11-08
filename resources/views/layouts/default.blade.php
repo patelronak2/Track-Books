@@ -34,19 +34,20 @@
 		#allNotifications{
 			position: absolute; 
 			top: 50px; 
-			width: auto; 
-			height: auto;
 			margin-right: 15px;
 		}
 		
 		@media only screen and (max-width: 768px){
-			#navSearchResults{
+			#navSearchResults, #allNotifications{
 				position: absolute; 
 				top: 100px; 
 				width: auto; 
 				height: auto; 
 				z-index: 1;
 				margin-right: 15px;
+			}
+			#allNotifications{
+				z-index: 1;
 			}
 		}
 	</style>
@@ -265,22 +266,22 @@
 							</a>
 
 							<div class="d-none bg-white" id="allNotifications">
-								<div class="overflow-auto">
-									<div class="card">
+								<div class="overflow-auto p-1" style="width: 300px; height: 400px;">
+									<div class="card mb-1">
 									<div class="card-body">
 									  <h5 class="card-title">Card title</h5>
 									  <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
 									  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 									</div>
 								</div>
-								<div class="card">
+								<div class="card mb-1">
 									<div class="card-body">
 									  <h5 class="card-title">Card title</h5>
 									  <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
 									  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 									</div>
 								</div>
-								<div class="card">
+								<div class="card mb-1">
 									<div class="card-body">
 									  <h5 class="card-title">Card title</h5>
 									  <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
