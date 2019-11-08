@@ -60,6 +60,9 @@
 			var searchBy = "Books";
 			var searchResult = "";
 			var clickedId = -1;
+			
+			getNotificationCount();
+			
 			$("#navSubmit").click(function(){
 				return false;
 			});
@@ -239,7 +242,16 @@
 				});
 				$("#allNotifications").removeClass("d-none");
 			});
+			
+			
+			
 		});
+		
+		function getNotificationCount() {
+		  setInterval(function(){ 
+			alert("Checked for notification");
+		  }, 3000);
+		}
 	</script>								
 </head>
 <body>
