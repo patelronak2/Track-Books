@@ -164,6 +164,11 @@ class HomeController extends Controller
 		
 		$user = Auth::user();
 		$user->unreadNotifications->markAsRead();
-		return $user->notifications;
+		$data = array();
+		foreach($user->notifications as $notification){
+			$data[][0] = $notification;
+			$data[][1] = $notification->created_at->diffForHumans();
+		}
+		return $data;
 	}
 }
