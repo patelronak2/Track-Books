@@ -152,7 +152,17 @@ class HomeController extends Controller
 		$user = Auth::user();
 		$book = Book::findorfail($book_id);
 		$user->notify(new ShelfUpdated($user, $book, $bookShelf));
-			
-		return $user->notifications;
+	}
+	
+	public getNotificationCount(){
+		$user = Auth::user();
+		$count = $user->unreadNotifications()->count();
+		return ['count' => $count];
+	}
+	
+	public getNotifications(){
+		$user = Auth::user();
+		$user->unreadNotifications->markAsRead();
+		return $user->getNotifications;
 	}
 }

@@ -222,10 +222,22 @@
 			});
 			
 			$("#notifications").on('click', function(){
-				$("#allNotifications").removeClass("d-none");
-				$("#unreadNotifications").addClass("d-none");
+				
+				$("#unreadNotifications").addClass("d-none").html("");
+				
 				//get all notifications from here
 				//ajax call to get unread notifications
+				$.ajax({
+					url: '/public/getNotification',
+					type: 'GET',
+					success: function(notifications){
+						alert("Displaying notification now");
+						},
+					error: function(){
+						alert("Something is wrong");
+					}
+				});
+				$("#getNotification").removeClass("d-none");
 			});
 		});
 	</script>								
@@ -241,10 +253,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 			
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">            
                     <ul class="navbar-nav mr-auto">
-						
 						<li class="nav-item">
 							<form class="form-inline my-2 my-md-0">
 								<div class="input-group">

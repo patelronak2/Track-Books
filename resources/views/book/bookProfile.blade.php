@@ -104,9 +104,6 @@ $(document).ready(function(){
 			type: 'POST',
 			data: {_token: CSRF_TOKEN, bookShelf: bookShelf, book_id: book_id},
 			success: function(data){
-				//Notification Fired
-				//Update the number of unread notification
-				$("#unreadNotifications").removeClass("d-none");
 				
 				},
 			error: function(error){

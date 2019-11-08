@@ -40,14 +40,5 @@ Route::post('/deleteReview', 'HomeController@deleteReview');
 Route::get('/manageReviews','AdminController@manageReviews')->middleware('is_admin')->name('admin');
 Route::get('/deleteReview/{id}', 'AdminController@deleteReview' )->middleware('is_admin')->name('admin');
 Route::post('/addToShelf','HomeController@addToShelf');
-
-Route::get('/test',function(){
-	// $user = Auth::user();
-	// $book = App\Book::findorfail(7);
-	// $shelf = "Already Read";
-	
-	// $user->notify( new App\Notifications\ShelfUpdated($user, $book, $shelf));
-	// die;
-	Auth::user()->notifications()->delete();
-	
-});
+Route::get('/count', 'HomeController@getNotificationCount');
+Route::get('/getNotification','HomeController@getNotification');
