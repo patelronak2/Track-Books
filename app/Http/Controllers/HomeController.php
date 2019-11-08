@@ -166,8 +166,8 @@ class HomeController extends Controller
 		$user->unreadNotifications->markAsRead();
 		$data = array();
 		foreach($user->notifications as $notification){
-			$data[][0] = $notification;
-			$data[][1] = $notification->created_at->diffForHumans();
+			$data[][0] += $notification;
+			$data[][1] += $notification->created_at->diffForHumans();
 		}
 		return $data;
 	}
