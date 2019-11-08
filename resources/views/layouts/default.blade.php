@@ -250,14 +250,15 @@
 								<span class="badge badge-danger ml-2">4</span>Notifications
 							</a>
 
-							<div class="dropdown-menu dropdown-menu-right animate slideIn overflow-auto" aria-labelledby="notifications" style="width:300px; 450px;">
-								<ul class="list-group list-group-flush">
+							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="notifications">
+								<ul class="list-group list-group-flush overflow-auto" style="width:300px; 450px;">
 								  <li class="list-group-item">Cras justo odio</li>
 								  <li class="list-group-item">Dapibus ac facilisis in</li>
 								  <li class="list-group-item">Morbi leo risus</li>
 								  <li class="list-group-item">Porta ac consectetur ac</li>
 								  <li class="list-group-item">Vestibulum at eros</li>
 								</ul>
+								<a href="#" class="btn btn-primary">Mark All Read</a>
 							</div>
 						</li>
 						
