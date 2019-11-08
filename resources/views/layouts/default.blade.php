@@ -33,7 +33,9 @@
 		
 		#allNotifications{
 			position: absolute; 
-			top: 50px; 
+			top: 50px;
+			width: auto; 
+			height: auto;
 			margin-right: 15px;
 		}
 		
@@ -266,7 +268,7 @@
 							</a>
 
 							<div class="d-none bg-white" id="allNotifications">
-								<div class="overflow-auto p-1" style="width: 300px; height: 400px;">
+								<div class="overflow-auto" style="width: 300px; height: 400px;">
 									<div class="card mb-1">
 									<div class="card-body">
 									  <h5 class="card-title">Card title</h5>
