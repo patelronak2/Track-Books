@@ -249,7 +249,17 @@
 		
 		function getNotificationCount() {
 		  setInterval(function(){ 
-			alert("Checked for notification");
+			//alert("Checked for notification");
+			$.ajax({
+				url: '/public/count',
+				type: 'GET',
+				success: function(data){
+					alert(data.count);
+					},
+				error: function(){
+					alert("Something is wrong");
+					}
+			});
 		  }, 3000);
 		}
 	</script>								
@@ -287,7 +297,7 @@
 						
 						<li class="nav-item dropdown">
 							<a id="notifications" class="nav-link" href="#" >
-								<span class="badge badge-danger ml-2" id="unreadNotifications">4</span>Notifications
+								<span class="badge badge-danger ml-2 d-none" id="unreadNotifications"></span>Notifications
 							</a>
 
 							<div class="d-none bg-white" id="allNotifications">
