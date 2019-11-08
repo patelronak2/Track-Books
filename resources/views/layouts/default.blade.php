@@ -236,7 +236,7 @@
 						
 						for(notification of res){
 							temphtml  += '<div class="card mb-1"><div class="card-body">';
-							if(notification.type == "App\\Notifications\\ShelfUpdated"){
+							if(notification[0].type == "App\\Notifications\\ShelfUpdated"){
 								temphtml += '<h5 class="card-title">'+ notification[0].data.book_name +'</h5>';
 								temphtml += '<p class="card-text">Added to "'+ notification[0].data.shelf +'" shelf.</p>';
 								temphtml += '<p class="card-text"><small class="text-muted">'+ notification[1] +'</small></p>';
