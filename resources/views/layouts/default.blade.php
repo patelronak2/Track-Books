@@ -231,7 +231,20 @@
 					url: '/public/getNotification',
 					type: 'GET',
 					success: function(notifications){
-						alert("Displaying notification now");
+						//alert("Displaying notification now");
+						var temphtml = '<div class="overflow-auto" style="width: 360px; height: 400px;">;
+						
+						for(notifications as notification){
+							temphtml  += '<div class="card mb-1"><div class="card-body">';
+							if(notification.type == "App\\Notifications\\ShelfUpdated"){
+								temphtml += '<h5 class="card-title">Shelf Updated</h5>';
+								temphtml += '<p class="card-text">Book: '+ notification.data.book_name +' added to "'+ notification.data.shelf +'" shelf.</p>';
+								
+							}
+							temphtml += '</div></div>';
+						}
+						temphtml += '</div>';
+						$("#allNotifications").html(temphtml);
 						},
 					error: function(){
 						alert("Something is wrong");
@@ -304,30 +317,14 @@
 							<div class="d-none bg-white" id="allNotifications">
 								<div class="overflow-auto" style="width: 360px; height: 400px;">
 									<div class="card mb-1">
-									<div class="card-body">
-									  <h5 class="card-title">Card title</h5>
-									  <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-									  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+										<div class="card-body">
+										  <h5 class="card-title">Card title</h5>
+										  <p class="card-text"></p>
+										  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+										</div>
 									</div>
 								</div>
-								<div class="card mb-1">
-									<div class="card-body">
-									  <h5 class="card-title">Card title</h5>
-									  <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-									  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-									</div>
-								</div>
-								<div class="card mb-1">
-									<div class="card-body">
-									  <h5 class="card-title">Card title</h5>
-									  <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-									  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-									</div>
-								</div>
-								</div>
-								<div class="mx-4 my-2 text-right">
-									<a href="#" class="btn btn-outline-primary btn-sm">Mark All Read</a>
-								</div>	
+								
 							</div>
 						</li>
 						
