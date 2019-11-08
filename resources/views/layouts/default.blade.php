@@ -345,7 +345,8 @@
 				
 				}
 			}
-			$("#allNotifications").html(temp);
+			//$("#allNotifications").html(temp);
+			alert(temp);
 		}
 	</script>
 </body>
