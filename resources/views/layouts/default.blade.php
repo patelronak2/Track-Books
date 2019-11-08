@@ -209,6 +209,12 @@
 				searchBy = $(this).children("option:selected").val();
 			});
 			
+			$("#notifications").on('click', function(){
+				$("#allNotifications").removeClass("d-none");
+				$("#unreadNotifications").addClass("d-none");
+				//get all notifications from here
+				//ajax call to get unread notifications
+			});
 		});
 	</script>								
 </head>
@@ -246,18 +252,17 @@
 						</li>
 						
 						<li class="nav-item dropdown">
-							<a id="notifications" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-								<span class="badge badge-danger ml-2">4</span>Notifications
+							<a id="notifications" class="nav-link" href="#" >
+								<span class="badge badge-danger ml-2" id="unreadNotifications">4</span>Notifications
 							</a>
 
-							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="notifications">
-								<div class="overflow-auto" style="width: 300px; height: 400px;" id="allNotifications">
+							<div class="d-none" id="allNotifications">
+								<div class="overflow-auto" style="width: 300px; height: 400px;">
 								
 								</div>
 								<div class="container text-right">
 									<a href="#" class="btn btn-outline-primary btn-sm">Mark All Read</a>
-								</div>
-								
+								</div>	
 							</div>
 						</li>
 						
@@ -335,19 +340,5 @@
 			<a href="https://ronakjpatel.com"> ronakjpatel.com</a>
 		</div>
     </div>
-	<script>
-		function displayNotifications(response){
-			var temp = "";
-			for(notification of response){
-				if(notification.type == "App\\Notifications\\ShelfUpdated"){
-					temp += 'Notification Type: ' + notification.type;
-					temp += ' Book: ' + notification.data['book_name'] + ' added to "' + notification.data['shelf'] + '" Shelf.\n';
-				
-				}
-			}
-			//$("#allNotifications").html(temp);
-			alert(temp);
-		}
-	</script>
 </body>
 </html>
