@@ -201,13 +201,13 @@
 				
 			//Remove the search results
 			$(document).mouseup(function(event){ 
-				var container = $("#navSearchResults");
+				var container = $("#navSearchResults, #allNotifications");
 				var container1 = $("#bookModal");
 				// if the target of the click isn't the container nor a descendant of the container
 				if (!container.is(event.target) && container.has(event.target).length === 0 && !container1.is(event.target) && container1.has(event.target).length === 0) 
 				{
 					container.addClass("d-none");
-					container.val("")
+					$("#navSearchResults").val("")
 					$("#navSearch").val("");
 					
 				}
@@ -264,9 +264,12 @@
 								<span class="badge badge-danger ml-2" id="unreadNotifications">4</span>Notifications
 							</a>
 
-							<div class="d-none" id="allNotifications">
-								<div class="overflow-auto" style="width: 300px; height: 400px;">
-								
+							<div class="d-none bg-white" id="allNotifications">
+								<div class="overflow-auto">
+									<a class="dropdown-item" href="#">Profile</a>
+									<a class="dropdown-item" href="#">Account Settings</a>
+									<a class="dropdown-item" href="#">Profile</a>
+									<a class="dropdown-item" href="#">Account Settings</a>
 								</div>
 								<div class="container text-right">
 									<a href="#" class="btn btn-outline-primary btn-sm">Mark All Read</a>
