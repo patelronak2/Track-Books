@@ -232,7 +232,7 @@
 					type: 'GET',
 					success: function(notifications){
 						//alert("Displaying notification now");
-						var temphtml = '<div class="overflow-auto" style="width: 360px; height: 400px;">;
+						var temphtml = '<div class="overflow-auto" style="width: 360px; height: 400px;">';
 						
 						for(notifications as notification){
 							temphtml  += '<div class="card mb-1"><div class="card-body">';
