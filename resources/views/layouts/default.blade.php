@@ -234,7 +234,7 @@
 						//alert("Displaying notification now");
 						var temphtml = '<div class="overflow-auto" style="width: 360px; height: 400px;">';
 						
-						for(notifications as notification){
+						for(notification of notifications){
 							temphtml  += '<div class="card mb-1"><div class="card-body">';
 							if(notification.type == "App\\Notifications\\ShelfUpdated"){
 								temphtml += '<h5 class="card-title">Shelf Updated</h5>';
