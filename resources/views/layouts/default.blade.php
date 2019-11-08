@@ -231,7 +231,7 @@
 					url: '/public/getNotification',
 					type: 'GET',
 					success: function(notifications){
-						alert(notifications.type);
+						alert(notifications[0].type);
 						var temphtml = '<div class="overflow-auto" style="width: 360px; height: 400px;">';
 						
 						for(notification of notifications){
