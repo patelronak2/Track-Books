@@ -31,6 +31,14 @@
 			margin-right: 15px;
 		}
 		
+		#allNotifications{
+			position: absolute; 
+			top: 50px; 
+			width: auto; 
+			height: auto;
+			margin-right: 15px;
+		}
+		
 		@media only screen and (max-width: 768px){
 			#navSearchResults{
 				position: absolute; 
