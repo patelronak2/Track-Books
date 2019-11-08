@@ -230,8 +230,8 @@
 				$.ajax({
 					url: '/public/getNotification',
 					type: 'GET',
-					success: function(res){
-						alert(res[0][0].type);
+					success: function(data){
+						var res = JSON.parse(data);
 						var temphtml = '<div class="overflow-auto" style="width: 360px; height: 400px;">';
 						
 						for(notification of res){
