@@ -130,12 +130,6 @@ $(document).ready(function(){
 			$(id).addClass("checked");
 		}
 		
-	},function(){
-		var val = $(this).attr("value");
-		for (var i = 1; i <= val; i++){
-			var id = "#rateStar" + val;
-			$(id).removeClass("checked");
-		}
 	});
 	
 	$("#bookShelf").change(function(){
