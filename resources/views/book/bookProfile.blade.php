@@ -123,6 +123,7 @@ $(document).ready(function(){
 	
 	$(".rate").hover(function(){
 		$(this).addClass("checked");
+		
 	},function(){
 		$(this).removeClass("checked");
 	});
