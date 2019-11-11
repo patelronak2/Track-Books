@@ -121,7 +121,7 @@ $(document).ready(function(){
 	var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 	var book_id = $("#bookID").text();
 	
-	$(".rate").hover(function(){
+	$("#rateStar1, #rateStar2, #rateStar3, #rateStar4, #rateStar5").hover(function(){
 		$(this).addClass("checked");
 		
 	},function(){
