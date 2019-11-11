@@ -154,7 +154,7 @@ $(document).ready(function(){
 			data: {_token: CSRF_TOKEN, book_id: book_id, rating: val},
 			success: function(data){
 				//Update the number of user that provided the rating and total rating of the book
-			}
+			},
 			error: function(error){
 				alert("Attempt to rate the book Failed");
 			}
