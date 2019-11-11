@@ -121,10 +121,11 @@ $(document).ready(function(){
 	var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 	var book_id = $("#bookID").text();
 	
-	$("#rateStar1, #rateStar2, #rateStar3, #rateStar4, #rateStar5").hover(function(){
-		$(this).addClass("checked");
+	$(".rate").hover(function(){
+		var val = $(this).attr("value");
+		alert(val);
 	},function(){
-		$(this).removeClass("checked");
+		$('.rate').removeClass("checked");
 	});
 	
 	$("#bookShelf").change(function(){
