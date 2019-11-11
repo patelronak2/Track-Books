@@ -170,4 +170,8 @@ class HomeController extends Controller
 		}
 		return ['notification' => $user->notifications,'timeStamp' => $data];
 	}
+	
+	public function rateBook(Request $request){
+		
+	}
 }

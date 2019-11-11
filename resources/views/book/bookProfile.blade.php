@@ -139,6 +139,7 @@ $(document).ready(function(){
 		}
 	});
 	
+	//Handles the rating of the Book by the user
 	$("#rateStar1, #rateStar2, #rateStar3, #rateStar4, #rateStar5").click(function(){
 		var val = $(this).attr("value");
 		$("#rateStar1, #rateStar2, #rateStar3, #rateStar4, #rateStar5").removeClass("clicked");
@@ -146,6 +147,19 @@ $(document).ready(function(){
 			var id = "#rateStar" + i;
 			$(id).addClass("clicked");
 		}
+		
+		$.ajax({
+			url: '/public/rateBook',
+			type: 'POST',
+			data: {_token: CSRF_TOKEN, book_id: book_id, rating: val},
+			success: function(data){
+				//Update the number of user that provided the rating and total rating of the book
+			}
+			error: function(error){
+				alert("Attempt to rate the book Failed");
+			}
+		});
+		
 	});
 	
 	$("#bookShelf").change(function(){
