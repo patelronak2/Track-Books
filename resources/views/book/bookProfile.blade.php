@@ -18,6 +18,13 @@
 				  <img src="{{ $book->img_link }}" class="img-thumbnail" alt="Image not Available" width="100%">
 				</div>
 				<div class="col-md-8 p-2">
+					<h5>
+						Rating: <span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+					</h5>
 					@if($author)
 						<h5>Author: {{ $book->author }}</h5>
 					@else
@@ -64,13 +71,7 @@
 							<option>Finished Reading</option>
 						</select>
 					@endif
-					<h5>
-						Rating: <span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-					</h5>
+					
 				</div>
 			  </div>
 			</div>
