@@ -141,6 +141,7 @@ $(document).ready(function(){
 	
 	$("#rateStar1, #rateStar2, #rateStar3, #rateStar4, #rateStar5").click(function(){
 		var val = $(this).attr("value");
+		$("#rateStar1, #rateStar2, #rateStar3, #rateStar4, #rateStar5").removeClass("clicked");
 		for (var i = 1; i <= val; i++){
 			var id = "#rateStar" + i;
 			$(id).addClass("clicked");
