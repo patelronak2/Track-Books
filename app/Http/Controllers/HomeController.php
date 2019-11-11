@@ -7,6 +7,7 @@ use App\User;
 use App\Book;
 use App\Shelf;
 use App\Review;
+use App\Rating;
 use App\Notifications\ShelfUpdated;
 class HomeController extends Controller
 {
