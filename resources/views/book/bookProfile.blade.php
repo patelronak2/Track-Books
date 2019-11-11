@@ -79,11 +79,11 @@
 			<div class="mb-3">
 				<div class="my-3">
 					<h5>Rate this Book: 
-						<span class="fa fa-star" id="rateStar1" value="1"></span>
-						<span class="fa fa-star" id="rateStar2" value="2"></span>
-						<span class="fa fa-star" id="rateStar3" value="3"></span>
-						<span class="fa fa-star" id="rateStar4" value="4"></span>
-						<span class="fa fa-star" id="rateStar5" value="5"></span>
+						<span class="fa fa-star" id="rateStar1" class="rate" value="1"></span>
+						<span class="fa fa-star" id="rateStar2" class="rate" value="2"></span>
+						<span class="fa fa-star" id="rateStar3" class="rate" value="3"></span>
+						<span class="fa fa-star" id="rateStar4" class="rate" value="4"></span>
+						<span class="fa fa-star" id="rateStar5" class="rate" value="5"></span>
 					</h5>
 				</div>
 				<div class="form-group">
@@ -120,6 +120,13 @@
 $(document).ready(function(){
 	var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 	var book_id = $("#bookID").text();
+	
+	$("rate").hover(function(){
+		$(this).addClass("checked");
+	},function(){
+		$(this).removeClass("checked");
+	});
+	
 	$("#bookShelf").change(function(){
 		var bookShelf = $(this).children("option:selected").val();
 		$.ajax({
