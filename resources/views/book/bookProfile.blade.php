@@ -5,6 +5,9 @@
 	.checked{
 		color: orange;
 	}
+	.clicked{
+		color: #FF8C00;
+	}
 </style>
 <div class="container">
     <div class="row justify-content-center">
