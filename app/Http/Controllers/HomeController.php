@@ -106,6 +106,19 @@ class HomeController extends Controller
 		echo json_encode(array('data' => $reviews, 'userType' => Auth::user()->type, 'userId' => Auth::id()));	
 	}
 	
+	public function rateBook(Request $request){
+		$book_id = $request->input('book_id');
+		$user_id = Auth::id();
+		
+		$rating = Rating::where('book_id', $book_id)->where('user_id', $user_id)->get();
+		
+		if($rating){
+			return "Rating Updated";
+		}else{
+			return "New Rating Added";
+		}
+	}
+	
 	public function addToShelf(Request $request)
 	{
 		$bookShelf = $request->input('bookShelf');
@@ -171,7 +184,5 @@ class HomeController extends Controller
 		return ['notification' => $user->notifications,'timeStamp' => $data];
 	}
 	
-	public function rateBook(Request $request){
-		
-	}
+	
 }
