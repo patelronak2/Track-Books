@@ -154,6 +154,7 @@ $(document).ready(function(){
 			data: {_token: CSRF_TOKEN, book_id: book_id, rating: val},
 			success: function(data){
 				//Update the number of user that provided the rating and total rating of the book
+				alert(data);
 			},
 			error: function(error){
 				alert("Attempt to rate the book Failed");
@@ -172,7 +173,7 @@ $(document).ready(function(){
 				
 				},
 			error: function(error){
-				alert("Something Went Wrong");
+				alert("Attempt to add the book to shelf failed");
 			}
 		});
 	});

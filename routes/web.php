@@ -42,4 +42,4 @@ Route::get('/deleteReview/{id}', 'AdminController@deleteReview' )->middleware('i
 Route::post('/addToShelf','HomeController@addToShelf');
 Route::get('/count', 'HomeController@getNotificationCount');
 Route::get('/getNotification','HomeController@getNotifications');
-Route::get('/rateBook', 'HomeController@rateBook');
+Route::post('/rateBook', 'HomeController@rateBook');
