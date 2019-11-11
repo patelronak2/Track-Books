@@ -122,10 +122,9 @@ $(document).ready(function(){
 	var book_id = $("#bookID").text();
 	
 	$(".rate").hover(function(){
-		var val = $(this).attr("value");
-		alert(val);
+		$(this).addClass("checked");
 	},function(){
-		$('.rate').removeClass("checked");
+		$(this).removeClass("checked");
 	});
 	
 	$("#bookShelf").change(function(){
