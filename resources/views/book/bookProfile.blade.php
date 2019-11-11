@@ -78,14 +78,12 @@
 			</div>
 			<div class="mb-3">
 				<div class="my-3">
-					<h5>Rate this Book:
-						<span id="stars">
+					<h5>Rate this Book: 
 						<span class="fa fa-star" id="rateStar1" value="1"></span>
 						<span class="fa fa-star" id="rateStar2" value="2"></span>
 						<span class="fa fa-star" id="rateStar3" value="3"></span>
 						<span class="fa fa-star" id="rateStar4" value="4"></span>
 						<span class="fa fa-star" id="rateStar5" value="5"></span>
-						</span>
 					</h5>
 				</div>
 				<div class="form-group">
@@ -128,16 +126,15 @@ $(document).ready(function(){
 		
 		var val = $(this).attr("value");
 		for (var i = 1; i <= val; i++){
-			var id = "#rateStar" + val;
+			var id = "#rateStar" + i;
 			$(id).addClass("checked");
 		}
 		
-	});
-	
-	$("#stars").mouseleave(function(){
-		for (var i = 1; i <= 5; i++){
-			var id = "#rateStar" + val;
-			$(id).removeClass("checked");
+	},function(){
+		var val = $(this).attr("value");
+		for (var i = 1; i <= val; i++){
+			var id = "#rateStar" + i;
+			$(id).addClass("checked");
 		}
 	});
 	
