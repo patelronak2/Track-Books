@@ -30,39 +30,49 @@
 					@if($publishedDate)
 						<p>Published: {{ $book->publishedDate }}</p>
 					@endif
-					@if($wantToRead)
-						<select id="bookShelf" class="btn btn-outline-primary">
-							<option disabled hidden>Add to Shelf</option>
-							<option selected>Want to Read</option>
-							<option>Currently Reading</option>
-							<option>Finished Reading</option>
-						</select>
-					@elseif($currentlyReading)
-						<select id="bookShelf" class="btn btn-outline-primary">
-							<option disabled hidden>Add to Shelf</option>
-							<option>Want to Read</option>
-							<option selected>Currently Reading</option>
-							<option>Finished Reading</option>
-						</select>
-					@elseif($finishedReading)
-						<select id="bookShelf" class="btn btn-outline-primary">
-							<option disabled hidden>Add to Shelf</option>
-							<option>Want to Read</option>
-							<option>Currently Reading</option>
-							<option selected>Finished Reading</option>
-						</select>
-					@else
-						<select id="bookShelf" class="btn btn-outline-primary">
-							<option selected disabled hidden>Add to Shelf</option>
-							<option>Want to Read</option>
-							<option>Currently Reading</option>
-							<option>Finished Reading</option>
-						</select>
-					@endif
+					<div class="row no-gutters">
+						<div class="col-md-8">
+						@if($wantToRead)
+							<select id="bookShelf" class="btn btn-outline-primary">
+								<option disabled hidden>Add to Shelf</option>
+								<option selected>Want to Read</option>
+								<option>Currently Reading</option>
+								<option>Finished Reading</option>
+							</select>
+						@elseif($currentlyReading)
+							<select id="bookShelf" class="btn btn-outline-primary">
+								<option disabled hidden>Add to Shelf</option>
+								<option>Want to Read</option>
+								<option selected>Currently Reading</option>
+								<option>Finished Reading</option>
+							</select>
+						@elseif($finishedReading)
+							<select id="bookShelf" class="btn btn-outline-primary">
+								<option disabled hidden>Add to Shelf</option>
+								<option>Want to Read</option>
+								<option>Currently Reading</option>
+								<option selected>Finished Reading</option>
+							</select>
+						@else
+							<select id="bookShelf" class="btn btn-outline-primary">
+								<option selected disabled hidden>Add to Shelf</option>
+								<option>Want to Read</option>
+								<option>Currently Reading</option>
+								<option>Finished Reading</option>
+							</select>
+						@endif
+						</div>
+						<div class="col-md-4">
+							<p>Display Total Rating and the no of user</P>
+						</div>
+					</div>
 				</div>
 			  </div>
 			</div>
 			<div class="mb-3">
+				<div class="my-3">
+					<h5>Stars goes here</h5>
+				</div>
 				<div class="form-group">
 				  <label for="comment">Write a Review:</label>
 				  <textarea class="form-control" rows="5" id="review"></textarea>
