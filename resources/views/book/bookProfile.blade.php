@@ -134,7 +134,7 @@ $(document).ready(function(){
 		var val = $(this).attr("value");
 		for (var i = 1; i <= val; i++){
 			var id = "#rateStar" + i;
-			$(id).addClass("checked");
+			$(id).removeClass("checked");
 		}
 	});
 	
