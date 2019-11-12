@@ -113,7 +113,7 @@ class HomeController extends Controller
 		
 		$rating = Rating::where('book_id', $book_id)->where('user_id', $user_id)->get();
 		
-		return json_encode($rating);
+		return sizeof($rating);
 		// if($rating){
 			// return "Rating Updated";
 		// }else{
