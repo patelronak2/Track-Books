@@ -231,7 +231,7 @@
 					url: '/public/getNotification',
 					type: 'GET',
 					success: function(response){
-						if(response.timeStamp.length){
+						if(response.timeStamp.length < 1){
 							var temphtml = '<div class="text-center m-2"><h5>No Notifications Yet</h5></div>';
 							$("#allNotifications").html(temphtml);
 						}else{
@@ -252,7 +252,7 @@
 						
 						},
 					error: function(){
-						alert("Something is wrong");
+						alert("Cannot get the notifications. Try logging in again");
 						}
 				});
 				$("#allNotifications").removeClass("d-none");
@@ -273,7 +273,7 @@
 					}
 					},
 				error: function(){
-					alert("Something is wrong");
+					alert("Cannot get the notification count");
 					}
 			});
 		  }, 3000);
