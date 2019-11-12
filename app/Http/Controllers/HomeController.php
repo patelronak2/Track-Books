@@ -112,13 +112,11 @@ class HomeController extends Controller
 		$user_id = Auth::id();
 		
 		$rating = Rating::where('book_id', $book_id)->where('user_id', $user_id)->get();
-		
-		return sizeof($rating);
-		// if($rating){
-			// return "Rating Updated";
-		// }else{
-			// return "New Rating Added";
-		// }
+		if(sizeof($rating)){
+			return "Rating Updated";
+		}else{
+			return "New Rating Added";
+		}
 	}
 	
 	public function addToShelf(Request $request)
