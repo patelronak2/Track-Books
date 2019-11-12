@@ -13,6 +13,7 @@
 					<h5>Birth date: {{ $profile->birthday }}</h5>
 				@else
 					<h5>Birth date: Not entered</h5>
+				@endif
 				<h5>Gender: </h5>
 				<h5>Account Setting</h5>
 			</div>
