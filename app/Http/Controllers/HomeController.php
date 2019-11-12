@@ -73,17 +73,17 @@ class HomeController extends Controller
 		}
 		
 		
-		$allRating = Rating::where('book_id', $id)->get();
-		$finalRating = 0;
-		if(sizeof($allRating)){
-			$totalRating = 0;
-			foreach($allRating as $allUserRating){
-				$totalRating += $allUserRating->rating;
-			}
-			$finalRating = $totalRating/sizeof($allRating);
-		}
+		// $allRating = Rating::where('book_id', $id)->get();
+		// $finalRating = 0;
+		// if(sizeof($allRating)){
+			// $totalRating = 0;
+			// foreach($allRating as $allUserRating){
+				// $totalRating += $allUserRating->rating;
+			// }
+			// $finalRating = $totalRating/sizeof($allRating);
+		// }
 				
-		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews, 'wantToRead' => $wantToRead, 'currentlyReading' => $currentlyReading, 'finishedReading' => $finishedReading, 'finalRating' => $finalRating, 'totalRatings' => sizeof($allRating)]);
+		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews, 'wantToRead' => $wantToRead, 'currentlyReading' => $currentlyReading, 'finishedReading' => $finishedReading]);
 	}
 	
 	public function addReview(Request $request)
@@ -121,11 +121,11 @@ class HomeController extends Controller
 	public function rateBook(Request $request){
 		$book_id = $request->input('book_id');
 		$user_id = Auth::id();
-		
 		$rating = Rating::where('book_id', $book_id)->where('user_id', $user_id)->get();
+		
 		if(sizeof($rating) == 1){
-			$rating->rating = $request->input('rating');
-			$rating->save();
+			// $rating->rating = $request->input('rating');
+			// $rating->save();
 		}else{
 			$rating = new Rating;
 			$rating->user_id = $user_id;
