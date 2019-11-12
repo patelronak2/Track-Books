@@ -21,8 +21,19 @@ class User extends Controller
      */
     public function index()
     {
-		//$user = Auth::user();
-		$profile = Profile::find(Auth::id());
+		$user = Auth::user();
+		$profile = Profile::where('user_id', Auth::id())->get();
+		if(sizeof($profile)){
+			//Profile Already Exist
+		}else{
+			//Create a New Profile
+			$profile = new Profile;
+			$profile->user_id = $user->id;
+			$profile->name = $user->name;
+			$profile->email = $user->email;
+			$profile->save();
+		}
+		
         return view('user.profile',['profile' => $profile]);
     }
 	
