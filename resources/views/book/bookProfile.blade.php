@@ -157,6 +157,7 @@ $(document).ready(function(){
 				var data = JSON.parse(response);
 				$("#totalRatings").html(data.totalRatings);
 				var ratings = Math.round(data.finalRating);
+				$("#ratedStar1, #ratedStar2, #ratedStar3, #ratedStar4, #ratedStar5").removeClass("clicked");
 				for (var i = 1; i <= ratings; i++){
 					var id = "#ratedStar" + i;
 					$(id).addClass("clicked");
