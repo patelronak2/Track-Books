@@ -83,7 +83,7 @@ class HomeController extends Controller
 			$finalRating = $totalRating/sizeof($allRating);
 		}
 				
-		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews, 'wantToRead' => $wantToRead, 'currentlyReading' => $currentlyReading, 'finishedReading' => $finishedReading], 'finalRating' => $finalRating, 'totalRatings' => sizeof($allRating));
+		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews, 'wantToRead' => $wantToRead, 'currentlyReading' => $currentlyReading, 'finishedReading' => $finishedReading, 'finalRating' => $finalRating, 'totalRatings' => sizeof($allRating)]);
 	}
 	
 	public function addReview(Request $request)
