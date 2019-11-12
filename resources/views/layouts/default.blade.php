@@ -231,7 +231,7 @@
 					url: '/public/getNotification',
 					type: 'GET',
 					success: function(response){
-						if(!response.timeStamp){
+						if(response.timeStamp.length){
 							var temphtml = '<div class="text-center m-2"><h5>No Notifications Yet</h5></div>';
 							$("#allNotifications").html(temphtml);
 						}else{
