@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="my-3">
-		<h2>{{ $user->name }}'s Profile</h2>
+		<h2>{{ $profile->name }}'s Profile</h2>
 	</div>
 	<div class="my-3">
 		<div class="row no-gutters shadow-sm bg-light p-3">
