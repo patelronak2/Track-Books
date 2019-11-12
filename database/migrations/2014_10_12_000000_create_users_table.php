@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
 			$table->string('type')->default('default');
 			$table->boolean('isBan')->default(false);
-			$table->boolean('isPrivate')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

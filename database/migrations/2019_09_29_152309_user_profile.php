@@ -19,10 +19,9 @@ class UserProfile extends Migration
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');  
 			$table->string('name');
 			$table->string('email');
-			$table->string('gender');
-			$table->date('birthday');
-			$table->boolean('account_visiblity');
-			$table->boolean('ban');
+			$table->string('gender')->nullable();
+			$table->date('birthday')->nullable();
+			$table->boolean('isPrivate')->default(false);
 			$table->timestamps();
 		});
     }

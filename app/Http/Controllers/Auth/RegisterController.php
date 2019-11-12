@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Profile;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -75,7 +76,7 @@ class RegisterController extends Controller
 		//the line below is added to workaround the default problem of not sending email automatically
 		//after a new user registration.
 		$user->sendEmailVerificationNotification();
-
+		
        return $user;
     }
 }
