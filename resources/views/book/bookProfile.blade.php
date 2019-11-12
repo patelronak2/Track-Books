@@ -128,7 +128,7 @@ $(document).ready(function(){
 	var noOfUser = $("#totalRatingByUser").text();
 	var bookRating = $("#finalRating").text();
 	
-	for (var i = 1; i <= val; i++){
+	for (var i = 1; i <= Math.round(bookRating); i++){
 		var id = "#rateStar" + i;
 		var id1 = "#ratedStar" + i;
 		$(id).addClass("clicked");
