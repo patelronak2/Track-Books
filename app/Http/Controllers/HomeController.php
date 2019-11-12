@@ -121,12 +121,19 @@ class HomeController extends Controller
 	public function rateBook(Request $request){
 		$book_id = $request->input('book_id');
 		$user_id = Auth::id();
-		$rating = Rating::where('book_id', $book_id)->where('user_id', $user_id)->get();
-		return sizeof($rating);
-		die;
-		if(sizeof($rating) == 1){
-			// $rating->rating = $request->input('rating');
-			// $rating->save();
+		//$rating = Rating::where('book_id', $book_id)->where('user_id', $user_id)->get();
+		$rating = Rating::all();
+		$ratingId = -1;
+		foreach($rating as $temp){
+			if($temp->user_id == $user_id && $temp->book_id == $book_id){
+				$ratingId = $temp->id;
+			}
+		}
+		
+		if($ratingId != -1){
+			$rating = Rating::find($ratingId);
+			$rating->rating = $request->input('rating');
+			$rating->save();
 		}else{
 			$rating = new Rating;
 			$rating->user_id = $user_id;
