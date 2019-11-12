@@ -27,7 +27,7 @@
 						<span class="fa fa-star" id="ratedStar3"></span>
 						<span class="fa fa-star" id="ratedStar4"></span>
 						<span class="fa fa-star" id="ratedStar5"></span>
-						<small>3 Users</small>
+						<small><span id="totalRatings">0</span> Users</small>
 					</div>
 					@if($author)
 						<h5>Author: {{ $book->author }}</h5>
@@ -155,7 +155,12 @@ $(document).ready(function(){
 			success: function(response){
 				//Update the number of user that provided the rating and total rating of the book
 				var data = JSON.parse(response);
-				alert("Rating: " + data.finalRating + " Users: " + data.totalRatings);
+				$("#totalRatings").html(data.totalRatings);
+				var ratings = Math.round(data.finalRating);
+				for (var i = 1; i <= ratings; i++){
+					var id = "#ratedStar" + i;
+					$(id).addClass("clicked");
+				}
 			},
 			error: function(error){
 				alert("Attempt to rate the book Failed");
