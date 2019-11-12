@@ -122,7 +122,7 @@ class HomeController extends Controller
 		$book_id = $request->input('book_id');
 		$user_id = Auth::id();
 		$rating = Rating::where('book_id', $book_id)->where('user_id', $user_id)->get();
-		return $rating->id;
+		return sizeof($rating);
 		die;
 		if(sizeof($rating) == 1){
 			// $rating->rating = $request->input('rating');
