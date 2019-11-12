@@ -1,8 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\User;
+use App\User;
+use App\Book;
+use App\Shelf;
+use App\Review;
+use App\Rating;
 
 class User extends Controller
 {
@@ -16,7 +22,8 @@ class User extends Controller
      */
     public function index()
     {
-        return view('user.profile');
+		$user = Auth::user();
+        return view('user.profile',['user' => $user]);
     }
 	
 	public function setting()
