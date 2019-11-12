@@ -72,7 +72,18 @@ class HomeController extends Controller
 			}
 		}
 		
-		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews, 'wantToRead' => $wantToRead, 'currentlyReading' => $currentlyReading, 'finishedReading' => $finishedReading]);
+		
+		$allRating = Rating::where('book_id', $id)->get();
+		$finalRating = 0;
+		if(sizeof($allRating)){
+			$totalRating = 0;
+			foreach($allRating as $allUserRating){
+				$totalRating += $allUserRating->rating;
+			}
+			$finalRating = $totalRating/sizeof($allRating);
+		}
+				
+		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews, 'wantToRead' => $wantToRead, 'currentlyReading' => $currentlyReading, 'finishedReading' => $finishedReading], 'finalRating' => $finalRating, 'totalRatings' => sizeof($allRating));
 	}
 	
 	public function addReview(Request $request)
@@ -113,10 +124,29 @@ class HomeController extends Controller
 		
 		$rating = Rating::where('book_id', $book_id)->where('user_id', $user_id)->get();
 		if(sizeof($rating)){
-			return "Rating Updated";
+			$rating->rating = $request->input('rating');
+			$rating->save();
 		}else{
-			return "New Rating Added";
+			$rating = new Rating;
+			$rating->user_id = $user_id;
+			$rating->book_id = $book_id;
+			$rating->rating = $request->input('rating');
+			$rating->save();
 		}
+		
+		$allRating = Rating::where('book_id', $book_id)->get();
+		
+		$totalRating = 0;
+		foreach($allRating as $allUserRating){
+			$totalRating += $allUserRating->rating;
+		}
+		
+		$finalRating = $totalRating/sizeof($allRating);
+		$book = Book::findorfail($book_id);
+		$book->rating = $finalRating;
+		
+		return json_encode(array('finalRating' => $finalRating, 'totalRatings' => sizeof($allRating)));
+		
 	}
 	
 	public function addToShelf(Request $request)

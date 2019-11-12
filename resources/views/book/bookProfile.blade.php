@@ -22,11 +22,11 @@
 				</div>
 				<div class="col-md-8 p-2">
 					<div>
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star"></span>
-						<span class="fa fa-star"></span>
+						<span class="fa fa-star" id="ratedStar1"></span>
+						<span class="fa fa-star" id="ratedStar2"></span>
+						<span class="fa fa-star" id="ratedStar3"></span>
+						<span class="fa fa-star" id="ratedStar4"></span>
+						<span class="fa fa-star" id="ratedStar5"></span>
 						<small>3 Users</small>
 					</div>
 					@if($author)
@@ -152,9 +152,10 @@ $(document).ready(function(){
 			url: '/public/rateBook',
 			type: 'POST',
 			data: {_token: CSRF_TOKEN, book_id: book_id, rating: val},
-			success: function(data){
+			success: function(response){
 				//Update the number of user that provided the rating and total rating of the book
-				alert(data);
+				var data = JSON.parse(response);
+				alert("Rating: " + data.finalRating + " Users: " + data.totalRatings);
 			},
 			error: function(error){
 				alert("Attempt to rate the book Failed");
