@@ -133,6 +133,7 @@ $(document).ready(function(){
 		var id1 = "#ratedStar" + i;
 		$(id).addClass("clicked");
 		$(id1).addClass("clicked");
+		$("#totalRatings").html(noOfUser);
 	}
 	
 	$("#rateStar1, #rateStar2, #rateStar3, #rateStar4, #rateStar5").hover(function(){
