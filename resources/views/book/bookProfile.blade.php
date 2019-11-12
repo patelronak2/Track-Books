@@ -22,6 +22,8 @@
 				</div>
 				<div class="col-md-8 p-2">
 					<div>
+						<span class="sr-only" id="totalRatingByUser">{{ $totalRatings }}</span>
+						<span class="sr-only" id="finalRating">{{ $finalRating }}</span>
 						<span class="fa fa-star" id="ratedStar1"></span>
 						<span class="fa fa-star" id="ratedStar2"></span>
 						<span class="fa fa-star" id="ratedStar3"></span>
@@ -123,7 +125,16 @@
 $(document).ready(function(){
 	var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 	var book_id = $("#bookID").text();
-		
+	var noOfUser = $("#totalRatingByUser").text();
+	var bookRating = $("#finalRating").text();
+	
+	for (var i = 1; i <= val; i++){
+		var id = "#rateStar" + i;
+		var id1 = "#ratedStar" + i;
+		$(id).addClass("clicked");
+		$(id1).addClass("clicked");
+	}
+	
 	$("#rateStar1, #rateStar2, #rateStar3, #rateStar4, #rateStar5").hover(function(){
 		var val = $(this).attr("value");
 		for (var i = 1; i <= val; i++){
