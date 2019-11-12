@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Profile;
 use App\Book;
 use App\Shelf;
 use App\Review;
@@ -20,8 +21,9 @@ class User extends Controller
      */
     public function index()
     {
-		$user = Auth::user();
-        return view('user.profile',['user' => $user]);
+		//$user = Auth::user();
+		$profile = Profile::find(Auth::id());
+        return view('user.profile',['profile' => $profile]);
     }
 	
 	public function setting()

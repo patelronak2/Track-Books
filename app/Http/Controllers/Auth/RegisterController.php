@@ -77,6 +77,11 @@ class RegisterController extends Controller
 		//after a new user registration.
 		$user->sendEmailVerificationNotification();
 		
+		$profile = new Profile;
+		$profile->user_id = $user->id;
+		$profile->name = $user->name;
+		$profile->email = $user->email;
+		$profile->save();
        return $user;
     }
 }
