@@ -40,7 +40,7 @@
 		<div class="">
 			<h3>Book Shelves</h3>
 			<div class="row no-gutters shadow-sm p-3">
-				<div class="col-md-4" style="max-height: 400px;">
+				<div class="col-md-4 overflow-auto" style="max-height: 400px;">
 					<h5>Want to Read</h5>
 					@foreach($shelves as $shelf)
 						@if($shelf->wantToRead)
@@ -52,7 +52,7 @@
 						@endif
 					@endforeach
 				</div>
-				<div class="col-md-4" style="max-height: 400px;">
+				<div class="col-md-4 overflow-auto" style="max-height: 400px;">
 					<h5>Currently Reading</h5>
 					@foreach($shelves as $shelf)
 						@if($shelf->currentlyReading)
@@ -64,7 +64,7 @@
 						@endif
 					@endforeach
 				</div>
-				<div class="col-md-4" style="max-height: 400px;">
+				<div class="col-md-4 overflow-auto" style="max-height: 400px;">
 					<h5>Finished Reading</h5>
 					@foreach($shelves as $shelf)
 						@if($shelf->finishedReading)
