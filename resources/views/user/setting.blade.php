@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <h1>Account Setting</h1>
-	<div class="my-3 bg-light shadow-sm">
+    <h2>Account Setting</h2>
+	<div class="my-3 bg-light shadow-sm p-3">
 		<h3>Edit Profile</h3>
 		<form method="POST" action="/public/editProfile">
 			<div class="form-group row">
