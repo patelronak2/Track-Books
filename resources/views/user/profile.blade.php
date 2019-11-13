@@ -41,10 +41,10 @@
 			<h3>Book Shelves</h3>
 			<div class="row no-gutters shadow-sm p-3">
 				<div class="col-md-4">
-					<h5 class="sticky-top">Finished Reading</h5>
+					<h5 class="sticky-top">Want to Read</h5>
 					<div class="overflow-auto" style="max-height: 400px;">
 						@foreach($shelves as $shelf)
-							@if($shelf->finishedReading)
+							@if($shelf->wantToRead)
 								<div class="row no-gutters p-1 mb-2" style="position: relative;">
 									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
 									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
@@ -55,10 +55,10 @@
 					</div>
 				</div>
 				<div class="col-md-4">
-					<h5 class="sticky-top">Finished Reading</h5>
+					<h5 class="sticky-top">Currently Reading</h5>
 					<div class="overflow-auto" style="max-height: 400px;">
 						@foreach($shelves as $shelf)
-							@if($shelf->finishedReading)
+							@if($shelf->currentlyReading)
 								<div class="row no-gutters p-1 mb-2" style="position: relative;">
 									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
 									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
