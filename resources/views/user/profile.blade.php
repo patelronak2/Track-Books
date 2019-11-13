@@ -37,8 +37,9 @@
 		</div>
 	</div>
 	<div class="my-3">
-		<div class="row no-gutters shadow-sm">
+		<div class="p-3">
 			<h3>Book Shelves</h3>
+			<div class="row no-gutters shadow-sm">
 			<div class="col-md-4">
 				<h4>Want to Read</h4>
 			</div>
@@ -48,7 +49,7 @@
 			<div class="col-md-4">
 				<h4>Finished Reading</h4>
 			</div>
-			
+			</div>
 		</div>
 	</div>
 </div>
