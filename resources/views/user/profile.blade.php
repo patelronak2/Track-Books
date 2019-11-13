@@ -46,7 +46,7 @@
 						@if($shelf->wantToRead)
 							<div class="row no-gutters p-1 mb-2">
 								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-								<p class="col mt-2 p-1">{{ $shelf->book->title }}</p>
+								<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
 							</div>
 						@endif
 					@endforeach
@@ -57,7 +57,7 @@
 						@if($shelf->currentlyReading)
 							<div class="row no-gutters p-1 mb-2">
 								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-								<p class="col mt-2 p-1">{{ $shelf->book->title }}</p>
+								<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
 							</div>
 						@endif
 					@endforeach
@@ -68,7 +68,7 @@
 						@if($shelf->finishedReading)
 							<div class="row no-gutters p-1 mb-2">
 								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-								<p class="col mt-2 p-1">{{ $shelf->book->title }}</p>
+								<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
 							</div>
 						@endif
 					@endforeach
