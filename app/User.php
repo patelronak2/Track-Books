@@ -53,4 +53,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Rating');
     }
 	
+	function shelf() {
+		return $this->hasMany('App\Shelf');
+	}
+	
 }

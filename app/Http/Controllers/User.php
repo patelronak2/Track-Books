@@ -41,8 +41,10 @@ class User extends Controller
 			}
 		}
 		$profile = Profile::find($profileId);
+		$shelves = Shelf::all();
+		$shelves = Shelf::where('user_id', $user->id)->with('book')->get();
 		
-        return view('user.profile',['profile' => $profile]);
+        return view('user.profile',['profile' => $profile, 'shelves' => $shelves]);
     }
 	
 	public function setting()

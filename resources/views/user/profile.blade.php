@@ -32,7 +32,7 @@
 				@endif
 			</div>
 			<div class="col-md-4">
-				<h5>Friend List</h5>
+				<h5>Friends List</h5>
 			</div>
 		</div>
 	</div>
@@ -42,6 +42,13 @@
 			<div class="row no-gutters shadow-sm p-3">
 				<div class="col-md-4">
 					<h5>Want to Read</h5>
+					@foreach($shelves as $shelf)
+						@if($shelf->wantToRead)
+							<div class="p-2">
+								<p>{{ $shelf->book->title }}</p>
+							</div>
+						@endif
+					@endforeach
 				</div>
 				<div class="col-md-4">
 					<h5>Currently Reading</h5>
