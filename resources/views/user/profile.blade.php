@@ -53,6 +53,7 @@
 						@endforeach
 					@else
 						<p>No Entry Yet</p>
+					@endif
 				</div>
 				<div class="col-md-4">
 					<h5>Currently Reading</h5>
