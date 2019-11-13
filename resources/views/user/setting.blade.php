@@ -21,11 +21,18 @@
 			  <div class="form-group row">
 				<label for="gender" class="col-sm-2 col-form-label">Gender</label>
 				<div class="col-sm-10">
-				  <input type="text" class="form-control" id="gender" placeholder="Male" name="gender">
+				  <div class="custom-control custom-radio custom-control-inline">
+					  <input type="radio" id="male" name="gender" class="custom-control-input">
+					  <label class="custom-control-label" for="male">Male</label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+					  <input type="radio" id="female" name="gender" class="custom-control-input">
+					  <label class="custom-control-label" for="female">Female</label>
+					</div>
 				</div>
 			  </div>
 			  <div class="form-group row">
-				<label for="accountVisiblity" class="col-sm-2 col-form-label">Gender</label>
+				<label for="accountVisiblity" class="col-sm-2 col-form-label">Account Visiblity</label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" id="accountVisiblity" placeholder="Pulbic" name="accountVisiblity">
 				</div>
