@@ -29,12 +29,23 @@
 					  <input type="radio" id="female" name="gender" class="custom-control-input">
 					  <label class="custom-control-label" for="female">Female</label>
 					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+					  <input type="radio" id="notToSay" name="gender" class="custom-control-input">
+					  <label class="custom-control-label" for="notToSay">Prefer not to say</label>
+					</div>
 				</div>
 			  </div>
 			  <div class="form-group row">
 				<label for="accountVisiblity" class="col-sm-2 col-form-label">Account Visiblity</label>
 				<div class="col-sm-10">
-				  <input type="text" class="form-control" id="accountVisiblity" placeholder="Pulbic" name="accountVisiblity">
+				  <div class="custom-control custom-radio custom-control-inline">
+					  <input type="radio" id="public" name="accountVisiblity" checked class="custom-control-input" value="public">
+					  <label class="custom-control-label" for="public">Public</label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+					  <input type="radio" id="private" value="private" name="accountVisiblity" class="custom-control-input">
+					  <label class="custom-control-label" for="private">Private</label>
+					</div>
 				</div>
 			  </div>
 			<div class="form-group row mb-0">
