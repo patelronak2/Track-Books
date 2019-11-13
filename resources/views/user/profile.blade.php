@@ -8,14 +8,21 @@
 	<div class="my-3">
 		<div class="row no-gutters shadow-sm bg-light p-3">
 			<div class="col-md-6">
-				<h5>Email: {{ $profile->email }}</h5>
-				@if($profile->birthday)
-					<h5>Birth date: {{ $profile->birthday }}</h5>
-				@else
-					<h5>Birth date: Not entered</h5>
-				@endif
-				<h5>Gender: </h5>
-				<h5>Account Setting</h5>
+				<h4>Personal Information</h4>
+				<div>
+					<p><span class="font-weight-bold">Email:</span> {{ $profile->email }}</p>
+					@if($profile->birthday)
+						<p><span class="font-weight-bold">Birth date:</span> {{ $profile->birthday }}</p>
+					@else
+						<p><span class="font-weight-bold">Birth date:</span> Information Not Entered</p>
+					@endif
+					@if($profile->gender)
+						<p><span class="font-weight-bold">Gender:</span> </p>
+					@else	
+						<p><span class="font-weight-bold">Gender:</span> Information Not Entered</p>
+					@endif
+					
+				</div>
 			</div>
 			<div class="col-md-3"></div>
 			<div class="col-md-3"></div>
