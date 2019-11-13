@@ -53,7 +53,7 @@
 						@endforeach
 					@else
 						<div class="p-1 mb-2">
-							No Books in the Shelf
+							<p>No Books in the Shelf</p>
 						</div>
 					@endif
 				</div>
