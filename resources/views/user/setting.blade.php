@@ -13,15 +13,27 @@
 				</div>
 			  </div>
 			  <div class="form-group row">
-				<label for="birthdate" class="col-sm-2 col-form-label">Birth Date</label>
+				<label for="birthday" class="col-sm-2 col-form-label">Birth Date</label>
 				<div class="col-sm-10">
-				  <input type="text" class="form-control" id="birthdate" placeholder="18th November, 1998">
+				  <input type="text" class="form-control" id="birthday" name="birthday" placeholder="18th November, 1998">
+				</div>
+			  </div>
+			  <div class="form-group row">
+				<label for="gender" class="col-sm-2 col-form-label">Gender</label>
+				<div class="col-sm-10">
+				  <input type="text" class="form-control" id="gender" placeholder="Male" name="gender">
+				</div>
+			  </div>
+			  <div class="form-group row">
+				<label for="accountVisiblity" class="col-sm-2 col-form-label">Gender</label>
+				<div class="col-sm-10">
+				  <input type="text" class="form-control" id="accountVisiblity" placeholder="Pulbic" name="accountVisiblity">
 				</div>
 			  </div>
 			<div class="form-group row mb-0">
-				<div class="col-md-6 offset-md-4">
+				<div class="col-sm-10 offset-sm-2">
 					<button type="submit" class="btn btn-primary">
-						Add Book
+						Save Changes
 					</button>
 				</div>
 			</div>
