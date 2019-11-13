@@ -42,36 +42,54 @@
 			<div class="row no-gutters shadow-sm p-3">
 				<div class="col-md-4">
 					<h5>Want to Read</h5>
-					@foreach($shelves as $shelf)
-						@if($shelf->wantToRead)
-							<div class="row no-gutters p-1 mb-2">
-								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-								<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
-							</div>
-						@endif
-					@endforeach
+					@if(count($shelves) > 0)
+						@foreach($shelves as $shelf)
+							@if($shelf->wantToRead)
+								<div class="row no-gutters p-1 mb-2">
+									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
+									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
+								</div>
+							@endif
+						@endforeach
+					@else
+						<div class="p-1 mb-2">
+							No Books in the Shelf
+						</div>
+					@endif
 				</div>
 				<div class="col-md-4">
 					<h5>Currently Reading</h5>
-					@foreach($shelves as $shelf)
-						@if($shelf->currentlyReading)
-							<div class="row no-gutters p-1 mb-2">
-								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-								<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
-							</div>
-						@endif
-					@endforeach
+					@if(count($shelves) > 0)
+						@foreach($shelves as $shelf)
+							@if($shelf->currentlyReading)
+								<div class="row no-gutters p-1 mb-2">
+									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
+									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
+								</div>
+							@endif
+						@endforeach
+					@else
+						<div class="p-1 mb-2">
+							No Books in the Shelf
+						</div>
+					@endif
 				</div>
 				<div class="col-md-4">
 					<h5>Finished Reading</h5>
-					@foreach($shelves as $shelf)
-						@if($shelf->finishedReading)
-							<div class="row no-gutters p-1 mb-2">
-								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-								<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
-							</div>
-						@endif
-					@endforeach
+					@if(count($shelves) > 0)
+						@foreach($shelves as $shelf)
+							@if($shelf->finishedReading)
+								<div class="row no-gutters p-1 mb-2">
+									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
+									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
+								</div>
+							@endif
+						@endforeach
+					@else
+						<div class="p-1 mb-2">
+							No Books in the Shelf
+						</div>
+					@endif
 				</div>
 			</div>
 		</div>
