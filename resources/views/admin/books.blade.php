@@ -31,7 +31,6 @@
 								  <tr>
 									<th>Book Name</th>
 									<th>Author</th>
-									<th>Rating</th>
 									<th>Category</th>
 									<th>Publisher</th>
 									<th>Published Date</th>
