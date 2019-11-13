@@ -7,19 +7,19 @@
 		<h5>Edit Profile</h5>
 		<form method="POST" action="/public/editProfile">
 			 <div class="form-group row">
-				<label for="name" class="col-sm-2 col-form-label">Name</label>
+				<label for="name" class="col-sm-2 col-form-label font-weight-bold">Name</label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" id="name" value="John Doe">
 				</div>
 			  </div>
 			  <div class="form-group row">
-				<label for="birthday" class="col-sm-2 col-form-label">Birth Date</label>
+				<label for="birthday" class="col-sm-2 col-form-label font-weight-bold">Birth Date</label>
 				<div class="col-sm-10">
 				  <input type="text" class="form-control" id="birthday" name="birthday" placeholder="18th November, 1998">
 				</div>
 			  </div>
 			  <div class="form-group row">
-				<label for="gender" class="col-sm-2 col-form-label">Gender</label>
+				<label for="gender" class="col-sm-2 col-form-label font-weight-bold">Gender</label>
 				<div class="col-sm-10">
 				  <div class="custom-control custom-radio custom-control-inline">
 					  <input type="radio" id="male" name="gender" class="custom-control-input">
@@ -36,7 +36,7 @@
 				</div>
 			  </div>
 			  <div class="form-group row">
-				<label for="accountVisiblity" class="col-sm-2 col-form-label">Account Visiblity</label>
+				<label for="accountVisiblity" class="col-sm-2 col-form-label font-weight-bold">Account Visiblity</label>
 				<div class="col-sm-10">
 				  <div class="custom-control custom-radio custom-control-inline">
 					  <input type="radio" id="public" name="accountVisiblity" checked class="custom-control-input" value="public">
