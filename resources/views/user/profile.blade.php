@@ -8,7 +8,7 @@
 	<div class="my-3">
 		<div class="row no-gutters shadow-sm bg-light p-3">
 			<div class="col-md-4">
-				<h4>Personal Information</h4>
+				<h5>Personal Information</h5>
 				<p><span class="font-weight-bold">Email:</span> {{ $profile->email }}</p>
 				@if($profile->birthday)
 					<p><span class="font-weight-bold">Birth date:</span> {{ $profile->birthday }}</p>
@@ -24,7 +24,7 @@
 				<a href="/public/editProfile" class="btn btn-primary m-3">Edit Profile</a>
 			</div>
 			<div class="col-md-4">
-				<h4>Account Preferences</h4>
+				<h5>Account Preferences</h5>
 				@if($profile->isPrivate)
 					<p><span class="font-weight-bold">Account Visibility:</span> Private</p>
 				@else	
@@ -32,23 +32,23 @@
 				@endif
 			</div>
 			<div class="col-md-4">
-				<h4>Friend List</h4>
+				<h5>Friend List</h5>
 			</div>
 		</div>
 	</div>
 	<div class="my-3">
-		<div class="p-3">
+		<div class="">
 			<h3>Book Shelves</h3>
-			<div class="row no-gutters shadow-sm">
-			<div class="col-md-4">
-				<h4>Want to Read</h4>
-			</div>
-			<div class="col-md-4">
-				<h4>Currently Reading</h4>
-			</div>
-			<div class="col-md-4">
-				<h4>Finished Reading</h4>
-			</div>
+			<div class="row no-gutters shadow-sm p-3">
+				<div class="col-md-4">
+					<h5>Want to Read</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Currently Reading</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Finished Reading</h5>
+				</div>
 			</div>
 		</div>
 	</div>
