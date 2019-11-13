@@ -44,7 +44,7 @@
 					<h5>Want to Read</h5>
 					@foreach($shelves as $shelf)
 						@if($shelf->wantToRead)
-							<div class="row no-gutters">
+							<div class="row no-gutters p-1 mb-2">
 								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
 								<p class="col mt-2 p-1">{{ $shelf->book->title }}</p>
 							</div>
@@ -55,7 +55,7 @@
 					<h5>Currently Reading</h5>
 					@foreach($shelves as $shelf)
 						@if($shelf->currentlyReading)
-							<div class="row no-gutters">
+							<div class="row no-gutters p-1 mb-2">
 								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
 								<p class="col mt-2 p-1">{{ $shelf->book->title }}</p>
 							</div>
@@ -66,7 +66,7 @@
 					<h5>Finished Reading</h5>
 					@foreach($shelves as $shelf)
 						@if($shelf->finishedReading)
-							<div class="row no-gutters">
+							<div class="row no-gutters p-1 mb-2">
 								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
 								<p class="col mt-2 p-1">{{ $shelf->book->title }}</p>
 							</div>
