@@ -44,9 +44,9 @@
 					<h5>Want to Read</h5>
 					@foreach($shelves as $shelf)
 						@if($shelf->wantToRead)
-							<div class="row no-gutters">
-								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="img-thumbnail col" style="max-height: 90px; max-width: 75px;">
-								<p class="font-weight-bold col">{{ $shelf->book->title }}</p>
+							<div class="row">
+								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
+								<p class="col p-1 align-middle">{{ $shelf->book->title }}</p>
 							</div>
 						@endif
 					@endforeach
