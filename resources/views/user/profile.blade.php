@@ -42,18 +42,15 @@
 			<div class="row no-gutters shadow-sm p-3">
 				<div class="col-md-4">
 					<h5>Want to Read</h5>
-					@if($shelves)
-						@foreach($shelves as $shelf)
-							@if($shelf->wantToRead)
-								<div class="row no-gutters p-1 mb-2">
-									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
-								</div>
-							@endif
-						@endforeach
-					@else
-						<p>No Entry Yet</p>
-					@endif
+					@foreach($shelves as $shelf)
+						@if($shelf->wantToRead)
+							<div class="row no-gutters p-1 mb-2" style="position: relative;">
+								<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
+								<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
+								<a href="/public/showBook/{{ $shelf->book->id }}" class="stretched-link"></a>
+							</div>
+						@endif
+					@endforeach
 				</div>
 				<div class="col-md-4">
 					<h5>Currently Reading</h5>
