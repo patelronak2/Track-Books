@@ -31,6 +31,24 @@
 					<p><span class="font-weight-bold">Account Visibility:</span> Public</p>
 				@endif
 			</div>
+			<div class="col-md-4">
+				<h4>Friend List</h4>
+			</div>
+		</div>
+	</div>
+	<div class="my-3">
+		<div class="row no-gutters shadow-sm">
+			<h3>Book Shelves</h3>
+			<div class="col-md-4">
+				<h4>Want to Read</h4>
+			</div>
+			<div class="col-md-4">
+				<h4>Currently Reading</h4>
+			</div>
+			<div class="col-md-4">
+				<h4>Finished Reading</h4>
+			</div>
+			
 		</div>
 	</div>
 </div>
