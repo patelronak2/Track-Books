@@ -21,7 +21,7 @@
 					<p><span class="font-weight-bold">Gender:</span> Information not entered</p>
 				@endif
 				
-				<a href="/public/editProfile" class="btn btn-primary m-3">Edit Profile</a>
+				<a href="/public/setting" class="btn btn-primary m-3">Edit Profile</a>
 			</div>
 			<div class="col-md-4">
 				<h5>Account Preferences</h5>
