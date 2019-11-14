@@ -49,7 +49,7 @@
 								  <div class="card-body">
 									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
 									<div class="text-center">
-									  <img src="{{$shelf->book->img_link}}" class="rounded" alt="Image Not Available">
+									  <img src="{{$shelf->book->img_link}}" width="65px" height="75px" class="rounded" alt="Image Not Available">
 									</div>
 									<a href="#" class="stretched-link"></a>
 								  </div>
@@ -67,7 +67,7 @@
 								  <div class="card-body">
 									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
 									<div class="text-center">
-									  <img src="{{$shelf->book->img_link}}" class="rounded" alt="Image Not Available">
+									  <img src="{{$shelf->book->img_link}}" width="65px" height="75px" class="rounded" alt="Image Not Available">
 									</div>
 									<a href="#" class="stretched-link"></a>
 								  </div>
@@ -85,7 +85,7 @@
 								  <div class="card-body">
 									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
 									<div class="text-center">
-									  <img src="{{$shelf->book->img_link}}" class="rounded" alt="Image Not Available">
+									  <img src="{{$shelf->book->img_link}}" class="rounded" width="65px" height="75px" alt="Image Not Available">
 									</div>
 									<a href="#" class="stretched-link"></a>
 								  </div>
