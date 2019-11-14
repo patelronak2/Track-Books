@@ -40,7 +40,7 @@ class User extends Controller
 	
 	public function setting()
 	{	
-		$shelves = Shelf::where('user_id', $user->id)->with('book')->get();
+		$shelves = Shelf::where('user_id', Auth::id())->with('book')->get();
 		return view('user.setting',['profile' => $profile, 'shelves' => $shelves]);
 	}
 	
