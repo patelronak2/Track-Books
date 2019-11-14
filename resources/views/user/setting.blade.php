@@ -68,7 +68,7 @@
 		var userID = $("#userID").text();
 		
 		$.ajax({
-			url: '/getProfileDetails',
+			url: '/public/getProfileDetails',
 			type: 'GET',
 			success: function(data){
 				alert(data.name)
