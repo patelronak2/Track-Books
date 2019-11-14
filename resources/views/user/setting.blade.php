@@ -67,7 +67,7 @@
 					<h5 class="card-title">{{ $shelf->book->title }}</h5>
 					@if($shelf->wantToRead)
 						<p class="card-text text-info">Shelf: Want To Read</p>
-					@else if($shelf->currentlyRead)
+					@elseif($shelf->currentlyRead)
 						<p class="card-text text-warning">Shelf: Currently Reading</p>
 					@else
 						<p class="card-text text-success">Shelf: Finished Reading</p>
