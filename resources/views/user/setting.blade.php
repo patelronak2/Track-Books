@@ -61,6 +61,7 @@
 	<h3>Delete from Book Shelves</h3>
 	<div class="my-3 p-3 shadow-sm">
 		<div class="row no-gutters">
+			<div class="justify-content-center">
 			@foreach($shelves as $shelf)
 				<div class="card m-2" style="width: 18rem;">
 				  <div class="card-body">
@@ -70,6 +71,7 @@
 				  </div>
 				</div>	
 			@endforeach
+			</div>
 		</div>
 	</div>
 </div>
