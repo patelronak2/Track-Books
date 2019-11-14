@@ -60,24 +60,6 @@
 	</div>
 	<h3>Delete from Book Shelves</h3>
 	<div class="my-3 p-3 shadow-sm">
-		<!-- <div class="row no-gutters justify-content-center">
-			@foreach($shelves as $shelf)
-				<div class="card m-1" style="width: 12rem;">
-				  <div class="card-body">
-					<h5 class="card-title">{{ $shelf->book->title }}</h5>
-					
-					<a href="#" class="btn btn-danger">Delete</a>
-				  </div>
-				</div>	
-				<div class="card m-1" style="width: 12rem;">
-				  <div class="card-body">
-					<h5 class="card-title">{{ $shelf->book->title }}</h5>
-					
-					<a href="#" class="btn btn-danger">Delete</a>
-				  </div>
-				</div>
-			@endforeach
-		</div> -->
 		<div class="row no-gutters">
 				<div class="col-md-4">
 					<h5 class="sticky-top">Want to Read</h5>

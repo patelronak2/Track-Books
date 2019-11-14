@@ -57,4 +57,11 @@ class User extends Controller
 		$profile = Profile::find($profileId);
 		return $profile;
 	}
+	
+	public function editProfile(Request $request){
+		$user = Auth::user();
+		$profiles = Profile::where('user_id', $user->id)->get();
+		echo "$profiles->name";
+		
+	}
 }
