@@ -60,7 +60,15 @@
 	</div>
 	<h3>Delete from Book Shelves</h3>
 	<div class="my-3 p-3 shadow-sm">
-		No Books added to the shelves
+		<div class="row no-gutters">
+			@foreach($shelves as $shelf)
+				<div class="col m-2 p-2" style="width: 25%;">
+					<div class="bg-light shadow-sm">
+					 {{ $shelf->book->title }}
+					</div>
+				</div>		
+			@endforeach
+		</div>
 	</div>
 </div>
 <script>
@@ -73,7 +81,7 @@
 			success: function(data){
 				//alert(data.name);
 				$("#name").val(data.name);
-				$("#birthday").attr("value", "2018-07-19");
+				$("#birthday").attr("value", data.birthday);
 				//$("#name").value(data.gender);
 				//$("#name").value(data.isPrivate);
 				if(data.gender){
