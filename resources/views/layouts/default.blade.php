@@ -232,7 +232,7 @@
 					type: 'GET',
 					success: function(response){
 						if(response.timeStamp.length < 1){
-							var temphtml = '<div class="text-center m-2"><h5>No Notifications Yet</h5></div>';
+							var temphtml = '<div class="text-center m-2 p-2"><h5>No Notifications Yet</h5></div>';
 							$("#allNotifications").html(temphtml);
 						}else{
 							var temphtml = '<div class="overflow-auto" style="width: 360px; max-height: 400px;">';							
@@ -316,7 +316,7 @@
 								<span class="badge badge-danger ml-2 d-none" id="unreadNotifications"></span>Notifications
 							</a>
 
-							<div class="d-none bg-white" id="allNotifications">								
+							<div class="d-none bg-white shadow-sm" id="allNotifications">								
 							</div>
 						</li>
 						
