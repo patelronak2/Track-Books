@@ -42,14 +42,14 @@
 			<div class="row no-gutters shadow-sm p-3">
 				<div class="col-md-4">
 					<h5 class="sticky-top">Want To Read</h5>
-					<div class="overflow-auto" style="max-height: 400px;">
+					<div class="overflow-auto" style="max-height: 600px;">
 						@foreach($shelves as $shelf)
 							@if($shelf->wantToRead)
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
-									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
+									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
 									<div class="text-center">
-									  <img src="{{$shelf->book->img_link}}" width="65px" height="75px" class="rounded" alt="Image Not Available">
+									  <img src="{{$shelf->book->img_link}}" width="75px" height="90px" class="rounded" alt="Image Not Available">
 									</div>
 									<a href="#" class="stretched-link"></a>
 								  </div>
@@ -60,14 +60,14 @@
 				</div>
 				<div class="col-md-4">
 					<h5 class="sticky-top">Currently Reading</h5>
-					<div class="overflow-auto" style="max-height: 400px;">
+					<div class="overflow-auto" style="max-height: 600px;">
 						@foreach($shelves as $shelf)
 							@if($shelf->currentlyReading)
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
-									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
+									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
 									<div class="text-center">
-									  <img src="{{$shelf->book->img_link}}" width="65px" height="75px" class="rounded" alt="Image Not Available">
+									  <img src="{{$shelf->book->img_link}}" width="75px" height="90px" class="rounded" alt="Image Not Available">
 									</div>
 									<a href="#" class="stretched-link"></a>
 								  </div>
@@ -78,14 +78,14 @@
 				</div>
 				<div class="col-md-4">
 					<h5 class="sticky-top">Finished Reading</h5>
-					<div class="overflow-auto" style="max-height: 400px;">
+					<div class="overflow-auto" style="max-height: 600px;">
 						@foreach($shelves as $shelf)
 							@if($shelf->finishedReading)
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
-									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
+									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
 									<div class="text-center">
-									  <img src="{{$shelf->book->img_link}}" class="rounded" width="65px" height="75px" alt="Image Not Available">
+									  <img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available">
 									</div>
 									<a href="#" class="stretched-link"></a>
 								  </div>
