@@ -98,8 +98,7 @@
 						@foreach($shelves as $shelf)
 							@if($shelf->finishedReading)
 								<div class="card m-1" style="width: 18rem;">
-									<img src="{{$shelf->img_link}}" class="card-img" alt="">
-								  <div class="card-img-overlay">
+								  <div class="card-body">
 									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
 									<a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
 								  </div>
