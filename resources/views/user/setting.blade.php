@@ -76,12 +76,30 @@
 				$("#birthday").attr("value", "2018-07-19");
 				//$("#name").value(data.gender);
 				//$("#name").value(data.isPrivate);
-				alert("Gender: " + data.gender + "\n isPrivate: " + data.isPrivate);
+				if(data.gender){
+					if(data.gender == "male"){
+						 $("#male").prop("checked", true);
+					}else if(data.gender == "female"){
+						$("#female").prop("checked", true);
+					}else{
+						$("#notToSay").prop("checked", true);
+					}
+				}
+				if(data.isPrivate){
+					$("#private").prop("checked", true);
+				}else{
+					$("#public").prop("checked", true);
+				}
+				//alert("Gender: " + data.gender + "\n isPrivate: " + data.isPrivate);
 				
 			},
 			error: function(error){
 				alert("Couldn't get profile data");
 			}
+		});
+		
+		$("#birthday").change(function(){
+			alert($("#birthday").val());
 		});
 	});
 </script>
