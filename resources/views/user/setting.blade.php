@@ -60,10 +60,9 @@
 	</div>
 	<h3>Delete from Book Shelves</h3>
 	<div class="my-3 p-3 shadow-sm">
-		<div class="row no-gutters">
-			<div class="justify-content-center">
+		<div class="row no-gutters justify-content-center">
 			@foreach($shelves as $shelf)
-				<div class="card m-2" style="width: 18rem;">
+				<div class="card mx-2" style="width: 18rem;">
 				  <div class="card-body">
 					<h5 class="card-title">{{ $shelf->book->title }}</h5>
 					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -71,7 +70,6 @@
 				  </div>
 				</div>	
 			@endforeach
-			</div>
 		</div>
 	</div>
 </div>
