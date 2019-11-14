@@ -45,3 +45,4 @@ Route::get('/getNotification','HomeController@getNotifications');
 Route::post('/rateBook', 'HomeController@rateBook');
 Route::get('/getProfileDetails','User@getProfileDetails');
 Route::post('/editProfile', 'User@editProfile');
+Route::get('/deleteShelfBook/{id}', 'User@deleteShelfBook');

@@ -81,4 +81,9 @@ class User extends Controller
 		
 		
 	}
+	
+	public function deleteShelfBook($id){
+		$shelves = Shelf::all();
+		echo $shelves;
+	}
 }
