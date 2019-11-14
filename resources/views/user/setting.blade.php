@@ -113,7 +113,7 @@
 <script>
 	$(document).ready(function(){
 		var userID = $("#userID").text();
-		
+		//set minimum birthdate entry here
 		$.ajax({
 			url: '/public/getProfileDetails',
 			type: 'GET',
@@ -121,8 +121,6 @@
 				//alert(data.name);
 				$("#name").val(data.name);
 				$("#birthday").attr("value", data.birthday);
-				//$("#name").value(data.gender);
-				//$("#name").value(data.isPrivate);
 				if(data.gender){
 					if(data.gender == "male"){
 						 $("#male").prop("checked", true);
@@ -146,7 +144,7 @@
 		});
 		
 		$('form').submit(function(){
-			alert("form submit done");
+
 			var birthday = $("#birthday").val();
 			var name = $("#name").val();
 			var gender = "";
