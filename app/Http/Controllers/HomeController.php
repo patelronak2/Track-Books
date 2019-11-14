@@ -177,14 +177,18 @@ class HomeController extends Controller
 		$currentlyReading = false;
 		$wantToRead = false;
 		$finishedReading = false;
+		$message = "";
 		if($bookShelf == "Want to Read"){
 			$wantToRead = true;
+			$message = 'Added to "Want To Read" shelf.';
 		}
 		if($bookShelf == "Currently Reading"){
 			$currentlyReading = true;
+			$message = 'Added to "Currently Reading" shelf.';
 		}
 		if($bookShelf == "Finished Reading"){
 			$finishedReading = true;
+			$message = 'Added to "Finished Reading" shelf.';
 		}
 		$shelfId = -1;
 		$shelves = Shelf::all();
@@ -214,7 +218,7 @@ class HomeController extends Controller
 		
 		$user = Auth::user();
 		$book = Book::findorfail($book_id);
-		$user->notify(new ShelfUpdated($user, $book, $bookShelf));
+		$user->notify(new ShelfUpdated($user, $book, $message));
 	}
 	
 	public function getNotificationCount(){

@@ -240,7 +240,7 @@
 								temphtml  += '<div class="card mb-1"><div class="card-body">';
 								if(response.notification[i].type == "App\\Notifications\\ShelfUpdated"){
 									temphtml += '<h5 class="card-title">'+ response.notification[i].data.book_name +'</h5>';
-									temphtml += '<p class="card-text">Added to "'+ response.notification[i].data.shelf +'" shelf.</p>';
+									temphtml += '<p class="card-text">'+ response.notification[i].data.shelf +'</p>';
 									temphtml += '<p class="card-text"><small class="text-muted">'+ response.timeStamp[i] +'</small></p>';
 									temphtml += '<a href="/public/profile" class="stretched-link"></a>';
 								}
