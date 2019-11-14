@@ -45,11 +45,12 @@ class User extends Controller
 	}
 	
 	public function getProfileDetails(){
+		
 		$allProfiles = Profile::all();
 		$profileId = -1;
 		
 		foreach($allProfiles as $profile){
-			if($profile->user_id == $user->id){
+			if($profile->user_id == Auth::id()){
 				$profileId = $profile->id;
 			}
 		}
