@@ -155,7 +155,7 @@
 				gender = "Male";
 			}else if($("#female").prop("checked")){
 				gender = "Female"
-			}else{
+			}else if($("#notToSay").prop("checked")){
 				gender = "Prefer Not To Say"
 			}
 			var isPrivate = false;
