@@ -78,7 +78,7 @@
 				</div>
 			@endforeach
 		</div> -->
-		<div class="row no-gutters shadow-sm p-3">
+		<div class="row no-gutters">
 				<div class="col-md-4">
 					<h5 class="sticky-top">Want to Read</h5>
 					<div class="overflow-auto" style="max-height: 400px;">
@@ -86,7 +86,7 @@
 							@if($shelf->wantToRead)
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
-									<p class="card-title">{{ $shelf->book->title }}</p>
+									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
 									<a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
 								  </div>
 								</div>
@@ -101,7 +101,7 @@
 							@if($shelf->currentlyReading)
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
-									<p class="card-title">{{ $shelf->book->title }}</p>
+									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
 									<a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
 								  </div>
 								</div>
@@ -116,7 +116,7 @@
 							@if($shelf->finishedReading)
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
-									<p class="card-title">{{ $shelf->book->title }}</p>
+									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
 									<a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
 								  </div>
 								</div>
