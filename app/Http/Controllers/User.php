@@ -61,7 +61,7 @@ class User extends Controller
 	public function editProfile(Request $request){
 		$user = Auth::user();
 		$profiles = Profile::where('user_id', $user->id)->get();
-		echo "$profiles";
+		echo "$profiles[0]->name";
 		
 	}
 }
