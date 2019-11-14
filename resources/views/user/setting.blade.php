@@ -6,7 +6,7 @@
 	<p class="sr-only" id="userID">{{ Auth::id() }}</p>
 	<div class="my-3 bg-light shadow-sm p-3">
 		<h4>Edit Profile</h4>
-		<form method="POST" action="/public/editProfile" class="px-1">
+		<form class="px-1">
 			@csrf
 			 <div class="form-group row">
 				<label for="name" class="col-sm-2 col-form-label font-weight-bold">Name</label>
@@ -143,6 +143,11 @@
 			error: function(error){
 				alert("Couldn't get profile data");
 			}
+		});
+		
+		$('form').submit(function(){
+			alert("form submit done");
+			return false;
 		});
 		
 		$("#birthday").change(function(){
