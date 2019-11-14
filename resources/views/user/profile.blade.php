@@ -86,10 +86,10 @@
 									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
 									<div class="row">
 										<div class="col">
-											<img src="{{$shelf->book->img_link}}" class="rounded col" width="75px" height="90px" alt="Image Not Available">
+											<img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available">
 										</div>
-										<div class="col">
-											<a href="#" class="btn btn-outline-primary col">Details</a>
+										<div class="col align-middle">
+											<a href="#" class="btn btn-outline-primary btn-sm">Details</a>
 										</div>
 									  
 									  
