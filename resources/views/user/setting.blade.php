@@ -188,7 +188,7 @@
 				data: {_token: CSRF_TOKEN, name: name, birthday: birthday, gender: gender, isPrivate: isPrivate},
 				success: function(data){
 					if(data == "success"){
-						$("#message").html("Changes to your Profile has been saved.");
+						$("#message").html("Changes to your <a href='/public/profile'>Profile</a> has been saved.");
 						$("#alert").removeClass("d-none");
 					}
 				},
