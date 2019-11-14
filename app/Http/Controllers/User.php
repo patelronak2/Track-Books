@@ -94,10 +94,11 @@ class User extends Controller
 			}
 		}
 		if($shelfId != -1){
+			$user = Auth::user();
 			$shelf = Shelf::find($shelfId);
 			$shelf->delete();
 			//send a notification
-			$user->notify(new ShelfUpdated(Auth::user(), $book, "Book removed from the shelf"));
+			$user->notify(new ShelfUpdated($user, $book, "Book removed from the shelf"));
 			echo "Success";
 		}
 		
