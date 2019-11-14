@@ -17,7 +17,7 @@
 			  <div class="form-group row">
 				<label for="birthday" class="col-sm-2 col-form-label font-weight-bold">Birth Date</label>
 				<div class="col-sm-10">
-				  <input type="date" class="form-control" id="birthday" name="birthday" value="">
+				  <input type="date" class="form-control" id="birthday" name="birthday" max="" value="">
 				</div>
 			  </div>
 			  <div class="form-group row">
@@ -114,6 +114,9 @@
 	$(document).ready(function(){
 		var userID = $("#userID").text();
 		//set minimum birthdate entry here
+		var d = new Date(Date.now());
+		var maxDate = d.toISOString().split('T')[0];
+		$("#birthday").attr("max", maxDate);
 		$.ajax({
 			url: '/public/getProfileDetails',
 			type: 'GET',
