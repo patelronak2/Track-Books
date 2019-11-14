@@ -3,9 +3,10 @@
 @section('content')
 <div class="container">
     <h2>Account Setting</h2>
+	<p class="sr-only" id="userID">{{ Auth::id() }}</p>
 	<div class="my-3 bg-light shadow-sm p-3">
-		<h5>Edit Profile</h5>
-		<form method="POST" action="/public/editProfile">
+		<h4>Edit Profile</h4>
+		<form method="POST" action="/public/editProfile" class="px-1">
 			 <div class="form-group row">
 				<label for="name" class="col-sm-2 col-form-label font-weight-bold">Name</label>
 				<div class="col-sm-10">
@@ -15,7 +16,7 @@
 			  <div class="form-group row">
 				<label for="birthday" class="col-sm-2 col-form-label font-weight-bold">Birth Date</label>
 				<div class="col-sm-10">
-				  <input type="text" class="form-control" id="birthday" name="birthday" placeholder="18th November, 1998">
+				  <input type="date" class="form-control" id="birthday" name="birthday" value="">
 				</div>
 			  </div>
 			  <div class="form-group row">
@@ -57,5 +58,25 @@
 			</div>
 		</form>
 	</div>
+	<h3>Delete from Book Shelves</h3>
+	<div class="my-3 p-3 shadow-sm">
+		No Books added to the shelves
+	</div>
 </div>
+<script>
+	$(document).ready(function(){
+		var userID = $("#userID").text();
+		
+		$.ajax({
+			url: '/getProfileDetails',
+			type: 'GET',
+			success: function(data){
+				alert(data.name)
+			},
+			error: function(error){
+				alert("Couldn't get profile data");
+			}
+		});
+	});
+</script>
 @endsection
