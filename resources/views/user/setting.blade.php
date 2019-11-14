@@ -62,7 +62,7 @@
 	<div class="my-3 p-3 shadow-sm">
 		<div class="row no-gutters">
 			@foreach($shelves as $shelf)
-				<div class="card" style="width: 18rem;">
+				<div class="card m-2" style="width: 18rem;">
 				  <div class="card-body">
 					<h5 class="card-title">{{ $shelf->book->title }}</h5>
 					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
