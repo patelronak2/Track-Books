@@ -71,7 +71,13 @@
 			url: '/public/getProfileDetails',
 			type: 'GET',
 			success: function(data){
-				alert(data.name)
+				alert(data.name);
+				$("#name").value(data.name);
+				$("#birthday").value(data.birthday);
+				//$("#name").value(data.gender);
+				//$("#name").value(data.isPrivate);
+				alert("Gender: " + data.gender + "\n isPrivate: " + data.isPrivate);
+				
 			},
 			error: function(error){
 				alert("Couldn't get profile data");
