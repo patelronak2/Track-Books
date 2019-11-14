@@ -84,6 +84,7 @@ class User extends Controller
 	
 	public function deleteShelfBook($id){
 		$shelves = Shelf::where('user_id', Auth::id())->where('book_id',$id)->get();
+		$book = Book::find($id);
 		$shelfId = -1;
 		
 		foreach($shelves as $shelf){
@@ -94,6 +95,8 @@ class User extends Controller
 		if($shelfId != -1){
 			$shelf = Shelf::find($shelfId);
 			$shelf->delete();
+			//send a notification
+			$user->notify(new ShelfUpdated(Auth::user(), $book, "Book removed from the shelf"));
 			echo "Success";
 		}
 		
