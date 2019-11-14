@@ -7,6 +7,7 @@
 	<div class="my-3 bg-light shadow-sm p-3">
 		<h4>Edit Profile</h4>
 		<form method="POST" action="/public/editProfile" class="px-1">
+			@csrf
 			 <div class="form-group row">
 				<label for="name" class="col-sm-2 col-form-label font-weight-bold">Name</label>
 				<div class="col-sm-10">
