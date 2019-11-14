@@ -16,7 +16,7 @@
 					<p><span class="font-weight-bold">Birth date:</span> Information not entered</p>
 				@endif
 				@if($profile->gender)
-					<p><span class="font-weight-bold">Gender:</span> </p>
+					<p><span class="font-weight-bold">Gender:</span> {{ $profile->gender }}</p>
 				@else	
 					<p><span class="font-weight-bold">Gender:</span> Information not entered</p>
 				@endif
