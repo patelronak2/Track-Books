@@ -49,9 +49,8 @@
 								  <div class="card-body">
 									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
 									<div class="text-center">
-									  <img src="{{$shelf->book->img_link}}" width="75px" height="90px" class="rounded" alt="Image Not Available">
+									  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
 									</div>
-									<a href="#" class="stretched-link"></a>
 								  </div>
 								</div>
 							@endif
@@ -67,9 +66,8 @@
 								  <div class="card-body">
 									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
 									<div class="text-center">
-									  <img src="{{$shelf->book->img_link}}" width="75px" height="90px" class="rounded" alt="Image Not Available">
+									  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
 									</div>
-									<a href="#" class="stretched-link"></a>
 								  </div>
 								</div>
 							@endif
