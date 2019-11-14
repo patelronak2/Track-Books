@@ -62,10 +62,16 @@
 	<div class="my-3 p-3 shadow-sm">
 		<div class="row no-gutters justify-content-center">
 			@foreach($shelves as $shelf)
-				<div class="card m-1" style="width: 15rem;">
+				<div class="card m-1" style="width: 12rem;">
 				  <div class="card-body">
 					<h5 class="card-title">{{ $shelf->book->title }}</h5>
-					<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+					@if($shelf->wantToRead)
+						<p class="card-text text-info">Shelf: Want To Read</p>
+					@else if($shelf->currentlyRead)
+						<p class="card-text text-warning">Shelf: Currently Reading</p>
+					@else
+						<p class="card-text text-success">Shelf: Finished Reading</p>
+					@endif
 					<a href="#" class="btn btn-danger">Delete</a>
 				  </div>
 				</div>	
