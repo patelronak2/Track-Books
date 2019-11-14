@@ -138,7 +138,7 @@
 				}else{
 					$("#public").prop("checked", true);
 				}
-				//alert("Gender: " + data.gender + "\n isPrivate: " + data.isPrivate);
+				
 				
 			},
 			error: function(error){
@@ -161,7 +161,7 @@
 		});
 		
 		$('form').submit(function(){
-
+			var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 			var birthday = $("#birthday").val();
 			var name = $("#name").val();
 			var gender = "";
@@ -177,6 +177,19 @@
 				isPrivate = true
 			}
 			alert("Name: " + name + "\nBirthDay: " + birthday + "\ngender: " + gender +"\nisPrivate " + isPrivate);
+			$.ajax({
+				url: '/public/editProfile',
+				type: 'POST',
+				data: {_token: CSRF_TOKEN, name: name, birthday: birthday, gender: gender, isPrivate: isPrivate},
+				success: function(data){
+					//Reload the page to reflect changes
+					alert(data);
+				},
+				error: function(error){
+					alert("Something went wrong while updating your Profile");
+				}
+				
+			});
 			return false;
 		});
 	});
