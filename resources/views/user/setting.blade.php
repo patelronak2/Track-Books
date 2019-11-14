@@ -129,11 +129,11 @@
 				$("#name").val(data.name);
 				$("#birthday").attr("value", data.birthday);
 				if(data.gender){
-					if(data.gender == "male"){
+					if(data.gender == "Male"){
 						 $("#male").prop("checked", true);
-					}else if(data.gender == "female"){
+					}else if(data.gender == "Female"){
 						$("#female").prop("checked", true);
-					}else{
+					}else if(data.gender == "Prefer Not To Say"){
 						$("#notToSay").prop("checked", true);
 					}
 				}
