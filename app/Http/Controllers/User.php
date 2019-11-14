@@ -45,6 +45,7 @@ class User extends Controller
 	}
 	
 	public function getProfileDetails(){
+		die;
 		$allProfiles = Profile::all();
 		$profileId = -1;
 		
