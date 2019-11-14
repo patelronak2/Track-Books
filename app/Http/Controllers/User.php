@@ -93,8 +93,10 @@ class User extends Controller
 		}
 		if($shelfId != -1){
 			$shelf = Shelf::find($shelfId);
-				echo $shelf;
-			}
+			$shelf->delete();
+			echo "Success";
+		}
+		
 		
 	}
 }
