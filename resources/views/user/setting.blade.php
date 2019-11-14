@@ -70,7 +70,7 @@
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
 									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
-									<a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
+									<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
 								  </div>
 								</div>
 							@endif
@@ -85,7 +85,7 @@
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
 									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
-									<a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
+									<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
 								  </div>
 								</div>
 							@endif
@@ -100,7 +100,7 @@
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
 									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
-									<a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
+									<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
 								  </div>
 								</div>
 							@endif
@@ -144,6 +144,11 @@
 			error: function(error){
 				alert("Couldn't get profile data");
 			}
+		});
+		
+		$('.card-body').on('click','a', function(){
+			var id = $(this).attr('id');
+			alert($(this).text() + " \n " + id);
 		});
 		
 		$('form').submit(function(){
