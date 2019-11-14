@@ -60,23 +60,61 @@
 	</div>
 	<h3>Delete from Book Shelves</h3>
 	<div class="my-3 p-3 shadow-sm">
-		<div class="row no-gutters justify-content-center">
+		<!-- <div class="row no-gutters justify-content-center">
 			@foreach($shelves as $shelf)
 				<div class="card m-1" style="width: 12rem;">
 				  <div class="card-body">
 					<h5 class="card-title">{{ $shelf->book->title }}</h5>
-					@if($shelf->wantToRead)
-						<p class="card-text text-info">Shelf: Want To Read</p>
-					@elseif($shelf->currentlyRead)
-						<p class="card-text text-warning">Shelf: Currently Reading</p>
-					@else
-						<p class="card-text text-success">Shelf: Finished Reading</p>
-					@endif
+					
 					<a href="#" class="btn btn-danger">Delete</a>
 				  </div>
 				</div>	
 			@endforeach
-		</div>
+		</div> -->
+		<div class="row no-gutters shadow-sm p-3">
+				<div class="col-md-4">
+					<h5 class="sticky-top">Want to Read</h5>
+					<div class="overflow-auto" style="max-height: 400px;">
+						@foreach($shelves as $shelf)
+							@if($shelf->wantToRead)
+								<div class="row no-gutters p-1 mb-2" style="position: relative;">
+									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
+									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
+									<a href="/public/showBook/{{ $shelf->book->id }}" class="btn btn-danger">Delete</a>
+								</div>
+							@endif
+						@endforeach
+					</div>
+				</div>
+				<div class="col-md-4">
+					<h5 class="sticky-top">Currently Reading</h5>
+					<div class="overflow-auto" style="max-height: 400px;">
+						@foreach($shelves as $shelf)
+							@if($shelf->currentlyReading)
+								<div class="row no-gutters p-1 mb-2" style="position: relative;">
+									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
+									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
+									<a href="/public/showBook/{{ $shelf->book->id }}" class="btn btn-danger">Delete</a>
+								</div>
+							@endif
+						@endforeach
+					</div>
+				</div>
+				<div class="col-md-4">
+					<h5 class="sticky-top">Finished Reading</h5>
+					<div class="overflow-auto" style="max-height: 400px;">
+						@foreach($shelves as $shelf)
+							@if($shelf->finishedReading)
+								<div class="row no-gutters p-1 mb-2" style="position: relative;">
+									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
+									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
+									<a href="/public/showBook/{{ $shelf->book->id }}" class="btn btn-danger">Delete</a>
+								</div>
+							@endif
+						@endforeach
+					</div>
+				</div>
+			</div>
 	</div>
 </div>
 <script>
