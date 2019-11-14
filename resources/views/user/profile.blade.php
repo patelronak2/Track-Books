@@ -41,14 +41,18 @@
 			<h3>Book Shelves</h3>
 			<div class="row no-gutters shadow-sm p-3">
 				<div class="col-md-4">
-					<h5 class="sticky-top">Want to Read</h5>
+					<h5 class="sticky-top">Want To Read</h5>
 					<div class="overflow-auto" style="max-height: 400px;">
 						@foreach($shelves as $shelf)
 							@if($shelf->wantToRead)
-								<div class="row no-gutters p-1 mb-2" style="position: relative;">
-									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
-									<a href="/public/showBook/{{ $shelf->book->id }}" class="stretched-link"></a>
+								<div class="card m-1" style="width: 18rem;">
+								  <div class="card-body">
+									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
+									<div class="text-center">
+									  <img src="{{$shelf->book->img_link}}" class="rounded" alt="Image Not Available">
+									</div>
+									<a href="#" class="stretched-link"></a>
+								  </div>
 								</div>
 							@endif
 						@endforeach
@@ -59,10 +63,14 @@
 					<div class="overflow-auto" style="max-height: 400px;">
 						@foreach($shelves as $shelf)
 							@if($shelf->currentlyReading)
-								<div class="row no-gutters p-1 mb-2" style="position: relative;">
-									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
-									<a href="/public/showBook/{{ $shelf->book->id }}" class="stretched-link"></a>
+								<div class="card m-1" style="width: 18rem;">
+								  <div class="card-body">
+									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
+									<div class="text-center">
+									  <img src="{{$shelf->book->img_link}}" class="rounded" alt="Image Not Available">
+									</div>
+									<a href="#" class="stretched-link"></a>
+								  </div>
 								</div>
 							@endif
 						@endforeach
@@ -73,10 +81,14 @@
 					<div class="overflow-auto" style="max-height: 400px;">
 						@foreach($shelves as $shelf)
 							@if($shelf->finishedReading)
-								<div class="row no-gutters p-1 mb-2" style="position: relative;">
-									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
-									<a href="/public/showBook/{{ $shelf->book->id }}" class="stretched-link"></a>
+								<div class="card m-1" style="width: 18rem;">
+								  <div class="card-body">
+									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
+									<div class="text-center">
+									  <img src="{{$shelf->book->img_link}}" class="rounded" alt="Image Not Available">
+									</div>
+									<a href="#" class="stretched-link"></a>
+								  </div>
 								</div>
 							@endif
 						@endforeach
