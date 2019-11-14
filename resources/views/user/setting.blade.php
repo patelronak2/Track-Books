@@ -147,11 +147,22 @@
 		
 		$('form').submit(function(){
 			alert("form submit done");
+			var birthday = $("#birthday").val();
+			var name = $("#name").val();
+			var gender = "";
+			if($("#male").prop("checked")){
+				gender = "Male";
+			}else if($("#female").prop("checked")){
+				gender = "Female"
+			}else{
+				gender = "Prefer Not To Say"
+			}
+			var isPrivate = false;
+			if($("#private").prop("checked")){
+				isPrivate = true
+			}
+			alert("Name: " + name + "\nBirthDay: " + birthday + "\ngender: " + gender +"\nisPrivate " + isPrivate);
 			return false;
-		});
-		
-		$("#birthday").change(function(){
-			alert($("#birthday").val());
 		});
 	});
 </script>
