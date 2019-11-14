@@ -173,9 +173,9 @@
 			if($("#male").prop("checked")){
 				gender = "Male";
 			}else if($("#female").prop("checked")){
-				gender = "Female"
+				gender = "Female";
 			}else if($("#notToSay").prop("checked")){
-				gender = "Prefer Not To Say"
+				gender = "Prefer Not To Say";
 			}
 			var isPrivate = false;
 			if($("#private").prop("checked")){

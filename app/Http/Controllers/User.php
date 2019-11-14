@@ -79,7 +79,7 @@ class User extends Controller
 		$user->name = $request->input('name');
 		$user->save();
 		
-		echo "Success";
+		echo "success";
 		
 		
 	}
