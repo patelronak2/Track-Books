@@ -152,9 +152,7 @@
 				url: '/public/deleteShelfBook/' + bookId,
 				type: 'GET',
 				success: function(data){
-						if(data == "success"){
-							 location.reload(true);
-						}
+						location.reload(true);
 					},
 				error: function(error){
 					alert("Deletion Failed");
