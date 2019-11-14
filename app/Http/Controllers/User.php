@@ -8,6 +8,7 @@ use App\Book;
 use App\Shelf;
 use App\Review;
 use App\Rating;
+use App\Notifications\ShelfUpdated;
 
 class User extends Controller
 {
