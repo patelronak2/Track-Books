@@ -1,6 +1,5 @@
 <?php
 
-use App\User;
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -77,7 +76,6 @@ class User extends Controller
 		$profile->isPrivate = $request->input('isPrivate');
 		$profile->save();
 		
-		$user = User::find($user_id);
 		$user->name = $request->input('name');
 		$user->save();
 		
