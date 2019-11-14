@@ -100,7 +100,7 @@
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
 									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
-									<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->id }}">Delete</a>
+									<a href="/public/deleteShelfBook/{{ $shelf->book->id }}" class="btn btn-outline-danger btn-sm" id="">Delete</a>
 								  </div>
 								</div>
 							@endif
@@ -147,9 +147,17 @@
 		});
 		
 		$('.card-body').on('click','a', function(){
-			var id = $(this).attr('id');
-			alert(id);
-			//Ajax call to delete from the shelf
+			var bookId = $(this).attr('id');
+			// $.ajax({
+				// url: '/public/deleteShelfBook/' + bookId,
+				// type: 'GET',
+				// success: function(){
+					
+					// },
+				// error: function(error){
+					// alert("Deletion Failed");
+				// }
+			// });
 		});
 		
 		$('form').submit(function(){

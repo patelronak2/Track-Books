@@ -83,7 +83,18 @@ class User extends Controller
 	}
 	
 	public function deleteShelfBook($id){
-		$shelves = Shelf::all();
-		echo $shelves;
+		$shelves = Shelf::where('user_id' Auth::id())->where('book_id',$id)->get();
+		$shelfId = -1;
+		
+		foreach($shelves as $shelf){
+			if($shelf->book_id == $id){
+				$shelfId = $shelf->id;
+			}
+		}
+		if($shelfId != -1){
+			$shelf = Shelf::find($shelfId);
+				echo $shelf;
+			}
+		
 	}
 }
