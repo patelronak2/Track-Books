@@ -4,6 +4,9 @@
 <div class="container">
     <h2>Account Setting</h2>
 	<p class="sr-only" id="userID">{{ Auth::id() }}</p>
+	<div class="alert alert-success d-none" id="alert" role="alert">
+	  <span id="message"></span>
+	</div>
 	<div class="my-3 bg-light shadow-sm p-3">
 		<h4>Edit Profile</h4>
 		<form class="px-1">
@@ -113,6 +116,7 @@
 <script>
 	$(document).ready(function(){
 		var userID = $("#userID").text();
+		$("#alert").addClass("d-none");
 		//set minimum birthdate entry here
 		var d = new Date(Date.now());
 		var maxDate = d.toISOString().split('T')[0];
@@ -147,6 +151,7 @@
 		});
 		
 		$('.card-body').on('click','a', function(){
+			$("#alert").addClass("d-none");
 			var bookId = $(this).attr('id');
 			$.ajax({
 				url: '/public/deleteShelfBook/' + bookId,
@@ -182,8 +187,10 @@
 				type: 'POST',
 				data: {_token: CSRF_TOKEN, name: name, birthday: birthday, gender: gender, isPrivate: isPrivate},
 				success: function(data){
-					//Reload the page to reflect changes
-					alert(data);
+					if(data == "success"){
+						$("#message").html("Changes to your Profile has been saved.");
+						$("#alert").removeClass("d-none");
+					}
 				},
 				error: function(error){
 					alert("Something went wrong while updating your Profile");
