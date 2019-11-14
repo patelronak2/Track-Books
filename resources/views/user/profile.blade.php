@@ -84,17 +84,9 @@
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
 									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
-									<div class="row">
-										<div class="col">
-											<img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available">
-										</div>
-										<div class="col align-middle">
-											<a href="#" class="btn btn-outline-primary btn-sm">Details</a>
-										</div>
-									  
-									  
+									<div class="text-center">
+									  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
 									</div>
-									
 								  </div>
 								</div>
 							@endif
