@@ -73,7 +73,7 @@
 			success: function(data){
 				//alert(data.name);
 				$("#name").val(data.name);
-				$("#birthday").val(data.birthday);
+				$("#birthday").attr("value", "2018-07-19");
 				//$("#name").value(data.gender);
 				//$("#name").value(data.isPrivate);
 				alert("Gender: " + data.gender + "\n isPrivate: " + data.isPrivate);
