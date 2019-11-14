@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -8,7 +9,6 @@ use App\Book;
 use App\Shelf;
 use App\Review;
 use App\Rating;
-use App\user;
 use App\Notifications\ShelfUpdated;
 
 class User extends Controller
