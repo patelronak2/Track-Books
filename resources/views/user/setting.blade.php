@@ -84,10 +84,10 @@
 					<div class="overflow-auto" style="max-height: 400px;">
 						@foreach($shelves as $shelf)
 							@if($shelf->wantToRead)
-								<div class="card m-1" style="width: 12rem;">
+								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
-									<h5 class="card-title">{{ $shelf->book->title }}</h5>
-									<a href="#" class="btn btn-danger">Delete</a>
+									<p class="card-title">{{ $shelf->book->title }}</p>
+									<a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
 								  </div>
 								</div>
 							@endif
@@ -99,10 +99,10 @@
 					<div class="overflow-auto" style="max-height: 400px;">
 						@foreach($shelves as $shelf)
 							@if($shelf->currentlyReading)
-								<div class="card m-1" style="width: 12rem;">
+								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
-									<h5 class="card-title">{{ $shelf->book->title }}</h5>
-									<a href="#" class="btn btn-danger">Delete</a>
+									<p class="card-title">{{ $shelf->book->title }}</p>
+									<a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
 								  </div>
 								</div>
 							@endif
@@ -116,8 +116,8 @@
 							@if($shelf->finishedReading)
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
-									<h5 class="card-title">{{ $shelf->book->title }}</h5>
-									<a href="#" class="btn btn-danger">Delete</a>
+									<p class="card-title">{{ $shelf->book->title }}</p>
+									<a href="#" class="btn btn-outline-danger btn-sm">Delete</a>
 								  </div>
 								</div>
 							@endif
