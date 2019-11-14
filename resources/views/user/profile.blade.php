@@ -84,10 +84,11 @@
 								<div class="card m-1" style="width: 18rem;">
 								  <div class="card-body">
 									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
-									<div class="text-center">
-									  <img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available">
+									<div class="clearfix">
+									  <img src="{{$shelf->book->img_link}}" class="rounded float-left" width="75px" height="90px" alt="Image Not Available">
+									  <a href="#" class="btn-btn-outline-primary float-right">Details</a>
 									</div>
-									<a href="#" class="stretched-link"></a>
+									
 								  </div>
 								</div>
 							@endif
