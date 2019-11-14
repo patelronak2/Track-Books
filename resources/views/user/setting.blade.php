@@ -69,6 +69,13 @@
 					<a href="#" class="btn btn-danger">Delete</a>
 				  </div>
 				</div>	
+				<div class="card m-1" style="width: 12rem;">
+				  <div class="card-body">
+					<h5 class="card-title">{{ $shelf->book->title }}</h5>
+					
+					<a href="#" class="btn btn-danger">Delete</a>
+				  </div>
+				</div>
 			@endforeach
 		</div> -->
 		<div class="row no-gutters shadow-sm p-3">
@@ -77,10 +84,11 @@
 					<div class="overflow-auto" style="max-height: 400px;">
 						@foreach($shelves as $shelf)
 							@if($shelf->wantToRead)
-								<div class="row no-gutters p-1 mb-2" style="position: relative;">
-									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
-									<a href="/public/showBook/{{ $shelf->book->id }}" class="btn btn-danger">Delete</a>
+								<div class="card m-1" style="width: 12rem;">
+								  <div class="card-body">
+									<h5 class="card-title">{{ $shelf->book->title }}</h5>
+									<a href="#" class="btn btn-danger">Delete</a>
+								  </div>
 								</div>
 							@endif
 						@endforeach
@@ -91,10 +99,11 @@
 					<div class="overflow-auto" style="max-height: 400px;">
 						@foreach($shelves as $shelf)
 							@if($shelf->currentlyReading)
-								<div class="row no-gutters p-1 mb-2" style="position: relative;">
-									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
-									<a href="/public/showBook/{{ $shelf->book->id }}" class="btn btn-danger">Delete</a>
+								<div class="card m-1" style="width: 12rem;">
+								  <div class="card-body">
+									<h5 class="card-title">{{ $shelf->book->title }}</h5>
+									<a href="#" class="btn btn-danger">Delete</a>
+								  </div>
 								</div>
 							@endif
 						@endforeach
@@ -105,10 +114,11 @@
 					<div class="overflow-auto" style="max-height: 400px;">
 						@foreach($shelves as $shelf)
 							@if($shelf->finishedReading)
-								<div class="row no-gutters p-1 mb-2" style="position: relative;">
-									<img src="{{ $shelf->book->img_link }}" alt="image not available" class="col p-1" style="max-height: 75px; max-width: 65px;">
-									<p class="col mt-2 pr-4">{{ $shelf->book->title }}</p>
-									<a href="/public/showBook/{{ $shelf->book->id }}" class="btn btn-danger">Delete</a>
+								<div class="card m-1" style="width: 12rem;">
+								  <div class="card-body">
+									<h5 class="card-title">{{ $shelf->book->title }}</h5>
+									<a href="#" class="btn btn-danger">Delete</a>
+								  </div>
 								</div>
 							@endif
 						@endforeach
