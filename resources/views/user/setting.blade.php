@@ -176,7 +176,7 @@
 			if($("#private").prop("checked")){
 				isPrivate = true
 			}
-			alert("Name: " + name + "\nBirthDay: " + birthday + "\ngender: " + gender +"\nisPrivate " + isPrivate);
+			//alert("Name: " + name + "\nBirthDay: " + birthday + "\ngender: " + gender +"\nisPrivate " + isPrivate);
 			$.ajax({
 				url: '/public/editProfile',
 				type: 'POST',
