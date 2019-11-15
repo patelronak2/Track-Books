@@ -78,7 +78,7 @@
 						$.ajax({
 							url: '/public/getUserList',
 							type: 'POST',
-							data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()}
+							data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()},
 							success: function(data){
 								alert(data);
 								if(data){
