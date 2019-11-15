@@ -242,7 +242,6 @@ class HomeController extends Controller
 	public function getUserList(Request $request){
 		
 		$users = User::all();
-		die;
 		return $users;
 	}
 	
