@@ -1,11 +1,12 @@
 <?php
 
-use App\User;
+
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Profile;
 use App\Book;
+use App\User;
 use App\Shelf;
 use App\Review;
 use App\Rating;
@@ -239,7 +240,7 @@ class HomeController extends Controller
 	}
 	
 	public function getUserList(Request $request){
-		
+		die;
 		$users = User::all();
 		return $users;
 	}
