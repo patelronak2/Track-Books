@@ -46,6 +46,9 @@ Route::post('/rateBook', 'HomeController@rateBook');
 Route::get('/getProfileDetails','User@getProfileDetails');
 Route::post('/editProfile', 'User@editProfile');
 Route::get('/deleteShelfBook/{id}', 'User@deleteShelfBook');
+Route::get('/getUserList','HomeController@getUserList');
+
+//-----------------------------------------------------------------------------
 Route::get('/test', function(){
 	$user = Auth::user();
 	$user->notifications()->delete();

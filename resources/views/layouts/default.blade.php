@@ -60,7 +60,7 @@
 			var searchBy = "Books";
 			var searchResult = "";
 			var clickedId = -1;
-			
+			var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 			getNotificationCount();
 			
 			$("#navSubmit").click(function(){
@@ -72,10 +72,29 @@
 				
 				switch(searchBy) {
 				  case "User":
-						var temphtml = '<div class="list-group">';
-						temphtml += '<a class="list-group-item" href="">SearchBy UserSearchBy UserSearchBy User</a>';
-						temphtml += '</div>';
-						$("#navSearchResults").html(temphtml).removeClass("d-none");
+						//-------------------------------------------------------------------------------------------------
+						//Ajax Call 
+						//Get all the users in the database and print 5 names that have accountVisiblity set to public
+						$.ajax({
+							url: '/public/getUserList',
+							type: 'POST',
+							data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()}
+							success: function(data){
+								alert(data);
+								if(data){
+									//display list here
+								}else{
+									var temphtml = '<div class="list-group">';
+									temphtml += '<p class="list-group-item">No Such User Found</p>';
+									temphtml += '</div>';
+									$("#navSearchResults").html(temphtml).removeClass("d-none");
+								}
+							},
+							error: function(error){
+								alert("cannot get User List");
+							}
+						});
+						//-----------------------------------------------------------------------------------------------------
 					break;
 				  case "Author":
 						var temphtml = '';
@@ -112,6 +131,11 @@
 			
 			//Enter information in modal and show it
 			$('.list-group').on('click', 'a', function() {
+				//--------------------------------------------------------------------------------------------------
+				//Add some kind of condition to figure out what kind of result is being clicked on
+				//i.e. If the target <a> tag contains result of book, User or Author
+				//One Idea would be to check the <select> value and put a switch case same as .keyup() function
+				//---------------------------------------------------------------------------------------------------
 				clickedId = parseInt($(this).find('#index').text());
 				$('#bookTitle').html(searchResult.items[clickedId].volumeInfo.title);
 				$('#modalBookID').html(clickedId);

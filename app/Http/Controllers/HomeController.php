@@ -238,5 +238,9 @@ class HomeController extends Controller
 		return ['notification' => $user->notifications,'timeStamp' => $data];
 	}
 	
+	public function getUserList(Request $request){
+		$users = User::all();
+		return $users;
+	}
 	
 }
