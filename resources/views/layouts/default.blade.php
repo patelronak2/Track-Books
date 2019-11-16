@@ -94,10 +94,11 @@
 									}
 								}
 								
-								if(flag){
+								if(!flag && searchTerm != ""){
+									
+									temphtml += '<p class="list-group-item">No User Found</p>';
 									$("#navSearchResults").html(temphtml).removeClass("d-none");
 								}else{
-									temphtml += '<p class="list-group-item">No User Found</p>';
 									$("#navSearchResults").html(temphtml).removeClass("d-none");
 								}
 								// if(user){
