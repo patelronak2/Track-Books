@@ -79,7 +79,6 @@
 						$.ajax({
 							url: '/public/getUserList',
 							type: 'GET',
-							//data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()},
 							success: function(data){
 								var user = JSON.parse(data);
 								var temphtml = "";
@@ -93,7 +92,6 @@
 										temphtml += '</a>';
 									}
 								}
-								
 								if(!flag && searchTerm != ""){
 									
 									temphtml += '<p class="list-group-item">No User Found</p>';
@@ -101,15 +99,6 @@
 								}else{
 									$("#navSearchResults").html(temphtml).removeClass("d-none");
 								}
-								// if(user){
-									// for(var i = 0; i < user.length && i < 5; i++){
-										
-									// }
-								// }else{
-									// //Users not found
-									// temphtml += '<p class="list-group-item">SearchBy Author</p>';
-								// }
-								// $("#navSearchResults").html(temphtml).removeClass("d-none");
 							},
 							error: function(error){
 								alert("cannot get User List");
@@ -157,38 +146,48 @@
 				//i.e. If the target <a> tag contains result of book, User or Author
 				//One Idea would be to check the <select> value and put a switch case same as .keyup() function
 				//---------------------------------------------------------------------------------------------------
-				clickedId = parseInt($(this).find('#index').text());
-				$('#bookTitle').html(searchResult.items[clickedId].volumeInfo.title);
-				$('#modalBookID').html(clickedId);
-				var img_Link = "";
-				if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('imageLinks')){
-					img_Link = searchResult.items[clickedId].volumeInfo.imageLinks.smallThumbnail;
+				switch(searchBy){
+					case "User":
+					
+						break;
+					case "Author":
+					
+						break;
+					default:
+						clickedId = parseInt($(this).find('#index').text());
+						$('#bookTitle').html(searchResult.items[clickedId].volumeInfo.title);
+						$('#modalBookID').html(clickedId);
+						var img_Link = "";
+						if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('imageLinks')){
+							img_Link = searchResult.items[clickedId].volumeInfo.imageLinks.smallThumbnail;
+						}
+						var author = "";
+						if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('authors')){
+							author = 'Author: ' +  searchResult.items[clickedId].volumeInfo.authors[0];
+						}else{
+							author = 'Author name not available';
+						}
+						var publisher = "";
+						if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('publisher')){
+							publisher = 'Publisher: ' + searchResult.items[clickedId].volumeInfo.publisher;
+						}else{
+							publisher = 'Publisher Information Not Available';
+						}
+						var publishedDate = ""
+						if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('publishedDate')){
+							publishedDate = 'Published Date: ' + searchResult.items[clickedId].volumeInfo.publishedDate;
+						}else{
+							publishedDate = "Published Date not Available"
+						}
+						var temphtml = '<img src="'+ img_Link +'" class="card-img" alt="Image Not Available">';
+						$('#modalImage').html(temphtml);
+						$('#modalAuthorName').html(author);
+						$('#modalBookPublisher').html(publisher);
+						$('#modalBookPublishedDate').html(publishedDate);
+						$('#bookModal').modal('show');
+						
+						
 				}
-				var author = "";
-				if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('authors')){
-					author = 'Author: ' +  searchResult.items[clickedId].volumeInfo.authors[0];
-				}else{
-					author = 'Author name not available';
-				}
-				var publisher = "";
-				if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('publisher')){
-					publisher = 'Publisher: ' + searchResult.items[clickedId].volumeInfo.publisher;
-				}else{
-					publisher = 'Publisher Information Not Available';
-				}
-				var publishedDate = ""
-				if(searchResult.items[clickedId].volumeInfo.hasOwnProperty('publishedDate')){
-					publishedDate = 'Published Date: ' + searchResult.items[clickedId].volumeInfo.publishedDate;
-				}else{
-					publishedDate = "Published Date not Available"
-				}
-				var temphtml = '<img src="'+ img_Link +'" class="card-img" alt="Image Not Available">';
-				$('#modalImage').html(temphtml);
-				$('#modalAuthorName').html(author);
-				$('#modalBookPublisher').html(publisher);
-				$('#modalBookPublishedDate').html(publishedDate);
-				$('#bookModal').modal('show');
-				
 				
 			});
 			
