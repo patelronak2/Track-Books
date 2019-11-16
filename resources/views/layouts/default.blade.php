@@ -77,8 +77,8 @@
 						//Get all the users in the database and print 5 names that have accountVisiblity set to public
 						$.ajax({
 							url: '/public/getUserList',
-							type: 'GET',
-							//data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()},
+							type: 'POST',
+							data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()},
 							success: function(data){
 								var user = JSON.parse(data);
 								var temphtml = "";
