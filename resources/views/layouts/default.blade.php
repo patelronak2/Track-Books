@@ -77,16 +77,23 @@
 						//Get all the users in the database and print 5 names that have accountVisiblity set to public
 						$.ajax({
 							url: '/public/getUserList',
-							type: 'POST',
-							data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()},
+							type: 'GET',
+							//data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()},
 							success: function(data){
-								alert(data);
+								var temphtml = '';
 								if(data){
-									//display list here
+									for(user in data){
+										if(user.name.includes($("#navSearch").val())){
+											temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
+											temphtml += '<div class="d-flex w-100 justify-content-between">';
+											temphtml += '<h5 class="mb-1">' + user.name + '</h5></div>';
+											temphtml += '</a>';
+										}
+									}
 								}else{
-									var temphtml = '<div class="list-group">';
-									temphtml += '<p class="list-group-item">No Such User Found</p>';
-									temphtml += '</div>';
+									//var temphtml = '<div class="list-group">';
+									var temphtml = '<p class="list-group-item">No Such User Found</p>';
+									//temphtml += '</div>';
 									$("#navSearchResults").html(temphtml).removeClass("d-none");
 								}
 							},
@@ -107,7 +114,7 @@
 						$.ajax({
 							url: searchURL,
 							success: function(data){
-								var temphtml = '<div class="list-group">';
+								var temphtml = '';
 								searchResult = data;
 								for(var i = 0; i < 5 && i < data['totalItems']; i++){
 									var title = data.items[i].volumeInfo.title;
