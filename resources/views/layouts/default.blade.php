@@ -84,8 +84,8 @@
 								var flag = false;
 								var temphtml = '';
 									for(var i = 0; i < 5 && i < allUsers.length; i++){
-										alert(allUsers[i]['name']);
-										if(allUsers[i]['name'].includes($("#navSearch").val())){
+										//alert(allUsers[i]['name']);
+										if(allUsers[i]['name'].includes($("#navSearch").val()toLowerCase().trim())){
 											flag = true;
 											temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
 											temphtml += '<div class="d-flex w-100 justify-content-between">';
