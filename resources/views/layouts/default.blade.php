@@ -80,17 +80,18 @@
 							type: 'GET',
 							//data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()},
 							success: function(data){
+								alert(data);
 								var temphtml = '';
 								if(data){
-									for(user in data){
-										alert(user);
-										// if(user.name.includes($("#navSearch").val())){
-											// temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
-											// temphtml += '<div class="d-flex w-100 justify-content-between">';
-											// temphtml += '<h5 class="mb-1">' + user.name + '</h5></div>';
-											// temphtml += '</a>';
-										// }
-									}
+									// for(user in data){
+										// alert(user);
+										// // if(user.name.includes($("#navSearch").val())){
+											// // temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
+											// // temphtml += '<div class="d-flex w-100 justify-content-between">';
+											// // temphtml += '<h5 class="mb-1">' + user.name + '</h5></div>';
+											// // temphtml += '</a>';
+										// // }
+									// }
 									//$("#navSearchResults").html(temphtml).removeClass("d-none");
 								}else{
 									//var temphtml = '<div class="list-group">';
