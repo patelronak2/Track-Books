@@ -80,25 +80,20 @@
 							type: 'GET',
 							//data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()},
 							success: function(data){
-								var allUsers = JSON.parse(data);
-								var flag = false;
-								var temphtml = '';
-									for(var i = 0; i < 5 && i < allUsers.length; i++){
-										//alert(allUsers[i]['name']);
-										if(allUsers[i]['name'].indexOf($("#navSearch").val().toLowerCase().trim()) !== -1){
-											flag = true;
-											temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
-											temphtml += '<div class="d-flex w-100 justify-content-between">';
-											temphtml += '<h5 class="mb-1">' + allUsers[i]['name'] + '</h5></div>';
-											temphtml += '</a>';
-										}
+								var user = JSON.parse(data);
+								var temphtml = "";
+								if(user){
+									for(var i = 0; i < user.length && i < 5; i++){
+										temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
+										temphtml += '<div class="d-flex w-100 justify-content-between">';
+										temphtml += '<h5 class="mb-1">' + user[i]['name'] + '</h5></div>';
+										temphtml += '</a>';
 									}
-								if(!flag){
-									var temphtml = '<p class="list-group-item">No Such User Found</p>';
-									$("#navSearchResults").html(temphtml).removeClass("d-none");
 								}else{
-									$("#navSearchResults").html(temphtml).removeClass("d-none");
-								}								
+									//Users not found
+									temphtml += '<p class="list-group-item">SearchBy Author</p>';
+								}
+								$("#navSearchResults").html(temphtml).removeClass("d-none");
 							},
 							error: function(error){
 								alert("cannot get User List");
