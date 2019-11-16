@@ -84,6 +84,7 @@
 								var flag = false;
 								var temphtml = '';
 									for(var i = 0; i < 5 && i < allUsers.length; i++){
+										alert(allUsers[i]['name']);
 										if(allUsers[i]['name'].includes($("#navSearch").val())){
 											flag = true;
 											temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
@@ -92,9 +93,10 @@
 											temphtml += '</a>';
 										}
 									}
-									$("#navSearchResults").html(temphtml).removeClass("d-none");
-								if(flag){
+								if(!flag){
 									var temphtml = '<p class="list-group-item">No Such User Found</p>';
+									$("#navSearchResults").html(temphtml).removeClass("d-none");
+								}else{
 									$("#navSearchResults").html(temphtml).removeClass("d-none");
 								}								
 							},
