@@ -83,12 +83,12 @@
 								var allUsers = JSON.parse(data);
 								var flag = false;
 								var temphtml = '';
-									for(user in allUsers){
-										if(user.name.includes($("#navSearch").val())){
+									for(var i = 0; i < 5 && i < allUsers.length; i++){
+										if(allUsers[i]['name'].includes($("#navSearch").val())){
 											flag = true;
 											temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
 											temphtml += '<div class="d-flex w-100 justify-content-between">';
-											temphtml += '<h5 class="mb-1">' + user.name + '</h5></div>';
+											temphtml += '<h5 class="mb-1">' + allUsers[i]['name'] + '</h5></div>';
 											temphtml += '</a>';
 										}
 									}
