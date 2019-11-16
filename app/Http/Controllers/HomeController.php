@@ -241,7 +241,7 @@ class HomeController extends Controller
 	
 	public function getUserList(Request $request){
 		
-		$users = User::all();
+		$users = User::where('name','like','%' . $request->input("searchTerm") . '%')->get();
 		return $users;
 	}
 	
