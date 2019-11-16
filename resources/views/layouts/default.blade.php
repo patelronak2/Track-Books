@@ -80,25 +80,23 @@
 							type: 'GET',
 							//data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()},
 							success: function(data){
-								alert(data);
+								var allUsers = JSON.parse(data);
+								var flag = false;
 								var temphtml = '';
-								if(data){
-									// for(user in data){
-										// alert(user);
-										// // if(user.name.includes($("#navSearch").val())){
-											// // temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
-											// // temphtml += '<div class="d-flex w-100 justify-content-between">';
-											// // temphtml += '<h5 class="mb-1">' + user.name + '</h5></div>';
-											// // temphtml += '</a>';
-										// // }
-									// }
-									//$("#navSearchResults").html(temphtml).removeClass("d-none");
-								}else{
-									//var temphtml = '<div class="list-group">';
-									var temphtml = '<p class="list-group-item">No Such User Found</p>';
-									//temphtml += '</div>';
+									for(user in allUsers){
+										if(user.name.includes($("#navSearch").val())){
+											flag = true;
+											temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
+											temphtml += '<div class="d-flex w-100 justify-content-between">';
+											temphtml += '<h5 class="mb-1">' + user.name + '</h5></div>';
+											temphtml += '</a>';
+										}
+									}
 									$("#navSearchResults").html(temphtml).removeClass("d-none");
-								}
+								if(flag){
+									var temphtml = '<p class="list-group-item">No Such User Found</p>';
+									$("#navSearchResults").html(temphtml).removeClass("d-none");
+								}								
 							},
 							error: function(error){
 								alert("cannot get User List");
