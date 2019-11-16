@@ -83,13 +83,15 @@
 								var temphtml = '';
 								if(data){
 									for(user in data){
-										if(user.name.includes($("#navSearch").val())){
-											temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
-											temphtml += '<div class="d-flex w-100 justify-content-between">';
-											temphtml += '<h5 class="mb-1">' + user.name + '</h5></div>';
-											temphtml += '</a>';
-										}
+										alert(user);
+										// if(user.name.includes($("#navSearch").val())){
+											// temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
+											// temphtml += '<div class="d-flex w-100 justify-content-between">';
+											// temphtml += '<h5 class="mb-1">' + user.name + '</h5></div>';
+											// temphtml += '</a>';
+										// }
 									}
+									//$("#navSearchResults").html(temphtml).removeClass("d-none");
 								}else{
 									//var temphtml = '<div class="list-group">';
 									var temphtml = '<p class="list-group-item">No Such User Found</p>';
