@@ -242,7 +242,7 @@ class HomeController extends Controller
 	public function getUserList(){
 		
 		$users = User::all();
-		return $users;
+		return json_encode($users);
 	}
 	
 }
