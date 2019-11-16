@@ -239,9 +239,9 @@ class HomeController extends Controller
 		return ['notification' => $user->notifications,'timeStamp' => $data];
 	}
 	
-	public function getUserList(Request $request){
+	public function getUserList(){
 		
-		$users = User::where('name','like','%'. $request->input('searchTerm') .'%')->get();
+		$users = User::all();
 		return json_encode($users);
 	}
 	

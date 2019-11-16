@@ -75,25 +75,40 @@
 						//-------------------------------------------------------------------------------------------------
 						//Ajax Call 
 						//Get all the users in the database and print 5 names that have accountVisiblity set to public
+						var searchTerm = $("#navSearch").val().toLowerCase().trim();
 						$.ajax({
 							url: '/public/getUserList',
-							type: 'POST',
-							data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()},
+							type: 'GET',
+							//data: {_token: CSRF_TOKEN, searchTerm: $("#navSearch").val()},
 							success: function(data){
 								var user = JSON.parse(data);
 								var temphtml = "";
-								if(user){
-									for(var i = 0; i < user.length && i < 5; i++){
+								var flag = false;
+								for(var i = 0; i < 5 && i < user.length; i++){
+									if(searchTerm != "" && (searchTerm.indexOf(user[i]['name'].toLowerCase()) !== -1)){
+										flag = true;
 										temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
 										temphtml += '<div class="d-flex w-100 justify-content-between">';
 										temphtml += '<h5 class="mb-1">' + user[i]['name'] + '</h5></div>';
 										temphtml += '</a>';
 									}
-								}else{
-									//Users not found
-									temphtml += '<p class="list-group-item">SearchBy Author</p>';
 								}
-								$("#navSearchResults").html(temphtml).removeClass("d-none");
+								
+								if(flag){
+									$("#navSearchResults").html(temphtml).removeClass("d-none");
+								}else{
+									temphtml += '<p class="list-group-item">No User Found</p>';
+									$("#navSearchResults").html(temphtml).removeClass("d-none");
+								}
+								// if(user){
+									// for(var i = 0; i < user.length && i < 5; i++){
+										
+									// }
+								// }else{
+									// //Users not found
+									// temphtml += '<p class="list-group-item">SearchBy Author</p>';
+								// }
+								// $("#navSearchResults").html(temphtml).removeClass("d-none");
 							},
 							error: function(error){
 								alert("cannot get User List");

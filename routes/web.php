@@ -46,7 +46,7 @@ Route::post('/rateBook', 'HomeController@rateBook');
 Route::get('/getProfileDetails','User@getProfileDetails');
 Route::post('/editProfile', 'User@editProfile');
 Route::get('/deleteShelfBook/{id}', 'User@deleteShelfBook');
-Route::post('/getUserList','HomeController@getUserList');
+Route::get('/getUserList','HomeController@getUserList');
 
 //-----------------------------------------------------------------------------
 Route::get('/test', function(){
