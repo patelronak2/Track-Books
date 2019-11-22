@@ -80,16 +80,16 @@
 							url: '/public/getUserList',
 							type: 'GET',
 							success: function(data){
-								//alert(data);
-								var user = JSON.parse(data);
+								var searchResult = JSON.parse(data);
 								var temphtml = "";
 								var flag = false;
-								for(var i = 0; i < 5 && i < user.length; i++){
-									if(searchTerm != "" && user[i]['name'].toLowerCase().indexOf(searchTerm) !== -1 && !user[i]['profile']['isPrivate']){
+								for(var i = 0; i < 5 && i < searchResult.length; i++){
+									if(searchTerm != "" && searchResult[i]['name'].toLowerCase().indexOf(searchTerm) !== -1){
 										flag = true;
-										temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
+										temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="public/showProfile/'+ searchResult[i]['id'] +'">';
 										temphtml += '<div class="d-flex w-100 justify-content-between">';
-										temphtml += '<h5 class="mb-1">' + user[i]['name'] + '</h5></div>';
+										temphtml += '<h5 class="mb-1">' + searchResult[i]['name'] + '</h5></div>';
+										temphtml += '<p class="sr-only" id="index">' + i + '</p>';
 										temphtml += '</a>';
 									}
 								}
@@ -151,6 +151,8 @@
 					case "User":
 						//Handle the Click
 						//Get the User Id and display another User Profile with that ID
+						// clickedId = parseInt($(this).find('#index').text());
+						// var userId = searchResult[clickedId]['id'];
 						break;
 					case "Author":
 					

@@ -47,6 +47,7 @@ Route::get('/getProfileDetails','User@getProfileDetails');
 Route::post('/editProfile', 'User@editProfile');
 Route::get('/deleteShelfBook/{id}', 'User@deleteShelfBook');
 Route::get('/getUserList','HomeController@getUserList');
+Route::get('/showProfile/{id}', 'User@showProfile');
 
 //-----------------------------------------------------------------------------
 Route::get('/test', function(){

@@ -101,8 +101,12 @@ class User extends Controller
 			//send a notification
 			$user->notify(new ShelfUpdated($user, $book, "Book removed from the shelf"));
 			echo "Success";
-		}
+		}	
+	}
+	
+	public function showProfile($id){
+		$profile = Profile::find($id)->with('user');
 		
-		
+		return view('user.anotherUserProfile',['profile' => $profile]); 
 	}
 }
