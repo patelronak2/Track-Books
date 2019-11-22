@@ -148,7 +148,8 @@
 				//---------------------------------------------------------------------------------------------------
 				switch(searchBy){
 					case "User":
-					
+						//Handle the Click
+						//Get the User Id and display another User Profile with that ID
 						break;
 					case "Author":
 					

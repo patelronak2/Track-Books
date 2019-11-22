@@ -241,6 +241,7 @@ class HomeController extends Controller
 	
 	public function getUserList(){
 		
+		//Get only those users where account is public
 		$users = User::all();
 		return json_encode($users);
 	}

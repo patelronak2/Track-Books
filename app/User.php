@@ -57,4 +57,9 @@ class User extends Authenticatable
 		return $this->hasMany('App\Shelf');
 	}
 	
+	public function profile()
+    {
+        return $this->hasOne('App\Profile');
+    }
+	
 }
