@@ -80,7 +80,7 @@
 							url: '/public/getUserList',
 							type: 'GET',
 							success: function(data){
-								alert(data);
+								//alert(data);
 								var user = JSON.parse(data);
 								var temphtml = "";
 								var flag = false;
