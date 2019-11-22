@@ -85,7 +85,7 @@
 								var temphtml = "";
 								var flag = false;
 								for(var i = 0; i < 5 && i < user.length; i++){
-									if(searchTerm != "" && user[i]['name'].toLowerCase().indexOf(searchTerm) !== -1){
+									if(searchTerm != "" && user[i]['name'].toLowerCase().indexOf(searchTerm) !== -1 && !user[i]['profile']['isPrivate']){
 										flag = true;
 										temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
 										temphtml += '<div class="d-flex w-100 justify-content-between">';
