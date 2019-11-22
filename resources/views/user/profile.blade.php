@@ -38,59 +38,57 @@
 		</div>
 	</div>
 	<div class="my-3">
-		<div class="">
-			<h3>Book Shelves</h3>
-			<div class="row no-gutters shadow-sm p-3">
-				<div class="col-md-4">
-					<h5 class="sticky-top">Want To Read</h5>
-					<div class="overflow-auto" style="max-height: 600px;">
-						@foreach($shelves as $shelf)
-							@if($shelf->wantToRead)
-								<div class="card m-1" style="width: 18rem;">
-								  <div class="card-body">
-									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
-									<div class="text-center">
-									  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
-									</div>
-								  </div>
+		<h3>Book Shelves</h3>
+		<div class="row no-gutters shadow-sm p-3">
+			<div class="col-md-4">
+				<h5 class="sticky-top">Want To Read</h5>
+				<div class="overflow-auto" style="max-height: 600px;">
+					@foreach($shelves as $shelf)
+						@if($shelf->wantToRead)
+							<div class="card m-1" style="width: 18rem;">
+							  <div class="card-body">
+								<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
+								<div class="text-center">
+								  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
 								</div>
-							@endif
-						@endforeach
-					</div>
+							  </div>
+							</div>
+						@endif
+					@endforeach
 				</div>
-				<div class="col-md-4">
-					<h5 class="sticky-top">Currently Reading</h5>
-					<div class="overflow-auto" style="max-height: 600px;">
-						@foreach($shelves as $shelf)
-							@if($shelf->currentlyReading)
-								<div class="card m-1" style="width: 18rem;">
-								  <div class="card-body">
-									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
-									<div class="text-center">
-									  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
-									</div>
-								  </div>
+			</div>
+			<div class="col-md-4">
+				<h5 class="sticky-top">Currently Reading</h5>
+				<div class="overflow-auto" style="max-height: 600px;">
+					@foreach($shelves as $shelf)
+						@if($shelf->currentlyReading)
+							<div class="card m-1" style="width: 18rem;">
+							  <div class="card-body">
+								<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
+								<div class="text-center">
+								  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
 								</div>
-							@endif
-						@endforeach
-					</div>
+							  </div>
+							</div>
+						@endif
+					@endforeach
 				</div>
-				<div class="col-md-4">
-					<h5 class="sticky-top">Finished Reading</h5>
-					<div class="overflow-auto" style="max-height: 600px;">
-						@foreach($shelves as $shelf)
-							@if($shelf->finishedReading)
-								<div class="card m-1" style="width: 18rem;">
-								  <div class="card-body">
-									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
-									<div class="text-center">
-									  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
-									</div>
-								  </div>
+			</div>
+			<div class="col-md-4">
+				<h5 class="sticky-top">Finished Reading</h5>
+				<div class="overflow-auto" style="max-height: 600px;">
+					@foreach($shelves as $shelf)
+						@if($shelf->finishedReading)
+							<div class="card m-1" style="width: 18rem;">
+							  <div class="card-body">
+								<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
+								<div class="text-center">
+								  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
 								</div>
-							@endif
-						@endforeach
-					</div>
+							  </div>
+							</div>
+						@endif
+					@endforeach
 				</div>
 			</div>
 		</div>

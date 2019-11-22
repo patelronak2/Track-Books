@@ -106,7 +106,7 @@ class User extends Controller
 	
 	public function showProfile($id){
 		$profile = Profile::find($id);
-		
-		return view('user.anotherUserProfile',['profile' => $profile]); 
+		$shelves = Shelf::where('user_id', $id)->with('book')->get();
+		return view('user.anotherUserProfile',['profile' => $profile, 'shelves' => $shelves]); 
 	}
 }
