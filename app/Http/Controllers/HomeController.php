@@ -242,7 +242,7 @@ class HomeController extends Controller
 	public function getUserList(){
 		
 		//Get only those users where account is public
-		$users = User::all();
+		$users = User::with('profile')->get();
 		return json_encode($users);
 	}
 	
