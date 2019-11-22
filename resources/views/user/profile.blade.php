@@ -7,7 +7,7 @@
 	</div>
 	<div class="my-3">
 		<div class="row no-gutters shadow-sm bg-light p-3">
-			<div class="col-md-4">
+			<div class="col-md-4 p-2">
 				<h5>Personal Information</h5>
 				<p><span class="font-weight-bold">Email:</span> {{ $profile->email }}</p>
 				@if($profile->birthday)
@@ -23,16 +23,18 @@
 				
 				<a href="/public/setting" class="btn btn-primary m-3">Edit Profile</a>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 p-2">
 				<h5>Account Preferences</h5>
 				@if($profile->isPrivate)
-					<p><span class="font-weight-bold">Account Visibility:</span> Private</p>
-					<p><small>Other User's will not be able to see your profile or reviews</small></p>
+					<p><span class="font-weight-bold">Account Visibility:</span> Private<br>
+						<small>User's will not be able to see your profile or reviews</small>
+					</p>
+					
 				@else	
 					<p><span class="font-weight-bold">Account Visibility:</span> Public</p>
 				@endif
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 p-2">
 				<h5>Friends List</h5>
 			</div>
 		</div>
