@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="container">
-    <div class="my-3">
+    <div class="my-3 shadow-sm bg-light p-3 text-center">
 		<h2>{{ $profile->name }}'s Profile</h2>
 	</div>
 	@if($profile->isPrivate)
 				<div class="my-3">
-					<div class="row no-gutters shadow-sm bg-light p-3">
-						<div class="justify-content-center">
-							<i class="fa fa-lock" style="font-size:48px"></i>
+					<div class="justify-content-center">
+						<div class="text-center">
+							<i class="fa fa-lock my-2" style="font-size:48px"></i>
 							<h4>This User's Profile is Private</h4>
 						</div>
 					</div>
