@@ -86,7 +86,7 @@
 								for(var i = 0; i < 5 && i < searchResult.length; i++){
 									if(searchTerm != "" && searchResult[i]['name'].toLowerCase().indexOf(searchTerm) !== -1){
 										flag = true;
-										temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="public/showProfile/'+ searchResult[i]['id'] +'">';
+										temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="/public/showProfile/'+ searchResult[i]['id'] +'">';
 										temphtml += '<div class="d-flex w-100 justify-content-between">';
 										temphtml += '<h5 class="mb-1">' + searchResult[i]['name'] + '</h5></div>';
 										temphtml += '<p class="sr-only" id="index">' + i + '</p>';
