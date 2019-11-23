@@ -54,3 +54,7 @@ Route::get('/test', function(){
 	$user = Auth::user();
 	$user->notifications()->delete();
 });
+
+Route::get('/sendFriendRequest','User@sendFriendRequest');
+
+Route::get('/pendingRequest','User@pendingRequest');

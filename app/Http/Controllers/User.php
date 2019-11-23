@@ -8,6 +8,7 @@ use App\Book;
 use App\Shelf;
 use App\Review;
 use App\Rating;
+use App\FriendShip;
 use App\Notifications\ShelfUpdated;
 
 class User extends Controller
@@ -108,5 +109,24 @@ class User extends Controller
 		$profile = Profile::find($id);
 		$shelves = Shelf::where('user_id', $id)->with('book')->get();
 		return view('user.anotherUserProfile',['profile' => $profile, 'shelves' => $shelves]); 
+	}
+	
+	public function sendFriendRequest(){
+		$friendship = new FriendShip;
+		$friendship->first_user = Auth::id();
+		$friendship->second_user = 2;
+		$friendship->acted_user = Auth::id();
+		$friendship->status = 'pending';
+		$friendship->save();
+		
+		$friendships = FriendShip::all();
+		print_r($friendships);
+	}
+	
+	public function pendingRequest(){
+		FriendShip::where('first_user', 1 )->where('second_user', Auth::id())->update(['status' => 'confirmed']);
+		
+		$friendships = FriendShip::all();
+		print_r($friendships);
 	}
 }
