@@ -1,23 +1,28 @@
 @extends('layouts.default')
 
 @section('content')
+<style>
+	.parallax{
+		  background-image: url("https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+		  background-attachment: fixed;
+		  background-position: center;
+		  background-repeat: no-repeat;
+		  background-size: cover;
+	}
+</style>
 <div class="my-3 container-fluid">
 	<h2>{{ $profile->name }}'s Profile</h2>
 </div>
 @if($profile->isPrivate)
-	<div class="my-3 shadow-sm bg-light py-2">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="text-center">
-					<i class="fa fa-lock my-2" style="font-size:48px"></i>
-					<h4>This User's Profile is Private</h4>
-				</div>
+	<div class="my-3">
+		<div class="parallax">
+		  <div class="justify-content-center">
+			<div class="text-center">
+				<i class="fa fa-lock my-2" style="font-size:48px"></i>
+				<h4>This User's Profile is Private</h4>
 			</div>
-			<div class="col-md-6">
-				<div id="fillerImage">
-					<p>Image goes here</p>
-				</div>
-			</div>
+			<button class="btn btn-light button">Add Friend</button>
+		  </div>
 		</div>
 	</div>
 @else
