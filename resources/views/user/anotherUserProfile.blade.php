@@ -30,7 +30,7 @@
 					<p class="col-md-3"><span class="font-weight-bold">Gender:</span> {{ $profile->gender }}</p>
 				@endif
 				<div class="col-md-3">
-					<p><span class="font-weight-bold">Total Friends: </span><span id="totalFriends">0</span></p>
+					<p><span class="font-weight-bold">Total Friends: </span><span id="totalFriends">{{ $totalFriends}}</span></p>
 				</div>
 			</div>
 			<a href="#" class="btn btn-light button">Add Friend</a>

@@ -36,8 +36,8 @@ class User extends Controller
 		$profile = Profile::find($profileId);
 		
 		$shelves = Shelf::where('user_id', $user->id)->with('book')->get();
-		
-        return view('user.profile',['profile' => $profile, 'shelves' => $shelves]);
+		$totalFriends = count($user->friends);
+        return view('user.profile',['profile' => $profile, 'shelves' => $shelves, 'totalFriends' => $totalFriends]);
     }
 	
 	public function setting()
@@ -108,7 +108,9 @@ class User extends Controller
 	public function showProfile($id){
 		$profile = Profile::find($id);
 		$shelves = Shelf::where('user_id', $id)->with('book')->get();
-		return view('user.anotherUserProfile',['profile' => $profile, 'shelves' => $shelves]); 
+		$user = User::find($profile->user_id);
+		$totalFriends = count($user->friends);
+		return view('user.anotherUserProfile',['profile' => $profile, 'shelves' => $shelves, 'totalFriends' => $totalFriends]); 
 	}
 	
 	public function sendFriendRequest(){

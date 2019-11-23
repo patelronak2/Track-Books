@@ -400,6 +400,9 @@
 							<div class="d-none bg-white shadow-sm" id="allNotifications">								
 							</div>
 						</li>
+						<li class="nav-item">
+							<a href="/public/friendList">Friend List</a>
+						</li>
 						
                     </ul>
 					

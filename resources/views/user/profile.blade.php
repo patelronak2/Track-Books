@@ -25,7 +25,7 @@
 					@endif
 					</div>
 					<div class="col-md-3">
-						<p><span class="font-weight-bold">Total Friends: </span><span id="totalFriends">0</span></p>
+						<p><span class="font-weight-bold">Total Friends: </span><span id="totalFriends">{{ $totalFriends}}</span></p>
 					</div>
 				</div>
 			<div class="my-2">
