@@ -13,13 +13,14 @@
 		</div>
 	  </div>
 	</div> -->
-	<div class="my-3 row">
-		<div class="col-md-6 bg-light" style="min-height: 500px;">
+	<div class="my-3 row text-center">
+		<div class="col-md-6 p-5" style="min-height: 100px;">
 			<i class="fa fa-lock my-2" style="font-size:48px"></i>
-			<h4>This User's Profile is Private</h4>
+			<h4>{{ $profile->name }}'s Profile is Private.</h4>
 		</div>
-		<div class="col-md-6 bg-primary" style="min-height: 500px;">
-			<button class="btn btn-light button">Add Friend</button>
+		<div class="col-md-6 p-5" style="min-height: 100px;">
+			<button class="btn btn-light button my-2">Add Friend</button>
+			<h4>Add {{ $profile->name }} as friend to view more details.</h4>
 		</div>
 	
 	</div>
