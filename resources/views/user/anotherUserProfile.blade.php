@@ -1,31 +1,24 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="my-3 container-fluid">
-	<h2>{{ $profile->name }}'s Profile</h2>
-</div>
+
 @if($profile->isPrivate)
-	<!-- <div class="my-3">
-	  <div class="justify-content-center">
-		<div class="text-center">
-			
-			
-		</div>
-	  </div>
-	</div> -->
-	<div class="my-3 row text-center">
-		<div class="col-md-6 p-5" style="min-height: 100px;">
+	<div class="my-3 text-center">
+		<h3>{{ $profile->name }}'s Profile is Private.</h3>
+		<div class="p-5">
 			<i class="fa fa-lock my-2" style="font-size:48px"></i>
-			<h4>{{ $profile->name }}'s Profile is Private.</h4>
 		</div>
-		<div class="col-md-6 p-5" style="min-height: 100px;">
-			<button class="btn btn-light button my-2">Add Friend</button>
+		<div class="p-5">
 			<h4>Add {{ $profile->name }} as friend to view more details.</h4>
+			<button class="btn btn-light button my-2">Add Friend</button>
 		</div>
 	
 	</div>
 @else
 	<div class="my-3">
+		<div class="my-3 container-fluid">
+			<h2>{{ $profile->name }}'s Profile</h2>
+		</div>
 		<div class="shadow-sm bg-light py-2 container-fluid">
 			<h5>Personal Information</h5>
 			<div class="row">
