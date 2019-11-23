@@ -118,16 +118,16 @@
 </div>
 <script>
 	//$(document).ready(function(){
-		alert($("#finishedReadingResult").text());
-		if(!$("#finishedReadingResult").text()){
+		alert($("#finishedReadingResult").val());
+		if(!$("#finishedReadingResult").val()){
 			var tempHtml = "<td><p>No Books in the shelf</p></td>";
 			$("#finishedReadingResult").html(tempHtml);
 		}
-		if(!$("#currentlyReadingResult").text()){
+		if(!$("#currentlyReadingResult").val()){
 			var tempHtml = "<td><p>No Books in the shelf</p></td>";
 			$("#currentlyReadingResult").html(tempHtml);
 		}
-		if(!$("#wantToReadResult").text()){
+		if(!$("#wantToReadResult").val()){
 			var tempHtml = "<td><p>No Books in the shelf</p></td>";
 			$("#wantToReadResult").html(tempHtml);
 		}
