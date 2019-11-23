@@ -4,11 +4,11 @@
 
 @if($profile->isPrivate)
 	<div class="my-3 text-center">
-		<h3>{{ $profile->name }}'s Profile is Private.</h3>
-		<div class="p-5">
+		<div class="px-3">
 			<i class="fa fa-lock my-2" style="font-size:48px"></i>
 		</div>
-		<div class="p-5">
+		<h2 class="p-3">{{ $profile->name }}'s Profile is Private.</h2>
+		<div class="p-3">
 			<h4>Add {{ $profile->name }} as friend to view more details.</h4>
 			<button class="btn btn-light button my-2">Add Friend</button>
 		</div>
