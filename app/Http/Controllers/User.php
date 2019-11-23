@@ -139,6 +139,6 @@ class User extends Controller
 	public function friendList(){
 		$user = Auth::user();
 		$friends = $user->friends;
-		return ('user.friendList',['user' => $user, 'friends' => $friends]);
+		return view('user.friendList',['user' => $user, 'friends' => $friends]);
 	}
 }
