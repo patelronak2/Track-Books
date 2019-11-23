@@ -133,7 +133,7 @@ class User extends Controller
 	
 	public function pendingRequest(){
 		$user = Auth::user();
-		print_r(json_encode($user->pending_requests));
+		print_r(json_encode($user->friend_requests));
 	}
 	
 	public function getFriends(){
