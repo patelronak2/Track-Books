@@ -118,8 +118,15 @@
 	$(document).ready(function(){
 		if($("#finishedReadingResult").html()){
 			var tempHtml = "<td><p>No Books in the shelf</p></td>";
-		}else{
-			alert($("#finishedReadingResult").html());
+			$("#finishedReadingResult").html(tempHtml);
+		}
+		if($("#currentlyReadingResult").html()){
+			var tempHtml = "<td><p>No Books in the shelf</p></td>";
+			$("#currentlyReadingResult").html(tempHtml);
+		}
+		if($("#wantToReadResult").html()){
+			var tempHtml = "<td><p>No Books in the shelf</p></td>";
+			$("#wantToReadResult").html(tempHtml);
 		}
 	});
 
