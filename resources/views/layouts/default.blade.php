@@ -59,7 +59,7 @@
 		#navSearchResults{
 			position: absolute; 
 			top: 50px; 
-			width: auto; 
+			min-width: 300px; 
 			height: auto;
 			margin-right: 15px;
 		}

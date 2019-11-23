@@ -100,19 +100,17 @@
 			<div class="mb-3" id="reviews">
 				@if(count($reviews) > 0)
 					@foreach ($reviews as $review)
-						@if()
-							<div class="bg-light shadow-sm p-2 m-2 row">
-								<div class="col-10">
-									<h6>{{ $review->user->name }}</h6>
-									<p>{{  $review->review}}</p>
-								</div>
-								<div class="col-2 text-right my-auto">
-									@if(Auth::id() == $review->user_id || Auth::user()->type == 'admin')
-										<a href="#" class="text-danger" id="{{ $review->id }}"><i class="fa fa-trash" style="font-size:24px"></i></a>
-									@endif
-								</div>
+						<div class="bg-light shadow-sm p-2 m-2 row">
+							<div class="col-10">
+								<h6>{{ $review->user->name }}</h6>
+								<p>{{  $review->review}}</p>
 							</div>
-						@endif
+							<div class="col-2 text-right my-auto">
+								@if(Auth::id() == $review->user_id || Auth::user()->type == 'admin')
+									<a href="#" class="text-danger" id="{{ $review->id }}"><i class="fa fa-trash" style="font-size:24px"></i></a>
+								@endif
+							</div>
+						</div>
 					@endforeach
 				@else
 					<div class="bg-light shadow-sm p-5">
