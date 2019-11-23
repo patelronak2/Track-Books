@@ -47,7 +47,7 @@
 			<h5>Want To Read</h5>
 			<div class="table-responsive">
 				<table>
-					<tr>
+					<tr id="wantToReadResult">
 						@foreach($shelves as $shelf)
 							@if($shelf->wantToRead)
 								<td>
@@ -70,7 +70,7 @@
 			<h5>Currently Reading</h5>
 			<div class="table-responsive">
 				<table>
-					<tr>
+					<tr id="currentlyReadingResult">
 						@foreach($shelves as $shelf)
 							@if($shelf->currentlyReading)
 								<td>
@@ -93,7 +93,7 @@
 				<h5>Finished Reading</h5>
 				<div class="table-responsive">
 					<table>
-						<tr>
+						<tr id="finishedReadingResult">
 							<td>
 								@foreach($shelves as $shelf)
 									@if($shelf->finishedReading)
@@ -114,5 +114,14 @@
 			   </div>
 	</div>
 </div>
+<script>
+	$(document).ready(function(){
+		if($("#finishedReadingResult").html()){
+			var tempHtml = "<td><p>No Books in the shelf</p></td>";
+		}else{
+			alert($("#finishedReadingResult").html());
+		}
+	});
 
+</script>
 @endsection
