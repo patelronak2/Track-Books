@@ -76,8 +76,8 @@ class User extends Authenticatable
 	
 	public function friend_requests()
 	{
-		return $this->hasMany(Friendship::class, ‘second_user’)
-		->where(‘status’, ‘pending’);
+		return $this->hasMany(Friendship::class, 'second_user')
+		->where('status', 'pending');
 	}
 	
 	public function isAdmin()

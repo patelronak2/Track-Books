@@ -124,11 +124,16 @@ class User extends Controller
 		print_r(json_encode($friendships));
 	}
 	
-	public function pendingRequest(){
+	public function acceptRequest(){
 		Friendship::where('first_user', 1 )->where('second_user', Auth::id())->update(['status' => 'confirmed', 'acted_user' => Auth::id()]);
 		
 		$friendships = Friendship::all();
 		print_r(json_encode($friendships));
+	}
+	
+	public function pendingRequest(){
+		$user = Auth::user();
+		print_r(json_encode($user->pending_requests));
 	}
 	
 	public function getFriends(){
