@@ -27,7 +27,7 @@
 				<h5>Account Preferences</h5>
 				@if($profile->isPrivate)
 					<p><span class="font-weight-bold">Account Visibility:</span> Private<br>
-						<small>User's will not be able to see your profile or reviews</small>
+						<small>User's will not be able to see your profile</small>
 					</p>
 					
 				@else	
