@@ -117,7 +117,8 @@
 	</div>
 </div>
 <script>
-	$(document).ready(function(){
+	//$(document).ready(function(){
+		alert($("#finishedReadingResult").html());
 		if(!$("#finishedReadingResult").html()){
 			var tempHtml = "<td><p>No Books in the shelf</p></td>";
 			$("#finishedReadingResult").html(tempHtml);
@@ -130,7 +131,7 @@
 			var tempHtml = "<td><p>No Books in the shelf</p></td>";
 			$("#wantToReadResult").html(tempHtml);
 		}
-	});
+	//});
 
 </script>
 @endsection
