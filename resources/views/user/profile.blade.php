@@ -94,20 +94,22 @@
 				<div class="table-responsive">
 					<table>
 						<tr id="finishedReadingResult">
-							<td>
-								@foreach($shelves as $shelf)
-									@if($shelf->finishedReading)
-										<div class="card m-1" style="width: 18rem;">
-										  <div class="card-body">
-											<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
-											<div class="text-center">
-											  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
-											</div>
-										  </div>
+							
+							@foreach($shelves as $shelf)
+								@if($shelf->finishedReading)
+									<td>
+									<div class="card m-1" style="width: 18rem;">
+									  <div class="card-body">
+										<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
+										<div class="text-center">
+										  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
 										</div>
-									@endif
-								@endforeach
-							</td>
+									  </div>
+									</div>
+									</td>
+								@endif
+							@endforeach
+							
 						</tr>
 					</table>
 				  </div>
@@ -116,15 +118,15 @@
 </div>
 <script>
 	$(document).ready(function(){
-		if($("#finishedReadingResult").html()){
+		if(!$("#finishedReadingResult").html()){
 			var tempHtml = "<td><p>No Books in the shelf</p></td>";
 			$("#finishedReadingResult").html(tempHtml);
 		}
-		if($("#currentlyReadingResult").html()){
+		if(!$("#currentlyReadingResult").html()){
 			var tempHtml = "<td><p>No Books in the shelf</p></td>";
 			$("#currentlyReadingResult").html(tempHtml);
 		}
-		if($("#wantToReadResult").html()){
+		if(!$("#wantToReadResult").html()){
 			var tempHtml = "<td><p>No Books in the shelf</p></td>";
 			$("#wantToReadResult").html(tempHtml);
 		}
