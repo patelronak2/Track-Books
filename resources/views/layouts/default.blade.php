@@ -19,7 +19,7 @@
 	
 	<style type="text/css">
 		@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-		h2{
+		h2, h1{
 			color: #756446;
 		}
 		h4, h5{

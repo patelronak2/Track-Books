@@ -136,8 +136,9 @@ class User extends Controller
 		print_r(json_encode($user->friend_requests));
 	}
 	
-	public function getFriends(){
+	public function friendList(){
 		$user = Auth::user();
-		print_r(json_encode($user->friends));
+		$friends = $user->friends;
+		return ('user.friendList',['user' => $user, 'friends' => $friends]);
 	}
 }

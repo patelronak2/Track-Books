@@ -9,21 +9,24 @@
 		<div class="shadow-sm bg-light container-fluid py-3">
 				<h4>Personal Information</h4>
 				<div class="row">
-				<p class="col-md-3"><span class="font-weight-bold">Email:</span> {{ $profile->email }}</p>
-				<div class="col-md-3">
-				@if($profile->birthday)
-					<p><span class="font-weight-bold">Birth date:</span> {{ $profile->birthday }}</p>
-				@else
-					<p><span class="font-weight-bold">Birth date:</span> Information not entered</p>
-				@endif
-				</div>
-				<div class="col-md-3">
-				@if($profile->gender)
-					<p><span class="font-weight-bold">Gender:</span> {{ $profile->gender }}</p>
-				@else	
-					<p><span class="font-weight-bold">Gender:</span> Information not entered</p>
-				@endif
-				</div>
+					<p class="col-md-3"><span class="font-weight-bold">Email:</span> {{ $profile->email }}</p>
+					<div class="col-md-3">
+					@if($profile->birthday)
+						<p><span class="font-weight-bold">Birth date:</span> {{ $profile->birthday }}</p>
+					@else
+						<p><span class="font-weight-bold">Birth date:</span> Information not entered</p>
+					@endif
+					</div>
+					<div class="col-md-3">
+					@if($profile->gender)
+						<p><span class="font-weight-bold">Gender:</span> {{ $profile->gender }}</p>
+					@else	
+						<p><span class="font-weight-bold">Gender:</span> Information not entered</p>
+					@endif
+					</div>
+					<div class="col-md-3">
+						<span id="totalFriends">0</span><a href="/public/friendList">Friends</a>
+					</div>
 				</div>
 			<div class="my-2">
 				<h4>Account Preferences</h4>
@@ -43,7 +46,7 @@
 		<div class="my-3 container-fluid">
 			<h3>Book Shelves</h3>
 		</div>
-		<div class="container-fluid">
+		<div class="container-fluid my-2">
 			<h5>Want To Read</h5>
 			<div class="table-responsive">
 				<table>
@@ -72,7 +75,7 @@
 				</table>
 			  </div>
 		</div>
-	   <div class="container-fluid">
+	   <div class="container-fluid my-2">
 			<h5>Currently Reading</h5>
 			<div class="table-responsive">
 				<table>
@@ -101,7 +104,7 @@
 				</table>
 			  </div>
 		   </div>
-		   <div class="container-fluid">
+		   <div class="container-fluid my-2">
 				<h5>Finished Reading</h5>
 				<div class="table-responsive">
 					<table>

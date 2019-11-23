@@ -56,6 +56,6 @@ Route::get('/test', function(){
 });
 
 Route::get('/sendFriendRequest','User@sendFriendRequest');
-Route::get('/getFriends','User@getFriends');
+Route::get('/friendList','User@friendList');
 Route::get('/pendingRequest','User@pendingRequest');
 Route::get('/acceptRequest','User@acceptRequest');
