@@ -25,7 +25,7 @@
 					@endif
 					</div>
 					<div class="col-md-3">
-						<a href="/public/friendList"><span class="font-weight-bold">Total Friends:</span><span id="totalFriends">0</span></a>
+						<p><span class="font-weight-bold">Total Friends: </span><span id="totalFriends">0</span></p>
 					</div>
 				</div>
 			<div class="my-2">

@@ -5,11 +5,18 @@
 	<h2>{{ $profile->name }}'s Profile</h2>
 </div>
 @if($profile->isPrivate)
-	<div class="my-3 shadow-sm bg-light p-3">
-		<div class="justify-content-center">
-			<div class="text-center">
-				<i class="fa fa-lock my-2" style="font-size:48px"></i>
-				<h4>This User's Profile is Private</h4>
+	<div class="my-3 shadow-sm bg-light py-2">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="text-center">
+					<i class="fa fa-lock my-2" style="font-size:48px"></i>
+					<h4>This User's Profile is Private</h4>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div id="fillerImage">
+					<p>Image goes here</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -26,7 +33,7 @@
 					<p class="col-md-3"><span class="font-weight-bold">Gender:</span> {{ $profile->gender }}</p>
 				@endif
 				<div class="col-md-3">
-					<a href="/public/friendList"><span class="font-weight-bold">Total Friends:</span><span id="totalFriends">0</span></a>
+					<p><span class="font-weight-bold">Total Friends: </span><span id="totalFriends">0</span></p>
 				</div>
 			</div>
 			<a href="#" class="btn btn-light button">Add Friend</a>
