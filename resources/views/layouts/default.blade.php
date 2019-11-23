@@ -23,6 +23,44 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
 	
 	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+		h2{
+			color: #756446;
+		}
+		h4, h5{
+			color: #6A6F75;
+		}
+		h3{
+			color: #292621
+		}
+		
+		h1,h2,h3,h4,h5{
+			font-family: 'Roboto Slab', serif;
+		}
+		
+		.button{
+			background-color: #6A6F75;
+			color: white;
+		}
+		
+		p{
+			font-family: Roboto, serif;
+			font-size: 16px;
+		}
+		::-webkit-scrollbar {
+			  width: 5px;
+			  height: 5px;
+			}
+
+			::-webkit-scrollbar-track {
+			  box-shadow: inset 0 0 2px grey; 
+			  border-radius: 5px;
+			}
+			 
+			::-webkit-scrollbar-thumb {
+			  background: #756446; 
+			  border-radius: 10px;
+			}
 		#navSearchResults{
 			position: absolute; 
 			top: 50px; 
@@ -331,7 +369,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm fixed-top">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
