@@ -112,6 +112,7 @@ class User extends Controller
 	}
 	
 	public function sendFriendRequest(){
+		Friendship::truncate();
 		$friendship = new Friendship;
 		$friendship->first_user = Auth::id();
 		$friendship->second_user = 2;
@@ -120,13 +121,13 @@ class User extends Controller
 		$friendship->save();
 		
 		$friendships = Friendship::all();
-		print_r($friendships);
+		print_r(json_encode($friendships));
 	}
 	
 	public function pendingRequest(){
-		Friendship::where('first_user', 1 )->where('second_user', Auth::id())->update(['status' => 'confirmed']);
+		Friendship::where('first_user', 1 )->where('second_user', Auth::id())->update(['status' => 'confirmed', 'acted_user' => Auth::id()]);
 		
 		$friendships = Friendship::all();
-		print_r($friendships);
+		print_r(json_encode($friendships));
 	}
 }
