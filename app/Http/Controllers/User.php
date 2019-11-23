@@ -130,4 +130,9 @@ class User extends Controller
 		$friendships = Friendship::all();
 		print_r(json_encode($friendships));
 	}
+	
+	public function getFriends(){
+		$user = Auth::user();
+		print_r(json_encode($user->friends));
+	}
 }
