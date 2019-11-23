@@ -9,7 +9,7 @@
 		color: #FF8C00;
 	}
 </style>
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">
 			<div class="mb-3 shadow-sm p-2 bg-light">
