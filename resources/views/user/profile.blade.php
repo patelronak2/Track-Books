@@ -47,56 +47,11 @@
 			<h5>Want To Read</h5>
 			<div class="table-responsive">
 				<table>
-					<tr id="wantToReadResult">
-						@foreach($shelves as $shelf)
-							@if($shelf->wantToRead)
-								<td>
-								<div class="card m-1" style="width: 18rem;">
-								  <div class="card-body">
-									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
-									<div class="text-center">
-									  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
-									</div>
-								  </div>
-								</div>
-								</td>
-							@endif
-						@endforeach
-					  </tr>
-				</table>
-			  </div>
-		</div>
-	   <div class="container-fluid">
-			<h5>Currently Reading</h5>
-			<div class="table-responsive">
-				<table>
-					<tr id="currentlyReadingResult">
-						@foreach($shelves as $shelf)
-							@if($shelf->currentlyReading)
-								<td>
-								<div class="card m-1" style="width: 18rem;">
-								  <div class="card-body">
-									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
-									<div class="text-center">
-									  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
-									</div>
-								  </div>
-								</div>
-								</td>
-							@endif
-						@endforeach
-					  </tr>
-				</table>
-			  </div>
-		   </div>
-		   <div class="container-fluid">
-				<h5>Finished Reading</h5>
-				<div class="table-responsive">
-					<table>
-						<tr id="finishedReadingResult">
-							
+					<tr>
+						<?php $flag = 0; ?>
 							@foreach($shelves as $shelf)
-								@if($shelf->finishedReading)
+								@if($shelf->wantToRead)
+									<?php $flag = 1; ?>
 									<td>
 									<div class="card m-1" style="width: 18rem;">
 									  <div class="card-body">
@@ -109,29 +64,73 @@
 									</td>
 								@endif
 							@endforeach
+							<?php if(!$flag){ ?>
+								<p>No books in the shelf</p>
 							
+							<?php } ?>
+					  </tr>
+				</table>
+			  </div>
+		</div>
+	   <div class="container-fluid">
+			<h5>Currently Reading</h5>
+			<div class="table-responsive">
+				<table>
+					<tr>
+						<?php $flag = 0; ?>
+							@foreach($shelves as $shelf)
+								@if($shelf->currentlyReading)
+									<?php $flag = 1; ?>
+									<td>
+									<div class="card m-1" style="width: 18rem;">
+									  <div class="card-body">
+										<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
+										<div class="text-center">
+										  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
+										</div>
+									  </div>
+									</div>
+									</td>
+								@endif
+							@endforeach
+							<?php if(!$flag){ ?>
+								<p>No books in the shelf</p>
+							
+							<?php } ?>
+					  </tr>
+				</table>
+			  </div>
+		   </div>
+		   <div class="container-fluid">
+				<h5>Finished Reading</h5>
+				<div class="table-responsive">
+					<table>
+						<tr>
+						<?php $flag = 0; ?>
+							@foreach($shelves as $shelf)
+								@if($shelf->finishedReading)
+									<?php $flag = 1; ?>
+									<td>
+									<div class="card m-1" style="width: 18rem;">
+									  <div class="card-body">
+										<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
+										<div class="text-center">
+										  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
+										</div>
+									  </div>
+									</div>
+									</td>
+								@endif
+							@endforeach
+							<?php if(!$flag){ ?>
+								<p>No books in the shelf</p>
+							
+							<?php } ?>
 						</tr>
 					</table>
 				  </div>
 			   </div>
 	</div>
 </div>
-<script>
-	//$(document).ready(function(){
-		alert($("#finishedReadingResult").val());
-		if(!$("#finishedReadingResult").val()){
-			var tempHtml = "<td><p>No Books in the shelf</p></td>";
-			$("#finishedReadingResult").html(tempHtml);
-		}
-		if(!$("#currentlyReadingResult").val()){
-			var tempHtml = "<td><p>No Books in the shelf</p></td>";
-			$("#currentlyReadingResult").html(tempHtml);
-		}
-		if(!$("#wantToReadResult").val()){
-			var tempHtml = "<td><p>No Books in the shelf</p></td>";
-			$("#wantToReadResult").html(tempHtml);
-		}
-	//});
 
-</script>
 @endsection
