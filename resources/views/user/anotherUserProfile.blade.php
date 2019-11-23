@@ -26,7 +26,7 @@
 					<p class="col-md-3"><span class="font-weight-bold">Gender:</span> {{ $profile->gender }}</p>
 				@endif
 				<div class="col-md-3">
-					<span id="totalFriends">0</span><a href="/public/friendList">Friends</a>
+					<a href="/public/friendList"><span class="font-weight-bold">Total Friends:</span><span id="totalFriends">0</span></a>
 				</div>
 			</div>
 			<a href="#" class="btn btn-light button">Add Friend</a>
