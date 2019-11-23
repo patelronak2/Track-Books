@@ -18,7 +18,7 @@ class CreateFriendsTable extends Migration
 			$table->integer('first_user')->index();
 			$table->integer('second_user')->index();
 			$table->integer('acted_user')->index();
-			$table->enum('status',['pending','confirmed', 'blocked'])
+			$table->enum('status',['pending','confirmed', 'blocked']);
             $table->timestamps();
         });
     }
