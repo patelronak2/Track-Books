@@ -5,8 +5,8 @@
     <div class="my-3 container-fluid">
 		<h2>{{ $profile->name }}'s Profile</h2>
 	</div>
-	<div class="my-3">
-		<div class="shadow-sm bg-light container-fluid py-3">
+	<div class="my-3 container-fluid">
+		<div class="shadow-sm bg-light py-3">
 				<h4>Personal Information</h4>
 				<div class="row">
 					<p class="col-md-3"><span class="font-weight-bold">Email:</span> {{ $profile->email }}</p>
