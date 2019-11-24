@@ -116,7 +116,7 @@ class User extends Controller
 		$friendship->save();
 		
 		//Notify the user with id => $id about the Friend Request
-		$this->showProfile($id);
+		return redirect('/showProfile/' . $id);
 	}
 	
 	public function acceptRequest(){
