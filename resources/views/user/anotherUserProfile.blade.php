@@ -13,10 +13,10 @@
 			<div class="my-2">
 				@if($isFriend)
 				<a href="#" class="btn btn-danger">Remove Friend</a>
-				@elif($hasRecievedRequest)
+				@elseif($hasRecievedRequest)
 					<a href="#" class="btn btn-warning">Accept Request</a>
 					<a href="#" class="btn btn-danger">Decline</a>
-				@elif($isRequestSent)
+				@elseif($isRequestSent)
 					<a href="#" class="btn btn-info" disabled>Request Sent</a>
 				@else
 					<a href="/public/sendFriendRequest/{{$profile->user_id}}" class="btn btn-light button">Add Friend</a>
@@ -47,10 +47,10 @@
 			<!-- check here if this user is already friend or request is sent to him/her -->
 			@if($isFriend)
 				<a href="#" class="btn btn-danger">Remove Friend</a>
-			@elif($hasRecievedRequest)
+			@elseif($hasRecievedRequest)
 				<a href="#" class="btn btn-warning">Accept Request</a>
 				<a href="#" class="btn btn-danger">Decline</a>
-			@elif($isRequestSent)
+			@elseif($isRequestSent)
 				<a href="#" class="btn btn-info" disabled>Request Sent</a>
 			@else
 				<a href="/public/sendFriendRequest/{{$profile->user_id}}" class="btn btn-light button">Add Friend</a>
