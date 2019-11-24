@@ -10,7 +10,14 @@
 			type: 'GET',
 			success: function(response){
 				var data = JSON.parse(response);
-				alert(data);
+				if(data.length){
+					
+				}else{
+					$("#totalRequests").html(data.length);
+					var temphtml = '<li class="list-group-item d-flex justify-content-between align-items-center">';
+					temphtml += 'No Pending Requests</li>';
+					$("#pendingList").html(temphtml);
+				}
 			},
 			error: function(error){
 				alert("Couldn't get pendingRequests");
@@ -22,7 +29,14 @@
 			type: 'GET',
 			success: function(response){
 				var data = JSON.parse(response);
-				alert(data);
+				if(data.length){
+					
+				}else{
+					$("#totalFriends").html(data.length);
+					var temphtml = '<li class="list-group-item d-flex justify-content-between align-items-center">';
+					temphtml += 'No Friends to Display</li>';
+					$("#friendList").html(temphtml);
+				}
 			},
 			error: function(error){
 				alert("Couldn't get FriendList");
