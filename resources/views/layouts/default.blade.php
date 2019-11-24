@@ -317,13 +317,15 @@
 									temphtml += '<p class="card-text">'+ response.notification[i].data.shelf +'</p>';
 									temphtml += '<p class="card-text"><small class="text-muted">'+ response.timeStamp[i] +'</small></p>';
 									temphtml += '<a href="/public/profile" class="stretched-link"></a>';
-								}else if(response.notification[i].type == "App\\Notifications\\FriendRequestSent"){
+								}
+								if(response.notification[i].type == "App\\Notifications\\FriendRequestSent"){
 									//User is notified about the friend request
 									temphtml += '<h5 class="card-title">New Friend Request</h5>';
 									temphtml += '<p class="card-text">'+ response.notification[i].data.sender_name +' wants to be your friend.</p>';
 									temphtml += '<p class="card-text"><small class="text-muted">'+ response.timeStamp[i] +'</small></p>';
 									temphtml += '<a href="/public/showProfile/'+ response.notification[i].data.sender_id +'" class="stretched-link"></a>';
-								}else if(response.notification[i].type == "App\\Notifications\\FriendRequestAccepted"){
+								}
+								if(response.notification[i].type == "App\\Notifications\\FriendRequestAccepted"){
 									temphtml += '<h5 class="card-title text-success">Friend Request Accepted</h5>';
 									temphtml += '<p class="card-text">'+ response.notification[i].data.accepting_user_name +' wants to be your friend.</p>';
 									temphtml += '<p class="card-text"><small class="text-muted">'+ response.timeStamp[i] +'</small></p>';
