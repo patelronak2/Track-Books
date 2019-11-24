@@ -44,7 +44,7 @@
 					for(var i = 0; i < data.length; i++){
 						temphtml += '<li class="list-group-item d-flex justify-content-between align-items-center">';
 						temphtml += '<a href="/public/showProfile/'+ data[i]['id'] +'" style="text-decoration: none; color: inherit;">'+ data[i]['name'] +'</a>';
-						temphtml += '<a href="#" class="btn btn-danger btn-sm" id="removeFriend">Remove Friend</a>';
+						temphtml += '<a href="#" class="btn btn-danger btn-sm" id="'+ data[i]['id'] +'">Remove Friend</a>';
 						temphtml += '</li>';
 					}
 					$("#friendList").html(temphtml);
@@ -59,8 +59,9 @@
 			}
 		});
 		
-		$('#removeFriend').on('click',function(){
-			alert("Remove Friend Clicked");
+		$('#friendList').on('click','a.btn-danger',function(){
+			var id = $(this).attr('id');
+			alert("Remove Friend Clicked: " + id);
 		});
 		$('#acceptRequest').on('click',function(){
 			alert(" Accept button Clicked");
