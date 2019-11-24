@@ -16,8 +16,8 @@
 					for(var i = 0; i < data.length; i++){
 						temphtml += '<li class="list-group-item d-flex justify-content-between align-items-center">';
 						temphtml += '<a href="/public/showProfile/'+ data[i][0] +'" style="text-decoration: none; color: inherit;">'+ data[i][1] +'</a>';
-						temphtml += '<a href="#" class="btn btn-warning btn-sm" id="'+ data[i][0] +'">Accept Request</a>';
-						temphtml +=	'<a href="#" class="btn btn-danger btn-sm" id="'+ data[i][0] +'">Decline</a>';
+						temphtml += '<div><a href="#" class="btn btn-warning btn-sm" id="'+ data[i][0] +'">Accept Request</a>';
+						temphtml +=	'<a href="#" class="btn btn-danger btn-sm" id="'+ data[i][0] +'">Decline</a></div>';
 						temphtml += '</li>';
 					}
 										
