@@ -1,7 +1,24 @@
 @extends('layouts.default')
 
 @section('content')
-
+<script>
+	$(document).ready(function(){
+		var anotherUserId = $("#anotherUserId").html();
+		$("#removeFriend").click(function(){
+			$.ajax({
+				url: '/public/removeFriend/'+anotherUserId,
+				type: 'GET',
+				success: function(){
+					location.reload(true);
+				},
+				error: function(){
+					
+				}
+			});
+		});
+	});
+</script>
+<p class="sr-only" id="anotherUserId">{{ $profile->user_id }}</p>
 @if($profile->isPrivate  && !$isFriend)
 	<div class="my-3 text-center">
 		<div class="px-3">
@@ -12,7 +29,7 @@
 			<h4>Add {{ $profile->name }} as friend to view more details.</h4>
 			<div class="my-2">
 				@if($isFriend)
-				<a href="#" class="btn btn-danger">Remove Friend</a>
+				<a href="#" class="btn btn-danger" id="removeFriend">Remove Friend</a>
 				@elseif($hasRecievedRequest)
 					<a href="#" class="btn btn-warning">Accept Request</a>
 					<a href="#" class="btn btn-danger">Decline</a>

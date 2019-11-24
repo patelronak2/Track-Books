@@ -115,7 +115,7 @@ class User extends Controller
 		$friendship->status = 'pending';
 		$friendship->save();
 		
-		//Figure out a way how to show that request has been sent and hide 'Add friend' button on anotherUserProfile page
+		//Notify the user with id => $id about the Friend Request
 		$this->showProfile($id);
 	}
 	
@@ -136,5 +136,24 @@ class User extends Controller
 		$friends = $user->friends;
 		$pendingRequest = $user->friend_requests; 
 		return view('user.friendList',['user' => $user, 'friends' => $friends, 'totalFriends' => count($friends), 'totalPendingRequest' => count($pendingRequest), 'pendingRequests' => $pendingRequest]);
+	}
+	
+	public function removeFriend($id){
+		$friendships = Friendship::all();
+		$friendshipId = -1;
+		foreach($friendships as $friendship){
+			if(($friendship->first_user == Auth::id() && $friendship->second_user == $id) || ($friendship->first_user == $id && $friendship->second_user == Auth::id())){ 
+				if($friendship->status == 'confirmed'){
+					$friendshipId = $friendship->id;
+				}
+			}
+		}
+		if($friendshipId != -1){
+			$friendship = Friendship::find($friendshipId);
+			$friendship->delete();
+			return true;
+		}else{
+			return false;
+		}
 	}
 }
