@@ -291,4 +291,19 @@ class HomeController extends Controller
 		}
 	}
 	
+	public function pendingRequest(){
+		$user = Auth::user();
+		$pendingRequests = $user->friend_requests);
+		$users = User::all();
+		$detailRecord = array();
+		foreach($pendingRequests as $pendingRequest){
+			foreach($users as $tempUser){
+				if($pendingRequest->second_user == $tempUser->id){
+					array_push($detailRecord, array($pendingRequest->second_user, $tempUser->name));
+				}
+			}
+		}
+		print_r(json_encode($detailRecord));
+	}
+	
 }
