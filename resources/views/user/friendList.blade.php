@@ -16,8 +16,8 @@
 					for(var i = 0; i < data.length; i++){
 						temphtml += '<li class="list-group-item d-flex justify-content-between align-items-center">';
 						temphtml += '<a href="/public/showProfile/'+ data[i][0] +'" style="text-decoration: none; color: inherit;">'+ data[i][1] +'</a>';
-						temphtml += '<a href="#" class="btn btn-warning btn-sm" id="acceptRequest">Accept Request</a>';
-						temphtml +=	'<a href="#" class="btn btn-danger btn-sm" id="decline">Decline</a>';
+						temphtml += '<a href="#" class="btn btn-warning btn-sm" id="'+ data[i][0] +'">Accept Request</a>';
+						temphtml +=	'<a href="#" class="btn btn-danger btn-sm" id="'+ data[i][0] +'">Decline</a>';
 						temphtml += '</li>';
 					}
 										
@@ -63,12 +63,17 @@
 			var id = $(this).attr('id');
 			alert("Remove Friend Clicked: " + id);
 		});
-		$('#acceptRequest').on('click',function(){
-			alert(" Accept button Clicked");
+		
+		$('#pendingList').on('click','a.btn-danger',function(){
+			var id = $(this).attr('id');
+			alert("Decline Request Clicked: " + id);
 		});
-		$('#decline').on('click',function(){
-			alert("Decline Clicked");
+		
+		$('#pendingList').on('click','a.btn-warning',function(){
+			var id = $(this).attr('id');
+			alert("Accept Request Clicked: " + id);
 		});
+		
 	});
 
 </script>
