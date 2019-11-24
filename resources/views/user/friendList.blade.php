@@ -96,7 +96,19 @@
 		<h2>{{ Auth::user()->name }}'s Friend List</h2>
 	</div>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-6 my-2">
+			<ul class="list-group">
+			  <li class="list-group-item d-flex justify-content-between align-items-center">
+				<h5>Requests</h5>
+				<span class="badge badge-primary badge-pill" id="totalRequests"></span>
+			  </li>
+			  <span id="pendingList">
+			  
+			  </span>
+			</ul>
+		</div>
+		
+		<div class="col-md-6 my-2">
 			<ul class="list-group">
 			  <li class="list-group-item d-flex justify-content-between align-items-center">
 				<h5>Friends</h5>
@@ -108,17 +120,7 @@
 			  
 			</ul>
 		</div>
-		<div class="col-md-6">
-			<ul class="list-group">
-			  <li class="list-group-item d-flex justify-content-between align-items-center">
-				<h5>Requests</h5>
-				<span class="badge badge-primary badge-pill" id="totalRequests"></span>
-			  </li>
-			  <span id="pendingList">
-			  
-			  </span>
-			</ul>
-		</div>
+		
 	</div>
 </div>
 
