@@ -5,16 +5,17 @@
 	$(document).ready(function(){
 		var anotherUserId = $("#anotherUserId").html();
 		$("#removeFriend").click(function(){
-			$.ajax({
-				url: '/public/removeFriend/'+anotherUserId,
-				type: 'GET',
-				success: function(){
-					location.reload(true);
-				},
-				error: function(){
-					
-				}
-			});
+			alert(anotherUserId);
+			// $.ajax({
+				// url: '/public/removeFriend/'+anotherUserId,
+				// type: 'GET',
+				// success: function(data){
+					// location.reload(true);
+				// },
+				// error: function(error){
+					// alert("Something Went wrong");
+				// }
+			// });
 		});
 	});
 </script>
