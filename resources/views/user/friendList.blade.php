@@ -46,13 +46,7 @@
 			  <span id="friendList">
 			  
 			  </span>
-			  <!-- For loop to display all the friends
-			  @foreach($friends as $friend)
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-				{{ $friend->name }}
-				<a href="#" class="btn btn-light btn-sm">Unfriend</a>
-				</li>
-			  @endforeach -->
+			  
 			</ul>
 		</div>
 		<div class="col-md-6">
@@ -61,13 +55,9 @@
 				<h5>Requests</h5>
 				<span class="badge badge-primary badge-pill" id="totalRequests"></span>
 			  </li>
-			  <!-- For loop here and print all pending requests 
-			  @foreach($pendingRequests as $pendingRequest)
-				<li class="list-group-item d-flex justify-content-between align-items-center">
-				{{ $pendingRequest->name }}
-				<a href="#" class="btn btn-danger btn-sm">Decline</a>
-				</li>
-			  @endforeach-->
+			  <span id="pendingList">
+			  
+			  </span>
 			</ul>
 		</div>
 	</div>
