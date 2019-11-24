@@ -327,7 +327,7 @@
 								}
 								if(response.notification[i].type == "App\\Notifications\\FriendRequestAccepted"){
 									temphtml += '<h5 class="card-title text-success">Friend Request Accepted</h5>';
-									temphtml += '<p class="card-text">'+ response.notification[i].data.accepting_user_name +' wants to be your friend.</p>';
+									temphtml += '<p class="card-text">'+ response.notification[i].data.accepting_user_name +' accepted your friend request.</p>';
 									temphtml += '<p class="card-text"><small class="text-muted">'+ response.timeStamp[i] +'</small></p>';
 									temphtml += '<a href="/public/showProfile/'+ response.notification[i].data.accepting_user_id +'" class="stretched-link"></a>';
 								}

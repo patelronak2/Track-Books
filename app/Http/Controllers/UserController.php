@@ -121,7 +121,7 @@ class UserController extends Controller
 		//Notify the user with id => $id about the Friend Request
 		//Auth::user() will be the user sending the friend request and user with $id will the user receiving request
 		$user = User::find($id);
-		$user->notify(new FriendRequestSent($user->id, $user->name));
+		$user->notify(new FriendRequestSent(Auth::id(), Auth::user()->name));
 		return redirect('/showProfile/' . $id);
 	}
 	
@@ -130,7 +130,7 @@ class UserController extends Controller
 		//Auth::user() will be the user accepting the request
 		//User with $id will be the one who had sent the request and receiving this notification
 		$user = User::find($id);
-		$user->notify(new FriendRequestAccepted($user->id, $user->name));
+		$user->notify(new FriendRequestAccepted(Auth::id(), Auth::user()->name));
 		echo "success";
 	}
 	
