@@ -25,7 +25,7 @@
 			<ul class="list-group">
 			  <li class="list-group-item d-flex justify-content-between align-items-center">
 				Requests
-				<span class="badge badge-primary badge-pill" id="totalRequests">{{ $totalPendingRequests }}</span>
+				<span class="badge badge-primary badge-pill" id="totalRequests">{{ $totalPendingRequest }}</span>
 			  </li>
 			  <!-- For loop here and print all pending requests -->
 			  @foreach($pendingRequests as $pendingRequest)
