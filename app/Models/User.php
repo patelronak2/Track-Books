@@ -95,20 +95,20 @@ class User extends Authenticatable
     ];
 	
 	function review() {
-        return $this->hasMany('App\Review');
+        return $this->hasMany(Review::class);
     }
 	
 	function rating() {
-        return $this->hasMany('App\Rating');
+        return $this->hasMany(Rating::class);
     }
 	
 	function shelf() {
-		return $this->hasMany('App\Shelf');
+		return $this->hasMany(Shelf::class);
 	}
 	
 	public function profile()
     {
-        return $this->hasOne('App\Profile');
+        return $this->hasOne(Profile::class);
     }
 	
 }

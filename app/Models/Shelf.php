@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Shelf extends Model
 {
     function user() {
-        return $this->belongsTo('App\User', 'user_id', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 	function book() {
-        return $this->belongsTo('App\Book', 'book_id', 'id');
+        return $this->belongsTo(Book::class, 'book_id', 'id');
     }
 }

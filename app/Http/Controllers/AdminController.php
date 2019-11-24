@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Validator;
 use Illuminate\Http\Request;
-use App\User;
-use App\Review;
-use App\Book;
+use App\Models\User;
+use App\Models\Review;
+use App\Models\Book;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
