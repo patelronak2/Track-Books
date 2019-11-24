@@ -4,12 +4,24 @@
 <script>
 	$(document).ready(function(){
 		var anotherUserId = $("#anotherUserId").html();
-		$("#removeFriend").click(function(){
+		$("#removeFriend, #decline").click(function(){
 			$.ajax({
-				url: '/public/removeFriend/'+anotherUserId,
+				url: '/public/removeFriendRecord/'+anotherUserId,
 				type: 'GET',
 				success: function(data){
-					alert(data);
+					location.reload(true);
+				},
+				error: function(error){
+					alert("Something Went wrong");
+				}
+			});
+		});
+		
+		$("#acceptRequest").click(function(){
+			$.ajax({
+				url: '/public/acceptRequest/'+anotherUserId,
+				type: 'GET',
+				success: function(data){
 					location.reload(true);
 				},
 				error: function(error){
@@ -32,8 +44,8 @@
 				@if($isFriend)
 				<a href="#" class="btn btn-danger" id="removeFriend">Remove Friend</a>
 				@elseif($hasRecievedRequest)
-					<a href="#" class="btn btn-warning">Accept Request</a>
-					<a href="#" class="btn btn-danger">Decline</a>
+					<a href="#" class="btn btn-warning" id="acceptRequest">Accept Request</a>
+					<a href="#" class="btn btn-danger" id="decline">Decline</a>
 				@elseif($isRequestSent)
 					<button class="btn btn-info" disabled>Request Sent</button>
 				@else
@@ -66,8 +78,8 @@
 			@if($isFriend)
 				<a href="#" class="btn btn-danger" id="removeFriend">Remove Friend</a>
 			@elseif($hasRecievedRequest)
-				<a href="#" class="btn btn-warning">Accept Request</a>
-				<a href="#" class="btn btn-danger">Decline</a>
+				<a href="#" class="btn btn-warning" id="acceptRequest">Accept Request</a>
+				<a href="#" class="btn btn-danger" id="decline" >Decline</a>
 			@elseif($isRequestSent)
 				<button class="btn btn-info" disabled>Request Sent</button>
 			@else

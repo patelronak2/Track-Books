@@ -119,17 +119,15 @@ class User extends Controller
 		return redirect('/showProfile/' . $id);
 	}
 	
-	public function acceptRequest(){
-		Friendship::where('first_user', 1 )->where('second_user', Auth::id())->update(['status' => 'confirmed', 'acted_user' => Auth::id()]);
-		
-		$friendships = Friendship::all();
-		print_r(json_encode($friendships));
+	public function acceptRequest($id){
+		Friendship::where('first_user', $id)->where('second_user', Auth::id())->update(['status' => 'confirmed', 'acted_user' => Auth::id()]);
+		echo "success";
 	}
 	
-	public function pendingRequest(){
-		$user = Auth::user();
-		print_r(json_encode($user->friend_requests));
-	}
+	// public function pendingRequest(){
+		// $user = Auth::user();
+		// print_r(json_encode($user->friend_requests));
+	// }
 	
 	public function friendList(){
 		$user = Auth::user();
@@ -138,14 +136,12 @@ class User extends Controller
 		return view('user.friendList',['user' => $user, 'friends' => $friends, 'totalFriends' => count($friends), 'totalPendingRequest' => count($pendingRequest), 'pendingRequests' => $pendingRequest]);
 	}
 	
-	public function removeFriend($id){
+	public function deleteFriendship($id){
 		$friendships = Friendship::all();
 		$friendshipId = -1;
 		foreach($friendships as $friendship){
 			if(($friendship->first_user == Auth::id() && $friendship->second_user == $id) || ($friendship->first_user == $id && $friendship->second_user == Auth::id())){ 
-				if($friendship->status == 'confirmed'){
-					$friendshipId = $friendship->id;
-				}
+				$friendshipId = $friendship->id;
 			}
 		}
 		if($friendshipId != -1){
