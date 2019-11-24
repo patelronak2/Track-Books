@@ -153,6 +153,6 @@ class User extends Controller
 			$friendship->delete();
 			
 		}
-		return true;
+		echo "Success";
 	}
 }
