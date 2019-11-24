@@ -293,7 +293,7 @@ class HomeController extends Controller
 	
 	public function pendingRequest(){
 		$user = Auth::user();
-		$pendingRequests = $user->friend_requests);
+		$pendingRequests = $user->friend_requests;
 		$users = User::all();
 		$detailRecord = array();
 		foreach($pendingRequests as $pendingRequest){
