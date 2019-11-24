@@ -61,7 +61,6 @@
 		
 		$('#pendingList, #friendList').on('click','a.btn-danger',function(){
 			var id = $(this).attr('id');
-			alert("Decline Request Clicked: " + id);
 			$.ajax({
 				url: '/public/removeFriendRecord/' + id,
 				type: 'GET',
@@ -76,7 +75,6 @@
 		
 		$('#pendingList').on('click','a.btn-warning',function(){
 			var id = $(this).attr('id');
-			alert("Accept Request Clicked: " + id);
 			$.ajax({
 				url: '/public/acceptRequest/'+id,
 				type: 'GET',
