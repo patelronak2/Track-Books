@@ -303,7 +303,7 @@ class HomeController extends Controller
 				}
 			}
 		}
-		print_r(json_encode($detailRecord));
+		echo json_encode($detailRecord);
 	}
 	
 }

@@ -124,17 +124,20 @@ class User extends Controller
 		echo "success";
 	}
 	
-	public function pendingRequest(){
-		$user = Auth::user();
-		$pendingRequest = $user->friend_requests);
-		print_r(json_encode($pendingRequest));
-	}
+	
 	
 	public function friendList(){
+		//$user = Auth::user();
+		//$friends = $user->friends;
+		//$pendingRequest = $user->friend_requests; 
+		return view('user.friendList');
+		//['user' => $user, 'friends' => $friends, 'totalFriends' => count($friends), 'totalPendingRequest' => count($pendingRequest), 'pendingRequests' => $pendingRequest]
+	}
+	
+	public function getFriendList(){
 		$user = Auth::user();
 		$friends = $user->friends;
-		$pendingRequest = $user->friend_requests; 
-		return view('user.friendList',['user' => $user, 'friends' => $friends, 'totalFriends' => count($friends), 'totalPendingRequest' => count($pendingRequest), 'pendingRequests' => $pendingRequest]);
+		echo json_encode($friends);
 	}
 	
 	public function deleteFriendship($id){

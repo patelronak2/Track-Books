@@ -58,5 +58,6 @@ Route::get('/pendingRequest','HomeController@pendingRequest');
 //---------------------------------------------------------------------
 Route::get('/sendFriendRequest/{id}','User@sendFriendRequest');
 Route::get('/friendList','User@friendList');
+Route::get('/getFriendList','User@getFriendList');
 Route::get('/removeFriendRecord/{id}', 'User@deleteFriendship');
 Route::get('/acceptRequest/{id}','User@acceptRequest');
