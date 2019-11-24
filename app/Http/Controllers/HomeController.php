@@ -254,7 +254,7 @@ class HomeController extends Controller
 		$totalFriends = count($user->friends);
 		
 		//Determine if the logged in user has sent or recieved a request from the user whose profile is being viewed
-		$friendShips = Friendship::all();
+		$friendships = Friendship::all();
 		$isFriend = false;
 		$isRequestSent = false;
 		$hasRecievedRequest = false;
