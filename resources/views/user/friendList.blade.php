@@ -12,7 +12,7 @@
 				<h5>Friends</h5>
 				<span class="badge badge-primary badge-pill" id="totalFriends">{{ $totalFriends }}</span>
 			  </li>
-			  <!-- For loop to display all the students -->
+			  <!-- For loop to display all the friends -->
 			  @foreach($friends as $friend)
 				<li class="list-group-item d-flex justify-content-between align-items-center">
 				{{ $friend->name }}

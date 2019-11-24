@@ -124,10 +124,10 @@ class User extends Controller
 		echo "success";
 	}
 	
-	// public function pendingRequest(){
-		// $user = Auth::user();
-		// print_r(json_encode($user->friend_requests));
-	// }
+	public function pendingRequest(){
+		$user = Auth::user();
+		print_r(json_encode($user->friend_requests));
+	}
 	
 	public function friendList(){
 		$user = Auth::user();
