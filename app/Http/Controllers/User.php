@@ -148,6 +148,7 @@ class User extends Controller
 				}
 			}
 		}
+		die;
 		if($friendshipId != -1){
 			$friendship = Friendship::find($friendshipId);
 			$friendship->delete();
