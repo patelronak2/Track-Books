@@ -298,7 +298,7 @@ class HomeController extends Controller
 		$detailRecord = array();
 		foreach($pendingRequests as $pendingRequest){
 			foreach($users as $tempUser){
-				if($pendingRequest->second_user == $tempUser->id){
+				if($pendingRequest->first_user == $tempUser->id){
 					array_push($detailRecord, array($pendingRequest->second_user, $tempUser->name));
 				}
 			}
