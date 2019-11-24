@@ -9,6 +9,7 @@
 				url: '/public/removeFriend/'+anotherUserId,
 				type: 'GET',
 				success: function(data){
+					alert(data);
 					location.reload(true);
 				},
 				error: function(error){
@@ -34,7 +35,7 @@
 					<a href="#" class="btn btn-warning">Accept Request</a>
 					<a href="#" class="btn btn-danger">Decline</a>
 				@elseif($isRequestSent)
-					<a href="#" class="btn btn-info" disabled>Request Sent</a>
+					<button class="btn btn-info" disabled>Request Sent</button>
 				@else
 					<a href="/public/sendFriendRequest/{{$profile->user_id}}" class="btn btn-light button">Add Friend</a>
 				@endif
@@ -68,7 +69,7 @@
 				<a href="#" class="btn btn-warning">Accept Request</a>
 				<a href="#" class="btn btn-danger">Decline</a>
 			@elseif($isRequestSent)
-				<a href="#" class="btn btn-info" disabled>Request Sent</a>
+				<button class="btn btn-info" disabled>Request Sent</button>
 			@else
 				<a href="/public/sendFriendRequest/{{$profile->user_id}}" class="btn btn-light button">Add Friend</a>
 			@endif
