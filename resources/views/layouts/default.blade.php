@@ -470,7 +470,7 @@
         <main class="py-4" style="margin-top: 80px;">
             @yield('content')
         </main>
-		<div class="footer-copyright text-right p-4">© 2018 Copyright:
+		<div class="footer-copyright text-center p-4">© 2018 Copyright:
 			<a href="https://ronakjpatel.com"> ronakjpatel.com</a>
 		</div>
     </div>

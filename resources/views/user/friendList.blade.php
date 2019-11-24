@@ -15,7 +15,7 @@
 			  <!-- For loop to display all the students -->
 			  @foreach($friends as $friend)
 				<li class="list-group-item d-flex justify-content-between align-items-center">
-				{{ $friend->name }}
+				<h5>{{ $friend->name }}</h5>
 				<a href="#" class="btn btn-light btn-sm">Unfriend</a>
 				</li>
 			  @endforeach
@@ -24,7 +24,7 @@
 		<div class="col-md-6">
 			<ul class="list-group">
 			  <li class="list-group-item d-flex justify-content-between align-items-center">
-				Requests
+				<h5>Requests</h5>
 				<span class="badge badge-primary badge-pill" id="totalRequests">{{ $totalPendingRequest }}</span>
 			  </li>
 			  <!-- For loop here and print all pending requests -->
