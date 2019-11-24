@@ -45,8 +45,8 @@ class FriendRequestSent extends Notification
     {
         return [
             //
-			"sender_id" => $this->sender_id;
-			"sender_name" => $this->sender_name;
+			"sender_id" => $this->sender_id,
+			"sender_name" => $this->sender_name,
         ];
     }
 }
