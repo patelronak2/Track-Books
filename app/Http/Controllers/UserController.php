@@ -129,7 +129,6 @@ class UserController extends Controller
 		Friendship::where('first_user', $id)->where('second_user', Auth::id())->update(['status' => 'confirmed', 'acted_user' => Auth::id()]);
 		//Auth::user() will be the user accepting the request
 		//User with $id will be the one who had sent the request and receiving this notification
-		die;
 		$user = User::find($id);
 		$user->notify(new FriendRequestAccepted($user->id, $user->name));
 		echo "success";
