@@ -10,7 +10,18 @@
 		<h2 class="p-3">{{ $profile->name }}'s Profile is Private.</h2>
 		<div class="p-3">
 			<h4>Add {{ $profile->name }} as friend to view more details.</h4>
-			<button class="btn btn-light button my-2">Add Friend</button>
+			<div class="my-2">
+				@if($isFriend)
+				<a href="#" class="btn btn-danger">Remove Friend</a>
+				@elif($hasRecievedRequest)
+					<a href="#" class="btn btn-warning">Accept Request</a>
+					<a href="#" class="btn btn-danger">Decline</a>
+				@elif($isRequestSent)
+					<a href="#" class="btn btn-info" disabled>Request Sent</a>
+				@else
+					<a href="/public/sendFriendRequest/{{$profile->user_id}}" class="btn btn-light button">Add Friend</a>
+				@endif
+			</div>
 		</div>
 	
 	</div>
@@ -34,7 +45,17 @@
 				</div>
 			</div>
 			<!-- check here if this user is already friend or request is sent to him/her -->
-			<a href="/public/sendFriendRequest/{{$profile->user_id}}" class="btn btn-light button">Add Friend</a>
+			@if($isFriend)
+				<a href="#" class="btn btn-danger">Remove Friend</a>
+			@elif($hasRecievedRequest)
+				<a href="#" class="btn btn-warning">Accept Request</a>
+				<a href="#" class="btn btn-danger">Decline</a>
+			@elif($isRequestSent)
+				<a href="#" class="btn btn-info" disabled>Request Sent</a>
+			@else
+				<a href="/public/sendFriendRequest/{{$profile->user_id}}" class="btn btn-light button">Add Friend</a>
+			@endif
+			
 		</div>
 	</div>
 	<div class="my-3">
