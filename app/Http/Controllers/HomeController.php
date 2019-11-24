@@ -249,7 +249,7 @@ class HomeController extends Controller
 	
 	public function showProfile($id){
 		if($id == Auth::id()){
-			app('App\Http\Controllers\User')->index();
+			return redirect('/public/profile');
 		}else{
 			
 			$profile = Profile::find($id);
