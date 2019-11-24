@@ -10,10 +10,17 @@
 			type: 'GET',
 			success: function(response){
 				var data = JSON.parse(response);
+				$("#totalRequests").html(data.length);
 				if(data.length){
-					
+					var temphtml = '';
+					for(var i = 0; i < data.length; i++){
+						temphtml += '<li class="list-group-item d-flex justify-content-between align-items-center">';
+						temphtml += '<a href="" class="">'+ data[i][1] +'</a>';
+						temphtml += '</li>';
+					}
+										
+					$("#pendingList").html(temphtml);
 				}else{
-					$("#totalRequests").html(data.length);
 					var temphtml = '<li class="list-group-item d-flex justify-content-between align-items-center">';
 					temphtml += 'No Pending Requests</li>';
 					$("#pendingList").html(temphtml);
@@ -29,10 +36,16 @@
 			type: 'GET',
 			success: function(response){
 				var data = JSON.parse(response);
+				$("#totalFriends").html(data.length);
 				if(data.length){
-					
+					var temphtml = '';
+					for(var i = 0; i < data.length; i++){
+						temphtml += '<li class="list-group-item d-flex justify-content-between align-items-center">';
+						temphtml += '<a href="" class="">'+ data[i]['name'] +'</a>';
+						temphtml += '</li>';
+					}
+					$("#friendList").html(temphtml);
 				}else{
-					$("#totalFriends").html(data.length);
 					var temphtml = '<li class="list-group-item d-flex justify-content-between align-items-center">';
 					temphtml += 'No Friends to Display</li>';
 					$("#friendList").html(temphtml);
