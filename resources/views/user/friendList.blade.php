@@ -15,7 +15,9 @@
 					var temphtml = '';
 					for(var i = 0; i < data.length; i++){
 						temphtml += '<li class="list-group-item d-flex justify-content-between align-items-center">';
-						temphtml += '<a href="/public/showProfile/'+ data[i][0] +'" style="text-decoration: none;">'+ data[i][1] +'</a>';
+						temphtml += '<a href="/public/showProfile/'+ data[i][0] +'" style="text-decoration: none; color: inherit;">'+ data[i][1] +'</a>';
+						temphtml += '<a href="#" class="btn btn-warning btn-sm" id="acceptRequest">Accept Request</a>';
+						temphtml +=	'<a href="#" class="btn btn-danger btn-sm" id="decline">Decline</a>';
 						temphtml += '</li>';
 					}
 										
@@ -41,7 +43,8 @@
 					var temphtml = '';
 					for(var i = 0; i < data.length; i++){
 						temphtml += '<li class="list-group-item d-flex justify-content-between align-items-center">';
-						temphtml += '<a href="/public/showProfile/'+ data[i]['id'] +'" style="text-decoration: none;">'+ data[i]['name'] +'</a>';
+						temphtml += '<a href="/public/showProfile/'+ data[i]['id'] +'" style="text-decoration: none; color: inherit;">'+ data[i]['name'] +'</a>';
+						temphtml += '<a href="#" class="btn btn-danger btn-sm" id="removeFriend">Remove Friend</a>';
 						temphtml += '</li>';
 					}
 					$("#friendList").html(temphtml);
