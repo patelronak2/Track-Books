@@ -5,17 +5,16 @@
 	$(document).ready(function(){
 		var anotherUserId = $("#anotherUserId").html();
 		$("#removeFriend").click(function(){
-			alert(anotherUserId);
-			// $.ajax({
-				// url: '/public/removeFriend/'+anotherUserId,
-				// type: 'GET',
-				// success: function(data){
-					// location.reload(true);
-				// },
-				// error: function(error){
-					// alert("Something Went wrong");
-				// }
-			// });
+			$.ajax({
+				url: '/public/removeFriend/'+anotherUserId,
+				type: 'GET',
+				success: function(data){
+					location.reload(true);
+				},
+				error: function(error){
+					alert("Something Went wrong");
+				}
+			});
 		});
 	});
 </script>
@@ -64,7 +63,7 @@
 			</div>
 			<!-- check here if this user is already friend or request is sent to him/her -->
 			@if($isFriend)
-				<a href="#" class="btn btn-danger">Remove Friend</a>
+				<a href="#" class="btn btn-danger" id="removeFriend">Remove Friend</a>
 			@elseif($hasRecievedRequest)
 				<a href="#" class="btn btn-warning">Accept Request</a>
 				<a href="#" class="btn btn-danger">Decline</a>
