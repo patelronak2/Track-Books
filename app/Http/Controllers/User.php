@@ -10,6 +10,8 @@ use App\Review;
 use App\Rating;
 use App\Friendship;
 use App\Notifications\ShelfUpdated;
+use App\Notifications\FriendRequestSent;
+use App\Notifications\FriendRequestAccepted;
 
 class User extends Controller
 {
@@ -116,22 +118,25 @@ class User extends Controller
 		$friendship->save();
 		
 		//Notify the user with id => $id about the Friend Request
+		//Auth::user() will be the user sending the friend request and user with $id will the user receiving request
+		$user = User::find($id);
+		$user->notify(new FriendRequestSent($user->id, $user->name));
 		return redirect('/showProfile/' . $id);
 	}
 	
 	public function acceptRequest($id){
 		Friendship::where('first_user', $id)->where('second_user', Auth::id())->update(['status' => 'confirmed', 'acted_user' => Auth::id()]);
+		//Auth::user() will be the user accepting the request
+		//User with $id will be the one who had sent the request and receiving this notification
+		$user = User::find($id);
+		$user->notify(new FriendRequestAccepted($user->id, $user->name));
 		echo "success";
 	}
 	
 	
 	
 	public function friendList(){
-		//$user = Auth::user();
-		//$friends = $user->friends;
-		//$pendingRequest = $user->friend_requests; 
 		return view('user.friendList');
-		//['user' => $user, 'friends' => $friends, 'totalFriends' => count($friends), 'totalPendingRequest' => count($pendingRequest), 'pendingRequests' => $pendingRequest]
 	}
 	
 	public function getFriendList(){

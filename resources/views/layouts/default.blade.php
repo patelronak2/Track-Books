@@ -174,13 +174,10 @@
 			
 			//Enter information in modal and show it
 			$('#navSearchResults').on('click', 'a', function() {
-				//--------------------------------------------------------------------------------------------------
-				//Add some kind of condition to figure out what kind of result is being clicked on
-				//i.e. If the target <a> tag contains result of book, User or Author
-				//One Idea would be to check the <select> value and put a switch case same as .keyup() function
-				//---------------------------------------------------------------------------------------------------
 				switch(searchBy){
 					case "User":
+						//No need to handle the click here
+						//The a tag contains the link where the user will be directed 
 						break;
 					case "Author":
 					
@@ -315,10 +312,22 @@
 							for(var i = 0; i < response.timeStamp.length; i++){
 								temphtml  += '<div class="card mb-1"><div class="card-body">';
 								if(response.notification[i].type == "App\\Notifications\\ShelfUpdated"){
+									//User is notified about change made to the book shelf
 									temphtml += '<h5 class="card-title">'+ response.notification[i].data.book_name +'</h5>';
 									temphtml += '<p class="card-text">'+ response.notification[i].data.shelf +'</p>';
 									temphtml += '<p class="card-text"><small class="text-muted">'+ response.timeStamp[i] +'</small></p>';
 									temphtml += '<a href="/public/profile" class="stretched-link"></a>';
+								}else if(response.notification[i].type == "App\\Notifications\\FriendRequestSent"){
+									//User is notified about the friend request
+									temphtml += '<h5 class="card-title">New Friend Request</h5>';
+									temphtml += '<p class="card-text">'+ response.notification[i].data.sender_name +' wants to be your friend.</p>';
+									temphtml += '<p class="card-text"><small class="text-muted">'+ response.timeStamp[i] +'</small></p>';
+									temphtml += '<a href="/public/showProfile/'+ response.notification[i].data.sender_id +'" class="stretched-link"></a>';
+								}else if(response.notification[i].type == "App\\Notifications\\FriendRequestAccepted"){
+									temphtml += '<h5 class="card-title text-success">Friend Request Accepted</h5>';
+									temphtml += '<p class="card-text">'+ response.notification[i].data.accepting_user_name +' wants to be your friend.</p>';
+									temphtml += '<p class="card-text"><small class="text-muted">'+ response.timeStamp[i] +'</small></p>';
+									temphtml += '<a href="/public/showProfile/'+ response.notification[i].data.accepting_user_id +'" class="stretched-link"></a>';
 								}
 								temphtml += '</div></div>';
 							}
