@@ -14,7 +14,7 @@ use App\Notifications\ShelfUpdated;
 use App\Notifications\FriendRequestSent;
 use App\Notifications\FriendRequestAccepted;
 
-class User extends Controller
+class UserController extends Controller
 {
 	 public function __construct()
     {

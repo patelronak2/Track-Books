@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 
 Auth::routes(['verify' => true]);
-Route::get('/profile','User@index');
-Route::get('/setting','User@setting');
+Route::get('/profile','UserController@index');
+Route::get('/setting','UserController@setting');
 Route::get('/home', 'HomeController@index')->middleware('verified')->name('home');
 Route::get('/admin', 'AdminController@admin')->middleware('is_admin')->name('admin');
 Route::get('/manageUsers','AdminController@manageUsers')->middleware('is_admin')->name('admin');
@@ -43,9 +43,9 @@ Route::post('/addToShelf','HomeController@addToShelf');
 Route::get('/count', 'HomeController@getNotificationCount');
 Route::get('/getNotification','HomeController@getNotifications');
 Route::post('/rateBook', 'HomeController@rateBook');
-Route::get('/getProfileDetails','User@getProfileDetails');
-Route::post('/editProfile', 'User@editProfile');
-Route::get('/deleteShelfBook/{id}', 'User@deleteShelfBook');
+Route::get('/getProfileDetails','UserController@getProfileDetails');
+Route::post('/editProfile', 'UserController@editProfile');
+Route::get('/deleteShelfBook/{id}', 'UserController@deleteShelfBook');
 Route::get('/getUserList','HomeController@getUserList');
 Route::get('/showProfile/{id}', 'HomeController@showProfile');
 
@@ -56,8 +56,8 @@ Route::get('/test', function(){
 });
 Route::get('/pendingRequest','HomeController@pendingRequest');
 //---------------------------------------------------------------------
-Route::get('/sendFriendRequest/{id}','User@sendFriendRequest');
-Route::get('/friendList','User@friendList');
-Route::get('/getFriendList','User@getFriendList');
-Route::get('/removeFriendRecord/{id}', 'User@deleteFriendship');
-Route::get('/acceptRequest/{id}','User@acceptRequest');
+Route::get('/sendFriendRequest/{id}','UserController@sendFriendRequest');
+Route::get('/friendList','UserController@friendList');
+Route::get('/getFriendList','UserController@getFriendList');
+Route::get('/removeFriendRecord/{id}', 'UserController@deleteFriendship');
+Route::get('/acceptRequest/{id}','UserController@acceptRequest');
