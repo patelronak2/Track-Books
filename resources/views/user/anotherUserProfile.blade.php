@@ -2,7 +2,7 @@
 
 @section('content')
 
-@if($profile->isPrivate)
+@if($profile->isPrivate  && !$isFriend)
 	<div class="my-3 text-center">
 		<div class="px-3">
 			<i class="fa fa-lock my-2" style="font-size:48px"></i>
@@ -33,7 +33,8 @@
 					<p><span class="font-weight-bold">Total Friends: </span><span id="totalFriends">{{ $totalFriends}}</span></p>
 				</div>
 			</div>
-			<a href="#" class="btn btn-light button">Add Friend</a>
+			<!-- check here if this user is already friend or request is sent to him/her -->
+			<a href="/public/sendFriendRequest/{{$profile->user_id}}" class="btn btn-light button">Add Friend</a>
 		</div>
 	</div>
 	<div class="my-3">

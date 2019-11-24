@@ -9,13 +9,13 @@
 		<div class="col-md-6">
 			<ul class="list-group">
 			  <li class="list-group-item d-flex justify-content-between align-items-center">
-				Friends
+				<h5>Friends</h5>
 				<span class="badge badge-primary badge-pill" id="totalFriends">{{ $totalFriends }}</span>
 			  </li>
 			  <!-- For loop to display all the students -->
 			  @foreach($friends as $friend)
 				<li class="list-group-item d-flex justify-content-between align-items-center">
-				<h5>{{ $friend->name }}</h5>
+				{{ $friend->name }}
 				<a href="#" class="btn btn-light btn-sm">Unfriend</a>
 				</li>
 			  @endforeach

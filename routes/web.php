@@ -55,7 +55,7 @@ Route::get('/test', function(){
 	$user->notifications()->delete();
 });
 
-Route::get('/sendFriendRequest','User@sendFriendRequest');
+Route::get('/sendFriendRequest/{id}','User@sendFriendRequest');
 Route::get('/friendList','User@friendList');
 Route::get('/pendingRequest','User@pendingRequest');
 Route::get('/acceptRequest','User@acceptRequest');
