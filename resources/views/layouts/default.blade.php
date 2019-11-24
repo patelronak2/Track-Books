@@ -174,7 +174,7 @@
 			});
 			
 			//Enter information in modal and show it
-			$('.list-group').on('click', 'a', function() {
+			$('#navSearchResults').on('click', 'a', function() {
 				//--------------------------------------------------------------------------------------------------
 				//Add some kind of condition to figure out what kind of result is being clicked on
 				//i.e. If the target <a> tag contains result of book, User or Author
