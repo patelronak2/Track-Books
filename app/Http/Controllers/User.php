@@ -141,6 +141,7 @@ class User extends Controller
 	public function friendList(){
 		$user = Auth::user();
 		$friends = $user->friends;
-		return view('user.friendList',['user' => $user, 'friends' => $friends]);
+		$pendingRequest = $user->friend_requests; 
+		return view('user.friendList',['user' => $user, 'friends' => $friends, 'totalFriends' => count($friends), 'totalPendingRequest' => count($pendingRequest), '$pendingRequests' => $pendingRequest]);
 	}
 }

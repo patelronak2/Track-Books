@@ -182,10 +182,6 @@
 				//---------------------------------------------------------------------------------------------------
 				switch(searchBy){
 					case "User":
-						//Handle the Click
-						//Get the User Id and display another User Profile with that ID
-						// clickedId = parseInt($(this).find('#index').text());
-						// var userId = searchResult[clickedId]['id'];
 						break;
 					case "Author":
 					
@@ -474,7 +470,7 @@
         <main class="py-4" style="margin-top: 80px;">
             @yield('content')
         </main>
-		<div class="footer-copyright text-right py-4">© 2018 Copyright:
+		<div class="footer-copyright text-right p-4">© 2018 Copyright:
 			<a href="https://ronakjpatel.com"> ronakjpatel.com</a>
 		</div>
     </div>

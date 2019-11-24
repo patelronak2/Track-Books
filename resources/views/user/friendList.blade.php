@@ -10,32 +10,30 @@
 			<ul class="list-group">
 			  <li class="list-group-item d-flex justify-content-between align-items-center">
 				Friends
-				<span class="badge badge-primary badge-pill">12</span>
+				<span class="badge badge-primary badge-pill" id="totalFriends">{{ $totalFriends }}</span>
 			  </li>
-			  <li class="list-group-item d-flex justify-content-between align-items-center">
-				Ads
-				<span class="badge badge-primary badge-pill">50</span>
-			  </li>
-			  <li class="list-group-item d-flex justify-content-between align-items-center">
-				Junk
-				<span class="badge badge-primary badge-pill">99</span>
-			  </li>
+			  <!-- For loop to display all the students -->
+			  @foreach($friends as $friend)
+				<li class="list-group-item d-flex justify-content-between align-items-center">
+				{{ $friend->name }}
+				<a href="#" class="btn btn-light btn-sm">Unfriend</a>
+				</li>
+			  @endforeach
 			</ul>
 		</div>
 		<div class="col-md-6">
 			<ul class="list-group">
 			  <li class="list-group-item d-flex justify-content-between align-items-center">
 				Requests
-				<span class="badge badge-primary badge-pill">12</span>
+				<span class="badge badge-primary badge-pill" id="totalRequests">{{ $totalPendingRequests }}</span>
 			  </li>
-			  <li class="list-group-item d-flex justify-content-between align-items-center">
-				Ads
-				<a href="#" class="btn btn-primary" >Unfriend</a>
-			  </li>
-			  <li class="list-group-item d-flex justify-content-between align-items-center">
-				Junk
-				<span class="badge badge-primary badge-pill">99</span>
-			  </li>
+			  <!-- For loop here and print all pending requests -->
+			  @foreach($pendingRequests as $pendingRequest)
+				<li class="list-group-item d-flex justify-content-between align-items-center">
+				{{ $pendingRequest->name }}
+				<a href="#" class="btn btn-danger btn-sm">Decline</a>
+				</li>
+			  @endforeach
 			</ul>
 		</div>
 	</div>
