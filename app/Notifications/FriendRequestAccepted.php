@@ -19,7 +19,8 @@ class FriendRequestAccepted extends Notification
      */
     public function __construct($accepting_user_id, $accepting_user_name)
     {
-        //
+        $this->accepting_user_id = $accepting_user_id;
+		$this->accepting_user_name = $accepting_user_name;
     }
 
     /**
