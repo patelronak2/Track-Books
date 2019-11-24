@@ -19,7 +19,7 @@
 		<div class="my-3">
 			<h2>{{ $profile->name }}'s Profile</h2>
 		</div>
-		<div class="shadow-sm bg-light py-2">
+		<div class="shadow-sm bg-light p-3">
 			<h5>Personal Information</h5>
 			<div class="row">
 				<p class="col-md-3"><span class="font-weight-bold">Email:</span> {{ $profile->email }}</p>

@@ -394,7 +394,7 @@
 						
 						<li class="nav-item dropdown">
 							<a id="notifications" class="nav-link" href="#" >
-								<span class="badge badge-danger ml-2 d-none" id="unreadNotifications"></span>Notifications
+								<span class="badge badge-danger badge-pill ml-2 d-none" id="unreadNotifications"></span>Notifications
 							</a>
 
 							<div class="d-none bg-white shadow-sm" id="allNotifications">								
@@ -474,7 +474,7 @@
         <main class="py-4" style="margin-top: 80px;">
             @yield('content')
         </main>
-		<div class="footer-copyright text-center py-4">© 2018 Copyright:
+		<div class="footer-copyright text-right py-4">© 2018 Copyright:
 			<a href="https://ronakjpatel.com"> ronakjpatel.com</a>
 		</div>
     </div>
