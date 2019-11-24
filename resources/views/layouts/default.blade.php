@@ -115,15 +115,22 @@
 							success: function(data){
 								var searchResult = JSON.parse(data);
 								var temphtml = "";
+								var currentUserId = parseInt($("#userId").html());
 								var flag = false;
 								for(var i = 0; i < 5 && i < searchResult.length; i++){
 									if(searchTerm != "" && searchResult[i]['name'].toLowerCase().indexOf(searchTerm) !== -1){
 										flag = true;
-										temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="/public/showProfile/'+ searchResult[i]['id'] +'">';
-										temphtml += '<div class="d-flex w-100 justify-content-between">';
-										temphtml += '<h5 class="mb-1">' + searchResult[i]['name'] + '</h5></div>';
-										temphtml += '<p class="sr-only" id="index">' + i + '</p>';
-										temphtml += '</a>';
+										if(searchResult[i]['id'] == currentUserId){
+											temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="/public/profile">';
+											temphtml += '<div class="d-flex w-100 justify-content-between">';
+											temphtml += '<h5 class="mb-1">' + searchResult[i]['name'] + '</h5></div>';
+											temphtml += '</a>';
+										}else{
+											temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="/public/showProfile/'+ searchResult[i]['id'] +'">';
+											temphtml += '<div class="d-flex w-100 justify-content-between">';
+											temphtml += '<h5 class="mb-1">' + searchResult[i]['name'] + '</h5></div>';
+											temphtml += '</a>';
+										}
 									}
 								}
 								if(!flag && searchTerm != ""){
@@ -407,7 +414,7 @@
 						
 						<li class="nav-item dropdown">
 							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-								{{ Auth::user()->name }} <span class="caret"></span>
+								{{ Auth::user()->name }} <span class="caret"></span><span id="userId" class="sr-only">{{ Auth::user()->id }}</span>
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
