@@ -58,6 +58,16 @@
 				alert("Couldn't get FriendList");
 			}
 		});
+		
+		$('#removeFriend').on('click',function(){
+			alert("Remove Friend Clicked");
+		});
+		$('#acceptRequest').on('click',function(){
+			alert(" Accept button Clicked");
+		});
+		$('#decline').on('click',function(){
+			alert("Decline Clicked");
+		});
 	});
 
 </script>
