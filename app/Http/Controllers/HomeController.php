@@ -10,6 +10,7 @@ use App\User;
 use App\Shelf;
 use App\Review;
 use App\Rating;
+use App\Friendship;
 use App\Notifications\ShelfUpdated;
 class HomeController extends Controller
 {
@@ -244,6 +245,45 @@ class HomeController extends Controller
 		//Get only those users where account is public
 		$users = User::with('profile')->get();
 		return json_encode($users);
+	}
+	
+	public function showProfile($id){
+		$profile = Profile::find($id);
+		$shelves = Shelf::where('user_id', $id)->with('book')->get();
+		$user = User::find($profile->user_id);
+		$totalFriends = count($user->friends);
+		
+		//Determine if the logged in user has sent or recieved a request from the user whose profile is being viewed
+		$friendShips = Friendship::all();
+		$isFriend = false;
+		$isRequestSent = false;
+		$hasRecievedRequest = false;
+		foreach($friendships as $friendship){
+			
+			//Find Record between logged in user and the user whose profile is being viewed
+			if(($friendship->first_user == Auth::id() && $friendship->second_user == $id) || ($friendship->first_user == $id && $friendship->second_user == Auth::id())){ 
+				
+				if($friendship->acted_user == Auth::id() && $friendship->status == 'pending'){
+					//Current User has sent the request but the other user hasn't accepted
+					//Button to show = Request Sent
+					$isRequestSent = true;
+				}elseif($friendship->acted_user == $id && $friendship->status == 'pending'){
+					//Current User has recieved the request from the other user and hasn't responded yet
+					//Button to show = Accept Request
+					$hasRecievedRequest = true;
+				}elseif($friendship->status == 'confirmed'){
+					//Both users are already friends
+					//Button to show = Unfriend
+					$isFriend = true;
+				}
+			}
+		}
+		
+		//If no record found at the end of the loop,
+		//It means nobody has sent any request
+		//All three boolean is false at this point and Button will show 'Add Friend'
+		
+		return view('user.anotherUserProfile',['profile' => $profile, 'shelves' => $shelves, 'totalFriends' => $totalFriends, 'isFriend' => $isFriend, 'isRequestSent' =>  $isRequestSent, 'hasRecievedRequest' => $hasRecievedRequest]); 
 	}
 	
 }
