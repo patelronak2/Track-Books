@@ -151,9 +151,8 @@ class User extends Controller
 		if($friendshipId != -1){
 			$friendship = Friendship::find($friendshipId);
 			$friendship->delete();
-			return true;
-		}else{
-			return false;
+			
 		}
+		return true;
 	}
 }
