@@ -23,24 +23,37 @@
 		<header class="my-2">
 			<h3>What other people are doing</h3>
 		</header>
-		<article class="post pl-1 my-2" style="border-left: 2px solid #756446;">
+		<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
 			<p>Post Content Goes here</p>
-			<div class="font-italics">
+			<div class="font-italic">
 				<h5>Posted by: Ronak Patel</h5>
 			</div>
 		</article>
-		<article class="post pl-1 my-2" style="border-left: 2px solid #756446;">
+		<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
 			<p>Post Content Goes here</p>
-			<div class="font-italics">
+			<div class="font-italic">
 				<h5>Posted by: Ronak Patel</h5>
 			</div>
 		</article>
-		<article class="post pl-1 my-2" style="border-left: 2px solid #756446;">
+		<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
 			<p>Post Content Goes here</p>
-			<div class="font-italics">
+			<div class="font-italic">
 				<h5>Posted by: Ronak Patel</h5>
 			</div>
 		</article>
+		<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
+			<p>Post Content Goes here</p>
+			<div class="font-italic">
+				<h5>Posted by: Ronak Patel</h5>
+			</div>
+		</article>
+		<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
+			<p>Post Content Goes here</p>
+			<div class="font-italic">
+				<h5>Posted by: Ronak Patel</h5>
+			</div>
+		</article>
+		
 	</div>
 </div>
 </div>
