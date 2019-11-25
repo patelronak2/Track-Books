@@ -254,7 +254,7 @@ class HomeController extends Controller
 			return redirect('/profile');
 		}else{
 			
-			$profile = Profile::find($id);
+			$profile = Profile::where('user_id', $id);
 			$shelves = Shelf::where('user_id', $id)->with('book')->get();
 			$user = User::find($profile->user_id);
 			$totalFriends = count($user->friends);
