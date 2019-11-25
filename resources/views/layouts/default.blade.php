@@ -41,6 +41,10 @@
 			background-color: #756446;
 			color: white
 		}
+		.button-sd{
+			background-color: #292621;
+			color: white;
+		}
 		
 		p{
 			font-family: 'Roboto', sans-serif;

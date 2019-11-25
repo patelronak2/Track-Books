@@ -13,7 +13,7 @@
 						@endif
 					@endif
 					<div class="container-fluid">
-						<a href="/public/addEntries" class="badge badge-primary m-1 p-2">Add Books </a>
+						<a href="/public/addEntries" class="badge badge-light button-sd m-1 p-2">Add Books </a>
 						<a href="/public/addMultipleEntries" class="badge badge-light m-1 p-2">Add Multiple Books </a>
 						<a href="/public/manageBooks" class="badge badge-light button-pm m-1 p-2">Refresh</a>
 						<a href="/public/admin" class="badge badge-secondary m-1 p-2">Back to Dashboard</a>
