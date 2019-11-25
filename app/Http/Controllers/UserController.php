@@ -185,6 +185,6 @@ class UserController extends Controller
 			$message = "Post Deletion Successful";
 		}
 		
-		return redirect('/home')->with(['alert' => true, 'message' => $message]);
+		return redirect('/home');
 	}
 }
