@@ -11,7 +11,7 @@
 					<label for="name" class="col-sm-2 col-form-label font-weight-bold">{{ __('Name') }}</label>
 
 					<div class="col-sm-10">
-						<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="John Doe">
+						<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name"  placeholder="John Doe">
 
 						@error('name')
 							<span class="invalid-feedback" role="alert">
@@ -72,7 +72,7 @@
 					<label for="title" class="col-sm-2 col-form-label font-weight-bold">Book Name</label>
 
 					<div class="col-sm-10">
-						<input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus placeholder="Harry Potter and the deathly hallows">
+						<input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" placeholder="Harry Potter and the deathly hallows">
 						@error('title')
 							<span class="invalid-feedback" role="alert">
 								<strong>{{ $message }}</strong>
@@ -83,7 +83,7 @@
 				<div class="form-group row">
 					<label for="description" class="col-sm-2 col-form-label font-weight-bold">Description</label>
 					<div class="col-sm-10">
-						<input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autocomplete="description" autofocus>
+						<input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" autocomplete="description">
 
 						@error('description')
 							<span class="invalid-feedback" role="alert">
@@ -96,7 +96,7 @@
 					<label for="authorName" class="col-sm-2 col-form-label font-weight-bold">Author Name</label>
 
 					<div class="col-sm-10">
-						<input id="authorName" type="text" class="form-control @error('authorName') is-invalid @enderror" name="authorName" value="{{ old('authorName') }}" autocomplete="authorName" autofocus placeholder="J.K. Rowling">
+						<input id="authorName" type="text" class="form-control @error('authorName') is-invalid @enderror" name="authorName" value="{{ old('authorName') }}" autocomplete="authorName" placeholder="J.K. Rowling">
 
 						@error('authorName')
 							<span class="invalid-feedback" role="alert">
@@ -109,7 +109,7 @@
 					<label for="category" class="col-sm-2 col-form-label font-weight-bold">Category</label>
 
 					<div class="col-sm-10">
-						<input id="category" type="text" class="form-control @error('category') is-invalid @enderror" name="category" value="{{ old('category') }}"  autocomplete="category" autofocus placeholder="Young Fiction">
+						<input id="category" type="text" class="form-control @error('category') is-invalid @enderror" name="category" value="{{ old('category') }}"  autocomplete="category"  placeholder="Young Fiction">
 
 						@error('category')
 							<span class="invalid-feedback" role="alert">
@@ -122,7 +122,7 @@
 					<label for="publisher" class="col-sm-2 col-form-label font-weight-bold">Publisher</label>
 
 					<div class="col-sm-10">
-						<input id="publisher" type="text" class="form-control @error('publisher') is-invalid @enderror" name="publisher" value="{{ old('publisher') }}"  autocomplete="publisher" autofocus>
+						<input id="publisher" type="text" class="form-control @error('publisher') is-invalid @enderror" name="publisher" value="{{ old('publisher') }}"  autocomplete="publisher" >
 
 						@error('publisher')
 							<span class="invalid-feedback" role="alert">
@@ -135,7 +135,7 @@
 					<label for="publishedDate" class="col-sm-2 col-form-label font-weight-bold">Published Date</label>
 
 					<div class="col-md-10">
-						<input id="publishedDate" type="text" class="form-control @error('publishedDate') is-invalid @enderror" name="publishedDate" value="{{ old('publishedDate') }}"  autocomplete="publishedDate" autofocus placeholder="2005">
+						<input id="publishedDate" type="text" class="form-control @error('publishedDate') is-invalid @enderror" name="publishedDate" value="{{ old('publishedDate') }}"  autocomplete="publishedDate"  placeholder="2005">
 
 						@error('publishedDate')
 							<span class="invalid-feedback" role="alert">
@@ -161,7 +161,7 @@
 					<label for="authorName" class="col-sm-2 col-form-label font-weight-bold">Author Name</label>
 
 					<div class="col-sm-10">
-						<input id="authorName" type="text" class="form-control @error('authorName') is-invalid @enderror" name="authorName" value="{{ old('authorName') }}" required autocomplete="authorName" autofocus placeholder="J.K. Rowling">
+						<input id="authorName" type="text" class="form-control @error('authorName') is-invalid @enderror" name="authorName" value="{{ old('authorName') }}" required autocomplete="authorName" placeholder="J.K. Rowling">
 
 						@error('authorName')
 							<span class="invalid-feedback" role="alert">
