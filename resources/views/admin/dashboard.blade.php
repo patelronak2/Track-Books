@@ -1,6 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
+<!-- Big Changes expected in term of looks on this page -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
