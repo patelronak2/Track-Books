@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Review;
 use App\Models\Book;
+use App\Models\Author;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
@@ -60,7 +61,8 @@ class AdminController extends Controller
      */
 	public function manageAuthors()
     {
-        return view('admin.authors');
+		$authors = Author::all();
+        return view('admin.authors', ['authors' => $author]);
     }
 	
 	/**
@@ -276,5 +278,30 @@ class AdminController extends Controller
 		 return view('/manageReviews')->with(['message' => $message, 'alert' => false]); 
 	 }
 	
+	public function insertAuthor(Request $request){
+		$this->validate($request, [
+			'authorName' => 'required|max:50',
+		]);
+		$author = new Author;
+		$author->name = $request->input('authorName');
+		$message = "There was as error inserting Author.";
+		$alert = true;
+		if($author->save()){
+			$message = "Author added Successfully: " . $request->input('authorName');
+			$alert = false;
+		}
+		return redirect('/manageAuthors')->with(['alert' => $alert, 'message' => $message]);
+	}
 	
+	public function deleteAuthor($id){
+		$author = Author::find($id);
+		$name = $author->name;
+		$message = "Couldn't delete author: " . $name;
+		$alert = true;
+		if($author->delete()){
+			$message = "Author deleted successfully: " . $name;
+			$alert = false;
+		}
+		return redirect('/manageAuthors')->with(['alert' => $alert, 'message' => $message]);
+	}
 }

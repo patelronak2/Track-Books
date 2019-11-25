@@ -20,6 +20,7 @@ Route::group(['middleware' => ['is_admin', 'verified']],function(){
 	Route::get('/manageUsers','AdminController@manageUsers');
 	Route::get('/manageBooks','AdminController@manageBooks');
 	Route::get('/manageAuthors','AdminController@manageAuthors');
+	Route::get('/deleteAuthor/{id}','AdminController@deleteAuthor');
 	Route::get('/addEntries','AdminController@addEntries');
 	Route::post('/insertUser','AdminController@insertUser');
 	Route::post('/insertBook','AdminController@insertBook');
