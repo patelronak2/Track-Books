@@ -1,8 +1,8 @@
 @extends('layouts.default')
 
 @section('content')
-
-<section class="row new-post p-3 border-bottom-2">
+<div class="container">
+<div class="row new-post p-3 border-bottom">
 	<div class="col-md-6 offset-md-3">
 		<header>
 			<h2>What's on your mind?</h2>
@@ -15,8 +15,8 @@
 			<button class="btn btn-light button" type="submit">Create Post</button>
 		</form>
 	</div>
-</section>
-<section class="row posts mt-3 p-3">
+</div>
+<div class="row posts mt-3 p-3">
 	<div class="col-md-6 offset-md-3">
 		<header class="my-2">
 			<h3>What other people are doing</h3>
@@ -28,5 +28,6 @@
 			</div>
 		</article>
 	</div>
-</section>
+</div>
+</div>
 @endsection
