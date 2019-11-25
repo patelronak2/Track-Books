@@ -30,7 +30,7 @@
 		}
 		
 		h1,h2,h3,h4,h5{
-			font-family: 'Roboto Slab', serif!important;
+			font-family: 'Roboto Slab', serif;
 		}
 		
 		.button{
@@ -39,7 +39,7 @@
 		}
 		
 		p{
-			font-family: Roboto, serif!important;
+			font-family: Roboto, serif;
 			font-size: 16px;
 		}
 		::-webkit-scrollbar {
