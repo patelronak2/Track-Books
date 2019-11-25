@@ -3,9 +3,9 @@
 @section('content')
 <div class="container-fluid">
 			<h2 class="">Add Multiple Books</h2>
-			<div class="">
-				<a href="/public/manageBooks" class="btn btn-light m-1 p-2">All Books</a>
-				<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>
+			<div class="container-fluid">
+				<a href="/public/manageBooks" class="badge badge-light m-1 p-2">All Books</a>
+				<a href="/public/admin" class="badge badge-secondary m-1 p-2">Back to Dashboard</a>
 			</div>
 			<div class="my-3 bg-light shadow-sm p-3">
 					<h4>Through Google Api</h4>

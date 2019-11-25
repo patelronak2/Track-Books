@@ -1,13 +1,10 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="card">
-                <h4 class="card-header">Manage Books</h4>
+<div class="container-fluid">
+                <h2>Manage Books</h2>
 
-                <div class="card-body">
+                <div class="">
 					@if(Session::has('message'))
 						@if(session('alert'))
 							<div class="alert alert-danger">{{ session('message') }}</div>
@@ -15,11 +12,11 @@
 							<div class="alert alert-success">{{ session('message') }}</div>
 						@endif
 					@endif
-					<div class="text-center">
-						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Books </a>
-						<a href="/public/addMultipleEntries" class="btn btn-light m-1 p-2">Add Multiple Books </a>
-						<a href="/public/manageBooks" class="btn btn-outline-primary m-1 p-2">Refresh</a>
-						<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
+					<div class="container-fluid">
+						<a href="/public/addEntries" class="badge badge-primary m-1 p-2">Add Books </a>
+						<a href="/public/addMultipleEntries" class="badge badge-light m-1 p-2">Add Multiple Books </a>
+						<a href="/public/manageBooks" class="badge badge-light button-pm m-1 p-2">Refresh</a>
+						<a href="/public/admin" class="badge badge-secondary m-1 p-2">Back to Dashboard</a>
 					</div>
                     <div class="mt-1 text-center table-responsive">
 						@if(count($books) > 0)
@@ -46,12 +43,11 @@
 								@endforeach
 							</table>
 						@else
-							<h3>No book in the database yet</h3>
+							<div class="bg-light shadow-sm p-5">
+								<h5 class="text-center">No Books in the Database</h5>
+							</div>
 						@endif
 					</div>
                 </div>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection
