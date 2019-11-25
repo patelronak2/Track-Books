@@ -110,7 +110,7 @@ class AdminController extends Controller
 	 public function deleteUser($id)
 	 {
 		$user = User::find($id);
-		$name->$user->name;
+		$name = $user->name;
 		$user->delete();
 		$message = "Deletion Successful: ". $name . " Deleted";
 		return redirect('/manageUsers')->with(['message' => $message, 'alert' => false]);
