@@ -250,13 +250,15 @@ class HomeController extends Controller
 	}
 	
 	public function showProfile($id){
+		//$id is another user's id
 		if($id == Auth::id()){
 			return redirect('/profile');
 		}else{
 			
 			$profile = Profile::where('user_id', $id);
 			$shelves = Shelf::where('user_id', $id)->with('book')->get();
-			$user = User::find($profile->user_id);
+			
+			$user = User::find($id);
 			$totalFriends = count($user->friends);
 			
 			//Determine if the logged in user has sent or recieved a request from the user whose profile is being viewed
