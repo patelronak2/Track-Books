@@ -360,7 +360,6 @@
 					}
 					},
 				error: function(){
-					alert("Cannot get the notification count");
 					}
 			});
 		  }, 3000);
