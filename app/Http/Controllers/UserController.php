@@ -175,6 +175,8 @@ class UserController extends Controller
 		if($post->save()){
 			$message = "Post Created Successfully";
 		}
-		return view('home',['alert' => true, 'message' => $message]);
+		
+		$posts = Post::all();
+		return view('home',['alert' => true, 'message' => $message, 'posts' => $posts]);
 	}
 }

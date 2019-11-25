@@ -26,37 +26,20 @@
 		<header class="my-2">
 			<h3>What other people are doing</h3>
 		</header>
-		<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
-			<p>Post Content Goes here</p>
-			<div class="font-italic">
-				<h5>Posted by: Ronak Patel</h5>
-			</div>
-		</article>
-		<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
-			<p>Post Content Goes here</p>
-			<div class="font-italic">
-				<h5>Posted by: Ronak Patel</h5>
-			</div>
-		</article>
-		<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
-			<p>Post Content Goes here</p>
-			<div class="font-italic">
-				<h5>Posted by: Ronak Patel</h5>
-			</div>
-		</article>
-		<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
-			<p>Post Content Goes here</p>
-			<div class="font-italic">
-				<h5>Posted by: Ronak Patel</h5>
-			</div>
-		</article>
-		<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
-			<p>Post Content Goes here</p>
-			<div class="font-italic">
-				<h5>Posted by: Ronak Patel</h5>
-			</div>
-		</article>
-		
+		@if(count($posts) > 0)
+			@foreach($posts as $post)
+				<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
+					<p>{{ $post->body }}</p>
+					<div class="font-italic">
+						<h5>Posted by: {{ $post->user->name }}</h5>
+					</div>
+				</article>
+			@endforeach
+		@else
+			<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
+				<p>No Posts to display</p>
+			</article>
+		@endif		
 	</div>
 </div>
 </div>
