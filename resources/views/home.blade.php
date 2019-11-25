@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-	<section class="row new-post mb-2">
+	<section class="row new-post mb-2" style="border-bottom: 1px solid #756446">
 		<div class="col-md-6 offset-md-3">
 			<header>
 				<h2>What's on your mind?</h2>
