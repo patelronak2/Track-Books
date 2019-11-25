@@ -42,7 +42,7 @@ class HomeController extends Controller
 			$profile->save();
 		}
 		
-        return view('home');
+        return view('home', ['alert' => false]);
     }
 	
 	public function showBook($id)

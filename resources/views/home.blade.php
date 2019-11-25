@@ -7,7 +7,7 @@
 		<header>
 			<h2>What's on your mind?</h2>
 		</header>
-		@if ($message)
+		@if ($alert)
 			<div class="alert alert-success">{{ $message }}</div>
 		@endif
 		<form action="/public/createPost" method="POST">
