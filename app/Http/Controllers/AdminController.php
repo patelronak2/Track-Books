@@ -280,14 +280,14 @@ class AdminController extends Controller
 	
 	public function insertAuthor(Request $request){
 		$this->validate($request, [
-			'authorName' => 'required|max:50|unique:authors',
+			'name' => 'required|max:50|unique:authors',
 		]);
 		$author = new Author;
-		$author->name = $request->input('authorName');
+		$author->name = $request->input('name');
 		$message = "There was as error inserting Author.";
 		$alert = true;
 		if($author->save()){
-			$message = "Author added Successfully: " . $request->input('authorName');
+			$message = "Author added Successfully: " . $request->input('name');
 			$alert = false;
 		}
 		return redirect('/manageAuthors')->with(['alert' => $alert, 'message' => $message]);
