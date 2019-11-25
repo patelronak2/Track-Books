@@ -8,7 +8,11 @@
 			<h2>What's on your mind?</h2>
 		</header>
 		@if(Session::has('message'))
-			<div class="alert alert-danger">{{ session('message') }}</div>
+			@if(session('alert'))
+				<div class="alert alert-danger">{{ session('message') }}</div>
+			@else
+				<div class="alert alert-success">{{ session('message') }}</div>
+			@endif
 		@endif
 		<form action="/public/createPost" method="POST">
 			@csrf

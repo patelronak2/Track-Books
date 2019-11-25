@@ -42,7 +42,7 @@ class HomeController extends Controller
 			$profile->email = $user->email;
 			$profile->save();
 		}
-		$posts = Post::all();
+		$posts = Post::orderBy('created_at', 'desc')->get();
         return view('home', ['posts' => $posts]);
     }
 	
