@@ -14,6 +14,13 @@
 					<h4 class="card-header">Through Google Api</h4>
 					<div class="card-body">
 						<p>Search for the term. Top 5 results will be added to the database.</p>
+						@if(Session::has('message'))
+							@if(session('alert'))
+								<div class="alert alert-danger">{{ session('message') }}</div>
+							@else
+								<div class="alert alert-success">{{ session('message') }}</div>
+							@endif
+						@endif
 						<form method="post" action="/public/insertMultipleBooks">
 						@csrf
 						  <div class="form-row align-items-center">
@@ -26,12 +33,6 @@
 							</div>
 						  </div>
 						</form>
-						@if($errorMessage)
-							<div class="alert alert-danger" role="alert" id="error">
-								{{ $alert }}
-								
-							</div>
-						@endif
 						<div id="searchResult">
 						</div>
 					</div>

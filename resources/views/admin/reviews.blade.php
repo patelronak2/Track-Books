@@ -7,10 +7,12 @@
             <div class="card">
                 <h4 class="card-header">Manage Reviews</h4>
 				<div class="card-body">
-				@if($deleteReview)
-					<div class="alert alert-success" role="alert">
-						{{ $alert }}
-					</div>
+				@if(Session::has('message'))
+					@if(session('alert'))
+						<div class="alert alert-danger">{{ session('message') }}</div>
+					@else
+						<div class="alert alert-success">{{ session('message') }}</div>
+					@endif
 				@endif
                 <div class="text-center">
 					<a href="/public/manageReviews" class="btn btn-outline-primary m-1 p-2">Refresh</a>

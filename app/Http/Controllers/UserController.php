@@ -175,7 +175,7 @@ class UserController extends Controller
 		if($post->save()){
 			$message = "Post Created Successfully";
 		}
-		return redirect('/home')->with(['alert' => true, 'message' => $message]);
+		return redirect('/home')->with(['alert' => false, 'message' => $message]);
 	}
 	
 	public function deletePost($id){
@@ -185,6 +185,6 @@ class UserController extends Controller
 			$message = "Post Deletion Successful";
 		}
 		
-		return redirect('/home')->with(['alert' => true, 'message' => $message]);
+		return redirect('/home')->with(['alert' => false, 'message' => $message]);
 	}
 }

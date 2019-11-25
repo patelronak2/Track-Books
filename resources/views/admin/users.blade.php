@@ -8,22 +8,13 @@
                 <h4 class="card-header">Manage Users</h4>
 				
                 <div class="card-body">
-					@if($insertUser)
-                        <div class="alert alert-success" role="alert">
-                            {{ $alert }} {{$name}}
-							
-                        </div>
-                    @endif
-					@if($deleteUser)
-                        <div class="alert alert-info" role="alert">
-                            {{ $alert }}
-                        </div>
-                    @endif
-					@if($banUser)
-                        <div class="alert alert-warning" role="alert">
-                            {{ $alert }}
-                        </div>
-                    @endif
+					@if(Session::has('message'))
+						@if(session('alert'))
+							<div class="alert alert-danger">{{ session('message') }}</div>
+						@else
+							<div class="alert alert-success">{{ session('message') }}</div>
+						@endif
+					@endif
 					<div class="text-center">
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Users </a>
 						<a href="/public/manageUsers" class="btn btn-outline-primary m-1 p-2">Refresh</a>

@@ -39,7 +39,7 @@ class AdminController extends Controller
 	public function manageUsers()
     {
 		$users = User::all();
-        return view('admin.users', ['users' => $users, 'insertUser' => false, 'deleteUser' => false, 'banUser' => false]);
+        return view('admin.users', ['users' => $users]);
     }
 	
 	/**
@@ -50,7 +50,7 @@ class AdminController extends Controller
 	public function manageBooks()
     {
 		$books = Book::all();
-        return view('admin.books',['books' => $books, 'deleteBook' => false, 'insertBook' => false]);
+        return view('admin.books',['books' => $books]);
     }
 	
 	/**
@@ -98,7 +98,8 @@ class AdminController extends Controller
 		$user->password = Hash::make($password);
 		$user->email = $email;
 		$user->save();
-		return redirect('/manageUsers')->with(['alert' => 'Row added Successfully.', 'name' => 'User name: '.$name, 'insertUser' => true, 'deleteUser' => false, 'banUser' => false]);
+		$message = "Record insertion successful. User Added: " . $name;
+		return redirect('/manageUsers')->with(['message' => $message, 'alert' => false]);
 	}
 	
 	/**
@@ -109,8 +110,10 @@ class AdminController extends Controller
 	 public function deleteUser($id)
 	 {
 		$user = User::find($id);
+		$name->$user->name;
 		$user->delete();
-		return redirect('/manageUsers')->with(['insertUser' => false, 'alert' => 'Deletion Successful.', 'deleteUser' => true, 'banUser' => false]);
+		$message = "Deletion Successful: ". $name . " Deleted";
+		return redirect('/manageUsers')->with(['message' => $message, 'alert' => false]);
 	 }
 	 
 	 /**
@@ -122,6 +125,7 @@ class AdminController extends Controller
 	 {
 		$user = User::find($id);
 		$message = "";
+		$alert = false;
 		if($user->isBan){
 			$user->isBan = false;
 			$message = "Ban removed from user: " . $user->name;
@@ -131,11 +135,12 @@ class AdminController extends Controller
 				$message = "Baned user: " . $user->name;
 			}else{
 				$message = "cannot ban an administrator " . $user->name;
+				$alert = true;
 			}
 		}
 		$user->save();
 		
-		return redirect('/manageUsers')->with(['insertUser' => false, 'alert' => $message, 'deleteUser' => false, 'banUser' => true]);
+		return redirect('/manageUsers')->with(['message' => $message, 'alert' => $alert);
 	 }
 	 
 	 /**
@@ -159,7 +164,7 @@ class AdminController extends Controller
 		 $book->save();
 		 
 		 $message = "Book inserted: " . $title;
-		 return redirect('manageBooks')->with(['insertBook' => true, 'alert' => $message, 'deleteBook' => false]);
+		 return redirect('manageBooks')->with(['alert' => false, 'message' => $message]);
 		 
 	 }
 	 
@@ -176,7 +181,7 @@ class AdminController extends Controller
 		 $book->delete();
 		 
 		 $message = "Book Deleted: " . $title;
-		 return redirect('manageBooks')->with(['books' => $data, 'insertBook' => false, 'alert' => $message, 'deleteBook' => true]);
+		 return redirect('manageBooks')->with(['message' => $message, 'alert' => false]);
 	 }
 	 
 	 /**
@@ -186,7 +191,7 @@ class AdminController extends Controller
      */
 	 public function addMultipleEntries()
 	 {
-		 return view('admin.addMultipleEntries', ['errorMessage' => false]);
+		 return view('admin.addMultipleEntries');
 	 }
 	 
 	 /**
@@ -197,7 +202,7 @@ class AdminController extends Controller
 	 public function insertMultipleBooks(Request $request)
 	 {
 		 $alert = "One or more insertion failed. Try another term";
-		 return redirect('/addMultipleEntries')->with(['errorMessage' => true, 'alert' => $alert]);
+		 return redirect('/addMultipleEntries')->with(['alert' => true, 'message' => $alert]);
 	 }
 	 
 	 public function ajaxBookInsert(Request $request)
@@ -259,7 +264,7 @@ class AdminController extends Controller
 	 public function manageReviews()
 	 {
 		$reviews = Review::all();
-        return view('admin.reviews',['reviews' => $reviews, 'deleteReview' => false]);
+        return view('admin.reviews',['reviews' => $reviews]);
 	 }
 	 
 	 public function deleteReview($id)
@@ -267,8 +272,8 @@ class AdminController extends Controller
 		 $review = Review::find($id);
 		 $review->delete();
 		 
-		 $message = "Deletion Completed";
-		 return view('/manageReviews')->with(['alert' => $message, 'deleteReview' => true]); 
+		 $message = "Review Deleted";
+		 return view('/manageReviews')->with(['message' => $message, 'alert' => false]); 
 	 }
 	
 	
