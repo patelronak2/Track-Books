@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Book;
 use App\Models\Shelf;
 use App\Models\Review;
+use App\Models\Post;
 use App\Models\Rating;
 use App\Models\Friendship;
 use App\Notifications\ShelfUpdated;
@@ -41,8 +42,8 @@ class HomeController extends Controller
 			$profile->email = $user->email;
 			$profile->save();
 		}
-		
-        return view('home');
+		$posts = Post::all();
+        return view('home', ['posts' => $posts]);
     }
 	
 	public function showBook($id)
