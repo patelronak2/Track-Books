@@ -175,8 +175,6 @@ class UserController extends Controller
 		if($post->save()){
 			$message = "Post Created Successfully";
 		}
-		
-		$posts = Post::all();
-		return redirect('/home')->with(['alert' => true, 'message' => $message, 'posts' => $posts]);
+		return redirect('/home')->with(['alert' => true, 'message' => $message]);
 	}
 }
