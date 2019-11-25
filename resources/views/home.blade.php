@@ -15,11 +15,6 @@
 			<div class="form-group">
 				<textarea class="form-control @error('body') is-invalid @enderror" name="body" id="body" rows="5" placeholder="Write some thing here..."></textarea>
 			</div>
-			@error('body')
-				<span class="invalid-feedback" role="alert">
-					<strong>{{ $message }}</strong>
-				</span>
-			@enderror
 			<button class="btn btn-light button" type="submit">Create Post</button>
 		</form>
 	</div>
