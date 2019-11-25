@@ -7,8 +7,8 @@
 		<header>
 			<h2>What's on your mind?</h2>
 		</header>
-		@if (session('message'))
-			<div class="alert alert-success">{{ session('message') }}</div>
+		@if ($message)
+			<div class="alert alert-success">{{ $message }}</div>
 		@endif
 		<form action="/public/createPost" method="POST">
 			@csrf

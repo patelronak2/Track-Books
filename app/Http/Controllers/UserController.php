@@ -175,6 +175,6 @@ class UserController extends Controller
 		if($post->save()){
 			$message = "Post Created Successfully";
 		}
-		return redirect('/home')->with(['message' => $message]);
+		return view('home',['message' => $message]);
 	}
 }
