@@ -157,6 +157,7 @@
 			<h4>Add an Author</h4>
 			<!-- Author Form -->
 			<form method="POST" action="/public/insertAuthor" class="px-1">
+			@csrf
 				<div class="form-group row">
 					<label for="authorName" class="col-sm-2 col-form-label font-weight-bold">Author Name</label>
 
