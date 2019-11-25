@@ -3,9 +3,9 @@
 @section('content')
 <div class="container-fluid">
 	<h2>Manage Reviews</h2>
-	<div class="text-center">
-		<a href="/public/manageReviews" class="btn btn-outline-primary m-1 p-2">Refresh</a>
-		<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
+	<div class="container-fluid">
+		<a href="/public/manageReviews" class="badge badge-light button-pm m-1 p-2">Refresh</a>
+		<a href="/public/admin" class="badge badge-secondary m-1 p-2">Back to Dashboard</a>
 	</div>
 	@if(Session::has('message'))
 		@if(session('alert'))
