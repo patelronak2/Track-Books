@@ -24,6 +24,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "materialize-css": "^1.0.0-rc.2"
+        "laravel-echo": "^1.6.1",
+        "materialize-css": "^1.0.0-rc.2",
+        "pusher-js": "^5.0.3"
     }
 }
