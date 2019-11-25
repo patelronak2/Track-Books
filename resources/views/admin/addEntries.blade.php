@@ -156,7 +156,7 @@
 		<div class="my-3 bg-light shadow-sm p-3">
 			<h4>Add an Author</h4>
 			<!-- Author Form -->
-			<form method="POST" action="/public/insertAuthor">
+			<form method="POST" action="/public/insertAuthor" class="px-1">
 				<div class="form-group row">
 					<label for="authorName" class="col-sm-2 col-form-label font-weight-bold">Author Name</label>
 
@@ -172,7 +172,7 @@
 				</div>
 				<div class="form-group row mb-0">
 					<div class="col-sm-2 offset-md-2">
-						<button type="submit" class="btn btn-primary">
+						<button type="submit" class="btn btn-light button">
 							Add Author
 						</button>
 					</div>

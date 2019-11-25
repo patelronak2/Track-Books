@@ -1,45 +1,38 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
+<div class="container-fluid">
 			<h2 class="">Add Multiple Books</h2>
-			<div class="text-center">
+			<div class="">
 				<a href="/public/manageBooks" class="btn btn-light m-1 p-2">All Books</a>
 				<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
 			</div>
-			<div class="mt-2">
-				<div class="card">
-					<h4 class="card-header">Through Google Api</h4>
-					<div class="card-body">
-						<p>Search for the term. Top 5 results will be added to the database.</p>
-						@if(Session::has('message'))
-							@if(session('alert'))
-								<div class="alert alert-danger">{{ session('message') }}</div>
-							@else
-								<div class="alert alert-success">{{ session('message') }}</div>
-							@endif
+			<div class="my-3 bg-light shadow-sm p-3">
+					<h4>Through Google Api</h4>
+
+					<p>Search for the term. Top 5 results will be added to the database.</p>
+					@if(Session::has('message'))
+						@if(session('alert'))
+							<div class="alert alert-danger">{{ session('message') }}</div>
+						@else
+							<div class="alert alert-success">{{ session('message') }}</div>
 						@endif
-						<form method="post" action="/public/insertMultipleBooks">
-						@csrf
-						  <div class="form-row align-items-center">
-							<div class="col-auto">
-							  <label class="sr-only" for="searchTerm">Search Term</label>
-							  <input type="text" class="form-control mb-2" id="searchTerm" placeholder="Harry Potter" onkeyup="searchApi();">
-							</div>
-							<div class="col-auto">
-							  <button type="submit" class="btn btn-primary mb-2" onclick="return addmultipleRecords()">Add Multiple Books</button>
-							</div>
-						  </div>
-						</form>
-						<div id="searchResult">
+					@endif
+					<form method="post" action="/public/insertMultipleBooks" class="px-1">
+					  @csrf
+					  <div class="form-row align-items-center">
+						<div class="col-auto">
+						  <label class="sr-only" for="searchTerm">Search Term</label>
+						  <input type="text" class="form-control mb-2" id="searchTerm" placeholder="Harry Potter" onkeyup="searchApi();">
 						</div>
+						<div class="col-auto">
+						  <button type="submit" class="btn btn-primary mb-2" onclick="return addmultipleRecords()">Add Multiple Books</button>
+						</div>
+					  </div>
+					</form>
+					<div id="searchResult">
 					</div>
-				</div>
 			</div>
-        </div>
-    </div>
 </div>
 <script>
 	var data = "";
