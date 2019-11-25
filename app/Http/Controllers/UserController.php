@@ -170,8 +170,9 @@ class UserController extends Controller
 		]);
 		$post = new Post;
 		$post->body = $request->input('body');
+		$post->user_id = Auth::id();
 		$message = "There was as error creating post.";
-		if($request->user()->posts()->save($post)){
+		if($post->save()){
 			$message = "Post Created Successfully";
 		}
 		return redirect('/home')->with(['message' => $message]);
