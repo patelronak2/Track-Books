@@ -25,7 +25,7 @@
 				</thead>
 				@foreach ($authors as $author)
 					<tr>
-						<td>{{ $author->authorName }}</td>
+						<td>{{ $author->authName }}</td>
 						<td><a href="/public/deleteAuthor/{{ $author->id }}" class="text-danger"><i class="fa fa-trash" style="font-size:24px"></i></a></td>
 					</tr>
 				@endforeach

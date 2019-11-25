@@ -159,12 +159,12 @@
 			<form method="POST" action="/public/insertAuthor" class="px-1">
 			@csrf
 				<div class="form-group row">
-					<label for="authorName" class="col-sm-2 col-form-label font-weight-bold">Author Name</label>
+					<label for="authName" class="col-sm-2 col-form-label font-weight-bold">Author Name</label>
 
 					<div class="col-sm-10">
-						<input id="authorName" type="text" class="form-control @error('authorName') is-invalid @enderror" name="authorName" value="{{ old('authorName') }}" required autocomplete="authorName" placeholder="J.K. Rowling">
+						<input id="authName" type="text" class="form-control @error('authName') is-invalid @enderror" name="authName" value="{{ old('authName') }}" required autocomplete="authName" placeholder="J.K. Rowling">
 
-						@error('authorName')
+						@error('authName')
 							<span class="invalid-feedback" role="alert">
 								<strong>{{ $message }}</strong>
 							</span>
