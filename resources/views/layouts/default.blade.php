@@ -43,7 +43,6 @@
 		}
 		.button-sd{
 			background-color: #E7E89F;
-			color: white;
 		}
 		
 		p{
