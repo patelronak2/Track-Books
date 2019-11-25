@@ -31,15 +31,15 @@
 		});
 	});
 </script>
-<p class="sr-only" id="anotherUserId">{{ $profile->user->id }}</p>
-@if($profile->isPrivate  && !$isFriend)
+<p class="sr-only" id="anotherUserId">{{ $user->id }}</p>
+@if($user->profile->isPrivate  && !$isFriend)
 	<div class="my-3 text-center">
 		<div class="px-3">
 			<i class="fa fa-lock my-2" style="font-size:48px"></i>
 		</div>
-		<h2 class="p-3">{{ $profile->name }}'s Profile is Private.</h2>
+		<h2 class="p-3">{{ $user->name }}'s Profile is Private.</h2>
 		<div class="p-3">
-			<h4>Add {{ $profile->name }} as friend to view more details.</h4>
+			<h4>Add {{ $user->name }} as friend to view more details.</h4>
 			<div class="my-2">
 				@if($isFriend)
 				<a href="#" class="btn btn-danger" id="removeFriend">Remove Friend</a>
@@ -49,7 +49,7 @@
 				@elseif($isRequestSent)
 					<button class="btn btn-info" disabled>Request Sent</button>
 				@else
-					<a href="/public/sendFriendRequest/{{$profile->user->id}}" class="btn btn-light button">Add Friend</a>
+					<a href="/public/sendFriendRequest/{{$user->id}}" class="btn btn-light button">Add Friend</a>
 				@endif
 			</div>
 		</div>
@@ -58,17 +58,17 @@
 @else
 	<div class="my-3 container-fluid">
 		<div class="my-3">
-			<h2>{{ $profile->name }}'s Profile</h2>
+			<h2>{{ $user->name }}'s Profile</h2>
 		</div>
 		<div class="shadow-sm bg-light p-3">
 			<h5>Personal Information</h5>
 			<div class="row">
-				<p class="col-md-3"><span class="font-weight-bold">Email:</span> {{ $profile->email }}</p>
-				@if($profile->birthday)
-					<p class="col-md-3"><span class="font-weight-bold">Birth date:</span> {{ $profile->birthday }}</p>
+				<p class="col-md-3"><span class="font-weight-bold">Email:</span> {{ $user->email }}</p>
+				@if($user->profile->birthday)
+					<p class="col-md-3"><span class="font-weight-bold">Birth date:</span> {{ $user->profile->birthday }}</p>
 				@endif
-				@if($profile->gender)
-					<p class="col-md-3"><span class="font-weight-bold">Gender:</span> {{ $profile->gender }}</p>
+				@if($user->profile->gender)
+					<p class="col-md-3"><span class="font-weight-bold">Gender:</span> {{ $user->profile->gender }}</p>
 				@endif
 				<div class="col-md-3">
 					<p><span class="font-weight-bold">Total Friends: </span><span id="totalFriends">{{ $totalFriends}}</span></p>
@@ -83,7 +83,7 @@
 			@elseif($isRequestSent)
 				<button class="btn btn-info" disabled>Request Sent</button>
 			@else
-				<a href="/public/sendFriendRequest/{{$profile->user->id}}" class="btn btn-light button">Add Friend</a>
+				<a href="/public/sendFriendRequest/{{$user->id}}" class="btn btn-light button">Add Friend</a>
 			@endif
 			
 		</div>

@@ -9,7 +9,6 @@ use App\Models\User;
 use App\Models\Book;
 use App\Models\Shelf;
 use App\Models\Review;
-use App\Models\Post;
 use App\Models\Rating;
 use App\Models\Friendship;
 use App\Notifications\ShelfUpdated;
@@ -43,8 +42,7 @@ class HomeController extends Controller
 			$profile->save();
 		}
 		
-		$posts = Post::all();
-        return view('home', ['alert' => false, 'posts' => $posts]);
+        return view('home');
     }
 	
 	public function showBook($id)
@@ -245,19 +243,17 @@ class HomeController extends Controller
 	public function getUserList(){
 		
 		//Get only those users where account is public
-		$users = User::with('profile')->get();
+		$users = User::all();
 		return json_encode($users);
 	}
 	
 	public function showProfile($id){
-		//$id is another user's id
 		if($id == Auth::id()){
 			return redirect('/profile');
 		}else{
 			
-			$profile = Profile::where('user_id', $id);
+			//$profile = Profile::find($id);
 			$shelves = Shelf::where('user_id', $id)->with('book')->get();
-			
 			$user = User::find($id);
 			$totalFriends = count($user->friends);
 			
@@ -291,7 +287,7 @@ class HomeController extends Controller
 			//It means nobody has sent any request
 			//All three boolean is false at this point and Button will show 'Add Friend'
 			
-			return view('user.anotherUserProfile',['profile' => $profile, 'shelves' => $shelves, 'totalFriends' => $totalFriends, 'isFriend' => $isFriend, 'isRequestSent' =>  $isRequestSent, 'hasRecievedRequest' => $hasRecievedRequest]); 
+			return view('user.anotherUserProfile',['user' => $user, 'shelves' => $shelves, 'totalFriends' => $totalFriends, 'isFriend' => $isFriend, 'isRequestSent' =>  $isRequestSent, 'hasRecievedRequest' => $hasRecievedRequest]); 
 		}
 	}
 	
