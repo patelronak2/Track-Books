@@ -164,9 +164,16 @@ class UserController extends Controller
 	}
 	
 	public function createPost(Request $request){
+		
+		$this->validate($request, [
+			'body' => 'required|max:1000',
+		]);
 		$post = new Post;
 		$post->body = $request->input('body');
-		$request->user()->posts()->save($post);
-		return redirect('/home');
+		$message = "There was as error creating post.";
+		if($request->user()->posts()->save($post)){
+			$message = "Post Created Successfully";
+		}
+		return redirect('/home')->with(['message' => $message]);
 	}
 }
