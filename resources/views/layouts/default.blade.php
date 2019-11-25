@@ -16,9 +16,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
-	
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<style type="text/css">
-		@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 		h2, h1{
 			color: #756446;
 		}
@@ -30,7 +29,7 @@
 		}
 		
 		h1,h2,h3,h4,h5{
-			font-family: 'Roboto Slab';
+			font-family: 'Roboto', sans-serif;
 		}
 		
 		.button{
@@ -39,7 +38,7 @@
 		}
 		
 		p{
-			font-family: Roboto;
+			font-family: 'Roboto', sans-serif;
 			font-size: 16px;
 		}
 		::-webkit-scrollbar {
