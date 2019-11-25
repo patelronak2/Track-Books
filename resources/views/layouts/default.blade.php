@@ -38,7 +38,7 @@
 		}
 		
 		.button-pm{
-			background-color: #756446
+			background-color: #756446;
 			color: white
 		}
 		

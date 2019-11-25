@@ -5,7 +5,7 @@
 			<h2 class="">Add Multiple Books</h2>
 			<div class="">
 				<a href="/public/manageBooks" class="btn btn-light m-1 p-2">All Books</a>
-				<a href="/public/admin" class="btn btn-dark m-1 p-2">Back to Dashboard</a>
+				<a href="/public/admin" class="btn btn-secondary m-1 p-2">Back to Dashboard</a>
 			</div>
 			<div class="my-3 bg-light shadow-sm p-3">
 					<h4>Through Google Api</h4>
@@ -26,7 +26,7 @@
 						  <input type="text" class="form-control mb-2" id="searchTerm" placeholder="Harry Potter" onkeyup="searchApi();">
 						</div>
 						<div class="col-auto">
-						  <button type="submit" class="btn btn-primary mb-2" onclick="return addmultipleRecords()">Add Multiple Books</button>
+						  <button type="submit" class="btn btn-light button-pm mb-2" onclick="return addmultipleRecords()">Add Multiple Books</button>
 						</div>
 					  </div>
 					</form>
