@@ -31,7 +31,7 @@
 		});
 	});
 </script>
-<p class="sr-only" id="anotherUserId">{{ $profile->user_id }}</p>
+<p class="sr-only" id="anotherUserId">{{ $profile->user->id }}</p>
 @if($profile->isPrivate  && !$isFriend)
 	<div class="my-3 text-center">
 		<div class="px-3">
@@ -49,7 +49,7 @@
 				@elseif($isRequestSent)
 					<button class="btn btn-info" disabled>Request Sent</button>
 				@else
-					<a href="/public/sendFriendRequest/{{$profile->user_id}}" class="btn btn-light button">Add Friend</a>
+					<a href="/public/sendFriendRequest/{{$profile->user->id}}" class="btn btn-light button">Add Friend</a>
 				@endif
 			</div>
 		</div>
