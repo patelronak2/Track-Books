@@ -140,7 +140,7 @@ class AdminController extends Controller
 		}
 		$user->save();
 		
-		return redirect('/manageUsers')->with(['message' => $message, 'alert' => $alert);
+		return redirect('/manageUsers')->with(['message' => $message, 'alert' => $alert]);
 	 }
 	 
 	 /**
