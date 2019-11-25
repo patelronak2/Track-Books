@@ -177,6 +177,6 @@ class UserController extends Controller
 		}
 		
 		$posts = Post::all();
-		return view('home',['alert' => true, 'message' => $message, 'posts' => $posts]);
+		return redirect('/home')->with(['alert' => true, 'message' => $message, 'posts' => $posts]);
 	}
 }

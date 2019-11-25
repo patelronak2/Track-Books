@@ -32,8 +32,11 @@
 					<p>{{ $post->body }}</p>
 					<div class="font-italic">
 						<h5>Posted by: {{ $post->user->name }}</h5>
-						<small>{{ $post->created_at->diffForHumans() }}</small>
 					</div>
+					<small>{{ $post->created_at->diffForHumans() }}</small>
+					@if($post->user_id == Auth::id())
+						<a href="/public/deletePost/{{ $post->id}}" class="">Delete</a>
+					@endif
 				</article>
 			@endforeach
 		@else
