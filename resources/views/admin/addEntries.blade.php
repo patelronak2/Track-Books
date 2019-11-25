@@ -1,14 +1,14 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="container-fluid">
+    <!--<div class="row justify-content-center">
+        <div class="col-md-8"> -->
             <div class="mt-2">
-				<div class="card">
-					<h4 class="card-header">Add users</h4>
-					<div class="card-body">
-					<!-- User Form -------- -->
+				<div class="container-fluid">
+					
+					<div class="container-fluid">
+						<h2 class="card-header">Add users</h2>
 						<form method="POST" action="/public/insertUser">
 							@csrf
 							<div class="form-group row">
@@ -69,7 +69,7 @@
 								</div>
 							</div>
 						</form>
-					</div>
+					</div>					
 				</div>
 			</div>
 			<div class="mt-2">
@@ -197,7 +197,7 @@
 					</div>
 				</div>
 			</div>
-        </div>
-    </div>
+        <!--</div>
+    </div>-->
 </div>
 @endsection
