@@ -280,7 +280,7 @@ class AdminController extends Controller
 	
 	public function insertAuthor(Request $request){
 		$this->validate($request, [
-			'authorName' => 'required|max:50',
+			'authorName' => 'required|max:50|unique',
 		]);
 		$author = new Author;
 		$author->name = $request->input('authorName');
