@@ -62,7 +62,7 @@ class AdminController extends Controller
 	public function manageAuthors()
     {
 		$authors = Author::all();
-        return view('admin.authors', ['authors' => $author]);
+        return view('admin.authors', ['authors' => $authors]);
     }
 	
 	/**
