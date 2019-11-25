@@ -280,14 +280,14 @@ class AdminController extends Controller
 	
 	public function insertAuthor(Request $request){
 		$this->validate($request, [
-			'name' => 'required|max:50|unique:authors',
+			'authorName' => 'required|max:50|unique:authors',
 		]);
 		$author = new Author;
-		$author->name = $request->input('name');
+		$author->authorName = $request->input('authorName');
 		$message = "There was as error inserting Author.";
 		$alert = true;
 		if($author->save()){
-			$message = "Author added Successfully: " . $request->input('name');
+			$message = "Author added Successfully: " . $request->input('authorName');
 			$alert = false;
 		}
 		return redirect('/manageAuthors')->with(['alert' => $alert, 'message' => $message]);
@@ -295,7 +295,7 @@ class AdminController extends Controller
 	
 	public function deleteAuthor($id){
 		$author = Author::find($id);
-		$name = $author->name;
+		$name = $author->authorName;
 		$message = "Couldn't delete author: " . $name;
 		$alert = true;
 		if($author->delete()){
