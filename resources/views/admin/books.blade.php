@@ -8,16 +8,13 @@
                 <h4 class="card-header">Manage Books</h4>
 
                 <div class="card-body">
-					@if($insertBook)
-                        <div class="alert alert-success" role="alert">
-                            {{ $alert }}
-                        </div>
-                    @endif
-					@if($deleteBook)
-                        <div class="alert alert-success" role="alert">
-                            {{ $alert }}
-                        </div>
-                    @endif
+					@if(Session::has('message'))
+						@if(session('alert'))
+							<div class="alert alert-danger">{{ session('message') }}</div>
+						@else
+							<div class="alert alert-success">{{ session('message') }}</div>
+						@endif
+					@endif
 					<div class="text-center">
 						<a href="/public/addEntries" class="btn btn-primary m-1 p-2">Add Books </a>
 						<a href="/public/addMultipleEntries" class="btn btn-light m-1 p-2">Add Multiple Books </a>
