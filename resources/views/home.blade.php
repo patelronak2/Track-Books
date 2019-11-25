@@ -32,6 +32,7 @@
 					<p>{{ $post->body }}</p>
 					<div class="font-italic">
 						<h5>Posted by: {{ $post->user->name }}</h5>
+						<small>{{ $post->created_at->diffForHumans() }}</small>
 					</div>
 				</article>
 			@endforeach
