@@ -15,49 +15,48 @@ Route::get('/', function () {
     return view('pages.front');
 });
 
-Auth::routes(['verify' => true]);
-Route::get('/profile','UserController@index')->middleware('verified');
-Route::get('/setting','UserController@setting')->middleware('verified');
-Route::get('/home', 'HomeController@index')->middleware('verified')->name('home');
-Route::get('/admin', 'AdminController@admin')->middleware('is_admin')->name('admin');
-Route::get('/manageUsers','AdminController@manageUsers')->middleware('is_admin')->name('admin');
-Route::get('/manageBooks','AdminController@manageBooks')->middleware('is_admin')->name('admin');
-Route::get('/manageAuthors','AdminController@manageAuthors')->middleware('is_admin')->name('admin');
-Route::get('/addEntries','AdminController@addEntries')->middleware('is_admin')->name('admin');
-Route::post('/insertUser','AdminController@insertUser')->middleware('is_admin')->name('admin');
-Route::post('/insertBook','AdminController@insertBook')->middleware('is_admin')->name('admin');
-Route::post('/insertAuthor','AdminController@insertAuthor')->middleware('is_admin')->name('admin');
-Route::get('/deleteUser/{id}', 'AdminController@deleteUser')->middleware('is_admin')->name('admin');
-Route::get('/banUser/{id}','AdminController@banUser')->middleware('is_admin')->name('admin');
-Route::get('/deleteBook/{id}','AdminController@deleteBook')->middleware('is_admin')->name('admin');
-Route::get('/addMultipleEntries','AdminController@addMultipleEntries')->middleware('is_admin')->name('admin');
-Route::post('/insertMultipleBooks', 'AdminController@insertMultipleBooks')->middleware('is_admin')->name('admin');
-Route::post('/ajaxBookInsert', 'AdminController@ajaxBookInsert')->middleware('is_admin')->name('admin');
-Route::post('/searchInsert', 'AdminController@searchInsert')->middleware('verified');;
-Route::get('/showBook/{id}','HomeController@showBook')->middleware('verified');;
-Route::post('/addReview', 'HomeController@addReview')->middleware('verified');;
-Route::post('/deleteReview', 'HomeController@deleteReview')->middleware('verified');;
-Route::get('/manageReviews','AdminController@manageReviews')->middleware('is_admin')->name('admin');
-Route::get('/deleteReview/{id}', 'AdminController@deleteReview' )->middleware('is_admin')->name('admin');
-Route::post('/addToShelf','HomeController@addToShelf')->middleware('verified');;
-Route::get('/count', 'HomeController@getNotificationCount')->middleware('verified');;
-Route::get('/getNotification','HomeController@getNotifications')->middleware('verified');;
-Route::post('/rateBook', 'HomeController@rateBook')->middleware('verified');;
-Route::get('/getProfileDetails','UserController@getProfileDetails')->middleware('verified');;
-Route::post('/editProfile', 'UserController@editProfile')->middleware('verified');;
-Route::get('/deleteShelfBook/{id}', 'UserController@deleteShelfBook')->middleware('verified');;
-Route::get('/getUserList','HomeController@getUserList')->middleware('verified');;
-Route::get('/showProfile/{id}', 'HomeController@showProfile')->middleware('verified');;
-
-//-----------------------------------------------------------------------------
-Route::get('/test', function(){
-	$user = Auth::user();
-	$user->notifications()->delete();
+Route::group(['middleware' => ['is_admin', 'verified']],function(){
+	Route::get('/admin', 'AdminController@admin');
+	Route::get('/manageUsers','AdminController@manageUsers');
+	Route::get('/manageBooks','AdminController@manageBooks');
+	Route::get('/manageAuthors','AdminController@manageAuthors');
+	Route::get('/addEntries','AdminController@addEntries');
+	Route::post('/insertUser','AdminController@insertUser');
+	Route::post('/insertBook','AdminController@insertBook');
+	Route::post('/insertAuthor','AdminController@insertAuthor');
+	Route::get('/deleteUser/{id}', 'AdminController@deleteUser');
+	Route::get('/banUser/{id}','AdminController@banUser');
+	Route::get('/deleteBook/{id}','AdminController@deleteBook');
+	Route::get('/addMultipleEntries','AdminController@addMultipleEntries');
+	Route::post('/insertMultipleBooks', 'AdminController@insertMultipleBooks');
+	Route::post('/ajaxBookInsert', 'AdminController@ajaxBookInsert');
+	Route::get('/manageReviews','AdminController@manageReviews');
+	Route::get('/deleteReview/{id}', 'AdminController@deleteReview');
 });
-Route::get('/pendingRequest','HomeController@pendingRequest')->middleware('verified');;
-//---------------------------------------------------------------------
-Route::get('/sendFriendRequest/{id}','UserController@sendFriendRequest')->middleware('verified');;
-Route::get('/friendList','UserController@friendList')->middleware('verified');;
-Route::get('/getFriendList','UserController@getFriendList')->middleware('verified');;
-Route::get('/removeFriendRecord/{id}', 'UserController@deleteFriendship')->middleware('verified');;
-Route::get('/acceptRequest/{id}','UserController@acceptRequest')->middleware('verified');;
+
+Auth::routes(['verify' => true]);
+
+Route::group(['middleware' => ['verified']],function(){
+	Route::get('/profile','UserController@index');
+	Route::get('/setting','UserController@setting');
+	Route::get('/home', 'HomeController@index')->name('home');
+	Route::post('/searchInsert', 'AdminController@searchInsert');
+	Route::get('/showBook/{id}','HomeController@showBook');
+	Route::post('/addReview', 'HomeController@addReview');
+	Route::post('/deleteReview', 'HomeController@deleteReview');
+	Route::post('/addToShelf','HomeController@addToShelf');
+	Route::get('/count', 'HomeController@getNotificationCount');
+	Route::get('/getNotification','HomeController@getNotifications');
+	Route::post('/rateBook', 'HomeController@rateBook');
+	Route::get('/getProfileDetails','UserController@getProfileDetails');
+	Route::post('/editProfile', 'UserController@editProfile');
+	Route::get('/deleteShelfBook/{id}', 'UserController@deleteShelfBook');
+	Route::get('/getUserList','HomeController@getUserList');
+	Route::get('/showProfile/{id}', 'HomeController@showProfile');
+	Route::get('/pendingRequest','HomeController@pendingRequest');
+	Route::get('/sendFriendRequest/{id}','UserController@sendFriendRequest');
+	Route::get('/friendList','UserController@friendList');
+	Route::get('/getFriendList','UserController@getFriendList');
+	Route::get('/removeFriendRecord/{id}', 'UserController@deleteFriendship');
+	Route::get('/acceptRequest/{id}','UserController@acceptRequest');
+});
