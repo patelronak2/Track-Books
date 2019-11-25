@@ -9,6 +9,7 @@ use App\Models\Book;
 use App\Models\Shelf;
 use App\Models\Review;
 use App\Models\Rating;
+use App\Models\Post;
 use App\Models\Friendship;
 use App\Notifications\ShelfUpdated;
 use App\Notifications\FriendRequestSent;
@@ -160,5 +161,12 @@ class UserController extends Controller
 			
 		}
 		echo "Success";
+	}
+	
+	public function createPost(Request $request){
+		$post = new Post;
+		$post->body = $request->input('body');
+		$request->user()->posts()->save($post);
+		return redirect('/home');
 	}
 }

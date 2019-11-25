@@ -10,7 +10,7 @@
 		<form action="/public/createPost" method="POST">
 			@csrf
 			<div class="form-group">
-				<textarea class="form-control" name="new-post" id="new-post" rows="5" placeholder="Write some thing here..."></textarea>
+				<textarea class="form-control" name="body" id="body" rows="5" placeholder="Write some thing here..."></textarea>
 			</div>
 			<button class="btn btn-light button" type="submit">Create Post</button>
 		</form>
