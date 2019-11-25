@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-	<section class="row new-post">
+	<section class="row new-post mb-2">
 		<div class="col-md-6 offset-md-3">
 			<header>
 				<h2>What's on your mind?</h2>
@@ -16,12 +16,12 @@
 			</form>
 		</div>
 	</section>
-	<section class="row posts">
+	<section class="row posts mt-3 pt-3">
 		<div class="col-md-6 offset-md-3">
-			<header>
+			<header class="my-2">
 				<h3>What other people are doing</h3>
 			</header>
-			<article class="post">
+			<article class="post pl-1">
 				<p>Post Content Goes here</p>
 				<div class="info">
 					<h5>Posted by: Ronak Patel</h5>
