@@ -16,7 +16,7 @@
 			<div class="alert alert-success">{{ session('message') }}</div>
 		@endif
 	@endif
-	<div class="my-3 text-center table-responsive">
+	<div class="my-3 table-responsive">
 		@if(count($books) > 0)
 			<table class="table table-hover">
 				<thead class="thead-light">
