@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-			<h2 class="">Add Multiple Books</h2>
+			<h2>Add Multiple Books</h2>
 			<div class="container-fluid">
 				<a href="/public/manageBooks" class="badge badge-light m-1 p-2">All Books</a>
 				<a href="/public/admin" class="badge badge-secondary m-1 p-2">Back to Dashboard</a>
