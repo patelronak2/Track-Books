@@ -83,7 +83,7 @@
 			@elseif($isRequestSent)
 				<button class="btn btn-info" disabled>Request Sent</button>
 			@else
-				<a href="/public/sendFriendRequest/{{$profile->user_id}}" class="btn btn-light button">Add Friend</a>
+				<a href="/public/sendFriendRequest/{{$profile->user->id}}" class="btn btn-light button">Add Friend</a>
 			@endif
 			
 		</div>
