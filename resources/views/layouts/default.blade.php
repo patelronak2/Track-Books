@@ -25,7 +25,7 @@
 			color: #6A6F75;
 		}
 		h3{
-			color: #292621
+			color: #292621;
 		}
 		
 		h1,h2,h3,h4,h5{
@@ -42,7 +42,7 @@
 			color: white
 		}
 		.button-sd{
-			background-color: #292621;
+			background-color: #E7E89F;
 			color: white;
 		}
 		
