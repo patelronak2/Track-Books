@@ -34,7 +34,7 @@
 						<h5>Posted by: {{ $post->user->name }} <small>{{ $post->created_at->diffForHumans() }}</small></h5>
 					</div>
 					@if($post->user_id == Auth::id())
-						<a href="/public/deletePost/{{ $post->id}}" class="badge badge-danger">Delete</a>
+						<a href="/public/deletePost/{{ $post->id}}" class="badge badge-danger button">Delete</a>
 					@endif
 				</article>
 			@endforeach

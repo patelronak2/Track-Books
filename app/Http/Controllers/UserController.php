@@ -177,4 +177,14 @@ class UserController extends Controller
 		}
 		return redirect('/home')->with(['alert' => true, 'message' => $message]);
 	}
+	
+	public function deletePost($id){
+		$post = Post::find($id);
+		$message = "Post Deletion Failed";
+		if($post->delete()){
+			$message = "Post Deletion Successful";
+		}
+		
+		return redirect('/home')->with(['alert' => true, 'message' => $message]);
+	}
 }

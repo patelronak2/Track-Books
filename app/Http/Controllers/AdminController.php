@@ -98,8 +98,7 @@ class AdminController extends Controller
 		$user->password = Hash::make($password);
 		$user->email = $email;
 		$user->save();
-		$users = User::all();
-		return view('admin.users', ['users'=> $users,'alert' => 'Row added Successfully.', 'name' => 'User name: '.$name, 'insertUser' => true, 'deleteUser' => false, 'banUser' => false]);
+		return redirect('/manageUsers')->with(['alert' => 'Row added Successfully.', 'name' => 'User name: '.$name, 'insertUser' => true, 'deleteUser' => false, 'banUser' => false]);
 	}
 	
 	/**
@@ -111,8 +110,7 @@ class AdminController extends Controller
 	 {
 		$user = User::find($id);
 		$user->delete();
-		$data = User::all();
-		return view('admin.users', ['users' => $data, 'insertUser' => false, 'alert' => 'Deletion Successful.', 'deleteUser' => true, 'banUser' => false]);
+		return redirect('/manageUsers')->with(['insertUser' => false, 'alert' => 'Deletion Successful.', 'deleteUser' => true, 'banUser' => false]);
 	 }
 	 
 	 /**
@@ -137,8 +135,7 @@ class AdminController extends Controller
 		}
 		$user->save();
 		
-		$data = User::all();
-		return view('admin.users', ['users' => $data, 'insertUser' => false, 'alert' => $message, 'deleteUser' => false, 'banUser' => true]);
+		return redirect('/manageUsers')->with(['insertUser' => false, 'alert' => $message, 'deleteUser' => false, 'banUser' => true]);
 	 }
 	 
 	 /**
@@ -162,8 +159,7 @@ class AdminController extends Controller
 		 $book->save();
 		 
 		 $message = "Book inserted: " . $title;
-		 $data = Book::all();
-		 return view('admin.books',['books' => $data, 'insertBook' => true, 'alert' => $message, 'deleteBook' => false]);
+		 return redirect('manageBooks')->with(['insertBook' => true, 'alert' => $message, 'deleteBook' => false]);
 		 
 	 }
 	 
@@ -180,8 +176,7 @@ class AdminController extends Controller
 		 $book->delete();
 		 
 		 $message = "Book Deleted: " . $title;
-		 $data = Book::all();
-		 return view('admin.books',['books' => $data, 'insertBook' => false, 'alert' => $message, 'deleteBook' => true]);
+		 return redirect('manageBooks')->with(['books' => $data, 'insertBook' => false, 'alert' => $message, 'deleteBook' => true]);
 	 }
 	 
 	 /**
@@ -202,7 +197,7 @@ class AdminController extends Controller
 	 public function insertMultipleBooks(Request $request)
 	 {
 		 $alert = "One or more insertion failed. Try another term";
-		 return view('admin.addMultipleEntries', ['errorMessage' => true, 'alert' => $alert]);
+		 return redirect('/addMultipleEntries')->with(['errorMessage' => true, 'alert' => $alert]);
 	 }
 	 
 	 public function ajaxBookInsert(Request $request)
@@ -273,8 +268,7 @@ class AdminController extends Controller
 		 $review->delete();
 		 
 		 $message = "Deletion Completed";
-		 $data = Review::all();
-		 return view('admin.reviews',['reviews' => $data, 'alert' => $message, 'deleteReview' => true]); 
+		 return view('/manageReviews')->with(['alert' => $message, 'deleteReview' => true]); 
 	 }
 	
 	
