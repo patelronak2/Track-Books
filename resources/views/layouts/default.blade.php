@@ -49,6 +49,27 @@
 			font-family: 'Roboto', sans-serif;
 			font-size: 16px;
 		}
+		.chat {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		  }
+
+		  .chat li {
+			margin-bottom: 10px;
+			padding-bottom: 5px;
+			border-bottom: 1px dotted #B3A9A9;
+		  }
+
+		  .chat li .chat-body p {
+			margin: 0;
+			color: #777777;
+		  }
+
+		  .panel-body {
+			overflow-y: scroll;
+			height: 350px;
+		  }
 		::-webkit-scrollbar {
 			  width: 5px;
 			  height: 5px;
