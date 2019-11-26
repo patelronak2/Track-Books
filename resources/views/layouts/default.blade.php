@@ -168,7 +168,7 @@
 						//-----------------------------------------------------------------------------------------------------
 					break;
 				  case "Author":
-						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=inauthor:" + $("#navSearch").val();
+						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + $("#navSearch").val() + "+inauthor:"+ $("#navSearch").val();
 						getBooksFromGoogleAPI(encodeURI(searchURL));
 					break;
 				  default:	
