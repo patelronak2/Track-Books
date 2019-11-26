@@ -7,21 +7,21 @@
             <div class="chat-body clearfix">
                 <div class="header">
                     <strong class="primary-font">
-                        {{ message.user.name }}
+                        Ronak Patel
                     </strong>
                 </div>
                 <p>
-                    {{ message.message }}
+                    Hey There!
                 </p>
             </div>
         </li>
     </ul>
 	
 	<div class="input-group">
-        <input id="btn-input" type="text" name="message" class="form-control input-sm" placeholder="Type your message here..." v-model="newMessage" @keyup.enter="sendMessage">
+        <input id="btn-input" type="text" name="message" class="form-control input-sm" placeholder="Type your message here..." >
 
         <span class="input-group-btn">
-            <button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage">
+            <button class="btn btn-primary btn-sm" id="btn-chat">
                 Send
             </button>
         </span>
