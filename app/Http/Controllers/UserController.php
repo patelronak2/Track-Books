@@ -156,6 +156,15 @@ class UserController extends Controller
 		return view('user.friendList', ['friends' => $friends, 'requests' => $requests]);
 	}
 	
+	public function declineRequest($id){
+		$user = User::find($id);
+		$alert = $this->removeFriendFromDatabase($id);
+		if($alert){
+			$message = "Your Denied Friend request from " . $user->name;
+		}
+		return redirect('/friendList')->with(['alert' => !$alert, 'message' => $message]);
+	}
+	
 	//This Function Handles Ajax Requests that is being sent from anotherUserProfile.blade
 	public function deleteFriendship($id){
 		$alert = $this->removeFriendFromDatabase($id);
