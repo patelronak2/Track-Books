@@ -59,6 +59,7 @@ Route::group(['middleware' => ['verified']],function(){
 	Route::get('/friendList','UserController@friendList');
 	Route::get('/getFriendList','UserController@getFriendList');
 	Route::get('/removeFriendRecord/{id}', 'UserController@deleteFriendship');
+	Route::get('/unFriend/{id}', 'UserController@unFriend');
 	Route::get('/acceptRequest/{id}','UserController@acceptRequest');
 	Route::post('/createPost', 'UserController@createPost');
 	Route::get('/deletePost/{id}','UserController@deletePost');

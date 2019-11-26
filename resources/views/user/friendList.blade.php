@@ -121,7 +121,7 @@
 				  @foreach($friends as $friend)
 					<li class="list-group-item d-flex justify-content-between align-items-center">
 						<a href="/public/showProfile/{{ $friend->id }}" style="text-decoration: none; color: inherit;">{{ $friend->name }}</a>
-						<a href="#" class="btn btn-danger btn-sm" id="">Remove Friend</a>
+						<a href="/public/unFriend/{{ $friend->id }}" class="badge badge-danger p-2" >UnFriend</a>
 					</li>
 				 @endforeach 	
 			  @else

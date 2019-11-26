@@ -159,10 +159,21 @@ class UserController extends Controller
 		}
 		if($friendshipId != -1){
 			$friendship = Friendship::find($friendshipId);
-			$friendship->delete();
-			
+			if($friendship->delete()){
+				return true;
+			}
 		}
-		echo "Success";
+		return false;
+		
+	}
+	
+	public function unFriend($id){
+		$user = User::find($id);
+		$alert = $this->deleteFriendship($id);
+		if($alert){
+			$message = $user->name . "removed from your Friend List."
+		}
+		return redirect('/friendList')->with(['alert' => !$alert, 'message' => $message]);
 	}
 	
 	public function createPost(Request $request){
