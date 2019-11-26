@@ -40,7 +40,7 @@
 					for (var i = 0; i < data.length; i++){
 						temphtml += '<li class="left clearfix">';
 						temphtml += '<div class="chat-body clearfix">';
-						temphtml += '<div class="header"><strong class="primary-font">' + data.user['name'];
+						temphtml += '<div class="header"><strong class="primary-font">' + data.user.name;
 						temphtml += '</strong> '+ data.created_at +'</div>';
 						temphtml += '<p>'+ data.message +'</p>';
 						temphtml += '</div></li>';

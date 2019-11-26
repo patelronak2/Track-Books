@@ -31,7 +31,7 @@ class ChatsController extends Controller
 	 */
 	public function fetchMessages()
 	{
-		$messages = Message::all();
+		$messages = Message::with('user')->get();
 		return json_encode($messages);
 	}
 	
