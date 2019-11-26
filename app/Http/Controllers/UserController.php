@@ -144,11 +144,11 @@ class UserController extends Controller
 		$user = Auth::user();
 		$pendingRequests = $user->friend_requests;
 		$users = User::all();
-		$requests = array();
+		$requests = [];
 		foreach($pendingRequests as $pendingRequest){
 			foreach($users as $tempUser){
 				if($pendingRequest->first_user == $tempUser->id){
-					array_push($requests, array('id' => $pendingRequest->first_user, 'name' => $tempUser->name));
+					$requests[] = ['id' => $pendingRequest->first_user, 'name' => $tempUser->name];
 				}
 			}
 		}
