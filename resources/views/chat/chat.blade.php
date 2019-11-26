@@ -11,7 +11,7 @@
 				var message = $("#typedMessage").val();
 				if(message != ""){
 					//post request to send the message
-					
+					$("#typedMessage").val("");
 					$.ajax({
 						url: '/public/messages',
 						type: 'POST',
@@ -36,7 +36,15 @@
 				type: 'GET',
 				success: function(response){
 					var data = JSON.parse(response);
-					alert(data);
+					var temphtml = "";
+					for (var i = 0; i < data.length; i++){
+						temphtml += '<li class="left clearfix">';
+						temphtml += '<div class="chat-body clearfix">';
+						temphtml += '<div class="header"><strong class="primary-font">' + data.user.name;
+						temphtml += '</strong> '+ data.created_at +'</div>';
+						temphtml += '<p>'+ data.message +'</p>';
+						temphtml += '</div></li>';
+					}
 					
 				},
 				error: function(error){
