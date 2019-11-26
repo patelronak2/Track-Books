@@ -90,6 +90,7 @@ class HomeController extends Controller
 		
 		$allRating = Rating::where('book_id', $id)->get();
 		$finalRating = 0;
+		$currentUserRating = 0;
 		if(sizeof($allRating)){
 			$totalRating = 0;
 			foreach($allRating as $allUserRating){
