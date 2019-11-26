@@ -1,0 +1,99 @@
+/* Custom CSS Styles 
+Created By: Ronak Patel */
+
+h2, h1{
+	color: #756446;
+}
+h4, h5{
+	color: #6A6F75;
+}
+h3{
+	color: #292621;
+}
+
+h1,h2,h3,h4,h5{
+	font-family: 'Roboto', sans-serif;
+}
+
+.button{
+	background-color: #6A6F75;
+	color: white;
+}
+
+.button-pm{
+	background-color: #756446;
+	color: white
+}
+.button-sd{
+	background-color: #E7E89F;
+}
+
+p{
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+.chat {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+  }
+
+  .chat li {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px dotted #B3A9A9;
+  }
+
+  .chat li .chat-body p {
+	margin: 0;
+	color: #777777;
+  }
+
+  #card-content {
+	overflow-y: scroll;
+	height: 350px;
+  }
+::-webkit-scrollbar {
+	  width: 5px;
+	  height: 5px;
+	}
+
+	::-webkit-scrollbar-track {
+	  box-shadow: inset 0 0 2px grey; 
+	  border-radius: 5px;
+	}
+	 
+	::-webkit-scrollbar-thumb {
+	  background: #756446; 
+	  border-radius: 10px;
+	}
+#navSearchResults{
+	position: absolute; 
+	top: 50px; 
+	min-width: 300px; 
+	height: auto;
+	margin-right: 15px;
+}
+
+#allNotifications{
+	position: absolute; 
+	top: 50px;
+	width: auto; 
+	height: auto;
+	margin-right: 15px;
+}
+
+@media only screen and (max-width: 768px){
+	#navSearchResults, #allNotifications{
+		position: absolute; 
+		top: 100px; 
+		width: auto; 
+		height: auto; 
+		z-index: 1;
+		margin-right: 15px;
+	}
+	#allNotifications{
+		z-index: 1;
+		top: auto;
+	}
+}
