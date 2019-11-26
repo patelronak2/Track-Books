@@ -5,7 +5,7 @@
 <script>
 	$(document).ready(function(){
 		
-		$.ajax({
+		/* $.ajax({
 			url: '/public/pendingRequest',
 			type: 'GET',
 			success: function(response){
@@ -31,35 +31,9 @@
 			error: function(error){
 				alert("Couldn't get pendingRequests");
 			}
-		});
+		}); */
 		
-		// $.ajax({
-			// url: '/public/getFriendList',
-			// type: 'GET',
-			// success: function(response){
-				// var data = JSON.parse(response);
-				// $("#totalFriends").html(data.length);
-				// if(data.length){
-					// // var temphtml = '';
-					// // for(var i = 0; i < data.length; i++){
-						// // temphtml += '<li class="list-group-item d-flex justify-content-between align-items-center">';
-						// // temphtml += '<a href="/public/showProfile/'+ data[i]['id'] +'" style="text-decoration: none; color: inherit;">'+ data[i]['name'] +'</a>';
-						// // temphtml += '<a href="#" class="btn btn-danger btn-sm" id="'+ data[i]['id'] +'">Remove Friend</a>';
-						// // temphtml += '</li>';
-					// // }
-					// // $("#friendList").html(temphtml);
-				// }else{
-					// // var temphtml = '<li class="list-group-item d-flex justify-content-between align-items-center">';
-					// // temphtml += 'No Friends to Display</li>';
-					// //$("#friendList").html(temphtml);
-				// }
-			// },
-			// error: function(error){
-				// console.log("Couldn't get FriendList");
-				// console.log(error);
-			// }
-		// });
-		
+				
 		$('#pendingList, #friendList').on('click','a.btn-danger',function(){
 			var id = $(this).attr('id');
 			$.ajax({
@@ -115,6 +89,17 @@
 			  <span id="pendingList">
 			  
 			  </span>
+			  @if(count($requests) > 0)
+				  @foreach($requests as $request)
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<a href="#" style="text-decoration: none; color: inherit;">{{ $request->name }}</a>
+						<a href="#" class="badge badge-light button-pm p-2" >Accept</a>
+						<a href="#" class="badge badge-danger button p-2" >Decline</a>
+					</li>
+				 @endforeach 	
+			  @else
+				  <li class="list-group-item d-flex justify-content-between align-items-center">No Friends to Display</li>
+			  @endif
 			</ul>
 		</div>
 		

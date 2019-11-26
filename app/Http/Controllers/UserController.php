@@ -140,7 +140,20 @@ class UserController extends Controller
 	public function friendList(){
 		$user = Auth::user();
 		$friends = $user->friends;
-		return view('user.friendList', ['friends' => $friends]);
+		
+		$user = Auth::user();
+		$pendingRequests = $user->friend_requests;
+		$users = User::all();
+		$requests = array();
+		foreach($pendingRequests as $pendingRequest){
+			foreach($users as $tempUser){
+				if($pendingRequest->first_user == $tempUser->id){
+					array_push($requests, array('id' => $pendingRequest->first_user, 'name' => $tempUser->name));
+				}
+			}
+		}
+		
+		return view('user.friendList', ['friends' => $friends, 'requests' => $requests]);
 	}
 	
 	//This Function Handles Ajax Requests that is being sent from anotherUserProfile.blade
@@ -178,7 +191,7 @@ class UserController extends Controller
 		$user = User::find($id);
 		$alert = $this->removeFriendFromDatabase($id);
 		if($alert){
-			$message = $user->name . "removed from your Friend List.";
+			$message = $user->name . ": Removed from your Friend List.";
 		}
 		return redirect('/friendList')->with(['alert' => !$alert, 'message' => $message]);
 	}
@@ -208,20 +221,20 @@ class UserController extends Controller
 		return redirect('/home')->with(['alert' => false, 'message' => $message]);
 	}
 	
-	public function pendingRequest(){
-		$user = Auth::user();
-		$pendingRequests = $user->friend_requests;
-		$users = User::all();
-		$detailRecord = array();
-		foreach($pendingRequests as $pendingRequest){
-			foreach($users as $tempUser){
-				if($pendingRequest->first_user == $tempUser->id){
-					array_push($detailRecord, array($pendingRequest->first_user, $tempUser->name));
-				}
-			}
-		}
-		echo json_encode($detailRecord);
-	}
+	// public function pendingRequest(){
+		// $user = Auth::user();
+		// $pendingRequests = $user->friend_requests;
+		// $users = User::all();
+		// $requests = array();
+		// foreach($pendingRequests as $pendingRequest){
+			// foreach($users as $tempUser){
+				// if($pendingRequest->first_user == $tempUser->id){
+					// array_push($requests, array('id' => $pendingRequest->first_user, 'name' => $tempUser->name));
+				// }
+			// }
+		// }
+		// echo json_encode($requests);
+	// }
 	
 	public function getUserList(){
 		$users = User::all();

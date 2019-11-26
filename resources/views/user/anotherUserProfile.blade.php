@@ -12,7 +12,7 @@
 					location.reload(true);
 				},
 				error: function(error){
-					console.log("Something Went Wrong");
+					console.log("Something Went Wrong while removing Friend/declining request");
 					console.log(error);
 				}
 			});
@@ -26,7 +26,8 @@
 					location.reload(true);
 				},
 				error: function(error){
-					alert("Something Went wrong");
+					console.log("Something Went wrong while Accepting Request.");
+					console.log(error);
 				}
 			});
 		});
