@@ -84,11 +84,8 @@
 			<ul class="list-group">
 			  <li class="list-group-item d-flex justify-content-between align-items-center">
 				<h5>Requests</h5>
-				<span class="badge badge-primary badge-pill" id="totalRequests"></span>
-			  </li>
-			  <span id="pendingList">
-			  
-			  </span>
+				<span class="badge badge-primary badge-pill">{{ count($requests) }}</span>
+			  </li>			  
 			  @if(count($requests) > 0)
 				  @foreach($requests as $request)
 					<li class="list-group-item d-flex justify-content-between align-items-center">
