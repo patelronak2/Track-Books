@@ -68,7 +68,7 @@ Route::group(['middleware' => ['verified']],function(){
 	Route::get('/pusher', function() {
 		$user = Auth::user();
 		$message = "This is test?";
-		broadcast(new App\Events\MessageSent($user, $message))->toOthers();
+		event(new App\Events\MessageSent($user, $message));
 		return "Event has been sent!";
 	});
 });
