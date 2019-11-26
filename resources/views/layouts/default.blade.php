@@ -168,34 +168,12 @@
 						//-----------------------------------------------------------------------------------------------------
 					break;
 				  case "Author":
-						var temphtml = '';
-						temphtml += '<a class="list-group-item" href="">SearchBy Author</a>';
-						temphtml += '</div>';
-						$("#navSearchResults").html(temphtml).removeClass("d-none");
+						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=inauthor:" + $("#navSearch").val();
+						getBooksFromGoogleAPI(encodeURI(searchURL));
 					break;
 				  default:	
-						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + $("#navSearch").val();
-						$.ajax({
-							url: searchURL,
-							success: function(data){
-								var temphtml = '';
-								searchResult = data;
-								for(var i = 0; i < 5 && i < data['totalItems']; i++){
-									var title = data.items[i].volumeInfo.title;
-									var author = "";
-									if(data.items[i].volumeInfo.hasOwnProperty('authors')){
-										author = 'By: ' +  data.items[i].volumeInfo.authors[0];
-									}
-									temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
-									temphtml += '<div class="d-flex w-100 justify-content-between">';
-									temphtml += '<h5 class="mb-1">' + title + '</h5></div>';
-									temphtml += '<p class="mb-1">' + author + '</p>';
-									temphtml += '<p class="sr-only" id="index">' + i + '</p>';
-									temphtml += '</a>';
-								}
-								$("#navSearchResults").html(temphtml).removeClass("d-none");
-							}
-						});
+						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#navSearch").val();
+						getBooksFromGoogleAPI(encodeURI(searchURL));
 				}
 				
 			});
@@ -208,7 +186,7 @@
 						//The a tag contains the link where the user will be directed 
 						break;
 					case "Author":
-					
+						alert("Clicked");
 						break;
 					default:
 						clickedId = parseInt($(this).find('#index').text());
@@ -250,7 +228,6 @@
 			
 
 			$("#modalMoreInfo").click(function(){
-					var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 					//hiding search results and clearing the form
 					var container = $("#navSearchResults");
 					container.addClass("d-none");
@@ -373,6 +350,30 @@
 				$("#allNotifications").removeClass("d-none");
 			});			
 		});
+		
+		function getBooksFromGoogleAPI(searchURL){
+			$.ajax({
+				url: searchURL,
+				success: function(data){
+					var temphtml = '';
+					searchResult = data;
+					for(var i = 0; i < 5 && i < data['totalItems']; i++){
+						var title = data.items[i].volumeInfo.title;
+						var author = "";
+						if(data.items[i].volumeInfo.hasOwnProperty('authors')){
+							author = 'By: ' +  data.items[i].volumeInfo.authors[0];
+						}
+						temphtml += '<a class="list-group-item list-group-item-action flex-column align-items-start" href="#">';
+						temphtml += '<div class="d-flex w-100 justify-content-between">';
+						temphtml += '<h5 class="mb-1">' + title + '</h5></div>';
+						temphtml += '<p class="mb-1">' + author + '</p>';
+						temphtml += '<p class="sr-only" id="index">' + i + '</p>';
+						temphtml += '</a>';
+					}
+					$("#navSearchResults").html(temphtml).removeClass("d-none");
+				}
+			});
+		}
 		
 		function getNotificationCount() {
 		  setInterval(function(){ 
