@@ -5,12 +5,13 @@
 <script>
 	$(document).ready(function(){
 		var pusher = new Pusher('74c23276456c6610bc6b', {
-		  cluster: 'us2'
+		  cluster: 'us2',
+		  encrypted: true
 		});
 		
 		var channel = pusher.subscribe('chat');
 		
-		channel.bind('MessageSent', function(data) {
+		channel.bind('App\\Events\\MessageSent', function(data) {
 		  alert('An event was triggered with message: ' + data.message);
 		});
 	});
