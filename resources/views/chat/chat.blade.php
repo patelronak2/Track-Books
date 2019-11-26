@@ -6,6 +6,7 @@
 		$(document).ready(function(){
 			//Retrive old messages from the database
 			fetchMessages();
+			setInterval(fetchMessages, 1000);
 			$("#sendMessage").click(function(){
 				var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 				var message = $("#typedMessage").val();
@@ -17,7 +18,6 @@
 						type: 'POST',
 						data: {_token: CSRF_TOKEN, message: message},
 						success: function(response){
-							alert(response);
 							//Message sent!
 							//Display all new messages
 							fetchMessages();
@@ -49,8 +49,9 @@
 					
 				},
 				error: function(error){
+					console.log("Couldn't Fetch the messages");
 					console.log(error);
-					alert("Couldn't Fetch the messages");
+					
 				}
 			});
 		}
