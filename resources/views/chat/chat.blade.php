@@ -3,8 +3,6 @@
 @section('content')
 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 <script>
-	$(document).ready(function(){
-		alert("Let's see");
 		var pusher = new Pusher('74c23276456c6610bc6b', {
 		  cluster: 'us2',
 		  encrypted: true
@@ -15,7 +13,6 @@
 		channel.bind('App\\Events\\MessageSent', function(data) {
 		  alert('An event was triggered with message: ' + data.message);
 		});
-	});
 </script>
 <div class="container-fluid">
 	<div class="row">
