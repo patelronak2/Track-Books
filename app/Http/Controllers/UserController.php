@@ -148,7 +148,7 @@ class UserController extends Controller
 		foreach($pendingRequests as $pendingRequest){
 			foreach($users as $tempUser){
 				if($pendingRequest->first_user == $tempUser->id){
-					$requests[] = ['id' => $pendingRequest->first_user, 'name' => $tempUser->name];
+					$requests[] = [ $pendingRequest->first_user, $tempUser->name];
 				}
 			}
 		}

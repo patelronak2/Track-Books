@@ -89,7 +89,7 @@
 			  @if(count($requests) > 0)
 				  @foreach($requests as $request)
 					<li class="list-group-item d-flex justify-content-between align-items-center">
-						<a href="#" style="text-decoration: none; color: inherit;">{{ $request->name }}</a>
+						<a href="#" style="text-decoration: none; color: inherit;">{{ $request[1] }}</a>
 						<a href="#" class="badge badge-light button-pm p-2" >Accept</a>
 						<a href="#" class="badge badge-danger button p-2" >Decline</a>
 					</li>
