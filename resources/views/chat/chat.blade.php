@@ -64,20 +64,9 @@
 		<div class="card-header"> 
 			<h4>{{ Auth::user()->name }}</h4>
 		</div>
-		<div class="card-body">
+		<div class="card-body" id="card-content">
 			 <ul class="chat" id="chatMessages">
-				<!-- <li class="left clearfix">
-					<div class="chat-body clearfix">
-						<div class="header">
-							<strong class="primary-font">
-								Ronak Patel
-							</strong>
-						</div>
-						<p>
-							Hey There!
-						</p>
-					</div>
-				</li> -->
+				
 			</ul> 
 			<!-- This content needs to be generated dynamically! -->
 		</div>

@@ -24,6 +24,7 @@
 					<div>
 						<span class="sr-only" id="totalRatingByUser">{{ $totalRatings }}</span>
 						<span class="sr-only" id="finalRating">{{ $finalRating }}</span>
+						<span class="sr-only" id="currentUserRating">{{ $currentUserRating }}</span>
 						<span class="fa fa-star" id="ratedStar1"></span>
 						<span class="fa fa-star" id="ratedStar2"></span>
 						<span class="fa fa-star" id="ratedStar3"></span>
@@ -127,14 +128,20 @@ $(document).ready(function(){
 	var book_id = $("#bookID").text();
 	var noOfUser = $("#totalRatingByUser").text();
 	var bookRating = $("#finalRating").text();
+	var currentUserRating = $("#currentUserRating").text();
 	
 	for (var i = 1; i <= Math.round(bookRating); i++){
-		var id = "#rateStar" + i;
 		var id1 = "#ratedStar" + i;
-		$(id).addClass("clicked");
 		$(id1).addClass("clicked");
 		$("#totalRatings").html(noOfUser);
 	}
+	
+	for (var i = 1; i <= Math.round(currentUserRating); i++){
+		var id = "#rateStar" + i;
+		$(id).addClass("clicked");
+	}
+	
+	//Find out what current user entered for his rating
 	
 	$("#rateStar1, #rateStar2, #rateStar3, #rateStar4, #rateStar5").hover(function(){
 		var val = $(this).attr("value");
