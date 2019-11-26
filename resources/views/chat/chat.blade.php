@@ -1,6 +1,20 @@
 @extends('layouts.default')
 
 @section('content')
+<script src="https://js.pusher.com/5.0/pusher.min.js"></script>
+<script>
+	$(document).ready(function(){
+		var pusher = new Pusher('74c23276456c6610bc6b', {
+		  cluster: 'us2'
+		});
+		
+		var channel = pusher.subscribe('chat');
+		
+		channel.bind('MessageSent', function(data) {
+		  alert('An event was triggered with message: ' + data.message);
+		});
+	});
+</script>
 <div class="container-fluid">
 	<div class="row">
 	<div class="col-md-5 offset-md-3">
@@ -10,7 +24,7 @@
 			<h4>{{ Auth::user()->name }}</h4>
 		</div>
 		<div class="card-body">
-			<ul class="chat">
+			<!-- <ul class="chat">
 				<li class="left clearfix">
 					<div class="chat-body clearfix">
 						<div class="header">
@@ -23,7 +37,8 @@
 						</p>
 					</div>
 				</li>
-			</ul>
+			</ul> -->
+			<!-- This content needs to be generated dynamically! -->
 		</div>
 		<div class="card-footer">
 			<div class="input-group mb-3">

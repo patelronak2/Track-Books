@@ -65,4 +65,8 @@ Route::group(['middleware' => ['verified']],function(){
 	Route::get('/messagingService', 'ChatsController@index');
 	Route::get('/messages', 'ChatsController@fetchMessages');
 	Route::post('/messages', 'ChatsController@sendMessage');
+	Route::get('/pusher', function() {
+		broadcast(new App\Events\MessageSent($user, $message))->toOthers();
+		return "Event has been sent!";
+	});
 });
