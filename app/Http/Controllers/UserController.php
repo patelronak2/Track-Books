@@ -126,16 +126,37 @@ class UserController extends Controller
 		return redirect('/showProfile/' . $id);
 	}
 	
+	//handles the request of adding friend from ajax calls
 	public function acceptRequest($id){
+		$alert = $this->addFriend($id);
+		if($alert){
+			echo "Success";
+		}else{
+			echo "Failed";
+		}
+	}
+	
+	//Change database record to reflect that the user has been added as friend
+	public function addFriend($id){
 		Friendship::where('first_user', $id)->where('second_user', Auth::id())->update(['status' => 'confirmed', 'acted_user' => Auth::id()]);
 		//Auth::user() will be the user accepting the request
 		//User with $id will be the one who had sent the request and receiving this notification
 		$user = User::find($id);
-		$user->notify(new FriendRequestAccepted(Auth::id(), Auth::user()->name));
-		echo "success";
+		if($user->notify(new FriendRequestAccepted(Auth::id(), Auth::user()->name))){
+			return true;
+		}
+		return false;
 	}
 	
-	
+	public function acceptFriendRequest($id){
+		$alert = $this->addFriend($id);
+		$user = User::find($id);
+		$message = "Couldn't add as Friend";
+		if($alert){
+			$message = $user->name . ": Added as Friend!";
+		}
+		return redirect('/friendList')->with(['alert' => !$alert, 'message' => $message]);
+	}
 	
 	public function friendList(){
 		$user = Auth::user();
@@ -156,11 +177,12 @@ class UserController extends Controller
 		return view('user.friendList', ['friends' => $friends, 'requests' => $requests]);
 	}
 	
+	//This function handles the request from friendList.blade, declines the friend request and send back a message!
 	public function declineRequest($id){
 		$user = User::find($id);
 		$alert = $this->removeFriendFromDatabase($id);
 		if($alert){
-			$message = "Your Denied Friend request from " . $user->name;
+			$message = "You Denied Friend request from " . $user->name;
 		}
 		return redirect('/friendList')->with(['alert' => !$alert, 'message' => $message]);
 	}
@@ -229,21 +251,6 @@ class UserController extends Controller
 		
 		return redirect('/home')->with(['alert' => false, 'message' => $message]);
 	}
-	
-	// public function pendingRequest(){
-		// $user = Auth::user();
-		// $pendingRequests = $user->friend_requests;
-		// $users = User::all();
-		// $requests = array();
-		// foreach($pendingRequests as $pendingRequest){
-			// foreach($users as $tempUser){
-				// if($pendingRequest->first_user == $tempUser->id){
-					// array_push($requests, array('id' => $pendingRequest->first_user, 'name' => $tempUser->name));
-				// }
-			// }
-		// }
-		// echo json_encode($requests);
-	// }
 	
 	public function getUserList(){
 		$users = User::all();
