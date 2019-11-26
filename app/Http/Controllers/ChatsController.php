@@ -31,7 +31,8 @@ class ChatsController extends Controller
 	 */
 	public function fetchMessages()
 	{
-	  
+		$messages = Message::all();
+		return json_encode($message);
 	}
 	
 	/**

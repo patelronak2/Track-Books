@@ -4,6 +4,22 @@
 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 <script>
 		//Implement logic of posts and use ajax to create illusion on  user to user messaging
+		$(document).ready(function(){
+			//Retrive old messages from the database
+			$.ajax({
+				url: '/public/messages',
+				type: 'GET',
+				success: function(response){
+					var data = JSON.parse(response);
+					alert(data);
+					
+				},
+				error: function(error){
+					console.log(error);
+					alert("Couldn't FFetch the messages");
+				}
+			});
+		});
 </script>
 <div class="container-fluid">
 	<div class="row">
@@ -14,8 +30,8 @@
 			<h4>{{ Auth::user()->name }}</h4>
 		</div>
 		<div class="card-body">
-			<!-- <ul class="chat">
-				<li class="left clearfix">
+			 <ul class="chat" id="chatMessages">
+				<!-- <li class="left clearfix">
 					<div class="chat-body clearfix">
 						<div class="header">
 							<strong class="primary-font">
@@ -26,8 +42,8 @@
 							Hey There!
 						</p>
 					</div>
-				</li>
-			</ul> -->
+				</li> -->
+			</ul> 
 			<!-- This content needs to be generated dynamically! -->
 		</div>
 		<div class="card-footer">

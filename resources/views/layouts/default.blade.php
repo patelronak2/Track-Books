@@ -436,7 +436,9 @@
 						<li class="nav-item">
 							<a href="/public/friendList" class="nav-link">Friend List</a>
 						</li>
-						
+						<li class="nav-item">
+							<a href="/public/groupChat" class="nav-link">Group Chat</a>
+						</li>
                     </ul>
 					
                     <ul class="navbar-nav ml-auto">

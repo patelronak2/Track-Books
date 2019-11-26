@@ -62,6 +62,7 @@ Route::group(['middleware' => ['verified']],function(){
 	Route::get('/acceptRequest/{id}','UserController@acceptRequest');
 	Route::post('/createPost', 'UserController@createPost');
 	Route::get('/deletePost/{id}','UserController@deletePost');
-	Route::get('/messagingService', 'ChatsController@index');
+	Route::get('/groupChat', 'ChatsController@index');
+	Route::get('/messages', 'ChatsController@fetchMessages');
 	
 });
