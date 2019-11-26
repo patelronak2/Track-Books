@@ -168,12 +168,12 @@
 						//-----------------------------------------------------------------------------------------------------
 					break;
 				  case "Author":
-						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + $("#navSearch").val();
+						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=inauthor:" + $("#navSearch").val();
 						getBooksFromGoogleAPI(encodeURI(searchURL));
 					break;
 				  default:	
 						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + $("#navSearch").val();
-						getBooksFromGoogleAPI(searchURL);
+						getBooksFromGoogleAPI(encodeURI(searchURL));
 				}
 				
 			});
@@ -348,10 +348,8 @@
 						}
 				});
 				$("#allNotifications").removeClass("d-none");
-			});			
-		});
-		
-		function getBooksFromGoogleAPI(searchURL){
+			});
+			function getBooksFromGoogleAPI(searchURL){
 			$.ajax({
 				url: searchURL,
 				success: function(data){
@@ -374,6 +372,9 @@
 				}
 			});
 		}
+		});
+		
+		
 		
 		function getNotificationCount() {
 		  setInterval(function(){ 
