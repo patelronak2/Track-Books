@@ -75,7 +75,7 @@ class RegisterController extends Controller
 
 		//the line below is added to workaround the default problem of not sending email automatically
 		//after a new user registration.
-		$user->sendEmailVerificationNotification();
+		//$user->sendEmailVerificationNotification();
        return $user;
     }
 }
