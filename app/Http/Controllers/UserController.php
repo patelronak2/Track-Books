@@ -142,10 +142,8 @@ class UserController extends Controller
 		//Auth::user() will be the user accepting the request
 		//User with $id will be the one who had sent the request and receiving this notification
 		$user = User::find($id);
-		if($user->notify(new FriendRequestAccepted(Auth::id(), Auth::user()->name))){
-			return true;
-		}
-		return false;
+		$user->notify(new FriendRequestAccepted(Auth::id(), Auth::user()->name));
+		return true;
 	}
 	
 	public function acceptFriendRequest($id){
