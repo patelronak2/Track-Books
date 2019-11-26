@@ -66,7 +66,7 @@
 			color: #777777;
 		  }
 
-		  .panel-body {
+		  .card-body {
 			overflow-y: scroll;
 			height: 350px;
 		  }
