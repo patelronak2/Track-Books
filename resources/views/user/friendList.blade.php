@@ -2,28 +2,6 @@
 
 @section('content')
 
-<script>
-	$(document).ready(function(){
-					
-		$('#pendingList').on('click','a.btn-warning',function(){
-			var id = $(this).attr('id');
-			$.ajax({
-				url: '/public/acceptRequest/'+id,
-				type: 'GET',
-				success: function(data){
-					location.reload(true);
-				},
-				error: function(error){
-					console.log("Something went wrong while accepting the request");
-					console.log(error);
-				}
-			})
-		});
-		
-	});
-
-</script>
-
 <div class="container-fluid">
 	<div class="my-3">
 		<h2>{{ Auth::user()->name }}'s Friend List</h2>

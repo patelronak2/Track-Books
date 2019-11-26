@@ -1,38 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-<script>
-	$(document).ready(function(){
-		var anotherUserId = $("#anotherUserId").html();
-		$("#removeFriend, #decline").click(function(){
-			$.ajax({
-				url: '/public/removeFriendRecord/'+anotherUserId,
-				type: 'GET',
-				success: function(data){
-					location.reload(true);
-				},
-				error: function(error){
-					console.log("Something Went Wrong while removing Friend/declining request");
-					console.log(error);
-				}
-			});
-		});
-		
-		$("#acceptRequest").click(function(){
-			$.ajax({
-				url: '/public/acceptRequest/'+anotherUserId,
-				type: 'GET',
-				success: function(data){
-					location.reload(true);
-				},
-				error: function(error){
-					console.log("Something Went wrong while Accepting Request.");
-					console.log(error);
-				}
-			});
-		});
-	});
-</script>
+<script type="text/javascript" src="{{ asset('js/anotherUserProfile.js') }}"></script>
 <p class="sr-only" id="anotherUserId">{{ $user->id }}</p>
 @if($user->profile->isPrivate  && !$isFriend)
 	<div class="my-3 text-center">
