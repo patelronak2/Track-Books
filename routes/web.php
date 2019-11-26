@@ -63,12 +63,5 @@ Route::group(['middleware' => ['verified']],function(){
 	Route::post('/createPost', 'UserController@createPost');
 	Route::get('/deletePost/{id}','UserController@deletePost');
 	Route::get('/messagingService', 'ChatsController@index');
-	Route::get('/messages', 'ChatsController@fetchMessages');
-	Route::post('/messages', 'ChatsController@sendMessage');
-	Route::get('/pusher', function() {
-		$user = Auth::user();
-		$message = "This is test?";
-		event(new App\Events\MessageSent($user, $message));
-		return "Event has been sent!";
-	});
+	
 });

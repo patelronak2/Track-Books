@@ -3,16 +3,7 @@
 @section('content')
 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 <script>
-		var pusher = new Pusher('74c23276456c6610bc6b', {
-		  cluster: 'us2',
-		  encrypted: true
-		});
-		
-		var channel = pusher.subscribe('chat');
-		
-		channel.bind('App\\Events\\MessageSent', function(data) {
-		  alert('An event was triggered with message: ' + data.message);
-		});
+		//Implement logic of posts and use ajax to create illusion on  user to user messaging
 </script>
 <div class="container-fluid">
 	<div class="row">
