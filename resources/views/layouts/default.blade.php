@@ -168,12 +168,12 @@
 						//-----------------------------------------------------------------------------------------------------
 					break;
 				  case "Author":
-						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=inauthor:" + $("#navSearch").val();
+						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + $("#navSearch").val();
 						getBooksFromGoogleAPI(encodeURI(searchURL));
 					break;
 				  default:	
-						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=intitle:" + $("#navSearch").val();
-						getBooksFromGoogleAPI(encodeURI(searchURL));
+						var searchURL = "https://www.googleapis.com/books/v1/volumes?q=" + $("#navSearch").val();
+						getBooksFromGoogleAPI(searchURL);
 				}
 				
 			});
