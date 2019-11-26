@@ -135,7 +135,7 @@ $(document).ready(function(){
 				var temphtml = '';
 				for(var i = 0; i < res.data.length; i++){
 					temphtml += '<div class="bg-light shadow-sm p-2 m-2 row">';
-					temphtml += '<div class="col-10"><h6>' + res.data[i].user.name + '</h6><p>' + res.data[i].review + '</p></div>';
+					temphtml += '<div class="col-10"><h6>' + res.data[i].user.name + ' ' + res.data[i].user.created_at + '</h6><p>' + res.data[i].review + '</p></div>';
 					temphtml += '<div class="col-2 text-right my-auto">';
 					if(res.userType == 'admin' || res.userId == res.data[i].user_id){
 						temphtml += '<a href="#" class="text-danger" id="' + res.data[i].id + '"><i class="fa fa-trash" style="font-size:24px"></i></a>';
