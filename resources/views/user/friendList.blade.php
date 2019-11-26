@@ -98,6 +98,13 @@
 	<div class="my-3">
 		<h2>{{ Auth::user()->name }}'s Friend List</h2>
 	</div>
+	@if(Session::has('message'))
+		@if(session('alert'))
+			<div class="alert alert-danger">{{ session('message') }}</div>
+		@else
+			<div class="alert alert-success">{{ session('message') }}</div>
+		@endif
+	@endif
 	<div class="row">
 		<div class="col-md-6 my-2">
 			<ul class="list-group">

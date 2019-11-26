@@ -12,7 +12,8 @@
 					location.reload(true);
 				},
 				error: function(error){
-					alert("Something Went wrong");
+					console.log("Something Went Wrong");
+					console.log(error);
 				}
 			});
 		});

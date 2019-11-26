@@ -143,13 +143,20 @@ class UserController extends Controller
 		return view('user.friendList', ['friends' => $friends]);
 	}
 	
-	// public function getFriendList(){
-		// $user = Auth::user();
-		// $friends = $user->friends;
-		// echo json_encode($friends);
-	// }
-	
+	//This Function Handles Ajax Requests that is being sent from anotherUserProfile.blade
 	public function deleteFriendship($id){
+		$alert = $this->removeFriendFromDatabase($id);
+		if($alert){
+			echo "Success";
+		}else{
+			echo "Failed";
+		}
+		
+	}
+	
+	//This Function deletes Friendship Record from the database
+	//Provides the functionality of Decline Friend Request or Unfriend
+	public function removeFriendFromDatabase($id){
 		$friendships = Friendship::all();
 		$friendshipId = -1;
 		foreach($friendships as $friendship){
@@ -164,12 +171,12 @@ class UserController extends Controller
 			}
 		}
 		return false;
-		
 	}
 	
+	//This function handles the requests from the FriendList Page
 	public function unFriend($id){
 		$user = User::find($id);
-		$alert = $this->deleteFriendship($id);
+		$alert = $this->removeFriendFromDatabase($id);
 		if($alert){
 			$message = $user->name . "removed from your Friend List.";
 		}
