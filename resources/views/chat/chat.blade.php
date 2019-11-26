@@ -27,10 +27,9 @@
 		</div>
 		<div class="card-footer">
 			<div class="input-group mb-3">
-			  <input type="text" class="form-control" placeholder="Type your message here!" >
+			  <input type="text" class="form-control" placeholder="Type Message Here...">
 			  <div class="input-group-append">
-				<span class="input-group-text">
-					<button class="badge badge-light button-sd m-1 p-2">Send</button></span>
+				<button class="btn btn-light button" type="button" id="button-addon2">Button</button>
 			  </div>
 			</div>
 		</div>
