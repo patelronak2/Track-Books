@@ -47,7 +47,7 @@
 					<li class="list-group-item d-flex justify-content-between align-items-center">
 						<a href="/public/showProfile/{{ $request[0] }}" style="text-decoration: none; color: inherit;">{{ $request[1] }}</a>
 						<div>
-							<a href="#" class="badge badge-light button-pm p-2" >Accept</a>
+							<a href="/public/acceptFriendRequest/{{ $request[0] }}" class="badge badge-light button-pm p-2" >Accept</a>
 							<a href="/public/declineRequest/{{ $request[0] }}" class="badge badge-danger button p-2" >Decline</a>
 						</div>
 					</li>

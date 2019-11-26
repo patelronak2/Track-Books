@@ -55,6 +55,7 @@ Route::group(['middleware' => ['verified']],function(){
 	Route::get('/getUserList','UserController@getUserList');
 	Route::get('/showProfile/{id}', 'UserController@showProfile');
 	Route::get('/declineRequest/{id}','UserController@declineRequest');
+	Route::get('/acceptFriendRequest/{id}', 'UserController@acceptFriendRequest');
 	Route::get('/sendFriendRequest/{id}','UserController@sendFriendRequest');
 	Route::get('/friendList','UserController@friendList');
 	Route::get('/getFriendList','UserController@getFriendList');
