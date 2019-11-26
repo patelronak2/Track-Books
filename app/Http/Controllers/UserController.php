@@ -171,7 +171,7 @@ class UserController extends Controller
 		$user = User::find($id);
 		$alert = $this->deleteFriendship($id);
 		if($alert){
-			$message = $user->name . "removed from your Friend List."
+			$message = $user->name . "removed from your Friend List.";
 		}
 		return redirect('/friendList')->with(['alert' => !$alert, 'message' => $message]);
 	}
