@@ -185,9 +185,6 @@
 						//No need to handle the click here
 						//The a tag contains the link where the user will be directed 
 						break;
-					case "Author":
-						alert("Clicked");
-						break;
 					default:
 						clickedId = parseInt($(this).find('#index').text());
 						$('#bookTitle').html(searchResult.items[clickedId].volumeInfo.title);
