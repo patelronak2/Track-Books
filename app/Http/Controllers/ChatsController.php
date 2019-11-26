@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\Models\Message;
 use App\Event\MessageSent;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
