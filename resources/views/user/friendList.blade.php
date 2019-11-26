@@ -33,31 +33,32 @@
 			}
 		});
 		
-		$.ajax({
-			url: '/public/getFriendList',
-			type: 'GET',
-			success: function(response){
-				var data = JSON.parse(response);
-				$("#totalFriends").html(data.length);
-				if(data.length){
-					var temphtml = '';
-					for(var i = 0; i < data.length; i++){
-						temphtml += '<li class="list-group-item d-flex justify-content-between align-items-center">';
-						temphtml += '<a href="/public/showProfile/'+ data[i]['id'] +'" style="text-decoration: none; color: inherit;">'+ data[i]['name'] +'</a>';
-						temphtml += '<a href="#" class="btn btn-danger btn-sm" id="'+ data[i]['id'] +'">Remove Friend</a>';
-						temphtml += '</li>';
-					}
-					$("#friendList").html(temphtml);
-				}else{
-					var temphtml = '<li class="list-group-item d-flex justify-content-between align-items-center">';
-					temphtml += 'No Friends to Display</li>';
-					$("#friendList").html(temphtml);
-				}
-			},
-			error: function(error){
-				alert("Couldn't get FriendList");
-			}
-		});
+		// $.ajax({
+			// url: '/public/getFriendList',
+			// type: 'GET',
+			// success: function(response){
+				// var data = JSON.parse(response);
+				// $("#totalFriends").html(data.length);
+				// if(data.length){
+					// // var temphtml = '';
+					// // for(var i = 0; i < data.length; i++){
+						// // temphtml += '<li class="list-group-item d-flex justify-content-between align-items-center">';
+						// // temphtml += '<a href="/public/showProfile/'+ data[i]['id'] +'" style="text-decoration: none; color: inherit;">'+ data[i]['name'] +'</a>';
+						// // temphtml += '<a href="#" class="btn btn-danger btn-sm" id="'+ data[i]['id'] +'">Remove Friend</a>';
+						// // temphtml += '</li>';
+					// // }
+					// // $("#friendList").html(temphtml);
+				// }else{
+					// // var temphtml = '<li class="list-group-item d-flex justify-content-between align-items-center">';
+					// // temphtml += 'No Friends to Display</li>';
+					// //$("#friendList").html(temphtml);
+				// }
+			// },
+			// error: function(error){
+				// console.log("Couldn't get FriendList");
+				// console.log(error);
+			// }
+		// });
 		
 		$('#pendingList, #friendList').on('click','a.btn-danger',function(){
 			var id = $(this).attr('id');
@@ -68,7 +69,8 @@
 					location.reload(true);
 				},
 				error: function(error){
-					alert("Couldn't delete the record");
+					console.log("Couldn't delete the record");
+					console.log(error);
 				}
 			})
 		});
@@ -82,7 +84,8 @@
 					location.reload(true);
 				},
 				error: function(error){
-					alert("Something went wrong while accepting the request");
+					console.log("Something went wrong while accepting the request");
+					console.log(error);
 				}
 			})
 		});
@@ -112,11 +115,18 @@
 			<ul class="list-group">
 			  <li class="list-group-item d-flex justify-content-between align-items-center">
 				<h5>Friends</h5>
-				<span class="badge badge-primary badge-pill" id="totalFriends"></span>
+				<span class="badge badge-primary badge-pill">{{ count($friends) }}</span>
 			  </li>
-			  <span id="friendList">
-			  
-			  </span>
+			  @if(count($friends) > 0)
+				  @foreach($friends as $friend)
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<a href="/public/showProfile/{{ $friend->id }}" style="text-decoration: none; color: inherit;">{{ $friend->name }}</a>
+						<a href="#" class="btn btn-danger btn-sm" id="">Remove Friend</a>
+					</li>
+				 @endforeach 	
+			  @else
+				  <li class="list-group-item d-flex justify-content-between align-items-center">No Friends to Display</li>
+			  @endif
 			  
 			</ul>
 		</div>

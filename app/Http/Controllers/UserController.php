@@ -138,14 +138,16 @@ class UserController extends Controller
 	
 	
 	public function friendList(){
-		return view('user.friendList');
-	}
-	
-	public function getFriendList(){
 		$user = Auth::user();
 		$friends = $user->friends;
-		echo json_encode($friends);
+		return view('user.friendList', ['friends' => $friends]);
 	}
+	
+	// public function getFriendList(){
+		// $user = Auth::user();
+		// $friends = $user->friends;
+		// echo json_encode($friends);
+	// }
 	
 	public function deleteFriendship($id){
 		$friendships = Friendship::all();
@@ -187,4 +189,69 @@ class UserController extends Controller
 		
 		return redirect('/home')->with(['alert' => false, 'message' => $message]);
 	}
+	
+	public function pendingRequest(){
+		$user = Auth::user();
+		$pendingRequests = $user->friend_requests;
+		$users = User::all();
+		$detailRecord = array();
+		foreach($pendingRequests as $pendingRequest){
+			foreach($users as $tempUser){
+				if($pendingRequest->first_user == $tempUser->id){
+					array_push($detailRecord, array($pendingRequest->first_user, $tempUser->name));
+				}
+			}
+		}
+		echo json_encode($detailRecord);
+	}
+	
+	public function getUserList(){
+		$users = User::all();
+		return json_encode($users);
+	}
+	
+	public function showProfile($id){
+		if($id == Auth::id()){
+			return redirect('/profile');
+		}else{
+			
+			//$profile = Profile::find($id);
+			$shelves = Shelf::where('user_id', $id)->with('book')->get();
+			$user = User::find($id);
+			$totalFriends = count($user->friends);
+			
+			//Determine if the logged in user has sent or recieved a request from the user whose profile is being viewed
+			$friendships = Friendship::all();
+			$isFriend = false;
+			$isRequestSent = false;
+			$hasRecievedRequest = false;
+			foreach($friendships as $friendship){
+				
+				//Find Record between logged in user and the user whose profile is being viewed
+				if(($friendship->first_user == Auth::id() && $friendship->second_user == $id) || ($friendship->first_user == $id && $friendship->second_user == Auth::id())){ 
+					
+					if($friendship->acted_user == Auth::id() && $friendship->status == 'pending'){
+						//Current User has sent the request but the other user hasn't accepted
+						//Button to show = Request Sent
+						$isRequestSent = true;
+					}elseif($friendship->acted_user == $id && $friendship->status == 'pending'){
+						//Current User has recieved the request from the other user and hasn't responded yet
+						//Button to show = Accept Request
+						$hasRecievedRequest = true;
+					}elseif($friendship->status == 'confirmed'){
+						//Both users are already friends
+						//Button to show = Unfriend
+						$isFriend = true;
+					}
+				}
+			}
+			
+			//If no record found at the end of the loop,
+			//It means nobody has sent any request
+			//All three boolean is false at this point and Button will show 'Add Friend'
+			
+			return view('user.anotherUserProfile',['user' => $user, 'shelves' => $shelves, 'totalFriends' => $totalFriends, 'isFriend' => $isFriend, 'isRequestSent' =>  $isRequestSent, 'hasRecievedRequest' => $hasRecievedRequest]); 
+		}
+	}
+	
 }
