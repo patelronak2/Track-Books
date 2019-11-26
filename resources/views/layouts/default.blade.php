@@ -23,7 +23,7 @@
         <main class="py-4" style="margin-top: 80px;">
             @yield('content')
         </main>
-		@includes('includes.footer')
+		@include('includes.footer')
     </div>
 	<!-- Bootstrap Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
