@@ -144,6 +144,9 @@ $(document).ready(function(){
 					temphtml += '</div></div>';
 				}
 				
+				if(!(temphtml != '')){
+					location.reload(true);
+				}				
 				$("#reviews").html(temphtml);	
 			},
 			error: function(error){
