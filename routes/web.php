@@ -64,5 +64,6 @@ Route::group(['middleware' => ['verified']],function(){
 	Route::get('/deletePost/{id}','UserController@deletePost');
 	Route::get('/groupChat', 'ChatsController@index');
 	Route::get('/messages', 'ChatsController@fetchMessages');
+	Route::post('/messages', 'ChatsController@sendMessages');
 	
 });

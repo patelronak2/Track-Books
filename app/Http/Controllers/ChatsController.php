@@ -32,7 +32,7 @@ class ChatsController extends Controller
 	public function fetchMessages()
 	{
 		$messages = Message::all();
-		return json_encode($message);
+		return json_encode($messages);
 	}
 	
 	/**
@@ -41,8 +41,15 @@ class ChatsController extends Controller
 	 * @param  Request $request
 	 * @return Response
 	 */
-	public function sendMessage(Request $request)
+	public function sendMessages(Request $request)
 	{
-	  
+		$messageToAdd = $request->input('message');
+		$message = new Message;
+		$message->message = $messageToAdd;
+		$message->user_id = Auth::id();
+		
+		if($message->save()){
+			echo "OK";
+		}
 	}
 }

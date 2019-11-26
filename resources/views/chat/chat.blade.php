@@ -1,11 +1,36 @@
 @extends('layouts.default')
 
 @section('content')
-<script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 <script>
 		//Implement logic of posts and use ajax to create illusion on  user to user messaging
 		$(document).ready(function(){
 			//Retrive old messages from the database
+			fetchMessages();
+			$("#sendMessage").click(function(){
+				var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+				var message = $("#typedMessage").val();
+				if(message != ""){
+					//post request to send the message
+					
+					$.ajax({
+						url: '/public/messages',
+						type: 'POST',
+						data: {_token: CSRF_TOKEN, message: message},
+						success: function(response){
+							alert(response);
+							//Message sent!
+							//Display all new messages
+							fetchMessages();
+							
+						},
+						error: function(error){
+							console.log(error);
+						}
+					});
+				}
+			});
+		});
+		function fetchMessages(){
 			$.ajax({
 				url: '/public/messages',
 				type: 'GET',
@@ -19,7 +44,7 @@
 					alert("Couldn't FFetch the messages");
 				}
 			});
-		});
+		}
 </script>
 <div class="container-fluid">
 	<div class="row">
@@ -48,9 +73,9 @@
 		</div>
 		<div class="card-footer">
 			<div class="input-group mb-3">
-			  <input type="text" class="form-control" placeholder="Type Message Here...">
+			  <input type="text" class="form-control" id="typedMessage" placeholder="Type Message Here...">
 			  <div class="input-group-append">
-				<button class="btn btn-light button" type="button" id="button-addon2">Button</button>
+				<button class="btn btn-light button" type="button" id="sendMessage">Send</button>
 			  </div>
 			</div>
 		</div>
