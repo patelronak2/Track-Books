@@ -4,6 +4,7 @@
 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 <script>
 	$(document).ready(function(){
+		alert("Let's see");
 		var pusher = new Pusher('74c23276456c6610bc6b', {
 		  cluster: 'us2',
 		  encrypted: true
