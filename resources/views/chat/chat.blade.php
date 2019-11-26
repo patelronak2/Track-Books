@@ -2,9 +2,12 @@
 
 @section('content')
 <div class="container-fluid">
-	<h2>Show some content here!</h2>
+	<div class="row">
+	<div class="col-md-6 offset-md-6">
 	<div class="card">
-		<div class="card-header">Chat</div>
+		<div class="card-header"> 
+			<h4>Chat</h4>
+		</div>
 		<div class="card-body">
 			<ul class="chat">
 				<li class="left clearfix">
@@ -22,16 +25,16 @@
 			</ul>
 		</div>
 		<div class="card-footer">
-			<div class="input-group">
-				<input id="btn-input" type="text" name="message" class="form-control input-sm" placeholder="Type your message here..." >
-
-				<span class="input-group-btn">
-					<button class="btn btn-primary btn-sm" id="btn-chat">
-						Send
-					</button>
-				</span>
+			<div class="input-group mb-3">
+			  <input type="text" class="form-control" placeholder="Type your message here!" >
+			  <div class="input-group-append">
+				<span class="input-group-text badge badge-primary" id="basic-addon2">Send</span>
+			  </div>
 			</div>
 		</div>
+		
+	</div>
+	</div>
 	</div>
 </div>	
 @endsection('content')
