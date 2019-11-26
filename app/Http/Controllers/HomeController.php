@@ -95,7 +95,7 @@ class HomeController extends Controller
 			foreach($allRating as $allUserRating){
 				$totalRating += $allUserRating->rating;
 				if($allUserRating->user_id == Auth::id()){
-					$currentUserRating = $totalRating->rating;
+					$currentUserRating = $allUserRating->rating;
 				}
 			}
 			$finalRating = $totalRating/sizeof($allRating);
