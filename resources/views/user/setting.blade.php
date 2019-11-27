@@ -58,7 +58,7 @@
 			  </div>
 			<div class="form-group row mb-0">
 				<div class="col-sm-10 offset-sm-2">
-					<button type="submit" class="btn btn-primary">
+					<button type="submit" class="btn btn-light button-pm">
 						Save Changes
 					</button>
 				</div>

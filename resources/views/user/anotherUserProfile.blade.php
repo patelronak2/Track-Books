@@ -13,10 +13,10 @@
 			<h4>Add {{ $user->name }} as friend to view more details.</h4>
 			<div class="my-2">
 				@if($isFriend)
-				<a href="#" class="btn btn-danger" id="removeFriend">Remove Friend</a>
+				<a href="#" class="btn btn-danger" id="removeFriend">Unfriend</a>
 				@elseif($hasRecievedRequest)
-					<a href="#" class="btn btn-warning" id="acceptRequest">Accept Request</a>
-					<a href="#" class="btn btn-danger" id="decline">Decline</a>
+					<a href="#" class="btn btn-light button-pm" id="acceptRequest">Accept Request</a>
+					<a href="#" class="btn btn-danger button" id="decline">Decline</a>
 				@elseif($isRequestSent)
 					<button class="btn btn-info" disabled>Request Sent</button>
 				@else
@@ -27,12 +27,13 @@
 	
 	</div>
 @else
-	<div class="my-3 container-fluid">
+	<div class="container-fluid">
 		<div class="my-3">
 			<h2>{{ $user->name }}'s Profile</h2>
 		</div>
+		<div class="my-3">
 		<div class="shadow-sm bg-light p-3">
-			<h5>Personal Information</h5>
+			<h4>Personal Information</h4>
 			<div class="row">
 				<p class="col-md-3"><span class="font-weight-bold">Email:</span> {{ $user->email }}</p>
 				@if($user->profile->birthday)
@@ -47,10 +48,10 @@
 			</div>
 			<!-- check here if this user is already friend or request is sent to him/her -->
 			@if($isFriend)
-				<a href="#" class="btn btn-danger" id="removeFriend">Remove Friend</a>
+				<a href="#" class="btn btn-danger" id="removeFriend">Unfriend</a>
 			@elseif($hasRecievedRequest)
-				<a href="#" class="btn btn-warning" id="acceptRequest">Accept Request</a>
-				<a href="#" class="btn btn-danger" id="decline" >Decline</a>
+				<a href="#" class="btn btn-light button-pm" id="acceptRequest">Accept Request</a>
+				<a href="#" class="btn btn-danger button" id="decline" >Decline</a>
 			@elseif($isRequestSent)
 				<button class="btn btn-info" disabled>Request Sent</button>
 			@else
@@ -58,98 +59,100 @@
 			@endif
 			
 		</div>
-	</div>
-	<div class="my-3">
-		<div class="my-3 container-fluid">
+		</div>
+		<div class="my-3">
+		<div class="my-3">
 			<h3>Book Shelves</h3>
 		</div>
-		<div class="container-fluid my-2">
+		<div class="my-2">
 			<h5>Want To Read</h5>
-			<div class="table-responsive">
+			<div class="container-fluid table-responsive">
 				<table>
 					<tr>
-					<?php $flag = 0; ?>
-					@foreach($shelves as $shelf)
-						@if($shelf->wantToRead)
-							<?php $flag = 1; ?>
-							<td>
-								<div class="card m-1" style="width: 18rem;">
-									<div class="card-body">
+						<?php $flag = 0; ?>
+							@foreach($shelves as $shelf)
+								@if($shelf->wantToRead)
+									<?php $flag = 1; ?>
+									<td>
+									<div class="card m-1" style="width: 18rem;">
+									  <div class="card-body">
 										<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
 										<div class="text-center">
-											<a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
+										  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
 										</div>
+									  </div>
 									</div>
-								</div>
-							</td>
-						@endif
-					@endforeach
-					<?php if(!$flag){ ?>
-					<p>No books in the shelf</p>
-
-					<?php } ?>
-					</tr>
+									</td>
+								@endif
+							@endforeach
+							<?php if(!$flag){ ?>
+								<p>No books in the shelf</p>
+							
+							<?php } ?>
+					  </tr>
 				</table>
-			</div>
+			  </div>
 		</div>
-		<div class="container-fluid my-2">
+	   <div class="my-2">
 			<h5>Currently Reading</h5>
-			<div class="table-responsive">
+			<div class=" container-fluid table-responsive">
 				<table>
 					<tr>
-					<?php $flag = 0; ?>
-					@foreach($shelves as $shelf)
-						@if($shelf->currentlyReading)
-						<?php $flag = 1; ?>
-						<td>
-							<div class="card m-1" style="width: 18rem;">
-								<div class="card-body">
-									<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
-									<div class="text-center">
-										<a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
-									</div>
-								</div>
-							</div>
-						</td>
-						@endif
-					@endforeach
-					<?php if(!$flag){ ?>
-					<p>No books in the shelf</p>
-
-					<?php } ?>
-					</tr>
-				</table>
-			</div>
-		</div>
-		<div class="container-fluid my-2">
-			<h5>Finished Reading</h5>
-			<div class="table-responsive">
-				<table>
-					<tr>
-					<?php $flag = 0; ?>
-					@foreach($shelves as $shelf)
-						@if($shelf->finishedReading)
-							<?php $flag = 1; ?>
-							<td>
-								<div class="card m-1" style="width: 18rem;">
-									<div class="card-body">
+						<?php $flag = 0; ?>
+							@foreach($shelves as $shelf)
+								@if($shelf->currentlyReading)
+									<?php $flag = 1; ?>
+									<td>
+									<div class="card m-1" style="width: 18rem;">
+									  <div class="card-body">
 										<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
 										<div class="text-center">
-											<a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
+										  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
 										</div>
+									  </div>
 									</div>
-								</div>
-							</td>
-						@endif
-					@endforeach
-					<?php if(!$flag){ ?>
-					<p>No books in the shelf</p>
-
-					<?php } ?>
-					</tr>
+									</td>
+								@endif
+							@endforeach
+							<?php if(!$flag){ ?>
+								<p>No books in the shelf</p>
+							
+							<?php } ?>
+					  </tr>
 				</table>
-			</div>
-		</div>
+			  </div>
+		   </div>
+		   <div class="my-2">
+				<h5>Finished Reading</h5>
+				<div class="container-fluid table-responsive">
+					<table>
+						<tr>
+						<?php $flag = 0; ?>
+							@foreach($shelves as $shelf)
+								@if($shelf->finishedReading)
+									<?php $flag = 1; ?>
+									<td>
+									<div class="card m-1" style="width: 18rem;">
+									  <div class="card-body">
+										<p class="card-title text-center font-weight-bold">{{ $shelf->book->title }}</p>
+										<div class="text-center">
+										  <a href="/public/showBook/{{ $shelf->book->id }}" ><img src="{{$shelf->book->img_link}}" class="rounded" width="75px" height="90px" alt="Image Not Available"></a>
+										</div>
+									  </div>
+									</div>
+									</td>
+								@endif
+							@endforeach
+							<?php if(!$flag){ ?>
+								<p>No books in the shelf</p>
+							
+							<?php } ?>
+						</tr>
+					</table>
+				  </div>
+			   </div>
 	</div>
+	</div>
+	
 @endif
 @endsection
