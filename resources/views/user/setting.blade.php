@@ -83,7 +83,7 @@
 									<div class="card m-1" style="width: 18rem;">
 									  <div class="card-body">
 										<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
-										<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
+										<a href="#" class="badge badge-danger p-2" id="{{ $shelf->book->id }}">Delete</a>
 									  </div>
 									</div>
 									</td>
@@ -110,7 +110,7 @@
 									<div class="card m-1" style="width: 18rem;">
 									  <div class="card-body">
 										<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
-										<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
+										<a href="#" class="badge badge-danger p-2" id="{{ $shelf->book->id }}">Delete</a>
 									  </div>
 									</div>
 									</td>
@@ -137,7 +137,7 @@
 									<div class="card m-1" style="width: 18rem;">
 									  <div class="card-body">
 										<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
-										<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
+										<a href="#" class="badge badge-danger p-2" id="{{ $shelf->book->id }}">Delete</a>
 									  </div>
 									</div>
 									</td>
@@ -152,56 +152,6 @@
 				  </div>
 			   </div>
 	</div>
-	<!-- <h3>Delete from Book Shelves</h3>
-	<div class="my-3 p-3 shadow-sm">
-		<div class="row no-gutters">
-				<div class="col-md-4">
-					<h5 class="sticky-top">Want to Read</h5>
-					<div class="overflow-auto" style="max-height: 400px;">
-						@foreach($shelves as $shelf)
-							@if($shelf->wantToRead)
-								<div class="card m-1" style="width: 18rem;">
-								  <div class="card-body">
-									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
-									<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
-								  </div>
-								</div>
-							@endif
-						@endforeach
-					</div>
-				</div>
-				<div class="col-md-4">
-					<h5 class="sticky-top">Currently Reading</h5>
-					<div class="overflow-auto" style="max-height: 400px;">
-						@foreach($shelves as $shelf)
-							@if($shelf->currentlyReading)
-								<div class="card m-1" style="width: 18rem;">
-								  <div class="card-body">
-									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
-									<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
-								  </div>
-								</div>
-							@endif
-						@endforeach
-					</div>
-				</div>
-				<div class="col-md-4">
-					<h5 class="sticky-top">Finished Reading</h5>
-					<div class="overflow-auto" style="max-height: 400px;">
-						@foreach($shelves as $shelf)
-							@if($shelf->finishedReading)
-								<div class="card m-1" style="width: 18rem;">
-								  <div class="card-body">
-									<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
-									<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
-								  </div>
-								</div>
-							@endif
-						@endforeach
-					</div>
-				</div>
-			</div>
-	</div>-->
 </div>
 <script type="text/javascript" src="{{ asset('js/setting.js') }}"></script>
 @endsection
