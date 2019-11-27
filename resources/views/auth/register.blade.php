@@ -25,7 +25,7 @@
 
 		body {
 		  background: #756446;
-		  background: linear-gradient(to right, #0062E6, #33AEFF);
+		  background: linear-gradient(to right, #FFDA99, #B3986B);
 		}
 
 		.card-signin {
@@ -126,16 +126,6 @@
 		  font-size: 12px;
 		  color: #777;
 		}
-
-		.btn-google {
-		  color: white;
-		  background-color: #ea4335;
-		}
-
-		.btn-facebook {
-		  color: white;
-		  background-color: #3b5998;
-		}
 	</style>
 </head>
 <body>
@@ -189,7 +179,7 @@
 						<label for="password-confirm">{{ __('Confirm Password') }}</label>
 					  </div>
 
-					  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">{{ __('Register') }}</button>
+					  <button class="btn btn-lg btn-light button-sd btn-block text-uppercase" type="submit">{{ __('Register') }}</button>
 					  <a class="d-block text-center mt-2 small" href="{{ route('login') }}">Login In</a>
 					</form>
 				  </div>
