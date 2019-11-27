@@ -86,7 +86,8 @@
 					<div class="alert alert-danger">{{ session('message') }}</div>
 				@endif
               <h3 class="login-heading mb-4">Welcome back!</h3>
-              <form>
+              <form method="POST" action="{{ route('login') }}">
+				@csrf
                 <div class="form-label-group">
 					@error('email')
 						<span class="invalid-feedback" role="alert">
