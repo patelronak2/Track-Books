@@ -29,7 +29,7 @@
 		}
 
 		.bg-image {
-		  background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
+		  background-image: url('https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
 		  background-size: cover;
 		  background-position: center;
 		}
@@ -134,6 +134,7 @@
 </head>
 <body>
     <div id="app">
+		@include('includes.navigation1')
 		@yield('content')
     </div>
 </body>
