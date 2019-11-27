@@ -259,7 +259,7 @@ class UserController extends Controller
 		if($id == Auth::id()){
 			return redirect('/profile');
 		}else{
-			
+			try{
 			//$profile = Profile::find($id);
 			$shelves = Shelf::where('user_id', $id)->with('book')->get();
 			$user = User::find($id);
@@ -294,7 +294,9 @@ class UserController extends Controller
 			//If no record found at the end of the loop,
 			//It means nobody has sent any request
 			//All three boolean is false at this point and Button will show 'Add Friend'
-			
+		}catch(ModelNotFoundException $exception){
+			return back()->withError('User not found by ID ' . $id)->withInput();
+		}
 			return view('user.anotherUserProfile',['user' => $user, 'shelves' => $shelves, 'totalFriends' => $totalFriends, 'isFriend' => $isFriend, 'isRequestSent' =>  $isRequestSent, 'hasRecievedRequest' => $hasRecievedRequest]); 
 		}
 	}

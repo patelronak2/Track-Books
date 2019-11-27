@@ -48,59 +48,63 @@ class HomeController extends Controller
 	
 	public function showBook($id)
 	{
-		$book = Book::find($id);
-		$description = true;
-		$author = true;
-		$publisher = true;
-		$publishedDate = true;
-		$category = true;
-		if($book->description == "Information not Available"){
-			$description = false;
-		}
-		if($book->author == "Information not Available"){
-			$author = false;
-		}
-		if($book->publisher == "Information not Available"){
-			$publisher = false;
-		}
-		if($book->publishedDate == "Information not Available"){
-			$publishedDate = false;
-		}
-		if($book->category == "Information not Available"){
-			$category = false;
-		}
-		
-		$reviews = Review::where('book_id', $id)->orderBy('id', 'desc')->get();
-		$wantToRead = false;
-		$currentlyReading = false;
-		$finishedReading = false;
-		$shelves = Shelf::all();
-		foreach($shelves as $shelf){
-			if($shelf->book_id == $id && $shelf->user_id == Auth::id()){
-				if($shelf->wantToRead){
-					$wantToRead = true;
-				}elseif($shelf->currentlyReading){
-					$currentlyReading = true;
-				}else{
-					$finishedReading = true;
+		try{
+			$book = Book::find($id);
+			$description = true;
+			$author = true;
+			$publisher = true;
+			$publishedDate = true;
+			$category = true;
+			if($book->description == "Information not Available"){
+				$description = false;
+			}
+			if($book->author == "Information not Available"){
+				$author = false;
+			}
+			if($book->publisher == "Information not Available"){
+				$publisher = false;
+			}
+			if($book->publishedDate == "Information not Available"){
+				$publishedDate = false;
+			}
+			if($book->category == "Information not Available"){
+				$category = false;
+			}
+			
+			$reviews = Review::where('book_id', $id)->orderBy('id', 'desc')->get();
+			$wantToRead = false;
+			$currentlyReading = false;
+			$finishedReading = false;
+			$shelves = Shelf::all();
+			foreach($shelves as $shelf){
+				if($shelf->book_id == $id && $shelf->user_id == Auth::id()){
+					if($shelf->wantToRead){
+						$wantToRead = true;
+					}elseif($shelf->currentlyReading){
+						$currentlyReading = true;
+					}else{
+						$finishedReading = true;
+					}
 				}
 			}
-		}
-		
-		
-		$allRating = Rating::where('book_id', $id)->get();
-		$finalRating = 0;
-		$currentUserRating = 0;
-		if(sizeof($allRating)){
-			$totalRating = 0;
-			foreach($allRating as $allUserRating){
-				$totalRating += $allUserRating->rating;
-				if($allUserRating->user_id == Auth::id()){
-					$currentUserRating = $allUserRating->rating;
+			
+			
+			$allRating = Rating::where('book_id', $id)->get();
+			$finalRating = 0;
+			$currentUserRating = 0;
+			if(sizeof($allRating)){
+				$totalRating = 0;
+				foreach($allRating as $allUserRating){
+					$totalRating += $allUserRating->rating;
+					if($allUserRating->user_id == Auth::id()){
+						$currentUserRating = $allUserRating->rating;
+					}
 				}
+				$finalRating = $totalRating/sizeof($allRating);
 			}
-			$finalRating = $totalRating/sizeof($allRating);
-		} 		
+		}catch(ModelNotFoundException  $exception){
+			 return back()->withError($exception->getMessage())->withInput();
+		}
 		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews, 'wantToRead' => $wantToRead, 'currentlyReading' => $currentlyReading, 'finishedReading' => $finishedReading, 'finalRating' => $finalRating, 'totalRatings'=> sizeof($allRating), 'currentUserRating' => $currentUserRating]);
 	}
 	
