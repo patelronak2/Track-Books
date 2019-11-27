@@ -1,9 +1,6 @@
 /* Custom CSS Styles 
 Created By: Ronak Patel */
-body {
-  background: #756446;
-  background: linear-gradient(to right, #756446 , #d6ae7b);
-}
+
 h2, h1{
 	color: #756446;
 }
