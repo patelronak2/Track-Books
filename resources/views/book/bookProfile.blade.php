@@ -86,7 +86,7 @@
 				  <label for="comment">Write a Review:</label>
 				  <textarea class="form-control" rows="5" id="review"></textarea>
 				</div>
-				<button class="btn btn-primary" id="addReview">Add Review</button>
+				<button class="btn btn-light button-pm" id="addReview">Add Review</button>
 			</div>
 			<div class="mb-3" id="reviews">
 				@if(count($reviews) > 0)

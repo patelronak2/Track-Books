@@ -2,12 +2,15 @@
 
 @section('content')
 <div class="container-fluid">
-    <h2>Account Setting</h2>
+    <div class="my-3">
+		<h2>Account Setting</h2>
+	</div>
 	<p class="sr-only" id="userID">{{ Auth::id() }}</p>
 	<div class="alert alert-success d-none" id="alert" role="alert">
 	  <span id="message"></span>
 	</div>
-	<div class="my-3 bg-light shadow-sm p-3">
+	<div class="my-3">
+		<div class="shadow-sm bg-light p-3">
 		<h4>Edit Profile</h4>
 		<form class="px-1">
 			@csrf
@@ -62,7 +65,94 @@
 			</div>
 		</form>
 	</div>
-	<h3>Delete from Book Shelves</h3>
+	</div>
+	<div class="my-3">
+		<div class="my-3">
+			<h3>Delete from Book Shelves</h3>
+		</div>
+		<div class="my-2">
+			<h5>Want To Read</h5>
+			<div class="container-fluid table-responsive">
+				<table>
+					<tr>
+						<?php $flag = 0; ?>
+							@foreach($shelves as $shelf)
+								@if($shelf->wantToRead)
+									<?php $flag = 1; ?>
+									<td>
+									<div class="card m-1" style="width: 18rem;">
+									  <div class="card-body">
+										<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
+										<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
+									  </div>
+									</div>
+									</td>
+								@endif
+							@endforeach
+							<?php if(!$flag){ ?>
+								<p>No books in the shelf</p>
+							
+							<?php } ?>
+					  </tr>
+				</table>
+			  </div>
+		</div>
+	   <div class="my-2">
+			<h5>Currently Reading</h5>
+			<div class=" container-fluid table-responsive">
+				<table>
+					<tr>
+						<?php $flag = 0; ?>
+							@foreach($shelves as $shelf)
+								@if($shelf->currentlyReading)
+									<?php $flag = 1; ?>
+									<td>
+									<div class="card m-1" style="width: 18rem;">
+									  <div class="card-body">
+										<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
+										<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
+									  </div>
+									</div>
+									</td>
+								@endif
+							@endforeach
+							<?php if(!$flag){ ?>
+								<p>No books in the shelf</p>
+							
+							<?php } ?>
+					  </tr>
+				</table>
+			  </div>
+		   </div>
+		   <div class="my-2">
+				<h5>Finished Reading</h5>
+				<div class="container-fluid table-responsive">
+					<table>
+						<tr>
+						<?php $flag = 0; ?>
+							@foreach($shelves as $shelf)
+								@if($shelf->finishedReading)
+									<?php $flag = 1; ?>
+									<td>
+									<div class="card m-1" style="width: 18rem;">
+									  <div class="card-body">
+										<p class="card-title font-weight-bold">{{ $shelf->book->title }}</p>
+										<a href="#" class="btn btn-outline-danger btn-sm" id="{{ $shelf->book->id }}">Delete</a>
+									  </div>
+									</div>
+									</td>
+								@endif
+							@endforeach
+							<?php if(!$flag){ ?>
+								<p>No books in the shelf</p>
+							
+							<?php } ?>
+						</tr>
+					</table>
+				  </div>
+			   </div>
+	</div>
+	<!-- <h3>Delete from Book Shelves</h3>
 	<div class="my-3 p-3 shadow-sm">
 		<div class="row no-gutters">
 				<div class="col-md-4">
@@ -111,7 +201,7 @@
 					</div>
 				</div>
 			</div>
-	</div>
+	</div>-->
 </div>
 <script type="text/javascript" src="{{ asset('js/setting.js') }}"></script>
 @endsection
