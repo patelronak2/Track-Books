@@ -7,13 +7,7 @@
 		<a href="/public/manageReviews" class="badge badge-light button-pm m-1 p-2">Refresh</a>
 		<a href="/public/admin" class="badge badge-secondary m-1 p-2">Back to Dashboard</a>
 	</div>
-	@if(Session::has('message'))
-		@if(session('alert'))
-			<div class="alert alert-danger">{{ session('message') }}</div>
-		@else
-			<div class="alert alert-success">{{ session('message') }}</div>
-		@endif
-	@endif
+	@include('error.error')
 	<div class="my-3 table-responsive">
 		@if(count($reviews) > 0)
 			<table class="table table-hover">

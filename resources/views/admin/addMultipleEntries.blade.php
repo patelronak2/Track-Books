@@ -11,13 +11,7 @@
 			<h4>Through Google Api</h4>
 
 			<p>Search for the term. Top 5 results will be added to the database.</p>
-			@if(Session::has('message'))
-				@if(session('alert'))
-					<div class="alert alert-danger">{{ session('message') }}</div>
-				@else
-					<div class="alert alert-success">{{ session('message') }}</div>
-				@endif
-			@endif
+			@include('error.error')
 			<form method="post" action="/public/insertMultipleBooks" class="px-1">
 			  @csrf
 			  <div class="form-row align-items-center">

@@ -13,6 +13,7 @@ use App\Models\Post;
 use App\Models\Rating;
 use App\Models\Friendship;
 use App\Notifications\ShelfUpdated;
+use Exception;
 class HomeController extends Controller
 {
     /**
@@ -102,8 +103,8 @@ class HomeController extends Controller
 				}
 				$finalRating = $totalRating/sizeof($allRating);
 			}
-		}catch(ModelNotFoundException  $exception){
-			 return back()->withError($exception->getMessage())->withInput();
+		}catch(Exception  $exception){
+			 return back()->withError("There was an error while finishing the request")->withInput();
 		}
 		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews, 'wantToRead' => $wantToRead, 'currentlyReading' => $currentlyReading, 'finishedReading' => $finishedReading, 'finalRating' => $finalRating, 'totalRatings'=> sizeof($allRating), 'currentUserRating' => $currentUserRating]);
 	}

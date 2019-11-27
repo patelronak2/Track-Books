@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Validator;
+use Exception;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Review;
@@ -111,10 +112,15 @@ class AdminController extends Controller
      */
 	 public function deleteUser($id)
 	 {
-		$user = User::find($id);
-		$name = $user->name;
-		$user->delete();
-		$message = "Deletion Successful: ". $name . " Deleted";
+		try{
+			$user = User::find($id);
+			$name = $user->name;
+			$user->delete();
+			$message = "Deletion Successful: ". $name . " Deleted";
+		}catch(Exception $e){
+			return back()->withError("Something went Wrong while Finishing Request.")->withInput();
+		} 
+		
 		return redirect('/manageUsers')->with(['message' => $message, 'alert' => false]);
 	 }
 	 
@@ -125,22 +131,27 @@ class AdminController extends Controller
      */
 	 public function banUser($id)
 	 {
-		$user = User::find($id);
-		$message = "";
-		$alert = false;
-		if($user->isBan){
-			$user->isBan = false;
-			$message = "Ban removed from user: " . $user->name;
-		}else{
-			if($user->type == 'default'){			
-				$user->isBan = true;
-				$message = "Baned user: " . $user->name;
+		 try{
+			$user = User::find($id);
+			$message = "";
+			$alert = false;
+			if($user->isBan){
+				$user->isBan = false;
+				$message = "Ban removed from user: " . $user->name;
 			}else{
-				$message = "cannot ban an administrator " . $user->name;
-				$alert = true;
+				if($user->type == 'default'){			
+					$user->isBan = true;
+					$message = "Baned user: " . $user->name;
+				}else{
+					$message = "cannot ban an administrator " . $user->name;
+					$alert = true;
+				}
 			}
-		}
-		$user->save();
+			$user->save();
+		 }catch(Exception $e){
+			 return back()->withError("Something went Wrong while Finishing Request")->withInput();
+		 }
+		
 		
 		return redirect('/manageUsers')->with(['message' => $message, 'alert' => $alert]);
 	 }
@@ -177,12 +188,16 @@ class AdminController extends Controller
      */
 	 public function deleteBook($id)
 	 {
+		 try{
+			$book = Book::find($id);
+			 $title = $book->title;
+			 $book->delete();
+			 
+			 $message = "Book Deleted: " . $title; 
+		 }catch(Exception $e){
+			 return back()->withError("Something went Wrong while Finishing Request")->withInput();
+		 }
 		 
-		 $book = Book::find($id);
-		 $title = $book->title;
-		 $book->delete();
-		 
-		 $message = "Book Deleted: " . $title;
 		 return redirect('manageBooks')->with(['message' => $message, 'alert' => false]);
 	 }
 	 
@@ -271,10 +286,14 @@ class AdminController extends Controller
 	 
 	 public function deleteReview($id)
 	 {
-		 $review = Review::find($id);
-		 $review->delete();
+		 try{
+			 $review = Review::find($id);
+			 $review->delete();
+			 $message = "Review Deleted";
+		 }catch(Exception $e){
+			 return back()->withError("Something went Wrong while Finishing Request")->withInput();
+		 }
 		 
-		 $message = "Review Deleted";
 		 return view('/manageReviews')->with(['message' => $message, 'alert' => false]); 
 	 }
 	
@@ -294,14 +313,19 @@ class AdminController extends Controller
 	}
 	
 	public function deleteAuthor($id){
-		$author = Author::find($id);
-		$name = $author->authName;
-		$message = "Couldn't delete author: " . $name;
-		$alert = true;
-		if($author->delete()){
-			$message = "Author deleted successfully: " . $name;
-			$alert = false;
+		try{
+			$author = Author::find($id);
+			$name = $author->authName;
+			$message = "Couldn't delete author: " . $name;
+			$alert = true;
+			if($author->delete()){
+				$message = "Author deleted successfully: " . $name;
+				$alert = false;
+			}
+		}catch(Exception $e){
+			return back()->withError("Something went Wrong while Finishing Request")->withInput();
 		}
+		
 		return redirect('/manageAuthors')->with(['alert' => $alert, 'message' => $message]);
 	}
 }

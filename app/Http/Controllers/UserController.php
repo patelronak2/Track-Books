@@ -29,26 +29,34 @@ class UserController extends Controller
      */
     public function index()
     {
-		$user = Auth::user();
-		
-		$allProfiles = Profile::all();
-		$profileId = -1;
-		
-		foreach($allProfiles as $profile){
-			if($profile->user_id == $user->id){
-				$profileId = $profile->id;
+		try{
+			$user = Auth::user();
+			$allProfiles = Profile::all();
+			$profileId = -1;
+			
+			foreach($allProfiles as $profile){
+				if($profile->user_id == $user->id){
+					$profileId = $profile->id;
+				}
 			}
+			$profile = Profile::find($profileId);
+			
+			$shelves = Shelf::where('user_id', $user->id)->with('book')->get();
+			$totalFriends = count($user->friends);
+		}catch(Exception $e){
+			return back()->withError("Something went Wrong while Finishing Request")->withInput();
 		}
-		$profile = Profile::find($profileId);
 		
-		$shelves = Shelf::where('user_id', $user->id)->with('book')->get();
-		$totalFriends = count($user->friends);
         return view('user.profile',['profile' => $profile, 'shelves' => $shelves, 'totalFriends' => $totalFriends]);
     }
 	
 	public function setting()
 	{	
-		$shelves = Shelf::where('user_id', Auth::id())->with('book')->get();
+		try{
+			$shelves = Shelf::where('user_id', Auth::id())->with('book')->get();
+		}catch(Exception $e){
+			return back()->withError("Something went Wrong while Finishing Request")->withInput();
+		}
 		return view('user.setting',['shelves' => $shelves]);
 	}
 	
@@ -120,11 +128,15 @@ class UserController extends Controller
 		$friendship->acted_user = Auth::id();
 		$friendship->status = 'pending';
 		$friendship->save();
+		try{
+			//Notify the user with id => $id about the Friend Request
+			//Auth::user() will be the user sending the friend request and user with $id will the user receiving request
+			$user = User::find($id);
+			$user->notify(new FriendRequestSent(Auth::id(), Auth::user()->name));
+		}catch(Exception $e){
+			return back()->withError("Something went Wrong while Finishing Request")->withInput();
+		}
 		
-		//Notify the user with id => $id about the Friend Request
-		//Auth::user() will be the user sending the friend request and user with $id will the user receiving request
-		$user = User::find($id);
-		$user->notify(new FriendRequestSent(Auth::id(), Auth::user()->name));
 		return redirect('/showProfile/' . $id);
 	}
 	
@@ -161,7 +173,6 @@ class UserController extends Controller
 	public function friendList(){
 		$user = Auth::user();
 		$friends = $user->friends;
-		
 		$user = Auth::user();
 		$pendingRequests = $user->friend_requests;
 		$users = User::all();
@@ -179,11 +190,16 @@ class UserController extends Controller
 	
 	//This function handles the request from friendList.blade, declines the friend request and send back a message!
 	public function declineRequest($id){
-		$user = User::find($id);
-		$alert = $this->removeFriendFromDatabase($id);
-		if($alert){
-			$message = "You Denied Friend request from " . $user->name;
+		try{
+			$user = User::find($id);
+			$alert = $this->removeFriendFromDatabase($id);
+			if($alert){
+				$message = "You Denied Friend request from " . $user->name;
+			}
+		}catch(Exception $e){
+			return back()->withError("Request couldn't be complete. Record with id: ". $id . "may not exist in database anymore.")->withInput();
 		}
+		
 		return redirect('/friendList')->with(['alert' => !$alert, 'message' => $message]);
 	}
 	
@@ -219,10 +235,14 @@ class UserController extends Controller
 	
 	//This function handles the requests from the FriendList Page
 	public function unFriend($id){
-		$user = User::find($id);
-		$alert = $this->removeFriendFromDatabase($id);
-		if($alert){
-			$message = $user->name . ": Removed from your Friend List.";
+		try{
+			$user = User::find($id);
+			$alert = $this->removeFriendFromDatabase($id);
+			if($alert){
+				$message = $user->name . ": Removed from your Friend List.";
+			}
+		}catch(Exception $e){
+			return back()->withError("Request couldn't be complete. Record with id: ". $id . "may not exist in database anymore.")->withInput();
 		}
 		return redirect('/friendList')->with(['alert' => !$alert, 'message' => $message]);
 	}
@@ -232,23 +252,32 @@ class UserController extends Controller
 		$this->validate($request, [
 			'body' => 'required|max:1000',
 		]);
-		$post = new Post;
-		$post->body = $request->input('body');
-		$post->user_id = Auth::id();
-		$message = "There was as error creating post.";
-		if($post->save()){
-			$message = "Post Created Successfully";
+		try{
+			$post = new Post;
+			$post->body = $request->input('body');
+			$post->user_id = Auth::id();
+			$message = "There was as error creating post.";
+			if($post->save()){
+				$message = "Post Created Successfully";
+			}
+		}catch(Exception $e){
+			return back()->withError("Something went Wrong while Finishing Request")->withInput();
 		}
+		
 		return redirect('/home')->with(['alert' => false, 'message' => $message]);
 	}
 	
 	public function deletePost($id){
-		$post = Post::find($id);
-		$message = "Post Deletion Failed";
-		if($post->delete()){
-			$message = "Post Deletion Successful";
+		try{
+			$post = Post::find($id);
+			$message = "Post Deletion Failed";
+			if($post->delete()){
+				$message = "Post Deletion Successful";
+			}
+		}catch(Exception $e){
+			return back()->withError("Couldn't complete request. Requested data may not exist.")->withInput();
 		}
-		
+				
 		return redirect('/home')->with(['alert' => false, 'message' => $message]);
 	}
 	
@@ -296,10 +325,8 @@ class UserController extends Controller
 			//If no record found at the end of the loop,
 			//It means nobody has sent any request
 			//All three boolean is false at this point and Button will show 'Add Friend'
-		}catch(ModelNotFoundException $exception){
-			return back()->withError('User not found by ID ' . $id)->withInput();
 		}catch(Exception $exception){
-			return back()->withError($exception->getMessage())->withInput();
+			return back()->withError("Request couldn't be complete. Record with id: ". $id . "may not exist in database anymore.")->withInput();
 		}
 			return view('user.anotherUserProfile',['user' => $user, 'shelves' => $shelves, 'totalFriends' => $totalFriends, 'isFriend' => $isFriend, 'isRequestSent' =>  $isRequestSent, 'hasRecievedRequest' => $hasRecievedRequest]); 
 		}
