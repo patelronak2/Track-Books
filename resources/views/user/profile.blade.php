@@ -1,11 +1,11 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="">
-    <div class="my-3 container-fluid">
+<div class="container-fluid">
+    <div class="my-3">
 		<h2>{{ $profile->name }}'s Profile</h2>
 	</div>
-	<div class="my-3 container-fluid">
+	<div class="my-3">
 		<div class="shadow-sm bg-light p-3">
 				<h4>Personal Information</h4>
 				<div class="row">
@@ -43,12 +43,12 @@
 		</div>
 	</div>
 	<div class="my-3">
-		<div class="my-3 container-fluid">
+		<div class="my-3">
 			<h3>Book Shelves</h3>
 		</div>
-		<div class="container-fluid my-2">
+		<div class="my-2">
 			<h5>Want To Read</h5>
-			<div class="table-responsive">
+			<div class="container-fluid table-responsive">
 				<table>
 					<tr>
 						<?php $flag = 0; ?>
@@ -75,9 +75,9 @@
 				</table>
 			  </div>
 		</div>
-	   <div class="container-fluid my-2">
+	   <div class="my-2">
 			<h5>Currently Reading</h5>
-			<div class="table-responsive">
+			<div class=" container-fluid table-responsive">
 				<table>
 					<tr>
 						<?php $flag = 0; ?>
@@ -104,9 +104,9 @@
 				</table>
 			  </div>
 		   </div>
-		   <div class="container-fluid my-2">
+		   <div class="my-2">
 				<h5>Finished Reading</h5>
-				<div class="table-responsive">
+				<div class="container-fluid table-responsive">
 					<table>
 						<tr>
 						<?php $flag = 0; ?>

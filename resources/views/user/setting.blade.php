@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <h2>Account Setting</h2>
 	<p class="sr-only" id="userID">{{ Auth::id() }}</p>
 	<div class="alert alert-success d-none" id="alert" role="alert">
