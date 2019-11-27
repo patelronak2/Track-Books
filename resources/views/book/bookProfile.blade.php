@@ -2,17 +2,15 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
+	<h2 class="text-center mb-3">{{ $book->title }}</h2>
 			<div class="mb-3 shadow-sm p-2 bg-light">
-			  <h3 class="text-center mb-3">{{ $book->title }}</h3>
 			  <p class="sr-only" id="bookID">{{ $book->id }}</p>
 			  <p class="sr-only" id="userID">{{ Auth::id() }}</p>
 			  <div class="row no-gutters">
-				<div class="col-md-4 px-2">
+				<div class="col-md-3 px-2">
 				  <img src="{{ $book->img_link }}" class="img-thumbnail" alt="Image not Available" width="100%">
 				</div>
-				<div class="col-md-8 p-2">
+				<div class="col-md-9 p-2">
 					<div>
 						<span class="sr-only" id="totalRatingByUser">{{ $totalRatings }}</span>
 						<span class="sr-only" id="finalRating">{{ $finalRating }}</span>
@@ -111,8 +109,7 @@
 					</div>
 				@endif
 			</div>
-        </div>
-    </div>
+        
 </div>
 <script type="text/javascript" src="{{ asset('js/bookProfile.js') }}"></script>
 @endsection
