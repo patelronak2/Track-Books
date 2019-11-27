@@ -100,7 +100,7 @@
 </header>
 
 <!-- Page Content -->
-<div class="container-fluid py-5">
+<div class="container py-5">
 	<div class="row no-gutters align-items-center">	
 	  <div class="col-md-6">
 		<h1 class="font-weight-light">Join Community Now</h1>
@@ -109,7 +109,7 @@
 	  <div class="col-md-6">
 		<div class="text-center">
 			<a href="#" class="btn btn-light button-pm btn-lg">Login</a>
-			<a href="#" class="btn btn-light button btn-lg">Register</a>
+			<a href="#" class="btn btn-light button-sd btn-lg">Register</a>
 		</div>
 	  </div>
 	</div>
