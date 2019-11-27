@@ -2,7 +2,7 @@
 "SOA: I Ronak Patel, 000744055 certify that this material is my original work. No other person's work has been used without due acknowledgement. 
 			  I have not made my work available to anyone else."
  -->
-<nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="{{ url('/home') }}">
 			{{ config('app.name', 'Laravel') }}
@@ -17,7 +17,7 @@
 					<form class="form-inline my-2 my-md-0">
 						<div class="input-group">
 						  <div class="input-group-prepend">
-							<select id="searchCategory" class="form-control btn btn-outline-secondary">
+							<select id="searchCategory" class="form-control btn btn-dark">
 								<option>Books</option>
 								<option>User</option>
 								<option>Author</option>

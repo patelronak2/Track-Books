@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-	<h2 class="text-center mb-3">{{ $book->title }}</h2>
+	<h2 class="mb-3">{{ $book->title }}</h2>
 			<div class="mb-3 shadow-sm p-2 bg-light">
 			  <p class="sr-only" id="bookID">{{ $book->id }}</p>
 			  <p class="sr-only" id="userID">{{ Auth::id() }}</p>
