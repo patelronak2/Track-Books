@@ -25,7 +25,7 @@
 
 		body {
 		  background: #756446;
-		  background: linear-gradient(to right, #eacda3 , #d6ae7b);
+		  background: linear-gradient(to right, #756446 , #d6ae7b);
 		}
 
 		.card-signin {
@@ -44,7 +44,7 @@
 		.card-signin .card-img-left {
 		  width: 45%;
 		  /* Link to your background image using in the property below! */
-		  background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');
+		  background: scroll center url('https://images.unsplash.com/photo-1570610159825-ec5d3823660c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
 		  background-size: cover;
 		}
 
