@@ -296,6 +296,8 @@ class UserController extends Controller
 			//All three boolean is false at this point and Button will show 'Add Friend'
 		}catch(ModelNotFoundException $exception){
 			return back()->withError('User not found by ID ' . $id)->withInput();
+		}catch(Exception $exception){
+			return back()->withError($exception->getMessage())->withInput();
 		}
 			return view('user.anotherUserProfile',['user' => $user, 'shelves' => $shelves, 'totalFriends' => $totalFriends, 'isFriend' => $isFriend, 'isRequestSent' =>  $isRequestSent, 'hasRecievedRequest' => $hasRecievedRequest]); 
 		}
