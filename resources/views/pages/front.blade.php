@@ -47,25 +47,23 @@
 <!-- Page Content -->
 
 <div class="container py-5">
-	<div class="row no-gutters align-items-center">
-		@guest
-	  <div class="col-md-6">
-		<h1 class="font-weight-light">Join Community Now</h1>
-		<p class="lead">See what's trending in book world!</p>
-	  </div>
-	  <div class="col-md-6">
-		<div class="text-center">
-			<a href="{{ route('login') }}" class="btn btn-light button-pm btn-lg">Login</a>
-			<a href="{{ route('register') }}" class="btn btn-light button-sd btn-lg">Register</a>
+	@guest
+		<div class="row no-gutters align-items-center">
+		  <div class="col-md-6">
+			<h1 class="font-weight-light">Join Community Now</h1>
+			<p class="lead">See what's trending in book world!</p>
+		  </div>
+		  <div class="col-md-6">
+			<div class="text-center">
+				<a href="{{ route('login') }}" class="btn btn-light button-pm btn-lg">Login</a>
+				<a href="{{ route('register') }}" class="btn btn-light button-sd btn-lg">Register</a>
+			</div>
+		  </div>
 		</div>
-	  </div>
-	  @else
-	  
+	@else
 		<h1 class="font-weight-light">Welcome Back!</h1>
 		<p class="lead">See what's trending in book world! Click <a href="/public/home">here</a> to visit your home Page.</p>
-	  
-	  @endguest
-	</div>
+	@endguest
 </div>
 
 @endsection
