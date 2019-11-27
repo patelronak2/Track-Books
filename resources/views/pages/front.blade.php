@@ -68,5 +68,4 @@
 	</div>
 </div>
 
-@endguest
 @endsection
