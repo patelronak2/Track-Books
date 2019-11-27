@@ -25,7 +25,7 @@
 
 		body {
 		  background: #756446;
-		  background: linear-gradient(to right, #FFDA99, #B3986B);
+		  background: linear-gradient(to right, #eacda3 , #d6ae7b);
 		}
 
 		.card-signin {
@@ -179,7 +179,7 @@
 						<label for="password-confirm">{{ __('Confirm Password') }}</label>
 					  </div>
 
-					  <button class="btn btn-lg btn-light button-sd btn-block text-uppercase" type="submit">{{ __('Register') }}</button>
+					  <button class="btn btn-lg btn-light button-pm btn-block text-uppercase" type="submit">{{ __('Register') }}</button>
 					  <a class="d-block text-center mt-2 small" href="{{ route('login') }}">Login In</a>
 					</form>
 				  </div>
