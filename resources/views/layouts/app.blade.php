@@ -25,7 +25,7 @@
 
 		.login,
 		.image {
-		  min-height: 100vh;
+		  min-height: 90vh;
 		}
 
 		.bg-image {
