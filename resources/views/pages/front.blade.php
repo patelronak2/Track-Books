@@ -60,10 +60,10 @@
 		</div>
 	  </div>
 	  @else
-	  <div class="col-md-6">
+	  
 		<h1 class="font-weight-light">Welcome Back!</h1>
 		<p class="lead">See what's trending in book world! Click <a href="/public/home">here</a> to visit your home Page.</p>
-	  </div>
+	  
 	  @endguest
 	</div>
 </div>
