@@ -5,57 +5,114 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="row shadow-sm" style="margin: 0px !important;">
-		<div class="col-md-6 col-sm-12 bg-primary text-white p-4" style="height: 75vh;">
-			<div class="mt-5 pt-5 d-flex flex-column container">
-				<div class="m-1">
-					<div class="d-flex flex-row">
-						<div class="m-2 p-2">
-							<i class="far fa-compass text-white mt-1" style="font-size: 36px"></i>
-						</div>
-						<div class="m-2 p-2">
-							<p><strong>Explore</strong><br>	Get information about the books!</p>
-						</div>
-					</div>
-				</div>
-				<div class="m-1">
-					<div class="d-flex flex-row">
-						<div class="m-2 p-2">
-							<i class="	fas fa-thumbs-up text-white mt-1" style="font-size: 36px"></i>
-						</div>
-						<div class="m-2 p-2">
-							<p><strong>Favorites</strong><br> Add books to showcase on your profile!</p>
-						</div>
-					</div>
-				</div>
-				<div class="m-1">
-					<div class="d-flex flex-row">
-						<div class="m-2 p-2">
-							<i class="fas fa-user-friends text-white mt-1" style="font-size: 36px"></i>
-						</div>
-						<div class="m-2 p-2">
-							<p><strong>Make Friends</strong><br> Find people with similar interest!</p>
-						</div>
-					</div>
-				</div>
-				
-				
-			</div>
-		</div>
-		<div class="col-md-6 col-sm-12 bg-light text-dark p-4" style="height: 75vh;">
-			<div class="text-center mt-5 pt-5 justify-content-center">
-				<i class="fas fa-book-reader text-primary" style="font-size: 48px;"></i>
-				<h5 class="text-center text-primary mt-5">See Who is trending in Book world!</h5>
-				<h5 class="text-center text-secondary">Join the community now!</h5>
+<nav class="navbar navbar-expand-md navbar-dark">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="{{ url('/') }}">
+			{{ config('app.name', 'Laravel') }}
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	   
+			<ul class="navbar-nav mr-auto">
+
+			</ul>
+			<ul class="navbar-nav ml-auto">
+			   
 				@guest
-				<div class="text-center mt-5">
-					<a class="btn btn-primary btn-lg" href="{{ route('login') }}" role="button">{{ __('Login') }}</a>
-					
-					<a class="btn btn-outline-primary btn-lg" href="{{ route('register') }}" role="button">{{ __('Register') }}</a>
-				</div>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+					</li>
+					@if (Route::has('register'))
+						<li class="nav-item">
+							<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+						</li>
+					@endif
+				@else
+					<li class="nav-item dropdown">
+						<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+							{{ Auth::user()->name }} <span class="caret"></span>
+						</a>
+
+						<div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="{{ url('/home') }}">Home</a>
+							@if (Auth::user()->type == 'admin')
+								<a class="dropdown-item" href="/public/admin">Admin Dashboard</a>
+							@endif
+							<a class="dropdown-item" href="/public/profile">Profile</a>
+							<a class="dropdown-item" href="/public/setting">Account Settings</a>
+							<a class="dropdown-item" href="{{ route('logout') }}"
+							   onclick="event.preventDefault();
+											 document.getElementById('logout-form').submit();">
+								{{ __('Logout') }}
+							</a>
+
+							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+								@csrf
+							</form>
+						</div>
+					</li>
 				@endguest
-			</div>
+			</ul>
 		</div>
 	</div>
+</nav>
+<header>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+	  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+	  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+	  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner" role="listbox">
+	  <!-- Slide One - Set the background image for this slide in the line below -->
+	  <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1572061486732-b528a9b293a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjUxMjV9&auto=format&fit=crop&w=1051&q=80')">
+		<div class="carousel-caption">
+		  <h3 class="display-4">Explore Books</h3>
+		  <p class="lead">Get information about books.</p>
+		</div>
+	  </div>
+	  <!-- Slide Two - Set the background image for this slide in the line below -->
+	  <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')">
+		<div class="carousel-caption">
+		  <h3 class="display-4">Book Shelves</h3>
+		  <p class="lead">Add books to show on your profile!</p>
+		</div>
+	  </div>
+	  <!-- Slide Three - Set the background image for this slide in the line below -->
+	  <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1481142889578-dda440dacfe1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')">
+		<div class="carousel-caption">
+		  <h3 class="display-4">Make Friends</h3>
+		  <p class="lead">Find People with similar interests.</p>
+		</div>
+	  </div>
+	</div>
+	<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Previous</span>
+		</a>
+	<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Next</span>
+		</a>
+  </div>
+</header>
+
+<!-- Page Content -->
+<div class="container-fluid py-5">
+	<div class="row no-gutters align-items-center">	
+	  <div class="col-md-6">
+		<h1 class="font-weight-light">Join Community Now</h1>
+		<p class="lead">See what's trending in book world!</p>
+	  </div>
+	  <div class="col-md-6">
+		<div class="text-center">
+			<a href="#" class="btn btn-light button-pm btn-lg">Login</a>
+			<a href="#" class="btn btn-light button btn-lg">Register</a>
+		</div>
+	  </div>
+	</div>
+</div>
 		
 @endsection

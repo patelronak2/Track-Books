@@ -12,14 +12,22 @@ h3{
 }
 
 h1,h2,h3,h4,h5{
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto Slab', sans-serif;
 }
 
 p{
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 }
-
+.carousel-item {
+  height: 65vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .button{
 	background-color: #6A6F75;
 	color: white;
@@ -104,5 +112,8 @@ p{
 	#allNotifications{
 		z-index: 1;
 		top: auto;
+	}
+	h1{
+		font-size: 2.0em;
 	}
 }
