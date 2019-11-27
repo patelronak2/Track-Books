@@ -14,6 +14,8 @@ use App\Models\Friendship;
 use App\Notifications\ShelfUpdated;
 use App\Notifications\FriendRequestSent;
 use App\Notifications\FriendRequestAccepted;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Exception;
 
 class UserController extends Controller
 {
