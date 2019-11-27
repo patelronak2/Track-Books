@@ -69,21 +69,21 @@
 	  <!-- Slide One - Set the background image for this slide in the line below -->
 	  <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1572061486732-b528a9b293a3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjUxMjV9&auto=format&fit=crop&w=1051&q=80')">
 		<div class="carousel-caption">
-		  <h3 class="display-4">Explore Books</h3>
+		  <p class="display-4">Explore Books</p>
 		  <p class="lead">Get information about books.</p>
 		</div>
 	  </div>
 	  <!-- Slide Two - Set the background image for this slide in the line below -->
 	  <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')">
 		<div class="carousel-caption">
-		  <h3 class="display-4">Book Shelves</h3>
+		  <p class="display-4">Book Shelves</p>
 		  <p class="lead">Add books to show on your profile!</p>
 		</div>
 	  </div>
 	  <!-- Slide Three - Set the background image for this slide in the line below -->
 	  <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1481142889578-dda440dacfe1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')">
 		<div class="carousel-caption">
-		  <h3 class="display-4">Make Friends</h3>
+		  <p class="display-4">Make Friends</p>
 		  <p class="lead">Find People with similar interests.</p>
 		</div>
 	  </div>
