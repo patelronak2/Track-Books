@@ -19,7 +19,7 @@
 			<div class="form-group">
 				<textarea class="form-control @error('body') is-invalid @enderror" name="body" id="body" rows="5" placeholder="Write some thing here..."></textarea>
 			</div>
-			<button class="btn btn-light button" type="submit">Create Post</button>
+			<button class="btn btn-light button-pm" type="submit">Create Post</button>
 		</form>
 	</div>
 	<hr>
