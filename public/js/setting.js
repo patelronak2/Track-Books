@@ -53,33 +53,39 @@ $(document).ready(function(){
 		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 		var birthday = $("#birthday").val();
 		var name = $("#name").val();
-		var gender = "";
-		if($("#male").prop("checked")){
-			gender = "Male";
-		}else if($("#female").prop("checked")){
-			gender = "Female";
-		}else if($("#notToSay").prop("checked")){
-			gender = "Prefer Not To Say";
-		}
-		var isPrivate = false;
-		if($("#private").prop("checked")){
-			isPrivate = true
-		}
-		$.ajax({
-			url: '/public/editProfile',
-			type: 'POST',
-			data: {_token: CSRF_TOKEN, name: name, birthday: birthday, gender: gender, isPrivate: isPrivate},
-			success: function(data){
-				if(data == "success"){
-					$("#message").html("Changes to your <a href='/public/profile'>Profile</a> has been saved.");
-					$("#alert").removeClass("d-none");
-				}
-			},
-			error: function(error){
-				alert("Something went wrong while updating your Profile");
+		if(name != ""){
+			$("#emptyField").addClass("d-none");
+			var gender = "";
+			if($("#male").prop("checked")){
+				gender = "Male";
+			}else if($("#female").prop("checked")){
+				gender = "Female";
+			}else if($("#notToSay").prop("checked")){
+				gender = "Prefer Not To Say";
 			}
-			
-		});
+			var isPrivate = false;
+			if($("#private").prop("checked")){
+				isPrivate = true
+			}
+			$.ajax({
+				url: '/public/editProfile',
+				type: 'POST',
+				data: {_token: CSRF_TOKEN, name: name, birthday: birthday, gender: gender, isPrivate: isPrivate},
+				success: function(data){
+					if(data == "success"){
+						$("#message").html("Changes to your <a href='/public/profile'>Profile</a> has been saved.");
+						$("#alert").removeClass("d-none");
+					}
+				},
+				error: function(error){
+					alert("Something went wrong while updating your Profile");
+				}
+				
+			});
+		}else{
+			$("#emptyField").removeClass("d-none");
+		}
+		
 		return false;
 	});
 });

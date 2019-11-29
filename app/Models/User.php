@@ -1,5 +1,5 @@
 <?php
-//changed by Ronak Patel @ line 13,14,34-38
+
 namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
@@ -74,6 +74,7 @@ class User extends Authenticatable implements MustVerifyEmail
 		}
 	}
 	
+	
 	public function friend_requests()
 	{
 		return $this->hasMany(Friendship::class, 'second_user')
@@ -94,23 +95,48 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 	
+	/**
+	 * A user can have many add many reviews
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
 	function review() {
         return $this->hasMany(Review::class);
     }
 	
+	/**
+	 * A user can have many rating for different books
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
 	function rating() {
         return $this->hasMany(Rating::class);
     }
 	
+	/**
+	 * A user can have many books on the shelf
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
 	function shelf() {
 		return $this->hasMany(Shelf::class);
 	}
 	
+	/**
+	 * A user can have only one profile
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasOne
+	 */
 	public function profile()
     {
         return $this->hasOne(Profile::class);
     }
 	
+	/**
+	 * A user can have many posts
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+	 */
 	public function post(){
 		return $this->hasMany(Post::class);
 	}

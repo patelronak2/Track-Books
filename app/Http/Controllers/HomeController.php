@@ -1,6 +1,9 @@
 <?php
 
-
+/*
+	This page handles requests related to Books, Authors, Reviews etc.
+	Created By: Ronak Patel
+*/
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -27,7 +30,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the user's home page.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -47,6 +50,11 @@ class HomeController extends Controller
         return view('home', ['posts' => $posts]);
     }
 	
+	/**
+     * show a Book page with details, Ratings and Reviews
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
 	public function showBook($id)
 	{
 		try{
@@ -109,6 +117,11 @@ class HomeController extends Controller
 		return view('book.bookProfile',['book' => $book, 'description' => $description, 'author' => $author, 'publisher' => $publisher, 'publishedDate' => $publishedDate, 'category' => $category, 'reviews' => $reviews, 'wantToRead' => $wantToRead, 'currentlyReading' => $currentlyReading, 'finishedReading' => $finishedReading, 'finalRating' => $finalRating, 'totalRatings'=> sizeof($allRating), 'currentUserRating' => $currentUserRating]);
 	}
 	
+	/**
+     * Adds a review to a particular book by the current user
+     *
+     * @return json data that contains book reviews
+     */
 	public function addReview(Request $request)
 	{
 		$validatedData = $request->validate([
@@ -129,6 +142,11 @@ class HomeController extends Controller
 		echo json_encode(array('data' => $reviews, 'userType' => Auth::user()->type, 'userId' => $user_id));
 	}
 	
+	/**
+     * Delete a review
+     *
+     * 
+     */
 	public function deleteReview(Request $request){
 		
 		$book_id = $request->input('book_id');
@@ -141,6 +159,11 @@ class HomeController extends Controller
 		echo json_encode(array('data' => $reviews, 'userType' => Auth::user()->type, 'userId' => Auth::id()));	
 	}
 	
+	/**
+     * Add a user's rating for the book
+     *
+     * 
+     */
 	public function rateBook(Request $request){
 		$book_id = $request->input('book_id');
 		$user_id = Auth::id();
@@ -180,6 +203,11 @@ class HomeController extends Controller
 		
 	}
 	
+	/**
+     * Add a book to user's Book Shelf
+     *
+     * 
+     */
 	public function addToShelf(Request $request)
 	{
 		$bookShelf = $request->input('bookShelf');
@@ -232,14 +260,23 @@ class HomeController extends Controller
 		$user->notify(new ShelfUpdated($user, $book, $message));
 	}
 	
+	/**
+     * Counts total notification a user has
+     *
+     * @return total notifications a user have
+     */
 	public function getNotificationCount(){
 		$user = Auth::user();
 		$count = $user->unreadNotifications()->count();
 		return ['count' => $count];
 	}
 	
+	/**
+     * This function gets all the notifications so that it can be displayed when user clicks on 'Notifications' in navbar
+     *
+     * 
+     */
 	public function	getNotifications(){
-		
 		$user = Auth::user();
 		$user->unreadNotifications->markAsRead();
 		$data = array();

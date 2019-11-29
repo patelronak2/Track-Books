@@ -9,6 +9,9 @@
 	<div class="alert alert-success d-none" id="alert" role="alert">
 	  <span id="message"></span>
 	</div>
+	<div class="alert alert-danger d-none" id="emptyField" role="alert">
+	  Name Cannot be blank!
+	</div>
 	<div class="my-3">
 		<div class="shadow-sm bg-light p-3">
 		<h4>Edit Profile</h4>

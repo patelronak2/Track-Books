@@ -284,6 +284,11 @@ class AdminController extends Controller
         return view('admin.reviews',['reviews' => $reviews]);
 	 }
 	 
+	 /**
+     * handles the route /deleteReview/{id}
+     *
+     * @return reviews.blade.php
+     */
 	 public function deleteReview($id)
 	 {
 		 try{
@@ -297,6 +302,11 @@ class AdminController extends Controller
 		 return view('/manageReviews')->with(['message' => $message, 'alert' => false]); 
 	 }
 	
+	/**
+     * handles the route /insertAuthor
+     *
+     * @return author.blade.php
+     */
 	public function insertAuthor(Request $request){
 		$this->validate($request, [
 			'authName' => 'required|max:50|unique:authors',
@@ -312,6 +322,11 @@ class AdminController extends Controller
 		return redirect('/manageAuthors')->with(['alert' => $alert, 'message' => $message]);
 	}
 	
+	/**
+     * handles the route /deleteAuthor/{id}
+     *
+     * @return author.blade.php
+     */
 	public function deleteAuthor($id){
 		try{
 			$author = Author::find($id);

@@ -1,5 +1,8 @@
 <?php
-
+/*
+	This page handles requests related to user chat.
+	Created By: Ronak Patel
+*/
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

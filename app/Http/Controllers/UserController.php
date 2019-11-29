@@ -1,5 +1,8 @@
 <?php
-
+/*
+	This page handles requests related to user's profile.
+	Created By: Ronak Patel
+*/
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -26,6 +29,7 @@ class UserController extends Controller
     /**
      * Show the user's profile
      *
+	 * return profile.blade.php page
      */
     public function index()
     {
@@ -50,6 +54,11 @@ class UserController extends Controller
         return view('user.profile',['profile' => $profile, 'shelves' => $shelves, 'totalFriends' => $totalFriends]);
     }
 	
+	/**
+	*Show the user's account setting page
+	*
+	*return setting.blage.php page
+	*/
 	public function setting()
 	{	
 		try{
@@ -60,6 +69,11 @@ class UserController extends Controller
 		return view('user.setting',['shelves' => $shelves]);
 	}
 	
+	/**
+	*Handle the ajax request 
+	*
+	*return array containing a user profile's detail
+	*/
 	public function getProfileDetails(){
 		
 		$allProfiles = Profile::all();
@@ -74,6 +88,10 @@ class UserController extends Controller
 		return $profile;
 	}
 	
+	/**
+	*Update changes made to user profile and save them
+	*
+	*/
 	public function editProfile(Request $request){
 		$user = Auth::user();
 		$allProfiles = Profile::all();
@@ -99,6 +117,11 @@ class UserController extends Controller
 		
 	}
 	
+	
+	/**
+	*Delete a book from user's Book Shelf
+	*
+	*/
 	public function deleteShelfBook($id){
 		$shelves = Shelf::where('user_id', Auth::id())->where('book_id',$id)->get();
 		$book = Book::find($id);
@@ -120,7 +143,10 @@ class UserController extends Controller
 	}
 	
 	
-	
+	/**
+	*Send a notification to a different user. Also, notifies that user
+	*
+	*/
 	public function sendFriendRequest($id){
 		$friendship = new Friendship;
 		$friendship->first_user = Auth::id();
@@ -140,7 +166,9 @@ class UserController extends Controller
 		return redirect('/showProfile/' . $id);
 	}
 	
-	//handles the request of adding friend from ajax calls
+	/**
+	*handles the request of adding friend from ajax calls
+	*/
 	public function acceptRequest($id){
 		$alert = $this->addFriend($id);
 		if($alert){
@@ -150,7 +178,9 @@ class UserController extends Controller
 		}
 	}
 	
-	//Change database record to reflect that the user has been added as friend
+	/**
+	*Change database record to reflect that the user has been added as friend
+	*/
 	public function addFriend($id){
 		Friendship::where('first_user', $id)->where('second_user', Auth::id())->update(['status' => 'confirmed', 'acted_user' => Auth::id()]);
 		//Auth::user() will be the user accepting the request
@@ -160,6 +190,10 @@ class UserController extends Controller
 		return true;
 	}
 	
+	/**
+	*Accept friend request from friend List page
+	*
+	*/
 	public function acceptFriendRequest($id){
 		$alert = $this->addFriend($id);
 		$user = User::find($id);
@@ -170,6 +204,11 @@ class UserController extends Controller
 		return redirect('/friendList')->with(['alert' => !$alert, 'message' => $message]);
 	}
 	
+	/**
+	*Show user's friend and pending requests 
+	*
+	*return friendList.blade.php
+	*/
 	public function friendList(){
 		$user = Auth::user();
 		$friends = $user->friends;
@@ -188,7 +227,10 @@ class UserController extends Controller
 		return view('user.friendList', ['friends' => $friends, 'requests' => $requests]);
 	}
 	
-	//This function handles the request from friendList.blade, declines the friend request and send back a message!
+	/**
+	*This function handles the request from friendList.blade, declines the friend request and send back a message!
+	*
+	*/
 	public function declineRequest($id){
 		try{
 			$user = User::find($id);
@@ -203,7 +245,10 @@ class UserController extends Controller
 		return redirect('/friendList')->with(['alert' => !$alert, 'message' => $message]);
 	}
 	
-	//This Function Handles Ajax Requests that is being sent from anotherUserProfile.blade
+	/**
+	*This Function Handles Ajax Requests that is being sent from anotherUserProfile.blade
+	*
+	*/
 	public function deleteFriendship($id){
 		$alert = $this->removeFriendFromDatabase($id);
 		if($alert){
@@ -214,8 +259,10 @@ class UserController extends Controller
 		
 	}
 	
-	//This Function deletes Friendship Record from the database
-	//Provides the functionality of Decline Friend Request or Unfriend
+	/**
+	*This Function deletes Friendship Record from the database
+	*Provides the functionality of Decline Friend Request or Unfriend
+	*/
 	public function removeFriendFromDatabase($id){
 		$friendships = Friendship::all();
 		$friendshipId = -1;
@@ -233,7 +280,10 @@ class UserController extends Controller
 		return false;
 	}
 	
-	//This function handles the requests from the FriendList Page
+	/**
+	*This function handles the requests from the FriendList Page
+	*
+	*/
 	public function unFriend($id){
 		try{
 			$user = User::find($id);
@@ -247,6 +297,10 @@ class UserController extends Controller
 		return redirect('/friendList')->with(['alert' => !$alert, 'message' => $message]);
 	}
 	
+	/**
+	*This function validates user input and create a post
+	*
+	*/
 	public function createPost(Request $request){
 		
 		$this->validate($request, [
@@ -267,6 +321,10 @@ class UserController extends Controller
 		return redirect('/home')->with(['alert' => false, 'message' => $message]);
 	}
 	
+	/**
+	*This function delete a post with the received id
+	*
+	*/
 	public function deletePost($id){
 		try{
 			$post = Post::find($id);
@@ -281,11 +339,19 @@ class UserController extends Controller
 		return redirect('/home')->with(['alert' => false, 'message' => $message]);
 	}
 	
+	/**
+	*This functions returns list of all the users from the database
+	*
+	*/
 	public function getUserList(){
 		$users = User::all();
 		return json_encode($users);
 	}
 	
+	/**
+	*This function collects all data of a user and return profile of that user
+	*
+	*/
 	public function showProfile($id){
 		if($id == Auth::id()){
 			return redirect('/profile');
