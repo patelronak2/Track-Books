@@ -144,35 +144,37 @@
 					<form class="form-signin" method="POST" action="{{ route('register') }}">
 					@csrf
 					  <div class="form-label-group">
-						@error('name')
-							<span class="invalid-feedback" role="alert">
-								<strong>{{ $message }}</strong>
-							</span>
-						@enderror
+						
 						<input type="text" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-						<label for="name">{{ __('Name') }}</label>
+						<label for="name">{{ __('Name') }}
+							@error('name')
+								
+								<strong>{{ $message }}</strong>
+								
+							@enderror
+						</label>
 					  </div>
 
 					  <div class="form-label-group">
-						@error('email')
-							<span class="invalid-feedback" role="alert">
-								<strong>{{ $message }}</strong>
-							</span>
-						@enderror
+						
 						<input type="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email address" name="email" value="{{ old('email') }}" required autocomplete="email">
-						<label for="email">{{ __('E-Mail Address') }}</label>
+						<label for="email">{{ __('E-Mail Address') }}
+							@error('email')
+								<strong>{{ $message }}</strong>
+							@enderror
+						</label>
 					  </div>
 					  
 					  <hr>
 
 					  <div class="form-label-group">
-						@error('password')
-							<span class="invalid-feedback" role="alert">
-								<strong>{{ $message }}</strong>
-							</span>
-						@enderror
+						
 						<input type="password" id="password" class="form-control form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password" required>
-						<label for="password">{{ __('Password') }}</label>
+						<label for="password">{{ __('Password') }}
+							@error('password')
+								<strong>{{ $message }}</strong>
+							@enderror
+						</label>
 					  </div>
 					  
 					  <div class="form-label-group">
