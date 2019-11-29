@@ -18,13 +18,13 @@
 				@csrf
                 <div class="form-label-group">
                   <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                  <label for="email">{{ __('E-Mail Address') }}</label>
+                  <label for="email">{{ __('E-Mail Address') }} @error('email') <strong>{{ $message }}</strong> @enderror</label>
                 </div>
-				@error('email')
-						<span class="invalid-feedback" role="alert">
-							<strong>{{ $message }}</strong>
-						</span>
-					@enderror
+				
+						<!-- <span class="invalid-feedback" role="alert">
+							
+						</span> -->
+					
                 <div class="form-label-group">
 				  
                   <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="current-password">
