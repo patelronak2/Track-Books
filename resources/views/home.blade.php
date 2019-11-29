@@ -36,7 +36,7 @@
 				<article class="post pl-3 my-3" style="border-left: 2px solid #756446;">
 					<p>{{ $post->body }}</p>
 					<div class="font-italic">
-						<h5>Posted by: {{ $post->profile->name }} <small>{{ $post->created_at->diffForHumans() }}</small></h5>
+						<h5>Posted by: {{ $post->user->name }} <small>{{ $post->created_at->diffForHumans() }}</small></h5>
 					</div>
 					@if($post->user_id == Auth::id())
 						<a href="/public/deletePost/{{ $post->id}}" class="badge badge-danger button">Delete</a>
