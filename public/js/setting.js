@@ -53,7 +53,7 @@ $(document).ready(function(){
 		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 		var birthday = $("#birthday").val();
 		var name = $("#name").val();
-		if(name != ""){
+		if(name){
 			$("#emptyField").addClass("d-none");
 			var gender = "";
 			if($("#male").prop("checked")){
